@@ -55,6 +55,8 @@
 // Essa página pega vários modelos dos Content (Directus).
 // - Principles
 // - Updates
+const articles = await queryContent('articles').find();
+const principles = await queryContent('principles').find();
 
 
 </script>

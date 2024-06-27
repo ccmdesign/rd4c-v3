@@ -28,12 +28,24 @@ const { menuItems } = useNavigation();
 }
 
 .menu {
-  display: none;
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    display: block;
+    z-index: 1000;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    overflow: hidden;
+    left: 0;
+    background: red;
+    margin: 0;
+    text-align: center;
+  }
+
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
     list-style: none;
     gap: var(--s1);
   }
-}
-</style>
+}</style>

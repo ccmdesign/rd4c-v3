@@ -39,9 +39,9 @@
     so the system will generate the same values for the three colors. 
   */
 
-  --base-h: 0;
-  --base-s: 0%;
-  --base-l: 8%;
+  --base-h: 217;
+  --base-s: 57%;
+  --base-l: 29%;
 
   --primary-h: 12;
   --primary-s: 100%;

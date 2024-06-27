@@ -1,6 +1,11 @@
 <template>
   <div>
-    <rd-hero>
+    <rd-hero bg="false" :content="hero_content">
+      
+
+    </rd-hero>
+
+    <rd-base-section>
       <h2>Data about children is everywhere</h2>
       <p>Today’s digital age is marked by major advances in how we record major events—at birth, at the doctor, at
         school, in the home, and when children ask for help. These advances have been key in ensuring that the rights
@@ -12,7 +17,7 @@
       <p>These facts raise a dilemma: How can we promote the good use of data while minimizing harm? </p>
       <p>What do government agencies, international organizations, civil society organizations, and everyday people need
         to handle data responsibly, effectively, and in ways that are consistent with children’s wants and needs?</p>
-    </rd-hero>
+    </rd-base-section>
 
     <rd-base-section>
       <h2>About Us</h2>
@@ -26,7 +31,7 @@
         potential of the next generation. </p>
     </rd-base-section>
     <rd-base-section>
-      <h2>Our Approach At a Glance</h2>
+      <h2>Our Approach at a Glance</h2>
       <p>Responsible Data for Children seeks to build awareness regarding the need for special attention to data issues
         affecting children—especially in this age of changing technology and data linkage. It is unique in that it
         adopts a principle-led approach to data responsibility. </p>
@@ -42,49 +47,18 @@
 
     <rd-base-section>
       <h2>Our Principles</h2>
-      <div class="card">
-        <h4>Participatory</h4>
-        <p>Engaging and informing individuals and groups affected by the use of data for and about
-          children.</p>
-      </div>
-      <div class="card">
-        <h4>Professionally Accountable</h4>
-        <p>Operationalizing responsible data practices and principles by establishing
-          institutional processes, roles, and responsibilities.</p>
-      </div>
-      <div class="card">
-        <h4>People-Centric</h4>
-        <p>Ensuring the needs and expectations of children, their caregivers, and their communities are
-          prioritized by actors handling data for and about them.</p>
-      </div>
-      <div class="card">
-        <h4>Prevention of Harms Across the Data Lifecycle</h4>
-        <p>Establishing end-to-end data responsibility by assessing risks
-          during the collecting, storing, preparing, sharing, analyzing, and using stages of the data life cycle.</p>
-      </div>
-      <div class="card">
-        <h4>Proportional</h4>
-        <p>Aligning the breadth of data collection and duration of data retention with the intended purpose.
-        </p>
-      </div>
-      <div class="card">
-        <h4>Protective of Children’s Rights</h4>
-        <p>Recognizing the distinct rights and requirements for helping children develop
-          to their full potential.</p>
-      </div>
-      <div class="card">
-        <h4>Purpose-Driven</h4>
-        <p>Identifying and specifying why the data is needed and how the intended or potential benefits
-          relate to improving children’s lives.</p>
-      </div>
+      <reel-l>
+        <rd-principle-card v-for="i in principles" :content="i" />
+      </reel-l>
+
     </rd-base-section>
 
     <rd-base-section>
       <h2>Testimonials</h2>
       <p>We look for opportunities to support youth and their advocates around the globe. In 2024, we spoke to a handful
         of our partners and asked them to describe what the Responsible Data for Children approach meant to them.</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/x4Nu8XhaDcw?si=rpCmMPwDqmXyVJ36"
-        title="YouTube video player" frameborder="0"
+      <iframe src="https://www.youtube.com/embed/x4Nu8XhaDcw?si=rpCmMPwDqmXyVJ36" title="YouTube video player"
+        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </rd-base-section>
@@ -93,7 +67,13 @@
 </template>
 
 <script setup>
-// Essa é uma página basicamente estática
+const hero_content = {
+  brow: "Responsible Data for Children",
+  title: "Why it Matters",
+  tagline: "Guidance, tools and leadership to support the responsible handling of data for and about children.",
+}
+
+const principles = await queryContent('principles').find();
 </script>
 
 <style scoped

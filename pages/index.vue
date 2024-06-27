@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rd-hero :content="hero_content" />
+    <rd-hero :content="hero_content" bg="true"/>
 
     <rd-base-section id="intro">
       <h2>Welcome to Responsible Data for Children</h2>
@@ -21,7 +21,7 @@
         institutions as they pursue data-driven projects that promote children’s welfare.</p>
       <p>Principles guide responsible data handling toward saving children’s lives, defending their rights, and helping
         them fulfill their potential from early childhood through adolescence.</p>
-      <p><base-button to="/about" visual="primary" color="primary">Join the Conversation</base-button></p>
+      <p><rd-button to="/about" visual="primary" color="primary">Join the Conversation</rd-button></p>
 
       <reel-l>
         <rd-principle-card v-for="i in principles" :content="i" />
@@ -32,22 +32,21 @@
       <h3>Offering instructive case studies</h3>
       <p>Visit our case study page to see examples from around the world on how institutions are promoting responsible
         data approaches</p>
-      <p><base-button to="/case-studies" visual="secondary" color="primary">Learn more</base-button></p>
+      <p><rd-button to="/case-studies" visual="secondary" color="primary">Learn more</rd-button></p>
     </rd-base-section>
 
     <rd-base-section id="updates">
-      <h2>Updates</h2>
-      <stack-l>
-        <rd-update-card v-for="i in articles" v-bind:key="i.slug"  :content="i" />
-      </stack-l>
-
+      <h3>Updates</h3>
+      <reel-l>
+        <rd-update-card v-for="i in articles" v-bind:key="i.slug" :content="i" />
+      </reel-l>
     </rd-base-section>
 
     <rd-base-section id="tools">
       <h3>Socializing our tools and resources</h3>
       <p>Check out our tools, a light-weight and user-friendly way for organizations and practitioners to operationalize
         the RD4C Principles.</p>
-      <p><base-button to="/tools" visual="secondary" color="primary">Learn more</base-button></p>
+      <p><rd-button to="/tools" visual="secondary" color="primary">Learn more</rd-button></p>
     </rd-base-section>
 
     <rd-base-section>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rd-hero :content="hero_content" />
+    <rd-hero :content="hero_content" bg="true" />
 
     <rd-base-section>
       <p>RD4C seeks to build awareness regarding the need for special attention to data issues affecting
@@ -18,11 +18,9 @@
 
     <rd-base-section>
       <h2>Principles</h2>
-      <ul>
-        <li v-for="i in principles">
-          <rd-principle-card :content="i" />
-        </li>
-      </ul>
+      <reel-l>
+        <rd-principle-card v-for="i in principles" :content="i" />
+      </reel-l>
     </rd-base-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->

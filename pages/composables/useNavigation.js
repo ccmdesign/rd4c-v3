@@ -1,0 +1,18 @@
+import { ref } from 'vue';
+
+export function useNavigation() {
+  const menuItems = ref([
+    { name: 'Home', link: '/', target: '_self' },
+    { name: 'About', link: '/about', target: '_self' },
+    { name: 'Updates', link: '/updates', target: '_self' },
+    { name: 'Case Studies', link: '/case-studies', target: '_self' },
+    { name: 'Principles', link: '/principles', target: '_self' },
+    { name: 'Team', link: '/team', target: '_self' },
+    { name: 'Tools', link: '/tools', target: '_self' }
+  ]);
+
+  return {
+    menuItems,
+  };
+}
+

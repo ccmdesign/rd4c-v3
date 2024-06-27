@@ -1,17 +1,22 @@
 <template>
   <div>
-    <h1>Team</h1>
-    <div class="aux">
-      <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a>
-      <p>Responsible Data for Children is an initiative launched by The Governance Lab at New York University and UNICEF that seeks to promote responsible handling of data for and about children. Its work could not be possible without dedicated support.</p>
-    </div>
+    <rd-hero>
+      <h1>Team</h1>
+      <p>Responsible Data for Children is an initiative launched by The Governance Lab at New York University and UNICEF
+        that seeks to promote responsible handling of data for and about children. Its work could not be possible
+        without dedicated support.</p>
+    </rd-hero>
 
-    <ul class="team">
-      <li class="team__member" v-for="i in team_temp">
-        <rd-team-card :content="i"/> 
-      </li>
-    </ul>
+    <base-section>
+      <ul class="team">
+        <li class="team__member" v-for="i in team_temp">
+          <rd-team-card :content="i" />
+        </li>
+      </ul>
+    </base-section>
+
   </div>
+  <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>
 
 <script setup>

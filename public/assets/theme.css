@@ -13,14 +13,14 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300');
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root,
 :after,
 :before {
   /* Set the project fonts */
-  --display-font: "Public Sans", sans-serif;
-  --body-font: "Public Sans", sans-serif;
+  --display-font: "Noto Sans", sans-serif;
+  --body-font: "Noto Sans", sans-serif;
 
   /* --icon-font: 'Material Symbols Outlined'; */
   /* --icon-weight: 300; /* This variable is here in case we have multiple weights of the material symbols. */
@@ -43,21 +43,25 @@
   --base-s: 0%;
   --base-l: 8%;
 
-  --primary-h: 266;
+  --primary-h: 12;
   --primary-s: 100%;
-  --primary-l: 64%;
+  --primary-l: 67%;
 
-  --accent-h: 115;
-  --accent-s: 50%;
-  --accent-l: 52%;
+  --accent-h: 202;
+  --accent-s: 69%;
+  --accent-l: 49%;
 
-  /* --secondary-h: 126; */
-  /* --secondary-s: 15%; */
-  /* --secondary-l: 72%; */
+  --secondary-h: 355;
+  --secondary-s: 56%;
+  --secondary-l: 51%;
 
-  /* --tertiary-h: 330; */
-  /* --tertiary-s: 28%; */
-  /* --tertiary-l: 65%; */
+  --tertiary-h: 170;
+  --tertiary-s: 74%;
+  --tertiary-l: 36%;
+  
+  --quaternary-h: 39;
+  --quaternary-s: 77%;
+  --quaternary-l: 58%;
 
   /* Feedback colors */
   /* These colors are for feedback. Success, Fail, Warning, Attention.  */
@@ -189,7 +193,7 @@
   /* --measure: 80ch; */
   /* --narrow: 700px; */
   /* --regular: 992px; */
-  /* --wide: 1280px; */
+  --wide: 1340px;
   /* --wrapper: 1280px; */
   /* --scroll-height: 0; /* Accepts a string in VH ex: "70vh" */
 }

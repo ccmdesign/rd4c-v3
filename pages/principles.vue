@@ -1,12 +1,8 @@
 <template>
   <div>
-    <rd-hero>
-      <h1>Principles</h1>
-      <p>Principles to guide responsible data handling toward saving children’s lives, defending their rights, and
-        helping them fulfill their potential from early childhood through adolescence.</p>
-    </rd-hero>
+    <rd-hero :content="hero_content" />
 
-    <base-section>
+    <rd-base-section>
       <p>RD4C seeks to build awareness regarding the need for special attention to data issues affecting
         children—especially in this age of changing technology and data linkage; and to engage with governments,
         communities, and development actors to put the best interests of children and a child rights approach at the
@@ -18,21 +14,26 @@
         addressing them; and encourage a broader discussion on actionable principles, insights, and approaches for
         responsible data management.</p>
       <p><base-button visual="primary">Download the Report</base-button></p>
-    </base-section>
+    </rd-base-section>
 
-    <base-section>
+    <rd-base-section>
       <h2>Principles</h2>
       <ul>
         <li v-for="i in principles">
           <rd-principle-card :content="i" />
         </li>
       </ul>
-    </base-section>
+    </rd-base-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>
 
 <script setup>
+
+const hero_content = {
+  title: "Principles",
+  tagline: "Principles to guide responsible data handling toward saving children’s lives, defending their rights, and helping them fulfill their potential from early childhood through adolescence."
+}
 
 const principles = await queryContent('principles').find();
 

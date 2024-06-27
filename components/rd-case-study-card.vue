@@ -1,6 +1,6 @@
 <template>
   <div>
-    <pre>{{ content }}</pre>
+    <h3><nuxt-link :to="content._path">{{ content.name }}</nuxt-link></h3>
   </div>
 </template>
 

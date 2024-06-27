@@ -14,7 +14,7 @@
         to handle data responsibly, effectively, and in ways that are consistent with children’s wants and needs?</p>
     </rd-hero>
 
-    <base-section>
+    <rd-base-section>
       <h2>About Us</h2>
       <p>Responsible Data for Children is an initiative launched by The Governance Lab at New York University and UNICEF
         that seeks to promote responsible handling of data for and about children. </p>
@@ -24,8 +24,8 @@
       <p>We also offer information on some of our collaborations around the globe, including our projects with
         governments, UN country offices, civil society groups, and others who play an integral part in promoting the
         potential of the next generation. </p>
-    </base-section>
-    <base-section>
+    </rd-base-section>
+    <rd-base-section>
       <h2>Our Approach At a Glance</h2>
       <p>Responsible Data for Children seeks to build awareness regarding the need for special attention to data issues
         affecting children—especially in this age of changing technology and data linkage. It is unique in that it
@@ -38,9 +38,9 @@
       <p>This principle-led approach was developed by UNICEF and The GovLab after extensive research, visits to
         partners, and discussion with our network of experts. We’ve used the principles in projects with UNHCR and
         others.</p>
-    </base-section>
+    </rd-base-section>
 
-    <base-section>
+    <rd-base-section>
       <h2>Our Principles</h2>
       <div class="card">
         <h4>Participatory</h4>
@@ -77,9 +77,9 @@
         <p>Identifying and specifying why the data is needed and how the intended or potential benefits
           relate to improving children’s lives.</p>
       </div>
-    </base-section>
+    </rd-base-section>
 
-    <base-section>
+    <rd-base-section>
       <h2>Testimonials</h2>
       <p>We look for opportunities to support youth and their advocates around the globe. In 2024, we spoke to a handful
         of our partners and asked them to describe what the Responsible Data for Children approach meant to them.</p>
@@ -87,7 +87,7 @@
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </base-section>
+    </rd-base-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>

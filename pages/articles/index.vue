@@ -1,16 +1,12 @@
 <template>
   <div>
-    <rd-hero>
-      <h1>Updates</h1>
-      <p>Short publications and analysis from our team and partners</p>
-    </rd-hero>
+    <rd-hero :content="hero_content" />
+
 
     <base-section>
-      <ul class="list">
-        <li v-for="post in data.articles" v-bind:key="post.slug">
-          <nuxt-link :to="post.url">{{ post.title }}</nuxt-link>
-        </li>
-      </ul>
+      <div class="list">
+        <rd-update-card v-for="post in data.articles" v-bind:key="post.slug" :content="post" />
+      </div>
     </base-section>
 
     <div class="aux">
@@ -33,6 +29,12 @@
 </template>
 
 <script setup>
+const hero_content = {
+  title: 'Responsible Data for Children',
+  tagline: 'Guidance, tools and leadership to support the responsible handling of data for and about children.',
+}
+
+
   // @ToDo
   // Vamos pegar os dados da lista de updates
   // Tabs/Filtros para "All, Blogs, Videos"

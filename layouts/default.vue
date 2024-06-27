@@ -1,6 +1,5 @@
 <template>
   <div class="page-wrapper">
-    <rd-top-bar />
     <main>
       <slot />
     </main>

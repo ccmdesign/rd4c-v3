@@ -1,14 +1,16 @@
 <template>
-  <header class="top-bar">
-    <img src="/images/rd4c-logo.svg" alt="">
-    <nav>
-      <ul class="menu">
-        <li v-for="item in menuItems" :key="item.name">
-          <nuxt-link :to="item.link" :target="item.target">{{ item.name }}</nuxt-link>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <center-l measure="var(--wide)">
+    <header class="top-bar">
+      <nuxt-link to="/"><img src="/images/rd4c-logo.svg" alt="Homepage"></nuxt-link>
+      <nav>
+        <ul class="menu">
+          <li v-for="item in menuItems" :key="item.name">
+            <nuxt-link :to="item.link" :target="item.target">{{ item.name }}</nuxt-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </center-l>
 </template>
 
 <script setup>
@@ -22,7 +24,7 @@ const { menuItems } = useNavigation();
 .top-bar {
   display: flex;
   justify-content: space-between;
-  margin-inline: var(--s1);
+  align-items: center;
 }
 
 .menu {

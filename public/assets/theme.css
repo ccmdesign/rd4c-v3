@@ -90,6 +90,14 @@
 :root,
 :after,
 :before {
+  /* Including Quaternay Color to the DS */
+  --quaternary-hsl: var(--quaternary-h), var(--quaternary-s), var(--quaternary-l);
+  --quaternary-color: hsla(var(--quaternary-hsl), 1);
+}
+
+:root,
+:after,
+:before {
   /* 
     This is the base styling of the system. Borders, spacings, rounded corners, etc. 
     The variables are fairly descriptive. 
@@ -105,12 +113,12 @@
 
   /* ToDo: I'm not sure this is a good thing. 
      base-padding is not equal to base-padding-inline and block */
-  --base-padding: var(--s1);
-  /* --base-padding-inline: var(--s0); */
-  /* --base-padding-block: var(--s-1); */
+  /* --base-padding: var(--s1); */
+  --base-padding-inline: var(--s1);
+  --base-padding-block: var(--s0);
 
   /* Decorations */
-  --base-border-radius: 8px;
+  --base-border-radius: 4px;
 
   /* --box-shadow-offset-x: 0; */
   /* --box-shadow-offset-y: 0; */
@@ -141,6 +149,7 @@
   /* --button-font-family: var(--base-font); */
   /* --button-font-weight: var(--base-font-weight); */
   /* --button-letter-spacing: var(--base-letter-spacing); */
+  --button-border-radius: var(--base-border-radius);
 
   /* Headings Config */
   /* H1 */

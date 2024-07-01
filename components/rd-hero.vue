@@ -19,7 +19,7 @@
 <script setup>
 defineProps({
 bg: {
-  type: Boolean,
+  type: String,
   default: false
 },
   content: {
@@ -64,14 +64,13 @@ bg: {
 
 .rd-hero__headings {
   margin-top: var(--s1);
-  --space: var(--s0);
+  --space: var(--s1);
   // height: 100%;
   
   
 }
 
 .rd-hero__brow {
-  
   color: var(--base-color);
   font-weight: 700;
   text-transform: uppercase;
@@ -80,9 +79,10 @@ bg: {
   color: var(--base-color);
   font-weight: 300;
   font-size: 2.7rem;
-  line-height: 1.1;
+  line-height: 1.25;
 }
 .rd-hero__tagline {
   color: var(--base-color);
+  font-weight: 300;
 }
 </style>

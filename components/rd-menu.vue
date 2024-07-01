@@ -1,6 +1,6 @@
 <template>
   <nav class="menu" :class="{ 'menu--open': isMenuOpen }">
-    <rd-button @click="toggleMenu" class="menu__toggle" icon-before="menu" visual="ghost" color="white" size="full-width" /> 
+    <rd-button @click="toggleMenu" class="menu__toggle" :icon-before="isMenuOpen ? 'close' : 'menu'" visual="ghost" color="white" size="full-width" /> 
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="item.link" :target="item.target">{{
       item.name }}</nuxt-link>
 
@@ -48,7 +48,7 @@ onMounted(() => {
     bottom: calc(-1 * var(--menu-height));
     overflow: hidden;
     left: 0;
-    background: var(--base-color);
+    background: var(--primary-color);
     margin: 0;
     text-align: center;
 

@@ -25,6 +25,11 @@ body {
   margin-right: auto;
 }
 
+/* This defines a custom width for the center object */
+.center[size="wrapper"] { --center-measure: 1280px; }
+
+
+
 
 
 

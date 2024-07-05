@@ -4,6 +4,7 @@
       <slot />
     </main>
     <footer>
+      <rd-cta />
       <rd-footer />
       <div class="by-ccm">
         <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>

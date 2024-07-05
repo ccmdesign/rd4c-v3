@@ -9,3 +9,154 @@ body {
   color: red;
 }
 
+[data-visibility="mobile-only"] {
+  @media (min-width: 36em) {
+    display: none !important;
+  }
+}
+
+[data-visibility="desktop-only"] {
+  @media (max-width: 36em) {
+    display: none !important;
+  }
+}
+
+.margin-right\:auto {
+  margin-right: auto;
+}
+
+
+
+
+
+
+/*******TEXT WITH SIDE IMAGE**********/
+.text-image {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  @media (max-width: 36em) {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    div:first-child {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.text-image__image {
+  width: 40%;
+  background-size: cover;
+  background-position: top left;
+
+  @media (max-width: 36em) {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.text-image__text {
+  width: 50%;
+
+  p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 36em) {
+    width: 100%;
+  }
+}
+
+/* // Initially inserted in the DS files directly */
+
+[data-caps="cap"] {
+  text-transform: uppercase;
+}
+
+.top-bar {
+  width: 100%;
+}
+
+.footer__heading {
+  &[data-cap="cap"] {
+    text-transform: uppercase;
+  }
+
+  &[data-color="accent"] {
+    color: hsla(var(--accent-hsl), 1);
+    opacity: 1;
+  }
+}
+
+.footer p {
+  font-weight: 300;
+}
+
+.footer div[data-column="two-columns"] {
+  column-count: 2;
+  column-gap: var(--s2);
+}
+
+.hero[data-type="image"] {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: #000;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@supports (width: Min(500px, 100%)) {
+  .grid--large {
+    grid-template-columns: repeat(auto-fit, minmax(Min(500px, 100%), 1fr));
+  }
+}
+
+/* // Sign up section, with heading and button. 
+// Lets create a more robust component, with conditional content, (heading, tagline and action) 
+// We also have a version with the button only
+// Potential variations:
+// Colors, conditional elements */
+
+.cta {
+  background-color: var(--rd4c-green-color);
+  padding: var(--s1) 0;
+}
+
+.cta--white {
+  background-color: #FbFbFb;
+
+  .cta__text {
+    color: #303030;
+  }
+}
+
+.cta__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.cta__text {
+  color: #FFF;
+  font-weight: 700;
+
+  @media (max-width: 36em) {
+    display: none;
+  }
+}
+
+
+/* // Small tweak on the nav */

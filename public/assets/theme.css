@@ -13,7 +13,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://use.typekit.net/lbc6lmu.css");
 
 :root,
 :after,
@@ -39,17 +39,17 @@
     so the system will generate the same values for the three colors. 
   */
 
-  --base-h: 217;
-  --base-s: 57%;
-  --base-l: 29%;
+  --base-h: 0;
+  --base-s: 0%;
+  --base-l: 20%;
 
   --primary-h: 12;
   --primary-s: 100%;
   --primary-l: 67%;
 
-  --accent-h: 202;
-  --accent-s: 69%;
-  --accent-l: 49%;
+  --accent-h: 39;
+  --accent-s: 88%;
+  --accent-l: 58%;
 
   --secondary-h: 355;
   --secondary-s: 56%;
@@ -86,6 +86,65 @@
   /* --black-hsl: 0%;   */
   /* --black-hsl: 5%; */
 }
+
+/* Colors from 11ty */
+:root {
+  --rd4c-red-hsl: 355, 84%, 47%;
+  --rd4c-red-text-hsl: var(--rd4c-red-hsl);
+
+  --rd4c-green-hsl: 170, 100%, 32%;
+  --rd4c-green-text-hsl: 170, 100%, 26%;
+
+  --rd4c-yellow-hsl: 39, 88%, 58%;
+  --rd4c-yellow-text-hsl: 39, 89%, 33%;
+  --rd4c-dark-yellow-text: var(--rd4c-yellow-hsl);
+
+  --rd4c-blue-hsl: 202, 68%, 49%;
+  --rd4c-blue-text-hsl: 202, 69%, 41%;
+
+  --rd4c-orange-hsl: 29, 100%, 44%;
+  --rd4c-orange-text-hsl: 29, 100%, 37%;
+
+  --rd4c-purple-hsl: 238, 33%, 46%;
+  --rd4c-purple-text-hsl: 238, 33%, 46%;
+
+  --rd4c-dark-gray: 255, 6%, 43%;
+  --rd4c-darker-gray: 0, 0%, 19%;
+
+  --rd4c-red-color: hsla(var(--rd4c-red-hsl), 1);
+  --rd4c-green-color: hsla(var(--rd4c-green-hsl), 1);
+  --rd4c-yellow-color: hsla(var(--rd4c-yellow-hsl), 1);
+  --rd4c-blue-color: hsla(var(--rd4c-blue-hsl), 1);
+  --rd4c-orange-color: hsla(var(--rd4c-orange-hsl), 1);
+  --rd4c-purple-color: hsla(var(--rd4c-purple-hsl), 1);
+
+  --rd4c-red-text: hsla(var(--rd4c-red-text-hsl), 1);
+  --rd4c-green-text: hsla(var(--rd4c-green-text-hsl), 1);
+  --rd4c-yellow-text: hsla(var(--rd4c-yellow-text-hsl), 1);
+  --rd4c-blue-text: hsla(var(--rd4c-blue-text-hsl), 1);
+  --rd4c-orange-text: hsla(var(--rd4c-orange-text-hsl), 1);
+  --rd4c-purple-text: hsla(var(--rd4c-purple-text-hsl), 1);
+
+
+  /* O ideal seria substituirmos essas variáveis para seguir o mesmo namespace do DS.*/
+  /* Sei que estamos correndo contra o tempo, então vamos deixar isso para a semana que vem.*/
+
+  --base-red: #DE1325;
+  --base-green: #00A388;
+  --text-green: #00856F;
+  --base-yellow: #F2B134;
+  --text-yellow: #9F6B09;
+  --text-dark-yellow: #f2b134;
+  --base-blue: #2695D3;
+  --text-blue: #207CB1;
+  --base-orange: #E06C00;
+  --text-orange: #BD5B00;
+  --base-purple: #4F519C;
+  --dark-gray: #676A73;
+  --darker-gray: #303030;
+}
+
+
 
 :root,
 :after,
@@ -190,10 +249,15 @@
 :root,
 :after,
 :before {
+  --measure: 80ch;
+  --wide: 1280px;
+  --wrapper: 1280px;
+  --narrow: 700px;
+  --scroll-height: 0;
+  /* Accepts a string in VH ex: "70vh" */
   /* --measure: 80ch; */
   /* --narrow: 700px; */
   /* --regular: 992px; */
-  --wide: 1340px;
   /* --wrapper: 1280px; */
   /* --scroll-height: 0; /* Accepts a string in VH ex: "70vh" */
 }

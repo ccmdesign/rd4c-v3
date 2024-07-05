@@ -1,19 +1,8 @@
 <template>
   <div>
-    <rd-hero :content="hero_content" bg="true"/>
+    <rd-hero :content="hero_content" />
 
-    <rd-base-section id="intro">
-      <h2>Welcome to Responsible Data for Children</h2>
-      <iframe src="https://www.youtube.com/embed/e0JxdJu4mK8?si=CY7g9bN1rYff_QDM" title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <p>Responsible Data for Children is a collaboration between UNICEF and The Governance Laboratory at New York
-        University to promote the well-being and interests of children in our digital age.</p>
-      <p>We provide a framework for assessing risks and opportunities for advancing children’s rights across the data
-        lifecycle. We are grounded in a set of principles for responsible data handling. Our support and guidance comes
-        in a few different ways.</p>
-    </rd-base-section>
+    <rd-home-intro />
 
     <rd-base-section id="principles">
       <h2>The RD4C principles</h2>
@@ -23,9 +12,7 @@
         them fulfill their potential from early childhood through adolescence.</p>
       <p><rd-button to="/about" visual="primary" color="primary">Join the Conversation</rd-button></p>
 
-      <reel-l>
-        <rd-principle-card v-for="i in principles" :content="i" />
-      </reel-l>
+      <rd-principles-slider :content="principles" />
     </rd-base-section>
 
     <rd-base-section id="case-studies">
@@ -104,9 +91,10 @@ const hero_content = {
   brow: "GovLab",  
   title: "Responsible Data for Children",
   tagline: "Guidance, tools and leadership to support the responsible handling of data for and about children.",
+  image: "/images/hero/home.png",
   action: {
-    label: "Join the Conversation",
-    link: "/join"
+    label: "Learn more",
+    url: "/about"
   }
 }
 
@@ -127,7 +115,7 @@ articles.forEach(post => {
   data.articles.push(article);
 });
 
-const principles = await queryContent('principles').find();
+
 
 
 </script>

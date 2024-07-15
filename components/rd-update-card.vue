@@ -1,16 +1,8 @@
 <template>
-  <div class="rd-update-card">
-    <h3><nuxt-link :to="content.url">{{ content.title }}</nuxt-link></h3>
-  </div>
+  <rd-colored-card class="rd-update-card" />
 </template>
 
 <script setup>
-defineProps({
-  content: {
-    type: Object,
-    required: true
-  }
-})
 
 </script>
 

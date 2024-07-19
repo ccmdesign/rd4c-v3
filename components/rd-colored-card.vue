@@ -1,17 +1,19 @@
 <template>
   <li class="colored-card" :data-color="content.color">
-    <p v-if="content.brow" class="colored-card__subject">{{ content.brow | truncate(30) }}</p>
+    <p v-if="content.brow" class="colored-card__subject">{{ content.brow }}</p>
 
-    <a :href="`${content.url}/articles/${content.brow ? `${content.brow | slugify}-${content.heading | slugify}` : content.heading | slugify}/index.html`"
-      class="colored-card__title" :aria-describedby="content.heading | slug">{{ content.heading }}</a>
-    <p class="colored-card__text" v-html="content.text | striptags(true)"></p>
-    <a :href="`${content.url}/articles/${content.brow ? `${content.brow | slugify}-${content.heading | slugify}` : content.heading | slugify}/index.html`"
-      class="colored-card__call colored-button" :data-color="content.color">Read more</a>
+    <a :href="computedUrl" class="colored-card__title" :aria-describedby="slugifiedHeading">{{ content.heading }}</a>
+    <p class="colored-card__text" v-html="strippedText"></p>
+    <a :href="computedUrl" class="colored-card__call colored-button" :data-color="content.color">Read more</a>
   </li>
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue';
+import { useSlugify, useStripTags } from '~/pages/composables/useFilters';
+
+
+const props = defineProps({
   content: {
     type: Object,
     required: true,
@@ -24,6 +26,18 @@ defineProps({
     })
   }
 });
+
+const slugify = useSlugify();
+const striptags = useStripTags();
+
+const computedUrl = computed(() => {
+  const browSlug = props.content.brow ? `${slugify(props.content.brow)}-` : '';
+  const headingSlug = slugify(props.content.heading);
+  return `${props.content.url}/articles/${browSlug}${headingSlug}/index.html`;
+});
+
+const slugifiedHeading = computed(() => slugify(props.content.heading));
+const strippedText = computed(() => striptags(props.content.text, true));
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +48,7 @@ defineProps({
   position: relative;
   border-top: 6px solid #000;
   padding: 30px 32px 92px;
-  box-shadow: 2px 2px 4px 0px hsla(39, 48, 13, 0.18);
+  box-shadow: 2px 2px 4px 0px hsla(39, 48%, 13%, 0.18);
 
   &[data-color="purple"] {
     border-color: var(--base-purple);

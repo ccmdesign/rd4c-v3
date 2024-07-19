@@ -42,10 +42,10 @@
 }
 
 .video-wrapper {
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;  
   margin-inline: auto;
-  margin-top: -200px;
+  // margin-top: -200px;
   margin-bottom: var(--s2);
 }
 </style>

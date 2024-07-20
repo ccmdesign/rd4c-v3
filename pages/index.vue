@@ -2,18 +2,27 @@
   <div>
     <rd-hero :content="hero_content" />
 
-    <rd-home-intro />
+    <rd-home-intro>
+      <h2>Welcome to Responsible Data for Children</h2>
+      <p>Responsible Data for Children is a collaboration between UNICEF and The Governance Laboratory at New York
+        University to promote the well-being and interests of children in our digital age.</p>
+      <p>We provide a framework for assessing risks and opportunities for advancing children’s rights across the data
+        lifecycle. We are grounded in a set of principles for responsible data handling. Our support and guidance
+        comes
+        in a few different ways.</p>
+    </rd-home-intro>
 
     <rd-base-section id="principles">
       <h2>Using a principle-led approach to help children</h2>
       <p>Supported by principles developed through extensive research and country office engagement, we support
         institutions as they pursue data-driven projects that promote children’s welfare.</p>
-      <h3>Explore our Approach and Principles</h3>
+      <p><rd-button to="/principles" visual="primary" color="primary">Explore our Approach and Principles</rd-button>
+      </p>
       <p>Principles guide responsible data handling toward saving children’s lives, defending their rights, and helping
         them fulfill their potential from early childhood through adolescence.</p>
       <p><rd-button to="/about" visual="primary" color="primary">Join the Conversation</rd-button></p>
 
-      <rd-principles-slider :content="principles" />
+      <!-- <rd-principles-slider :content="principles" /> -->
     </rd-base-section>
 
     <rd-base-section id="case-studies">
@@ -23,12 +32,12 @@
       <p><rd-button to="/publications#case-studies" visual="secondary" color="primary">Learn more</rd-button></p>
     </rd-base-section>
 
-    <rd-base-section id="updates">
+    <!-- <rd-base-section id="updates">
       <h2>Updates</h2>
       <reel-l>
         <rd-update-card v-for="i in articles" v-bind:key="i.slug" :content="i" />
       </reel-l>
-    </rd-base-section>
+    </rd-base-section> -->
 
     <rd-base-section id="tools">
       <h2>Socializing our tools and resources</h2>
@@ -62,12 +71,14 @@
 
     <rd-base-section id="get-involved">
       <h2>Get Involved & Stay Engaged</h2>
-      <p>Get Involved</p>
+
+      <h3>Get Involved</h3>
       <p>The Responsible Data for Children initiative seeks collaboration with all international organizations, NGOs,
         private sector companies, and others who have a role to play in promoting the responsible use of data for and
         about children. We encourage institutions to reach out to us if they are interested in having support for
         embedding the Responsible Data for Children principles into their work.</p>
       <p>If you become a member of our alliance, you will be able to:</p>
+
       <ul>
         <li>Find and connect with different collaboration partners;</li>
         <li>Share your work with stakeholders through our blog site and other platforms;</li>
@@ -77,6 +88,7 @@
         <li>Receive the opportunity to shape the international agenda around responsible data handling.</li>
       </ul>
       <p>Reach out to us at rd4c@thegovlab.org. Please put “Join Our Alliance” in the subject line of the email.</p>
+
     </rd-base-section>
 
     <rd-base-section id="stay-engaged">
@@ -84,7 +96,7 @@
       <p>The Responsible Data for Children initiative maintains a newsletter where it provides quarterly updates on its
         work around the globe. If you’d like to receive these updates and join the conversation, please subscribe now.
       </p>
-      <p>[Join the conversation]</p>
+      <p><rd-button to="/join" visual="secondary" color="primary">Join the conversation</rd-button></p>
     </rd-base-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->

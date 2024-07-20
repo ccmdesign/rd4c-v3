@@ -7,14 +7,8 @@
           <h5 class="rd-hero__brow" v-if="content.brow">{{ content.brow }}</h5>
           <h2 class="rd-hero__title">{{ content.title }}</h2>
           <h4 class="rd-hero__tagline">{{ content.tagline }}</h4>
-          <div>
-            <nuxt-link 
-              v-if="content.action" 
-              class="button" 
-              size="l" 
-              visual="primary" 
-              color="primary"
-              :to="content.action.url">
+          <div v-if="content.action">
+            <nuxt-link class="button" size="l" visual="primary" color="primary" :to="content.action.url">
               {{ content.action.label }}
             </nuxt-link>
           </div>

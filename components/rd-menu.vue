@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { useNavigation } from '~/pages/composables/useNavigation';
+import { useNavigation } from '@/composables/useNavigation';
 
 const { menuItems } = useNavigation();
 
@@ -38,7 +38,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .menu {
   @media screen and (max-width: 768px) {
-    --menu-height: 330px; // magic number calculated based on the number of menu items in useNavigation
+    --menu-height: 280px; // magic number calculated based on the number of menu items in useNavigation
     transition: all .3s ease-in-out;
     position: fixed;
     display: block;
@@ -59,7 +59,6 @@ onMounted(() => {
       text-decoration: none;
       font-weight: 500;
       border-bottom: 1px solid hsla(var(--white-hsl), .2);
-      
     }
 
     &.menu--open { bottom: 0; }

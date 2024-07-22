@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+/*const chalk = require('chalk');
 
 const { getCaseStudies } = require('./directus/caseStudies');
 const { getArticles } = require('./directus/articles');
@@ -16,4 +16,4 @@ getCaseStudies();
 getArticles();
 getPrinciples();
 getTools();
-getReadings();
+getReadings();*/

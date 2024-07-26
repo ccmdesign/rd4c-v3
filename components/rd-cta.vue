@@ -1,8 +1,8 @@
 <template>
   <div class="cta" data-visibility="desktop-only">
     <center-l class="cta__wrapper">
-      <h4 class="cta__text" data-caps="cap">Join the RD4C Conversation</h4>
-      <a href="http://eepurl.com/gKa2S1" target="_blank" class="cta__call | button" data-color="white">Join</a>
+      <h4 class="cta__text" data-caps="cap">{{ $t('texts.join') }}</h4>
+      <a href="http://eepurl.com/gKa2S1" target="_blank" class="cta__call | button" data-color="white">{{ $t('buttons.join') }}</a>
     </center-l>
   </div>
 </template>

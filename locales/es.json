@@ -1,0 +1,35 @@
+{
+    "menu": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "contact": "Contacto",
+        "principles": "Principios",
+        "publications": "Publicaciones",
+        "videos": "Videos",
+        "updates": "Actualizaciones"
+    },
+    "buttons": {
+        "learn-more": "Saber más",
+        "join": "Unirse"
+    },
+    "texts": {
+        "join": "Unirse a la conversación RD4C"
+    },
+    "footer": {
+        "partners": "Socios",
+        "about": "Acerca del proyecto",
+        "p1": "La iniciativa RD4C es un esfuerzo conjunto entre UNICEF y The GovLab en la Universidad de Nueva York para destacar y apoyar las mejores prácticas en nuestro trabajo; identificar desafíos y desarrollar herramientas prácticas para ayudar a los practicantes a evaluar y abordarlos; y fomentar un debate más amplio sobre principios, ideas, enfoques y enfoques prácticos para la gestión responsable de datos.",
+        "p2": "El trabajo está destinado a abordar consideraciones prácticas a lo largo del ciclo de vida de los datos, incluyendo la recopilación de datos rutinarios y la recopilación de datos únicos; y complementa el trabajo en temas relacionados que están siendo abordados por la comunidad de desarrollo, como la guía sobre sistemas de datos específicos y tecnologías, estandarización técnica, y estrategias de participación digital.",
+        "p3": "Adicionales herramientas y materiales están por venir y serán publicados en este sitio web a medida que estén disponibles. Únase a la conversación para recibir actualizaciones regulares.",
+        "under": "Este trabajo está bajo una",
+        "license": "Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional"
+    },
+    "pages": {
+        "home": {
+            "brow": "GovLab",
+            "title": "Datos Responsables para Niños",
+            "tagline": "Una iniciativa de UNICEF y The GovLab para proporcionar orientación, herramientas y liderazgo que apoyen el manejo responsable de datos para y sobre niños"
+        }
+    }
+    
+}

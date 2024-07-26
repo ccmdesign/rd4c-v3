@@ -1,0 +1,34 @@
+{
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "principles": "Principles",
+        "publications": "Publications",
+        "videos": "Videos",
+        "updates": "Updates"
+    },
+    "buttons": {
+        "learn-more": "Learn more",
+        "join": "Join"
+    },
+    "texts": {
+        "join": "Join the RD4C Conversation"
+    },
+    "footer": {
+        "partners": "Partners",
+        "about": "About the project",
+        "p1": "The RD4C initiative is a joint endeavor between UNICEF and The GovLab at New York University to highlight and support best practice in our work; identify challenges and develop practical tools to assist practitioners in evaluating and addressing them; and encourage a broader discussion on actionable principles, insights, and approaches for responsible data management.",
+        "p2": "The work is intended to address practical considerations across the data lifecycle, including routine data collection and one-off data collections; and compliments work on related topics being addressed by the development community such as guidance on specific data systems and technologies, technical standardization, and digital engagement strategies.",
+        "p3": "Additional tools and materials are coming soon and will be posted on this website as they become available. Join the conversation to receive regular updates.",
+        "under": "This work is licensed under a",
+        "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+    },
+    "pages": {
+        "home": {
+            "brow": "GovLab",
+            "title": "Responsible Data for Children",
+            "tagline": "An initiative by UNICEF and The GovLab to provide guidance, tools, and leadership that supports the responsible handling of data for and about children"
+        }
+    }
+}

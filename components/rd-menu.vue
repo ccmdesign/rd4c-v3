@@ -2,7 +2,7 @@
   <nav class="menu" :class="{ 'menu--open': isMenuOpen }">
     <rd-button @click="toggleMenu" class="menu__toggle" icon-before="menu" visual="ghost" color="white" size="full-width" /> 
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="item.link" :target="item.target">{{
-      item.name }}</nuxt-link>
+      $t(item.name) }}</nuxt-link>
 
   </nav>
 </template>

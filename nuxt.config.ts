@@ -2,6 +2,7 @@
 import { defineNuxtConfig } from "nuxt/config";
 import { resolve } from "path";
 import projectConfig from "./project_config.json";
+import locales from './locales'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
@@ -72,9 +73,11 @@ export default defineNuxtConfig({
     storesDirs: ['./stores/**'],
   },
   i18n: {
-    locales: ['en', 'es', 'fr'],
+    lazy: true,
+    langDir: 'locales',
+    locales,
     defaultLocale: 'en',
-  }
+  },
   ssr: false,
   gtag: {
     id: projectConfig.gtag

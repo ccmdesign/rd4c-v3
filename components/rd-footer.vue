@@ -3,26 +3,16 @@
     <center-l size="wrapper">
       <div class="footer__columns | padding-bottom:s2">
         <stack-l class="footer__column" data-size="min">
-          <h3 class="footer__heading" data-color="accent" data-cap="cap">Partners</h3>
+          <h3 class="footer__heading" data-color="accent" data-cap="cap">{{ $t('footer.partners') }}</h3>
           <a href="https://www.unicef.org/" target="_blank"><img src="/images/unicef_logo.svg" alt="Unicef"></a>
           <a href="http://www.thegovlab.org" target="_blank"><img src="/images/govlab-logo-white.svg" alt="Govlab"></a>
         </stack-l>
         <stack-l class="footer__column | stack" data-size="wide">
-          <h3 class="footer__heading" data-color="accent" data-cap="cap">About the project</h3>
+          <h3 class="footer__heading" data-color="accent" data-cap="cap">{{ $t('footer.about') }}</h3>
           <div data-column="two-columns">
-            <p>The RD4C initiative is a joint endeavor between UNICEF and The GovLab at New York University to highlight
-              and support best practice in our work; identify challenges and develop practical tools to assist
-              practitioners in evaluating and addressing them; and encourage a broader discussion on actionable
-              principles, insights, and approaches for responsible data management.</p>
-            <p>The work is intended to address practical considerations across the data lifecycle, including routine
-              data
-              collection and one-off data collections; and compliments work on related topics being addressed by the
-              development community such as guidance on specific data systems and technologies, technical
-              standardization,
-              and digital engagement strategies.</p>
-            <p>Additional tools and materials are coming soon and will be posted on this website as they become
-              available.
-              Join the conversation to receive regular updates.</p>
+            <p>{{ $t('footer.p1') }}</p>
+            <p>{{ $t('footer.p2') }}</p>
+            <p>{{ $t('footer.p3') }}</p>
           </div>
         </stack-l>
       </div>

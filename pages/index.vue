@@ -29,7 +29,7 @@
       <h2>Offering instructive case studies</h2>
       <p>Visit our case study page to see examples from around the world on how institutions are promoting responsible
         data approaches</p>
-      <p><rd-button to="/publications#case-studies" visual="secondary" color="primary">Learn more</rd-button></p>
+      <p><rd-button to="/publications#case-studies" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-base-section>
 
     <!-- <rd-base-section id="updates">
@@ -43,14 +43,14 @@
       <h2>Socializing our tools and resources</h2>
       <p>Check out our tools, a light-weight and user-friendly way for organizations and practitioners to operationalize
         the RD4C Principles.</p>
-      <p><rd-button to="/publications#resources" visual="secondary" color="primary">Learn more</rd-button></p>
+      <p><rd-button to="/publications#resources" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-base-section>
 
     <rd-base-section id="partners">
       <h2>Offering partners a platform to promote their work directly</h2>
       <p>Watch some of the videos developed by us and our partners that speak to the value of the Responsible Data for
         Children principles and examples around the globe.</p>
-      <p><rd-button to="/about#partners" visual="secondary" color="primary">Learn more</rd-button></p>
+      <p><rd-button to="/about#partners" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-base-section>
 
     <rd-base-section id="get-involved">
@@ -59,14 +59,14 @@
         practices for children?</p>
       <p>Keep up to date with us by joining our newsletter. We also welcome ideas for publications, case studies, tools,
         and events so that we can be a hub for researchers and practitioners around the world.</p>
-      <p><rd-button to="/#get-involved" visual="secondary" color="primary">Learn more</rd-button></p>
+      <p><rd-button to="/#get-involved" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-base-section>
 
     <rd-base-section id="team">
       <h2>Maintaining a team of dedicated researchers and advocates</h2>
       <p>Learn about the team supporting the Responsible Data for Children initiative and the different projects they
         work on.</p>
-      <p><rd-button to="/about#team" visual="secondary" color="primary">Learn more</rd-button></p>
+      <p><rd-button to="/about#team" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-base-section>
 
     <rd-base-section id="get-involved">
@@ -103,13 +103,15 @@
 </template>
 
 <script setup>
+import locales from '@/locales'
+const { locale, t } = useI18n()
 const hero_content = {
-  brow: "GovLab",  
-  title: "Responsible Data for Children",
-  tagline: "An initiative by UNICEF and The GovLab to provide guidance, tools, and leadership that supports the responsible handling of data for and about children",
+  brow: t('pages.home.brow'),  
+  title: t('pages.home.title'),
+  tagline: t('pages.home.tagline'),
   image: "/images/hero/home.png",
   action: {
-    label: "Learn more",
+    label: t('buttons.learn-more'),
     url: "/about"
   }
 }

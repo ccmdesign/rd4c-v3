@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { useNavigation } from '~/pages/composables/useNavigation';
+import { useNavigation } from '@/composables/useNavigation';
 const { menuItems } = useNavigation();
 
 </script>

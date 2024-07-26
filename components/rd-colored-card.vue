@@ -10,7 +10,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useSlugify, useStripTags } from '~/pages/composables/useFilters';
+import { useSlugify, useStripTags } from '@/composables/useFilters';
 
 
 const props = defineProps({

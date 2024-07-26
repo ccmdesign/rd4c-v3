@@ -3,7 +3,7 @@
     <rd-hero :content="hero_content" />
 
     <rd-base-section>
-      <p>[Interactive global map that can be clicked to display projects my continent]</p>
+      <h3 class="aux">[Interactive global map that can be clicked to display projects my continent]</h3>
     </rd-base-section>
 
     <rd-base-section>
@@ -18,8 +18,11 @@
 
     <rd-base-section>
       <ul>
+        <!-- Essa lista vai mudar para "publications", e vai receber Reports, Case Studies, Resources 
+          https://www.notion.so/ccmdesign/Conte-do-Publications-4dc0dc1d4d4743daa2d746818211aed6?pvs=4
+        -->
         <li v-for="i in caseStudies">
-          <rd-case-study-card :content="i" />
+          <rd-publication-card :content="i" />
         </li>
       </ul>
     </rd-base-section>
@@ -29,7 +32,7 @@
 
 <script setup>
 const hero_content = {
-  title: "Case Studies",
+  title: "Publications",
   tagline: "The RD4C Case Studies aim to provide insights on promising practice as well as barriers to realizing responsible data for children."
 }
 

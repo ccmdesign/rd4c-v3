@@ -18,6 +18,7 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+// Need a modal window with the full description
 .rd-team-card {
   display: flex;
   flex-direction: column;

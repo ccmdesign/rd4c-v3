@@ -18,9 +18,12 @@
 
     <rd-base-section>
       <h2>Principles</h2>
-      <reel-l>
+      <!-- <reel-l> -->
+      <stack-l>
         <rd-principle-card v-for="i in principles" :content="i" />
-      </reel-l>
+      </stack-l>
+
+      <!-- </reel-l> -->
     </rd-base-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->

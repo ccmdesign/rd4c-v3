@@ -7,16 +7,17 @@
 
     <template #extra>
       <div class="team-group">
-        <rd-team-card />
-        <rd-team-card />
-        <rd-team-card />
-        <rd-team-card />
+        <rd-team-card v-for="member of team" :content="member" :key="member.id"/>
       </div>
     </template>
   </rd-split-section>
 </template>
 
 <script setup>
+  const props = defineProps({
+    team: Object,
+  });
+
 
 </script>
 

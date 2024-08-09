@@ -56,7 +56,7 @@
       <p><rd-button to="/#get-involved" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
-    <rd-team-section />
+    <rd-team-section :team="team"/>
 
     <rd-split-section id="get-involved" image="/images/hero/readings.jpg">
       <h2>Get Involved & Stay Engaged</h2>
@@ -106,6 +106,7 @@ const hero_content = {
 }
 
 const articles = await queryContent('articles').sort({ createdAt: -1 }).limit(4).find();
+const team = await queryContent('team').limit(4).find();
 
 const data = reactive({
   articles: [],

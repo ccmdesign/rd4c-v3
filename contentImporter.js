@@ -1,19 +1,17 @@
-/*const chalk = require('chalk');
+const chalk = require('chalk');
 
-const { getCaseStudies } = require('./directus/caseStudies');
 const { getArticles } = require('./directus/articles');
 const { getPrinciples } = require('./directus/principles');
-const { getTools } = require('./directus/tools');
-const { getReadings } = require('./directus/readings');
+const { getPublications } = require('./directus/publications');
+const { getTeam } = require('./directus/team');
 
 
 console.log('');
 console.log(chalk.green('Starting importing data from Directus...'));
 console.log('');
-console.log(chalk.green('[ CASE STUDIES - ARTICLES - PRINCIPLES - TOOLS - READINGS ]'));
+console.log(chalk.green('[ ARTICLES - PRINCIPLES - PUBLICATIONS - TEAM ]'));
 
-getCaseStudies();
 getArticles();
 getPrinciples();
-getTools();
-getReadings();*/
+getPublications();
+getTeam();

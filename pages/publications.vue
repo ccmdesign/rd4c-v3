@@ -21,9 +21,22 @@
         <!-- Essa lista vai mudar para "publications", e vai receber Reports, Case Studies, Resources 
           https://www.notion.so/ccmdesign/Conte-do-Publications-4dc0dc1d4d4743daa2d746818211aed6?pvs=4
         -->
+        <h3>Case Studies</h3>
         <li v-for="i in caseStudies">
           <rd-publication-card :content="i" />
+          <pre>{{ i }}</pre>
         </li>
+
+        <h3>Resources</h3>
+        <li v-for="i in resources">
+          <rd-publication-card :content="i" />
+        </li>
+
+        <h3>Reports</h3>
+        <li v-for="i in reports">
+          <rd-publication-card :content="i" />
+        </li>
+
       </ul>
     </rd-base-section>
   </div>
@@ -36,7 +49,9 @@ const hero_content = {
   tagline: "The RD4C Case Studies aim to provide insights on promising practice as well as barriers to realizing responsible data for children."
 }
 
-const caseStudies = await queryContent('case-studies').find();
+const resources = await queryContent('publications').where({"publication_type": 'resource'}).find();
+const reports = await queryContent('publications').where({"publication_type": 'report'}).find();
+const caseStudies = await queryContent('publications').where({"publication_type": 'case_study'}).find();
 
 </script>
 

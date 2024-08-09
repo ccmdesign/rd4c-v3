@@ -3,32 +3,36 @@ var rimraf = require("rimraf");
 const common = require ("./common");
 
 const objectContructor = async (dir, fs) => {
-  let caseStudies = await common.getDirectusData("rd4c_case_studies");
+  
+  const junctionFields = [
+    "picture.*"
+  ]
+  const team = await common.getDirectusData("rd4c_team", junctionFields);
 
-  caseStudies = caseStudies.data.sort((a, b) => {
-    if (new Date(a.date) > new Date (b.date)) return 1;
-    else return -1;
-  });
-
-  caseStudies.forEach((item) => {
-    let i = { ...item };
-    i.slug = common.slugify(item.name);
-    i.image = item.image ? common.getImage(item.image.id) : '';
+  await team.data.forEach((team) => {
+    let i = {};
+    i.slug = team.slug && team.slug != '' ? team.slug : common.slugify(team.name);
+    i.image = team.picture && team.picture.id ? common.getImage(team.picture.id) : '';
+    i.bio = team.bio ? team.bio : '';
+    i.bioShort = team.bio_short ? team.bio_short : '';
+    i.name = team.name ? team.name : '';
+    i.title = team.title ? team.title : '';
 
     fs.writeFile(
-      `${dir}/${i.slug}.json`,
+      dir + "/" + i.slug + ".json",
       JSON.stringify(i),
-      function (err) {
+      function (err, result) {
         if (err) console.log("error", err);
       }
     );
-    console.log("WRITING CASE STUDIES: ", i.slug + ".json");
+    console.log("WRITING TEAM: ", i.slug + ".json");
+
   });
 }
 
-const getCaseStudies = async () => {
+const getTeam = async () => {
 
-  const dir = "./content/case-studies";
+  const dir = "./content/team";
   if (fs.existsSync(dir)) {
     rimraf(dir, async () => {
       if (!fs.existsSync(dir)) {
@@ -58,5 +62,5 @@ const getCaseStudies = async () => {
 }
 
 module.exports = {
-  getCaseStudies
+  getTeam
 }

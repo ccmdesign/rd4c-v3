@@ -3,16 +3,16 @@ var rimraf = require("rimraf");
 const common = require ("./common");
 
 const objectContructor = async (dir, fs) => {
-  let readings = await common.getDirectusData("rd4c_readings");
+  let publications = await common.getDirectusData("rd4c_publications");
 
-  readings = readings.data.sort((a, b) => {
+  publications = publications.data.sort((a, b) => {
     if (new Date(a.date) > new Date (b.date)) return 1;
     else return -1;
   });
 
-  readings.forEach((item) => {
+  publications.forEach((item) => {
     let i = { ...item };
-    i.slug = common.slugify(item.name);
+    i.slug = common.slugify(item.title);
 
     fs.writeFile(
       `${dir}/${i.slug}.json`,
@@ -21,13 +21,13 @@ const objectContructor = async (dir, fs) => {
         if (err) console.log("error", err);
       }
     );
-    console.log("WRITING READINGS: ", i.slug + ".json");
+    console.log("WRITING PUBLICATIONS: ", i.slug + ".json");
   });
 }
 
-const getReadings = async () => {
+const getPublications = async () => {
 
-  const dir = "./content/readings";
+  const dir = "./content/publications";
   if (fs.existsSync(dir)) {
     rimraf(dir, async () => {
       if (!fs.existsSync(dir)) {
@@ -57,5 +57,5 @@ const getReadings = async () => {
 }
 
 module.exports = {
-  getReadings
+  getPublications
 }

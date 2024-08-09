@@ -24,24 +24,36 @@ defineProps({
 
 <style lang="scss" scoped>
 .rd-split-section {
-  --_gap: var(--s0);
-  --_padding-inline: var(--s3);
-  --_padding-block: var(--s3);
+  --_gap: var(--s-1);
+  --_padding-inline: var(--s0);
+  --_padding-block: var(--s1);
+
+  @media screen and (min-width: 768px) {
+    --_gap: var(--s0);
+    --_padding-inline: var(--s3);
+    --_padding-block: var(--s3);
+  }
 }
 
-.rd-split-section { display: flex; }
+.rd-split-section { 
+  display: flex;
+  flex-direction: column;
 
-.rd-split-section:nth-of-type(2n) { 
-  flex-direction: row-reverse; 
-  
-  .content { text-align: right; }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+
+    &:nth-of-type(2n) { 
+      flex-direction: row-reverse; 
+      .content { text-align: right; }
+    }
+  }
 }
 
 .rd-split-section > * { flex: 1; }
 
 .rd-split-section > img {
   flex: 1;
-  width: 50%;
+  @media screen and (min-width: 768px) { width: 50%; }
   object-fit: cover;
   object-position: center;
   aspect-ratio: 1 / 1;
@@ -54,7 +66,7 @@ defineProps({
   gap: var(--_gap);
   padding: var(--_padding-block) var(--_padding-inline);
   text-wrap: balance;
-  font-size: 125%;
+  @media screen and (min-width: 768px) { font-size: 125%; }
 }
 
 .rd-split-section :deep(h2) {

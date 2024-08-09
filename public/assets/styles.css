@@ -1,5 +1,20 @@
+a:not[class] {
+  color: var(--rd4c-green-color);
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* In this file you will add your project wide styles. */
-body {
+/* body {
   height: 100svh;
 }
 
@@ -23,10 +38,10 @@ body {
 
 .margin-right\:auto {
   margin-right: auto;
-}
+} */
 
 /* This defines a custom width for the center object */
-.center[size="wrapper"] { --center-measure: 1280px; }
+/* .center[size="wrapper"] { --center-measure: 1280px; } */
 
 
 
@@ -36,7 +51,7 @@ body {
 
 
 /*******TEXT WITH SIDE IMAGE**********/
-.text-image {
+/* .text-image {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -72,11 +87,11 @@ body {
   @media (max-width: 36em) {
     width: 100%;
   }
-}
+} */
 
 /* // Initially inserted in the DS files directly */
 
-[data-caps="cap"] {
+/* [data-caps="cap"] {
   text-transform: uppercase;
 }
 
@@ -125,7 +140,7 @@ body {
   .grid--large {
     grid-template-columns: repeat(auto-fit, minmax(Min(500px, 100%), 1fr));
   }
-}
+} */
 
 /* // Sign up section, with heading and button. 
 // Lets create a more robust component, with conditional content, (heading, tagline and action) 
@@ -133,7 +148,7 @@ body {
 // Potential variations:
 // Colors, conditional elements */
 
-.cta {
+/* .cta {
   background-color: var(--rd4c-green-color);
   padding: var(--s1) 0;
 }
@@ -161,7 +176,7 @@ body {
   @media (max-width: 36em) {
     display: none;
   }
-}
+} */
 
 
 /* // Small tweak on the nav */

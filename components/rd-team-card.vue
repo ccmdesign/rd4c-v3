@@ -4,18 +4,23 @@
     <h4>{{content.name}}</h4>
     <h5>{{ content.organization }}</h5>
     <div><base-button icon-after="arrow_forward" visual="primary" color="primary">Bio</base-button></div>
+    <pre>{{ content }}</pre>
+  
   </div>
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   content: {
     type: Object,
     required: true,
     default: {
-      image: 'https://via.placeholder.com/250',
+      image: 'https://via.placeholder.com/250', // Need a default image
       name: 'John Doe',
-      organization: 'Example Organization'
+      title: 'Example Title',
+      organization: 'Example Organization',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec libero ultricies ultricies. Nullam nec purus nec libero ultricies ultricies. Nullam nec purus nec libero ultricies ultricies.',
+      bioShort: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }
   }
 })

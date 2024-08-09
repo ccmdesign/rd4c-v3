@@ -5,7 +5,7 @@
     <rd-hero :content="hero_content" />
     <base-section>
       <div class="list">
-        <rd-update-card v-for="post in data.articles" v-bind:key="post.slug" :content="post" />
+        <rd-update-card v-for="post in articles" v-bind:key="post.slug" :content="post" />
       </div>
     </base-section>
 
@@ -20,20 +20,6 @@ const hero_content = {
   
   const articles = await queryContent('articles').find();
   
-  const data = reactive({
-      articles: [],
-  });
-
-  articles.forEach(post => {
-    const article = {
-      title: post.title,
-      description: post.description,
-      slug: post.slug,
-      url: `/articles/${post.slug}`
-    }
-    data.articles.push(article);
-  });
-
 </script>
 
 <style lang="scss" scoped>

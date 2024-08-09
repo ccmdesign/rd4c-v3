@@ -3,15 +3,13 @@
     <p v-if="content.brow" class="colored-card__subject">{{ content.brow }}</p>
 
     <a :href="computedUrl" class="colored-card__title" :aria-describedby="slugifiedHeading">{{ content.heading }}</a>
-    <p class="colored-card__text" v-html="strippedText"></p>
+    <p class="colored-card__text" v-html="content.main_content"></p>
     <a :href="computedUrl" class="colored-card__call colored-button" :data-color="content.color">Read more</a>
   </li>
 </template>
 
 <script setup>
 import { computed } from 'vue';
-import { useSlugify, useStripTags } from '@/composables/useFilters';
-
 
 const props = defineProps({
   content: {
@@ -27,17 +25,11 @@ const props = defineProps({
   }
 });
 
-const slugify = useSlugify();
-const striptags = useStripTags();
-
+const slugifiedHeading = computed(() => props.content.slug);
 const computedUrl = computed(() => {
-  const browSlug = props.content.brow ? `${slugify(props.content.brow)}-` : '';
-  const headingSlug = slugify(props.content.heading);
-  return `${props.content.url}/articles/${browSlug}${headingSlug}/index.html`;
+  return `/articles/${props.content.slug}`;
 });
 
-const slugifiedHeading = computed(() => slugify(props.content.heading));
-const strippedText = computed(() => striptags(props.content.text, true));
 </script>
 
 <style lang="scss" scoped>

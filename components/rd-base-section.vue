@@ -24,11 +24,16 @@
   font-size: 1.5rem;
 }
 .rd-base-section :deep(h4) {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 900;
   color: var(--primary-color);
 }
 .rd-base-section :deep(p) {
+  font-size: 1.25rem;
   color: var(--base-color);
+}
+
+.rd-base-section[color="tertiary"] {
+  background: var(--tertiary-color);
 }
 </style>

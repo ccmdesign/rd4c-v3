@@ -1,0 +1,76 @@
+<template>
+  <section class="rd-split-section" :image="image">
+    <img v-if="image" :src="image" alt="">
+    <div class="extra-content" v-else >
+      <slot name="extra"></slot>
+    </div>
+
+    <div class="content">
+      <slot></slot>
+    </div>
+  </section>
+</template>
+
+<script setup>
+defineProps({
+  image: {
+    type: String,
+    required: true,
+    default: ''
+  }
+});
+
+</script>
+
+<style lang="scss" scoped>
+.rd-split-section {
+  --_gap: var(--s0);
+  --_padding-inline: var(--s3);
+  --_padding-block: var(--s3);
+}
+
+.rd-split-section { display: flex; }
+
+.rd-split-section:nth-of-type(2n) { 
+  flex-direction: row-reverse; 
+  
+  .content { text-align: right; }
+}
+
+.rd-split-section > * { flex: 1; }
+
+.rd-split-section > img {
+  flex: 1;
+  width: 50%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
+.rd-split-section .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--_gap);
+  padding: var(--_padding-block) var(--_padding-inline);
+  text-wrap: balance;
+  font-size: 125%;
+}
+
+.rd-split-section :deep(h2) {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+.rd-split-section :deep(h3) {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+.rd-split-section :deep(h4) {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+.rd-split-section :deep(p) {
+  color: var(--base-color);
+}
+</style>

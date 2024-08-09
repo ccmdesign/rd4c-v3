@@ -11,7 +11,12 @@
 defineProps({
   content: {
     type: Object,
-    required: true
+    required: true,
+    default: {
+      image: 'https://via.placeholder.com/250',
+      name: 'John Doe',
+      organization: 'Example Organization'
+    }
   }
 })
 

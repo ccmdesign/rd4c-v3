@@ -49,7 +49,7 @@ const { menuItems } = useNavigation();
   flex-direction: column;
   // align-items: center;
 
-  @media screen and (min-width: 35.98rem) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 }
@@ -73,13 +73,13 @@ const { menuItems } = useNavigation();
     flex-grow: 3;
   }
 
-  @media screen and (max-width: 35.98rem) {
+  @media screen and (max-width: 768px) {
     & + & {
       margin-top: var(--s1);
     }
   }
 
-  @media screen and (min-width: 35.98rem) {
+  @media screen and (min-width: 768px) {
     & + & {
       margin-left: var(--s2);
     }
@@ -109,8 +109,10 @@ const { menuItems } = useNavigation();
 }
 
 .footer [data-column="two-columns"] {
-  column-count: 2;
-  column-gap: var(--s2);
+  @media screen and (min-width: 768px) {
+    column-count: 2;
+    column-gap: var(--s2);
+  }
 }
 
 .after-footer {

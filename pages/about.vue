@@ -2,7 +2,6 @@
   <div>
     <rd-hero bg="false" :content="hero_content">
 
-
     </rd-hero>
 
     <rd-base-section id="intro">
@@ -56,6 +55,7 @@
 
     <rd-base-section>
       <center-l size="wide">
+        <h2>team</h2>
         <ul class="team">
           <li class="team__member" v-for="i in team">
             <rd-team-card :content="i" />

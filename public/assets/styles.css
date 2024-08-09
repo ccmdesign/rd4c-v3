@@ -10,14 +10,6 @@ a:not[class] {
 
 
 
-
-
-
-/* In this file you will add your project wide styles. */
-/* body {
-  height: 100svh;
-}
-
 .aux {
   outline: 2px solid red;
   padding: var(--s0);
@@ -35,6 +27,15 @@ a:not[class] {
     display: none !important;
   }
 }
+
+
+/* In this file you will add your project wide styles. */
+/* body {
+  height: 100svh;
+}
+
+
+
 
 .margin-right\:auto {
   margin-right: auto;

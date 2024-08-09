@@ -1,5 +1,6 @@
 <template>
   <rd-colored-card class="rd-update-card" />
+   <!-- <div class="rd-update-card"></div> -->
 </template>
 
 <script setup>

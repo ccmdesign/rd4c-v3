@@ -1,10 +1,8 @@
 <template>
-  <center-l measure="var(--wide)">
-    <header class="top-bar">
-      <nuxt-link to="/"><img src="/images/rd4c-logo.svg" alt="Homepage"></nuxt-link>
-      <rd-menu />
-    </header>
-  </center-l>
+  <header class="top-bar">
+    <nuxt-link to="/"><img src="/images/rd4c-logo.svg" alt="Homepage"></nuxt-link>
+    <rd-menu />
+  </header>
 </template>
 
 <script setup>
@@ -13,8 +11,9 @@
 
 <style lang="scss" scoped>
 .top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  background: var(--base-color);
+  grid-template-columns: 1fr auto;
+  padding: var(--s1);
 }
 </style>

@@ -41,7 +41,7 @@ defineProps({
 <style lang="scss" scoped>
 .rd-hero {
   height: 45.5svh;
-  padding: var(--s0) 0;
+  padding: 0;
 }
 
 .rd-hero[bg] {

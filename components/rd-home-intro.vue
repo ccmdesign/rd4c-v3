@@ -29,14 +29,14 @@
 <style lang="scss" scoped>
 .home-intro {
   --_color-1: var(--tertiary-color);
-  --_color-2: var(--base-color);
+  --_color-2: var(--white-color);
   background: linear-gradient(180deg, var(--_color-1) 0%, var(--_color-1) 35%, var(--_color-2) 35%, var(--_color-2) 100%); 
   padding: var(--s4) 0;
 }
 
 .content-wrapper {
   margin-top: var(--s2);
-  color: var(--white-color);
+  color: var(--base-color);
   text-align: center;
   font-size: 1.25rem;
   text-wrap: balance;

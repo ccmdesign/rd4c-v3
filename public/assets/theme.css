@@ -45,6 +45,7 @@
   --rd-orange: 29, 100%, 44%;
   --rd-purple: 238, 33%, 46%;
   --rd-red: 355, 84%, 47%;
+  --rd-teal: 180, 76%, 40%;
 
 
   --base-h: 0;
@@ -224,7 +225,7 @@
 
   /* H2 */
   /* --h2-font-family: var(--display-font); */
-  /* --h2-font-size: 2.5rem; */
+  --h2-font-size: 2rem;
   /* --h2-text-color: var(--primary-color); */
   /* --h2-line-height: 1.2; */
   --h2-font-weight: 300;

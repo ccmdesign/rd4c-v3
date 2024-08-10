@@ -1,23 +1,11 @@
 <template>
   <div>
     <rd-hero :content="hero_content" />
+    
     <rd-home-intro />
 
-    <rd-base-section id="principles">
-
-      <h2>Using a principle-led approach to help children</h2>
-      <p>Supported by principles developed through extensive research and country office engagement, we support
-        institutions as they pursue data-driven projects that promote children’s welfare.</p>
-      <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and Principles</rd-button>
-      </p>
-      <p>Principles guide responsible data handling toward saving children’s lives, defending their rights, and helping
-        them fulfill their potential from early childhood through adolescence.</p>
-      <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p>
+    <rd-principles-section :content="principles" id="principles" />
       
-      <rd-principles-slider :content="principles" />
-
-    </rd-base-section>
-
     <rd-split-section id="case-studies" image="/images/hero/readings.jpg">
       <h2>Offering instructive case studies</h2>
       <p>Visit our case study page to see examples from around the world on how institutions are promoting responsible
@@ -25,13 +13,13 @@
       <p><rd-button to="/publications#case-studies" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
-    <rd-base-section id="updates">
+    <!-- <rd-base-section id="updates">
       <h2>Updates</h2>
       <rd-card-group>
         <rd-update-card v-for="i in articles" v-bind:key="i.slug" :content="i" />
       </rd-card-group>
       <p class="text-align:center margin-top:s2"><rd-button to="/updates" visual="secondary" color="primary">{{ $t('buttons.view-all') }}</rd-button></p>
-    </rd-base-section>
+    </rd-base-section>-->
 
     <rd-split-section id="tools" image="/images/hero/case_studies.png">
       <h2>Socializing our tools and resources</h2>

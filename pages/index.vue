@@ -98,7 +98,7 @@ const hero_content = {
   brow: t('pages.home.brow'),  
   title: t('pages.home.title'),
   tagline: t('pages.home.tagline'),
-  image: "/images/hero/home.png",
+  image: "/images/hero/homepage.jpg",
   action: {
     label: t('buttons.learn-more'),
     url: "/about"

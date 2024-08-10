@@ -1,7 +1,12 @@
 <template>
-  <header class="rd-hero" :bg="content.image" :route="$route.name">
-    <rd-top-bar />
-    <center-l measure="var(--wide)" class="rd-hero__wrapper">
+  <header class="rd-hero" :bg="content.image" :route="$route.name" :color="color">
+    <rd-top-bar class="rd-hero__top-bar" />
+    <div class="rd-hero__image">
+      <img class="rd-hero__bg" :src="content.image" :alt="content.title" />
+      <img class="rd-logo-icon" src="/images/decor/rd4c-logo-icon.png" alt="">
+    </div>
+    
+    <div class="rd-hero__content">
       <slot>
         <stack-l class="rd-hero__headings">
           <h5 class="rd-hero__brow" v-if="content.brow">{{ content.brow }}</h5>
@@ -14,7 +19,7 @@
           </div>
         </stack-l>
       </slot>
-    </center-l>
+    </div>
   </header>
 </template>
 
@@ -33,6 +38,11 @@ defineProps({
         url: '/'
       }
     })
+  },
+  color: {
+    type: String,
+    required: false,
+    default: ''
   }
 })
 
@@ -40,53 +50,157 @@ defineProps({
 
 <style lang="scss" scoped>
 .rd-hero {
-  height: 45.5svh;
-  padding: 0;
-}
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  background-color: hsla(var(--rd-purple));
 
-.rd-hero[bg] {
-  background-image: url('/images/hero/home.png');      
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-}
-
-.rd-hero[route="index"] { padding-bottom: var(--s5); }
-
-.rd-hero__wrapper {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.rd-hero__headings {
-  --space: var(--s0);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  
-  > *[class] {
-    width: fit-content;
-    padding: var(--s-2) var(--s0);
-    color: var(--white-color);
-    position: relative;
-    z-index: 1;
-    background-blend-mode: multiply;
-    background-color: var(--primary-color);
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "top top"
+                         "image content";
   }
 }
 
-.rd-hero__brow {
-  font-weight: 700;
-  text-transform: uppercase;
+@media screen and (max-width: 768px) {
+  .rd-hero__image   { grid-row: 2; }
+  .rd-hero__content { grid-row: 3; }
 }
 
-.rd-hero__title {
-  font-weight: 300;
-  font-size: 2.7rem;
-  line-height: 1.1;
+@media screen and (min-width: 768px) {
+  .rd-hero__top-bar { grid-area: top; }
+  .rd-hero__image   {  grid-area: image; }
+  .rd-hero__content {  grid-area: content; }
 }
+
+.rd-hero {
+  @media screen and (max-width: 768px) { 
+    min-height: 80svh; 
+    text-align: center;
+  }
+  @media screen and (min-width: 768px) { 
+    min-height: 60svh; 
+    text-align: left;
+  }
+
+  &__content { 
+    align-self: center;
+    @media screen and (max-width: 768px) { padding: var(--s3) var(--s0); }
+    @media screen and (min-width: 768px) { padding: var(--s0) var(--s3); }
+  }
+
+  &__headings {
+    background-color: hsla(var(--rd-purple));
+    
+    * { color: white; }
+    
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 200;
+    }
+  }
+
+  &__image {
+    position: relative;
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+}
+
+.rd-logo-icon {
+  position: absolute;
+  z-index: 1;
+
+  @media screen and (max-width: 768px) { 
+    width: 60px;
+    bottom: -36px;
+    left: calc(50vw - 30px);
+  }
+  @media screen and (min-width: 768px) { 
+    width: 100px;
+    left: calc(100% - 50px);
+    top: calc(38% - 50px);
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .rd-hero {
+//   height: 45.5svh;
+//   padding: 0;
+// }
+
+// .rd-hero[bg] {
+//   background-image: url('/images/hero/home.png');      
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: bottom center;
+// }
+
+// .rd-hero[route="index"] { padding-bottom: var(--s5); }
+
+// .rd-hero__wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   text-align: center;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100%;
+// }
+
+// .rd-hero__headings {
+//   --space: var(--s0);
+//   text-align: center;
+//   display: flex;
+//   align-items: center;
+  
+//   > *[class] {
+//     width: fit-content;
+//     padding: var(--s-2) var(--s0);
+//     color: var(--white-color);
+//     position: relative;
+//     z-index: 1;
+//     background-blend-mode: multiply;
+//     background-color: var(--primary-color);
+//   }
+// }
+
+// .rd-hero__brow {
+//   font-weight: 700;
+//   text-transform: uppercase;
+// }
+
+// .rd-hero__title {
+//   font-weight: 300;
+//   font-size: 2.7rem;
+//   line-height: 1.1;
+// }
 </style>

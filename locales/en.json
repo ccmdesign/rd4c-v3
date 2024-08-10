@@ -27,7 +27,7 @@
     },
     "pages": {
         "home": {
-            "brow": "GovLab",
+            "brow": "",
             "title": "Responsible Data for Children",
             "tagline": "An initiative by UNICEF and The GovLab to provide guidance, tools, and leadership that supports the responsible handling of data for and about children"
         }

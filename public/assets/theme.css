@@ -39,6 +39,14 @@
     so the system will generate the same values for the three colors. 
   */
 
+  --rd-blue: 202, 68%, 49%;
+  --rd-green: 170, 100%, 32%;
+  --rd-yellow: 39, 88%, 58%;
+  --rd-orange: 29, 100%, 44%;
+  --rd-purple: 238, 33%, 46%;
+  --rd-red: 355, 84%, 47%;
+
+
   --base-h: 0;
   --base-s: 0%;
   --base-l: 20%;
@@ -62,6 +70,11 @@
   --quaternary-h: 39;
   --quaternary-s: 77%;
   --quaternary-l: 58%;
+
+  
+
+
+
 
   /* Feedback colors */
   /* These colors are for feedback. Success, Fail, Warning, Attention.  */

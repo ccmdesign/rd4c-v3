@@ -1,5 +1,5 @@
 <template>
-  <section id="team">
+  <section id="team" class="team-section">
     <center-l size="wide">
       <h2>Maintaining a team of dedicated researchers and advocates</h2>
       <p>Learn about the team supporting the Responsible Data for Children initiative and the different projects they
@@ -11,21 +11,26 @@
     <div class="team-group">
       <div class="team-card" v-for="member of team" :content="member" :key="member.id"
         :style="{ '--bg': `url(${member.image})` }">
+        <h4>{{ member.name }}</h4>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-  const props = defineProps({
-    team: Object,
-    bg: String
-  });
+  // const props = defineProps({
+  //   team: Object,
+  //   bg: String
+  // });
 
+  const team = await queryContent('team').find();
 
 </script>
 
 <style lang="scss" scoped>
+.team-section {
+  padding-block: var(--s2);
+}
 .team-group {
   margin-top: var(--s2);
   display: grid;
@@ -41,5 +46,10 @@
   background-image: var(--bg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.team-card h4 {
+  color: var(--white-color);
+  
 }
 </style>

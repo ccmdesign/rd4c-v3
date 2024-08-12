@@ -1,31 +1,34 @@
 <template>
-  <footer class="footer | padding-top:s4" data-color="base">
-    <center-l size="wrapper">
-      <div class="footer__columns | padding-bottom:s2">
-        <stack-l class="footer__column" data-size="min">
-          <h3 class="footer__heading" data-color="accent" data-cap="cap">{{ $t('footer.partners') }}</h3>
-          <a href="https://www.unicef.org/" target="_blank"><img src="/images/unicef_logo.svg" alt="Unicef"></a>
-          <a href="http://www.thegovlab.org" target="_blank"><img src="/images/govlab-logo-white.svg" alt="Govlab"></a>
-        </stack-l>
-        <stack-l class="footer__column | stack" data-size="wide">
-          <h3 class="footer__heading" data-color="accent" data-cap="cap">{{ $t('footer.about') }}</h3>
-          <div data-column="two-columns">
-            <p>{{ $t('footer.p1') }}</p>
-            <p>{{ $t('footer.p2') }}</p>
-            <p>{{ $t('footer.p3') }}</p>
-          </div>
-        </stack-l>
+  <div class="footer-wrapper">
+    <footer class="footer-section">
+      <h3 class="logos-title footer-heading">{{ $t('footer.partners') }}</h3>
+      <div class="logos">
+        <a class="logo-1" href="https://www.unicef.org/" target="_blank"><img
+            src="/images/logos/unicef-logo-white.svg" alt="Unicef"></a>
+        <a class="logo-2" href="http://www.thegovlab.org" target="_blank"><img
+            src="/images/logos/govlab-logo-white.svg" alt="Govlab"></a>
       </div>
-    </center-l>
 
-    <div class="after-footer | margin-top:s2">
-      <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0><img alt='Creative Commons License'
-          style='border-width:0' src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /> </a>
-      <p>{{ $t('footer.under') }} <a rel=license href="http://creativecommons.org/licenses/by-sa/4.0/">{{ $t('footer.license') }}</a></p>
-      <a class="by-line" href="http://ccmdesign.ca" target="_blank"
-        title="Website design and development by ccm.design">by ccm.design</a>
-    </div>
-  </footer>
+      <h3 class="content-title footer-heading">{{ $t('footer.about') }}</h3>
+      <div class="content" data-column="two-columns">
+        <p>{{ $t('footer.p1') }}</p>
+        <p>{{ $t('footer.p2') }}</p>
+        <p>{{ $t('footer.p3') }}</p>
+      </div>
+
+      <div class="after-footer">
+        <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0>
+          <img alt='Creative Commons License' style='border-width:0'
+            src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /> </a>
+        <p>{{ $t('footer.under') }} <a rel=license href="http://creativecommons.org/licenses/by-sa/4.0/">{{
+            $t('footer.license') }}</a></p>
+        <p><a class="by-line" href="http://ccmdesign.ca" target="_blank"
+            title="Website design and development by ccm.design">by
+            ccm.design</a></p>
+      </div>
+    </footer>
+  </div>
+
 </template>
 
 <script setup>
@@ -35,122 +38,121 @@ const { menuItems } = useNavigation();
 </script>
 
 <style lang="scss" scoped>
-.footer {
-  --measure: 60rem;
-  --col-min: 150px;
+.footer-wrapper {
   background-color: var(--bg);
-  color: var(--color);
   --bg: var(--base-color);
+}
+
+.footer-section {
+  max-width: 1680px;
+  margin-inline: auto;
+  color: var(--color);
+  
   --color: var(--white-color);
-}
-
-.footer__columns {
-  display: flex;
-  flex-direction: column;
-  // align-items: center;
+  padding-inline: var(--s0);
+  display: grid;
+  gap: var(--s0);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "logos-title logos-title"
+    "logos logos"
+    "content-title content-title"
+    "content content"
+    "by-line by-line";
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--s1);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "logos-title content-title"
+      "logos content"
+      "logos content"
+      "by-line by-line";
   }
 }
 
-.footer__column {
-  flex-grow: 2;
-  width: fit-content;
+.logos-title { grid-area: logos-title; }
+.content-title { grid-area: content-title; }
+.logos { grid-area: logos; }
+.content { grid-area: content; }
+.after-footer { grid-area: by-line; }
 
-  &[data-size=min] {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: var(--col-min);
-    max-width: var(--col-min);
+.content {
+  @media screen and (min-width: 1000px) { 
+    columns: 2; 
+    column-gap: var(--s2);
   }
+  *+* { margin-top: var(--s-1); }
+}
 
-  &[data-size=narrow] {
-    flex-grow: 1;
+.footer-section {
+  padding-top: var(--s2);
+
+  .logos { 
+    display: flex;
+    gap: var(--s2);
+    place-self: center; 
+    padding-bottom: var(--s2);
   }
-
-  &[data-size=wide] {
-    flex-grow: 3;
-  }
-
-  @media screen and (max-width: 768px) {
-    & + & {
-      margin-top: var(--s1);
+  
+  @media screen and (min-width: 768px) {
+    .logos {
+      flex-direction: column;
+      place-self: start;
+      max-width: 200px;
     }
   }
 
-  @media screen and (min-width: 768px) {
-    & + & {
-      margin-left: var(--s2);
-    }
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 
-.footer__heading {
+.footer-heading {
   font-size: 120%;
   color: var(--color);
-  opacity: var(--opacity, 0.5);
   font-weight: 600;
   letter-spacing: 0.2px;
   text-transform: uppercase;
-
-  &[data-cap="cap"] {
-    text-transform: uppercase;
-  }
-
-  &[data-color="accent"] {
-    color: hsla(var(--accent-hsl), 1);
-    opacity: 1;
-  }
-}
-
-.footer p + p {
-  margin-top: var(--s-1);
-}
-
-.footer [data-column="two-columns"] {
-  @media screen and (min-width: 768px) {
-    column-count: 2;
-    column-gap: var(--s2);
-  }
+  color: hsla(var(--accent-hsl), 1);
+  
 }
 
 .after-footer {
-  display: flex;
-  align-items: center;
-  padding: var(--s1);
-  background-color: hsla(var(--black-hsl), .2);
+  // background-color: hsla(var(--black-hsl), .2);
+  border-top: 1px solid hsla(var(--white-hsl), .1);
   font-size: 80%;
-
-  @media screen and (max-width: 35.98rem) {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: var(--s3);
-
-    & > * + * {
-      margin-top: var(--s-1);
-    }
+  padding: 1rem;
+  
+  @media screen and (max-width: 768px) {
+    padding-bottom: 3.5rem;
+    p, a { text-align: center; }
+    img { display: none;}
   }
 
-  @media screen and (min-width: 35.98rem) {
-    & > * + * {
-      margin-left: var(--s0);
-    }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--s-1);
 
-    .by-line {
-      margin-left: auto;
-    }
+  }
+
+  p:has(.by-line) {
+    margin-left: auto;
   }
 }
 
-.after-footer a {
+.by-line {
   color: hsl(var(--white-hsl), 0.5);
 }
 
 .by-line {
   text-decoration: none;
-  min-width: 100px;
   text-align: right;
 }
 </style>

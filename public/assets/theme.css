@@ -13,14 +13,15 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300');
-@import url("https://use.typekit.net/zez3buj.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 :root,
 :after,
 :before {
   /* Set the project fonts */
-  --display-font: proxima-nova, sans-serif;
-  --body-font: proxima-nova, sans-serif;
+  --display-font: "Noto Sans", sans-serif;
+  --body-font: "Noto Sans", sans-serif;
 
   /* --icon-font: 'Material Symbols Outlined'; */
   /* --icon-weight: 300; /* This variable is here in case we have multiple weights of the material symbols. */

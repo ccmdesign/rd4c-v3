@@ -1,21 +1,19 @@
 <template>
-  <!-- Estou tomando um erro nessa página -->
-
   <div>
     <rd-hero :content="hero_content" />
-    <base-section>
-      <div class="list">
-        <rd-update-card v-for="post in articles" v-bind:key="post.slug" :content="post" />
-      </div>
-    </base-section>
-
+    <rd-base-section>
+      <rd-card-grid>
+        <rd-card v-for="post in articles" v-bind:key="post.slug" :content="post" />
+      </rd-card-grid>
+  </rd-base-section>
   </div>
 </template>
 
 <script setup>
 const hero_content = {
-  title: 'Responsible Data for Children',
-  tagline: 'Guidance, tools and leadership to support the responsible handling of data for and about children.',
+  brow: 'Responsible Data for Children',
+  title: 'Readings',
+  tagline: 'News and developments from RD4C',
   image: "/images/hero/readings.jpg"
 }
   

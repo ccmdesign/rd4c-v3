@@ -21,21 +21,25 @@
         <!-- Essa lista vai mudar para "publications", e vai receber Reports, Case Studies, Resources 
           https://www.notion.so/ccmdesign/Conte-do-Publications-4dc0dc1d4d4743daa2d746818211aed6?pvs=4
         -->
+
+        <!-- <pre>{{caseStudies}}</pre>
+        <pre>{{ resources }}</pre>
+        <pre>{{ reports }}</pre> -->
+
         <h3>Case Studies</h3>
-        <li v-for="i in caseStudies">
-          <rd-publication-card :content="i" />
-          <pre>{{ i }}</pre>
-        </li>
+        <rd-card-grid>
+          <rd-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
+        </rd-card-grid>
 
         <h3>Resources</h3>
-        <li v-for="i in resources">
-          <rd-publication-card :content="i" />
-        </li>
+        <rd-card-grid>
+          <rd-card v-for="i in resources" v-bind:key="i.slug" :content="i" />
+        </rd-card-grid>
 
         <h3>Reports</h3>
-        <li v-for="i in reports">
-          <rd-publication-card :content="i" />
-        </li>
+        <rd-card-grid>
+          <rd-card v-for="i in reports" v-bind:key="i.slug" :content="i" />
+        </rd-card-grid>
 
       </ul>
     </rd-base-section>

@@ -90,7 +90,7 @@ const principles = await queryContent('principles').find();
   aspect-ratio: 1/1;
   align-items: center;
   place-content: center;
-  border-radius: 8px;
+  border-radius: var(--base-border-radius);
 }
 
 .grid-item {

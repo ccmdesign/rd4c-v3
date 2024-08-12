@@ -21,37 +21,20 @@
 </template>
 
 <script setup>
-    const route = useRoute()
+import * as filters from '~/composables/useFilters';
 
-    const postData = await queryContent('articles').where({
-        slug: route.params.slug
-    }).findOne();
+const route = useRoute()
 
-    const data = reactive({
-        post: postData,
-    });
+const postData = await queryContent('articles').where({
+    slug: route.params.slug
+}).findOne();
 
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    const options = { month: 'short', day: 'numeric', year: 'numeric' };
-    const formattedDate = date.toLocaleDateString('en-US', options);
+const data = reactive({
+    post: postData,
+});
 
-    // Add ordinal suffix to day
-    const day = date.getDate();
-    let daySuffix;
-    if (day > 3 && day < 21) {
-        daySuffix = 'th';
-    } else {
-        switch (day % 10) {
-            case 1: daySuffix = 'st'; break;
-            case 2: daySuffix = 'nd'; break;
-            case 3: daySuffix = 'rd'; break;
-            default: daySuffix = 'th'; break;
-        }
-    }
+const formatDate = filters.formatDate;
 
-    return formattedDate.replace(/\d+/, day + daySuffix);
-}
 
 // Example usage:
 // const formattedDate = formatDate('2024-02-11');

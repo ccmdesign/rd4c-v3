@@ -52,7 +52,7 @@ onMounted(() => {
     }
   }
   @media screen and (max-width: 768px) {
-    --menu-height: 280px; // magic number calculated based on the number of menu items in useNavigation
+    --menu-height: 330px; // magic number calculated based on the number of menu items in useNavigation
     transition: all .3s ease-in-out;
     position: fixed;
     display: block;

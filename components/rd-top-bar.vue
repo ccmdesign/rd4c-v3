@@ -1,6 +1,6 @@
 <template>
   <header class="top-bar">
-    <nuxt-link to="/"><img src="/images/rd4c-logo.svg" alt="Homepage"></nuxt-link>
+    <nuxt-link to="/"><img src="/images/logos/rd4c-logo.svg" alt="Homepage"></nuxt-link>
     <rd-menu />
   </header>
 </template>

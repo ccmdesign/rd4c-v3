@@ -3,7 +3,7 @@
     <rd-top-bar class="rd-hero__top-bar" />
     <div class="rd-hero__image">
       <img class="rd-hero__bg" :src="content.image" :alt="content.title" />
-      <img class="rd-logo-icon" src="/images/decor/rd4c-logo-icon.png" alt="">
+      <img class="rd-logo-icon" src="/images/logos/rd4c-logo-icon.png" alt="">
     </div>
     
     <div class="rd-hero__content">
@@ -32,7 +32,7 @@ defineProps({
       // brow: '',
       title: 'Title',
       tagline: 'tagline',
-      image: '/images/hero/hero.png',
+      image: '/images/hero/homepage.jpg',
       action: {
         label: 'Action',
         url: '/'

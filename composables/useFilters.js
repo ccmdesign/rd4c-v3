@@ -20,8 +20,30 @@ export function useStripTags() {
   };
 }
 
-function decodeHTMLEntities(text) {
+export function decodeHTMLEntities(text) {
   const textarea = document.createElement('textarea');
   textarea.innerHTML = text;
   return textarea.value;
+}
+
+export function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { month: 'short', day: 'numeric', year: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+
+    // Add ordinal suffix to day
+    const day = date.getDate();
+    let daySuffix;
+    if (day > 3 && day < 21) {
+        daySuffix = 'th';
+    } else {
+        switch (day % 10) {
+            case 1: daySuffix = 'st'; break;
+            case 2: daySuffix = 'nd'; break;
+            case 3: daySuffix = 'rd'; break;
+            default: daySuffix = 'th'; break;
+        }
+    }
+
+    return formattedDate.replace(/\d+/, day + daySuffix);
 }

@@ -16,6 +16,7 @@
       </div>
     </div>
 
+    <h3>Our Principles</h3>
     <div class="rd-principles-section__grid">
       <div v-for="(i, index) in principles" :key="index" class="grid-item" :data-n="index + 1">
         <h4>{{ (index + 1).toString().padStart(2, '0') }}</h4>
@@ -23,7 +24,7 @@
         <!-- <p>{{ i.description }}</p> -->
       </div>
       <div class="grid-item" data-n="8">
-        <h3 class="alt">Read about our principles at <a href="/principles"
+        <h3>Read about our principles at <a href="/principles"
             class="link">Principles Page</a></h3>
       </div>
     </div>
@@ -40,6 +41,7 @@ const principles = await queryContent('principles').find();
   background-color: var(--white-color);
   color: var(--base-color);
   text-align: center;
+  padding-bottom: var(--s2);
 }
 
 .rd-principles-section__panels {
@@ -74,8 +76,10 @@ const principles = await queryContent('principles').find();
 }
 
 .rd-principles-section__grid {
+  padding: var(--s-2);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-2);
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -86,6 +90,7 @@ const principles = await queryContent('principles').find();
   aspect-ratio: 1/1;
   align-items: center;
   place-content: center;
+  border-radius: 8px;
 }
 
 .grid-item {
@@ -120,7 +125,7 @@ const principles = await queryContent('principles').find();
 }
 
 .grid-item h3 {
-  font-size: clamp(1.25rem, 2vh, 1.75rem);
+  font-size: clamp(1rem, 2vh, 1.75rem);
   font-weight: bold;
   color: var(--white-color);
   text-align: center;
@@ -134,4 +139,5 @@ const principles = await queryContent('principles').find();
 
 .grid-item a {
   color: var(--accent-color);
-}</style>
+}
+</style>

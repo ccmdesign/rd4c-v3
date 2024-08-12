@@ -1,14 +1,13 @@
 {
-  "title": "Project Title",
-  "description": "Project Description can be a longer text, ideally the length of a tweet.",
-  "url": "https://example.com",
-  "image": "https://example.com/images/open-graph-image.jpg",
+  "title": "Responsible Data for Children",
+  "description": "An initiative by UNICEF and The GovLab to provide guidance, tools, and leadership that supports the responsible handling of data for and about children",
+  "url": "https://rd4c.org",
+  "image": "images/",
 
   "gtm": "GTM-XXXXXXX",
   "gtag": "G-XXXXXXXXXX",
-  
+
   "client": "CCM Design Inc.",
   "license_name": "MIT",
   "license_url": "https://opensource.org/licenses/MIT"
 }
-

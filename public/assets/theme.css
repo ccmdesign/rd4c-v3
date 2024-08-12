@@ -184,7 +184,7 @@
   /* --base-padding-block: var(--s-1); */
 
   /* Decorations */
-  --base-border-radius: 0;
+  --base-border-radius: 6px;
 
   /* --box-shadow-offset-x: 0; */
   /* --box-shadow-offset-y: 0; */

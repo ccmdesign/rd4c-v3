@@ -15,20 +15,20 @@
 </script>
 
 <style lang="scss" scoped>
-.rd-base-section :deep(h2) {
+.rd-base-section :slotted(h2) {
   color: var(--primary-color);
   font-size: 2rem;
 }
-.rd-base-section :deep(h3) {
+.rd-base-section :slotted(h3) {
   color: var(--primary-color);
   font-size: 1.5rem;
 }
-.rd-base-section :deep(h4) {
+.rd-base-section :slotted(h4) {
   font-size: 1.25rem;
   font-weight: 900;
   color: var(--primary-color);
 }
-.rd-base-section :deep(p) {
+.rd-base-section :slotted(p) {
   font-size: 1.25rem;
   color: var(--base-color);
 }

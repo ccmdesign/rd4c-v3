@@ -16,6 +16,7 @@
 const hero_content = {
   title: 'Responsible Data for Children',
   tagline: 'Guidance, tools and leadership to support the responsible handling of data for and about children.',
+  image: "/images/hero/readings.jpg"
 }
   
   const articles = await queryContent('articles').find();

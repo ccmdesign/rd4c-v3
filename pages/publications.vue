@@ -46,7 +46,8 @@
 <script setup>
 const hero_content = {
   title: "Publications",
-  tagline: "The RD4C Case Studies aim to provide insights on promising practice as well as barriers to realizing responsible data for children."
+  tagline: "The RD4C Case Studies aim to provide insights on promising practice as well as barriers to realizing responsible data for children.",
+  image: "/images/hero/readings.jpg"
 }
 
 const resources = await queryContent('publications').where({"publication_type": 'resource'}).find();

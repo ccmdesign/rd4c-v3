@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rd-hero :content="hero_content" bg="true" />
+    <rd-hero :content="hero_content" />
 
     <rd-base-section>
       <p>RD4C seeks to build awareness regarding the need for special attention to data issues affecting
@@ -33,7 +33,8 @@
 
 const hero_content = {
   title: "Principles",
-  tagline: "Principles to guide responsible data handling toward saving children’s lives, defending their rights, and helping them fulfill their potential from early childhood through adolescence."
+  tagline: "Principles to guide responsible data handling toward saving children’s lives, defending their rights, and helping them fulfill their potential from early childhood through adolescence.",
+  image: "/images/hero/pencils.png"
 }
 
 const principles = await queryContent('principles').find();

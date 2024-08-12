@@ -45,7 +45,8 @@
 <script setup>
 const hero_content = {
   title: "Videos",
-  tagline: "Need tagline"
+  tagline: "Need tagline",
+  image: "/images/hero/readings.jpg"
 }
 
 

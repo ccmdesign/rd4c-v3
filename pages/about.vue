@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rd-hero bg="false" :content="hero_content">
+    <rd-hero :content="hero_content">
 
     </rd-hero>
 
@@ -45,24 +45,9 @@
         others.</p>
     </rd-base-section>
 
-    <rd-base-section id="principles">
-      <h2>Our Principles</h2>
-      <reel-l>
-        <rd-principle-card v-for="i in principles" :content="i" />
-      </reel-l>
+    <rd-principles-section />
 
-    </rd-base-section>
-
-    <rd-base-section>
-      <center-l size="wide">
-        <h2>team</h2>
-        <ul class="team">
-          <li class="team__member" v-for="i in team">
-            <rd-team-card :content="i" />
-          </li>
-        </ul>
-      </center-l>
-    </rd-base-section>
+    <rd-team-section />
 
     <rd-base-section id="testimonials">
       <h2>Testimonials</h2>
@@ -82,6 +67,7 @@ const hero_content = {
   brow: "Responsible Data for Children",
   title: "Why it Matters",
   tagline: "Guidance, tools and leadership to support the responsible handling of data for and about children.",
+  image: "/images/hero/pencils.png"
 }
 
 const team = await queryContent('team').find();

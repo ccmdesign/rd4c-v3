@@ -26,7 +26,7 @@ defineProps({
 .rd-split-section {
   --_gap: var(--s-1);
   --_padding-inline: var(--s0);
-  --_padding-block: var(--s1);
+  --_padding-block: var(--s2);
 
   @media screen and (min-width: 768px) {
     --_gap: var(--s0);

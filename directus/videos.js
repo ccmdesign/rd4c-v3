@@ -3,19 +3,16 @@ var rimraf = require("rimraf");
 const common = require ("./common");
 
 const objectContructor = async (dir, fs) => {
-  let publications = await common.getDirectusData("rd4c_publications");
+  let videos = await common.getDirectusData("rd4c_videos");
 
-  publications = publications.data.sort((a, b) => {
+  videos = videos.data.sort((a, b) => {
     if (new Date(a.date) > new Date (b.date)) return 1;
     else return -1;
   });
 
-  publications.forEach((item) => {
+  videos.forEach((item) => {
     let i = { ...item };
     i.slug = common.slugify(item.title);
-    i.heading = item.title;
-    i.main_content = item.description;
-    i.cover_image = item.image ? common.getImage(item.image.id) : '';
 
     fs.writeFile(
       `${dir}/${i.slug}.json`,
@@ -24,13 +21,13 @@ const objectContructor = async (dir, fs) => {
         if (err) console.log("error", err);
       }
     );
-    console.log("WRITING PUBLICATIONS: ", i.slug + ".json");
+    console.log("WRITING VIDEOS: ", i.slug + ".json");
   });
 }
 
-const getPublications = async () => {
+const getVideos = async () => {
 
-  const dir = "./content/publications";
+  const dir = "./content/videos";
   if (fs.existsSync(dir)) {
     rimraf(dir, async () => {
       if (!fs.existsSync(dir)) {
@@ -60,5 +57,5 @@ const getPublications = async () => {
 }
 
 module.exports = {
-  getPublications
+  getVideos
 }

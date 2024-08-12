@@ -1,36 +1,39 @@
+// https://cms.thegovlab.com/items/pages?fields=title,blocks.collection,blocks.item.*,blocks.item.translations.*
+
 const fs = require("fs");
 var rimraf = require("rimraf");
 const common = require ("./common");
 
 const objectContructor = async (dir, fs) => {
-  let publications = await common.getDirectusData("rd4c_publications");
+  
+  const junctionFields = [
+    "blocks.collection",
+    "blocks.item.*",
+    "blocks.item.translations.*"
+  ]
+  const pages = await common.getDirectusData("pages", junctionFields);
 
-  publications = publications.data.sort((a, b) => {
-    if (new Date(a.date) > new Date (b.date)) return 1;
-    else return -1;
-  });
-
-  publications.forEach((item) => {
-    let i = { ...item };
-    i.slug = common.slugify(item.title);
-    i.heading = item.title;
-    i.main_content = item.description;
-    i.cover_image = item.image ? common.getImage(item.image.id) : '';
+  await pages.data.forEach((pg) => {
+    let i = {};
+    i.slug = common.slugify(pg.title);
+    i.title = pg.title ? pg.title : '';
+    
 
     fs.writeFile(
-      `${dir}/${i.slug}.json`,
+      dir + "/" + i.slug + ".json",
       JSON.stringify(i),
-      function (err) {
+      function (err, result) {
         if (err) console.log("error", err);
       }
     );
-    console.log("WRITING PUBLICATIONS: ", i.slug + ".json");
+    console.log("WRITING PAGES: ", i.slug + ".json");
+
   });
 }
 
-const getPublications = async () => {
+const getPages = async () => {
 
-  const dir = "./content/publications";
+  const dir = "./content/pages";
   if (fs.existsSync(dir)) {
     rimraf(dir, async () => {
       if (!fs.existsSync(dir)) {
@@ -60,5 +63,5 @@ const getPublications = async () => {
 }
 
 module.exports = {
-  getPublications
+  getPages
 }

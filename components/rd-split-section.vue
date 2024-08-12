@@ -52,11 +52,14 @@ defineProps({
 .rd-split-section > * { flex: 1; }
 
 .rd-split-section > img {
-  flex: 1;
   @media screen and (min-width: 768px) { width: 50%; }
-  object-fit: cover;
-  object-position: center;
-  aspect-ratio: 1 / 1;
+
+  & {
+    flex: 1;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .rd-split-section .content {

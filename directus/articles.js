@@ -13,7 +13,7 @@ const objectContructor = async (dir, fs) => {
   articles.forEach((item) => {
     let i = { ...item };
     i.slug = common.slugify(item.heading);
-    i.image = item.image ? common.getImage(item.image.id) : '';
+    i.cover_image = item.image ? common.getImage(item.image.id) : '';
 
     fs.writeFile(
       `${dir}/${i.slug}.json`,

@@ -1,7 +1,7 @@
 <template>
   <div class="rd-divider" :color="color" :content="content">
     <slot>
-      <h3>{{ content }}</h3>
+      <h2>{{ content }}</h2>
     </slot>
   </div>
 </template>
@@ -34,12 +34,11 @@ const props = defineProps({
   
   text-align: center;
 
-  h3 { 
-    font-size: clamp(1rem, 4vh, 3.75rem); 
+  h2 { 
+    font-size: clamp(1.5rem, 2.5vh, 3.75rem); 
     color: hsla(var(--_section-color-hsl), 1);
   }
 }
-
 
 .rd-divider[color="primary"] {
   --_section-hsl: var(--primary-hsl);

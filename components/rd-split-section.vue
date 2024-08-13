@@ -78,14 +78,14 @@ defineProps({
 
 .rd-split-section :deep(h2) {
   color: var(--primary-color);
-  font-size: 2rem;
+  // font-size: 2rem;
 }
 .rd-split-section :deep(h3) {
   color: var(--primary-color);
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
 }
 .rd-split-section :deep(h4) {
-  font-size: 1rem;
+  // font-size: 1rem;
   font-weight: 900;
   color: var(--primary-color);
 }

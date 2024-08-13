@@ -97,12 +97,10 @@ defineProps({
     
     h2 {
       text-transform: uppercase;
-      font-size: 1.5rem;
       font-weight: 600;
     }
 
     h4 {
-      font-size: 1.25rem;
       font-weight: 200;
     }
   }

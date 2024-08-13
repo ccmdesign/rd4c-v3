@@ -9,14 +9,14 @@
      filename_disk no Directus/Content. Por favor confira se isso vai funcionar.
      Se não, me avise como devemos fazer. -->
     <!-- <img v-if="content.cover_image.filename_disk" :src="`https://cms.thegovlab.com/assets/${content.cover_image.filename_disk}`" alt=""> -->
-    <!-- <img src="/images/default.jpg" alt=""> -->
+    <img src="/images/default.jpg" alt="">
     <div class="rd-card__action">
       <nuxt-link v-if="content.url" class="button" color="primary" :to="content.url">Read
         More</nuxt-link>
       <nuxt-link v-else class="button" color="primary" :to="content._path">
         Read More</nuxt-link>
     </div>
-    <pre>{{ content }}</pre>
+    <!-- <pre>{{ content }}</pre> -->
   </div>
 </template>
 

@@ -16,8 +16,6 @@
 
 .rd-card-grid {
   display: grid;
-  
-  padding-inline: var(--_padding-inline);
   grid-template-columns: repeat(1, 1fr);
   gap: var(--s1);
   

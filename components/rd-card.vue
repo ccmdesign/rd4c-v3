@@ -1,22 +1,24 @@
 <template>
-  <div class="rd-card" :color="content.color">
-    <h5>{{ content.brow }}</h5>
-    <h3>{{ content.heading }}</h3>
-    <h4>{{ content.tagline }}</h4>
-    <p>{{ formatDate(content.date) }}</p>
-    
-<!-- @Todo: Douglas, não sei exatamente como devemos puxar as imagens. Achei esse
+  <!-- @Todo: Douglas, não sei exatamente como devemos puxar as imagens. Achei esse
      filename_disk no Directus/Content. Por favor confira se isso vai funcionar.
      Se não, me avise como devemos fazer. -->
     <!-- <img v-if="content.cover_image.filename_disk" :src="`https://cms.thegovlab.com/assets/${content.cover_image.filename_disk}`" alt=""> -->
-    <img src="/images/default.jpg" alt="">
-    <div class="rd-card__action">
-      <nuxt-link v-if="content.url" class="button" color="primary" :to="content.url">Read
-        More</nuxt-link>
-      <nuxt-link v-else class="button" color="primary" :to="content._path">
-        Read More</nuxt-link>
-    </div>
-    <!-- <pre>{{ content }}</pre> -->
+    <!-- <img src="/images/default.jpg" alt=""> -->
+  
+    <div class="rd-card" :color="content.color">
+      <div class="rd-card__content">
+        <h5>{{ content.brow }}</h5>
+        <h3>{{ content.heading }}</h3>
+        <h4>{{ content.tagline }}</h4>
+        
+        <div class="rd-card__action">
+          <nuxt-link v-if="content.url" class="button" color="primary" :to="content.url">Read
+            More</nuxt-link>
+          <nuxt-link v-else class="button" color="primary" :to="content._path">
+            Read More</nuxt-link>
+        </div>
+      </div>
+    <pre>{{ content }}</pre>
   </div>
 </template>
 
@@ -44,76 +46,69 @@ const computedUrl = computed(() => {
 
 <style lang="scss" scoped>
 .rd-card {
-  --_gap: var(--s-2);
-  --_padding: var(--s0);
+  aspect-ratio: 1/1;
+  overflow: clip;
+  position: relative;
+  background-image: url('/images/default.jpg');
+  background-size: cover;
 }
 
+.rd-card:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(var(--rd-orange), 1);
+  mix-blend-mode: color;
+  z-index: 1;
+}
 
-.rd-card {
-  display: grid;
-  grid-template-rows: auto auto auto auto auto 1fr;
-  grid-template-columns: 1fr;
-  gap: var(--_gap);
-  grid-template-areas: 
-    "image"
-    "brow"
-    "heading"
-    "tagline"
-    "date"
-    "action";
+.rd-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, hsla(var(--black-hsl), .7), hsla(var(--black-hsl), 0));
+  z-index: 2;
+}
 
-  border: 1px solid hsla(var(--base-hsl), .1);
-  padding-bottom: var(--_padding);
-  border-radius: var(--base-border-radius);  
-  overflow: clip;
+.rd-card__content {
+  z-index: 3;
+  position: relative;
+  padding-inline: 2rem;
+  padding-block: 2rem;
+  box-sizing: border-box;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+      
+  > * { color: white;}
 
-  > *:not(img) {
-    padding-inline: var(--_padding);
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
   }
-  
-  img {
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-    grid-area: image;
-    margin-bottom: var(--_padding);
-  }
-
-  h5 { 
-    grid-area: brow;
-    font-size: .85rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: var(--accent-color);
-  }
-
   h3 {
-    grid-area: heading;
-    font-size: 1.15rem;
-    line-height: 1.45;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
   }
-  
   h4 {
-    grid-area: tagline;
-    font-size: 1rem;
-    line-height: 1.45;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
   }
-
   p {
-    grid-area: date;
-    font-size: .85rem;
-    font-weight: 600;
-    color: var(--primary-color);
-  }
-
-  .rd-card__action {
-    margin-top: var(--_padding);
-    grid-area: action;
-    display: flex;
-    // align-items: flex-end;
-    > * {
-      margin-top: auto;
-    }
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
   }
 }
 </style>

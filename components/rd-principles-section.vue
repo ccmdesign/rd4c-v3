@@ -16,7 +16,8 @@
       </div>
     </div>
 
-    <h3>Our Principles</h3>
+    <rd-divider content="Our Principles" color="purple" />
+
     <div class="rd-principles-section__grid">
       <div v-for="(i, index) in principles" :key="index" class="grid-item" :data-n="index + 1">
         <h4>{{ (index + 1).toString().padStart(2, '0') }}</h4>
@@ -76,7 +77,7 @@ const principles = await queryContent('principles').find();
 }
 
 .rd-principles-section__grid {
-  padding: var(--s-2);
+  padding: var(--s2) var(--s-2);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--s-2);

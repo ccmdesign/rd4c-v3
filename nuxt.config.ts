@@ -33,16 +33,6 @@ export default defineNuxtConfig({
     'public/assets/theme.css',
     'public/assets/styles.css',
   ],
-  googleFonts: {
-    families: {
-      'Public Sans': true
-    },
-    fontsDir: 'assets/fonts',
-    download: true,
-    overwriting: true,
-    outputDir: 'assets',
-    subsets: 'latin'
-  },
   components: {
     "dirs": [
       {

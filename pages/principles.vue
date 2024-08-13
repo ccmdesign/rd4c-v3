@@ -2,22 +2,26 @@
   <div>
     <rd-hero :content="hero_content" />
 
-    <rd-base-section>
-      <p>RD4C seeks to build awareness regarding the need for special attention to data issues affecting
-        children—especially in this age of changing technology and data linkage; and to engage with governments,
-        communities, and development actors to put the best interests of children and a child rights approach at the
-        center of our data activities. The right data in the right hands at the right time can significantly improve
-        outcomes for children. The challenge is to understand the potential risks and ensure that the collection,
-        analysis and use of data on children does not undermine these benefits.</p>
-      <p>Drawing upon field-based research and established good practice, RD4C aims to highlight and support best
-        practice in our work; identify challenges and develop practical tools to assist practitioners in evaluating
-        and addressing them; and encourage a broader discussion on actionable principles, insights, and approaches for
-        responsible data management.</p>
-      <p><rd-button color="primary">Download the Report</rd-button></p>
+    <rd-base-section >
+      <center-l measure="var(--wide)" class="columns">
+        <p>RD4C seeks to build awareness regarding the need for special attention to data issues affecting
+          children—especially in this age of changing technology and data linkage; and to engage with governments,
+          communities, and development actors to put the best interests of children and a child rights approach at the
+          center of our data activities. The right data in the right hands at the right time can significantly improve
+          outcomes for children. The challenge is to understand the potential risks and ensure that the collection,
+          analysis and use of data on children does not undermine these benefits.</p>
+        <p>Drawing upon field-based research and established good practice, RD4C aims to highlight and support best
+          practice in our work; identify challenges and develop practical tools to assist practitioners in evaluating
+          and addressing them; and encourage a broader discussion on actionable principles, insights, and approaches for
+          responsible data management.</p>
+        <p><rd-button color="primary">Download the Report</rd-button></p>
+      </center-l>
     </rd-base-section>
 
+    <rd-divider content="Principles" color="green"/>
+      
+
     <rd-base-section>
-      <h2>Principles</h2>
       <div class="principles-grid">
         <rd-principle-card class="principles-grid__item" v-for="(i, index) in principles" :content="i" :data-n="index + 1" :n="index+1"/>
       </div>
@@ -41,15 +45,23 @@ const principles = await queryContent('principles').find();
 <style scoped lang="scss">
 .principles-grid {
   display: grid;
-  gap: var(--s-2);
+  gap: var(--s1);
   grid-template-columns: 1fr;
   grid-row: auto;
 }
 
 .principles-grid__item {
-  aspect-ratio: 4/1;
 }
 
+.columns {
+  * + * { margin-top: var(--s-1);}
+
+  @media screen and (min-width: 768px) {
+    columns: 2;
+    column-gap: var(--s2);
+  }
+  
+}
 
 
 </style>

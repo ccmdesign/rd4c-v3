@@ -2,7 +2,14 @@
   <div>
     <rd-hero :content="hero_content" />
     
-    <rd-home-intro />
+    <rd-video-section video="https://www.youtube.com/embed/e0JxdJu4mK8?si=CY7g9bN1rYff_QDM">
+      <h2>Welcome to Responsible Data for Children</h2>
+      <p>Responsible Data for Children is a collaboration between UNICEF and The Governance Laboratory at New York
+        University to promote the well-being and interests of children in our digital age.</p>
+      <p>We provide a framework for assessing risks and opportunities for advancing children’s rights across the data
+        lifecycle. We are grounded in a set of principles for responsible data handling. Our support and guidance
+        comes in a few different ways.</p>
+    </rd-video-section>
 
     <rd-principles-section :content="principles" id="principles" />
       

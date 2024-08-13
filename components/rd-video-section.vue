@@ -1,33 +1,33 @@
 <template>
-  <section id="intro" class="home-intro">
+  <section class="video-section" :video="video">
     <center-l>
         <div class="video-wrapper">
           <div class="frame">
-            <iframe src="https://www.youtube.com/embed/e0JxdJu4mK8?si=CY7g9bN1rYff_QDM" title="YouTube video player"
+            <iframe :src="video" title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
         <stack-l class="content-wrapper">
-          <h2>Welcome to Responsible Data for Children</h2>
-          <p>Responsible Data for Children is a collaboration between UNICEF and The Governance Laboratory at New York
-            University to promote the well-being and interests of children in our digital age.</p>
-          <p>We provide a framework for assessing risks and opportunities for advancing children’s rights across the data
-            lifecycle. We are grounded in a set of principles for responsible data handling. Our support and guidance
-            comes
-            in a few different ways.</p>
+          <slot></slot>
         </stack-l>
     </center-l>
   </section>
 </template>
 
 <script setup>
+defineProps({
+  video: {
+    type: String,
+    default: ''
+  }
+});
 
 </script>
 
 <style lang="scss" scoped>
-.home-intro {
+.video-section {
   --_color-1: var(--tertiary-color);
   --_color-2: var(--white-color);
   background: linear-gradient(180deg, var(--_color-1) 0%, var(--_color-1) 35%, var(--_color-2) 35%, var(--_color-2) 100%); 

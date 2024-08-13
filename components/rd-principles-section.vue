@@ -1,6 +1,8 @@
 <template>
   <div class="rd-principles-section">
-    <h2>Using a principle-led approach to help children</h2>
+    <rd-divider content="Our Principles" color="purple" />
+    <h2></h2>
+
     <div class="rd-principles-section__panels">
       <div class="rd-principles-section__panel">
         <p>Supported by principles developed through extensive research and country office engagement, we support
@@ -10,13 +12,10 @@
       </div>
       <div class="rd-principles-section__panel">
         <p>Principles guide responsible data handling toward saving children’s lives, defending their rights, and
-          helping
-          them fulfill their potential from early childhood through adolescence.</p>
+          helping them fulfill their potential from early childhood through adolescence.</p>
         <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p>
       </div>
     </div>
-
-    <rd-divider content="Our Principles" color="purple" />
 
     <div class="rd-principles-section__grid">
       <div v-for="(i, index) in principles" :key="index" class="grid-item" :data-n="index + 1">
@@ -60,18 +59,20 @@ const principles = await queryContent('principles').find();
   display: flex;
   flex-direction: column;
   gap: var(--s0);
-  aspect-ratio: 2/1;
+  // aspect-ratio: 2/1;
   font-size: 1.25rem;
   text-align: left;
   padding: var(--s0);
-  max-width: 100svw;
   text-wrap: balance;
+  
   @media screen and (min-width: 768px) { padding: var(--s2); }
   
+  > * { max-width: 50ch; }
 }
 
 @media screen and (min-width: 768px) {
   .rd-principles-section__panel:nth-child(2n + 1) {
+    align-items: flex-end;
     text-align: right;
   }
 }
@@ -81,6 +82,10 @@ const principles = await queryContent('principles').find();
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--s-2);
+  @media screen and (min-width: 468px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }

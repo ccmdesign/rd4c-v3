@@ -29,7 +29,9 @@ const props = defineProps({
 
 .rd-divider {
   background-color: hsla(var(--_section-hsl), 1);
-  padding: var(--s2) 0;
+  padding: var(--s0) 0;
+  @media screen and (min-width: 768px) { padding: var(--s2) 0; }
+  
   text-align: center;
 
   h3 { 

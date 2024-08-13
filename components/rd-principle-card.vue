@@ -42,11 +42,15 @@ const principle_n = computed(() => {
 
 <style lang="scss" scoped>
 .principle-card {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto 1fr;
-  grid-template-areas: "number content";
-  gap: var(--s2);
+  
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    gap: var(--s2);
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "number content";
+    
+  }
 }
 
 // decorations
@@ -58,11 +62,13 @@ const principle_n = computed(() => {
 
 .principle-card .number {
   font-size: clamp(7rem, 13vh, 15rem);
+  line-height: 1;
   font-weight: 800;
   color: white;
   text-shadow: 0 0 2px hsla(var(--_principle-hsl), 1);
   grid-area: number;
-  padding: 0 var(--s2);
+  padding: var(--s1);
+  @media screen and (min-width: 768px) { padding-inline: var(--s2); }
 }
 
 .principle-card .content {
@@ -71,7 +77,11 @@ const principle_n = computed(() => {
   display: flex;
   gap: var(--s-1);
   flex-direction: column;
-  padding: var(--s2) var(--s4) var(--s2) 0;
+  padding: var(--s1);
+  @media screen and (min-width: 768px) {
+    padding: var(--s2) var(--s4) var(--s2) 0;
+  }
+  
 }
 
 .principle-card h3 {

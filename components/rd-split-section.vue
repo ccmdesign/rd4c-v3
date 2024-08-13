@@ -1,6 +1,7 @@
 <template>
   <section class="rd-split-section" :image="image">
     <img v-if="image" :src="image" alt="">
+    
     <div class="extra-content" v-else >
       <slot name="extra"></slot>
     </div>
@@ -15,7 +16,10 @@
 defineProps({
   image: {
     type: String,
-    required: true,
+    default: ''
+  },
+  video: {
+    type: String,
     default: ''
   }
 });

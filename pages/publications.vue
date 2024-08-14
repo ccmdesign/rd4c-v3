@@ -15,30 +15,25 @@
       <p>This page highlights some of our most prominent work. Use the map above to filter by continent or look through
         the full collection of examples below.</p>
     </rd-base-section>
-
+    <rd-divider content="Case Studies" color="purple" />
     <rd-base-section>
-        <!-- Essa lista vai mudar para "publications", e vai receber Reports, Case Studies, Resources 
-          https://www.notion.so/ccmdesign/Conte-do-Publications-4dc0dc1d4d4743daa2d746818211aed6?pvs=4
-        -->
+      <rd-card-grid>
+        <rd-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
+      </rd-card-grid>
+    </rd-base-section>
 
-        <!-- <pre>{{caseStudies}}</pre>
-        <pre>{{ resources }}</pre>
-        <pre>{{ reports }}</pre> -->
+    <rd-divider content="Resources" color="purple" />
+    <rd-base-section>
+      <rd-card-grid>
+        <rd-card v-for="i in resources" v-bind:key="i.slug" :content="i" />
+      </rd-card-grid>
+    </rd-base-section>
 
-        <h3>Case Studies</h3>
-        <rd-card-grid>
-          <rd-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
-        </rd-card-grid>
-
-        <h3>Resources</h3>
-        <rd-card-grid>
-          <rd-card v-for="i in resources" v-bind:key="i.slug" :content="i" />
-        </rd-card-grid>
-
-        <h3>Reports</h3>
-        <rd-card-grid>
-          <rd-card v-for="i in reports" v-bind:key="i.slug" :content="i" />
-        </rd-card-grid>
+    <rd-divider content="Reports" color="purple" />
+    <rd-base-section>
+      <rd-card-grid>
+        <rd-card v-for="i in reports" v-bind:key="i.slug" :content="i" />
+      </rd-card-grid>
     </rd-base-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->

@@ -45,5 +45,5 @@ export function formatDate(dateString) {
         }
     }
 
-    return formattedDate.replace(/\d+/, day + daySuffix);
+    return formattedDate.replace(/\d+/, day + '<sup>' + daySuffix + '</sup>');
 }

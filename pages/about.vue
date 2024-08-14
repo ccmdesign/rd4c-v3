@@ -46,7 +46,8 @@
     </rd-split-section>
 
     <rd-principles-section />
-
+    
+    <rd-divider content="Team" color="primary" class="divider"/>
     <rd-team-section />
 
     <rd-video-section id="testimonials" video="https://www.youtube.com/embed/x4Nu8XhaDcw?si=rpCmMPwDqmXyVJ36">

@@ -1,7 +1,6 @@
 <template>
   <div class="rd-principles-section">
     <rd-divider content="Our Principles" color="purple" />
-    <h2></h2>
 
     <div class="rd-principles-section__panels">
       <div class="rd-principles-section__panel">
@@ -78,17 +77,12 @@ const principles = await queryContent('principles').find();
 }
 
 .rd-principles-section__grid {
+  max-width: var(--wrapper);
+  margin: 0 auto;
   padding: var(--s2) var(--s-2);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--s-2);
-  @media screen and (min-width: 468px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .grid-item {
@@ -131,7 +125,7 @@ const principles = await queryContent('principles').find();
 }
 
 .grid-item h3 {
-  font-size: clamp(1rem, 2vh, 1.75rem);
+  font-size: clamp(1rem, 2vh, 1.275rem);
   font-weight: bold;
   color: var(--white-color);
   text-align: center;

@@ -1,6 +1,5 @@
 <template>
   <section id="team" class="team-section">
-    <rd-divider content="Team" color="primary" class="divider"/>
     <div class="content">
       <h2>Maintaining a team of dedicated researchers and advocates</h2>
       <p>Learn about the team supporting the Responsible Data for Children initiative and the different projects they
@@ -29,21 +28,21 @@
 
 <style lang="scss" scoped>
 .team-section {
+  max-width: var(--wrapper);
+  margin-inline: auto;
   padding-block: var(--s2);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas: "divider" "content" "team";  
+  grid-template-rows: auto;
+  grid-template-areas: "content" "team";  
   gap: var(--s1);  
 
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 2fr ;
-    grid-template-rows: auto auto;
-    grid-template-areas: "divider divider" "content team";  
+    grid-template-rows: auto;
+    grid-template-areas: "content team";  
     gap: var(--s2);  
   }
-  
-  
 }
 
 .team-group { grid-area: team; }
@@ -54,12 +53,7 @@
   padding-inline: var(--s0);
   display: grid;
   gap: var(--s-2);
-  
-  grid-template-columns: repeat(2, 1fr);
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    padding-inline: var(--s-2);
-  }
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
 .content {

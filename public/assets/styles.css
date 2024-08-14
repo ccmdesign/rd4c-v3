@@ -3,13 +3,6 @@ a:not[class] {
   text-decoration: underline;
 }
 
-
-
-
-
-
-
-
 .aux {
   outline: 2px solid red;
   padding: var(--s0);

@@ -42,11 +42,8 @@ const principle_n = computed(() => {
 
 <style lang="scss" scoped>
 .principle-card {
-  
-
   @media screen and (min-width: 768px) {
     display: grid;
-    gap: var(--s2);
     grid-template-columns: auto 1fr;
     grid-template-areas: "number content";
     
@@ -56,16 +53,21 @@ const principle_n = computed(() => {
 // decorations
 .principle-card {
   box-sizing: border-box;
-  border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0;
-  border-left: 4px solid hsla(var(--_principle-hsl), 1);
+  border-radius: var(--base-border-radius);
+  transition: all .3s;
+  box-shadow: 0 0 16px hsla(var(--base-hsl), .1);
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 32px hsla(var(--base-hsl), .25);
+  }
 }
 
 .principle-card .number {
   font-size: clamp(7rem, 13vh, 15rem);
   line-height: 1;
   font-weight: 800;
-  color: white;
-  text-shadow: 0 0 2px hsla(var(--_principle-hsl), 1);
+  color: hsla(var(--white-hsl), .15);
   grid-area: number;
   padding: var(--s1);
   @media screen and (min-width: 768px) { padding-inline: var(--s2); }
@@ -78,21 +80,24 @@ const principle_n = computed(() => {
   gap: var(--s-1);
   flex-direction: column;
   padding: var(--s1);
+  
   @media screen and (min-width: 768px) {
     padding: var(--s2) var(--s4) var(--s2) 0;
   }
   
 }
 
+.content > * { color: var(--white-color); }
+
 .principle-card h3 {
-  font-size: clamp(1rem, 4vh, 2.75rem);
+  font-size: clamp(1rem, 4vh, 2.5rem);
   font-weight: 200;
-  color: hsla(var(--_principle-hsl), 1);
 }
 
 .principle-card h4 {
-  color: hsla(var(--_principle-hsl), 1);
-  font-weight: 600;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vh, 1.5rem);
+  
 }
 
 .principle-card a {
@@ -103,7 +108,7 @@ const principle_n = computed(() => {
 // Defining Colors
 .principle-card {
   --_principle-hsl: var(--rd-purple);
-  background-color: hsla(var(--_principle-hsl), .2);
+  background-color: hsla(var(--_principle-hsl), 1);
 }
 
 .principle-card[data-n="1"] {

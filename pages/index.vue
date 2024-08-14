@@ -10,7 +10,7 @@
         lifecycle. We are grounded in a set of principles for responsible data handling. Our support and guidance
         comes in a few different ways.</p>
     </rd-video-section>
-
+    
     <rd-principles-section :content="principles" id="principles" />
       
     <rd-split-section id="case-studies" image="/images/hero/readings.jpg">
@@ -51,6 +51,7 @@
       <p><rd-button to="/#get-involved" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
+    <rd-divider content="Team" color="primary" class="divider"/>
     <rd-team-section :team="team"/>
 
     <rd-split-section id="get-involved" image="/images/hero/readings.jpg">

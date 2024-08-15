@@ -32,8 +32,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/google-fonts',
     '@vee-validate/nuxt',
-    '@nuxtjs/i18n',
-    "@nuxt/image"
+    '@nuxtjs/i18n'
   ],
 
   css: [

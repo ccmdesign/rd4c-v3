@@ -36,6 +36,7 @@ function toggleLangMenu() {
 function switchLanguage(lang) {
   activeLang.value = lang;
   toggleLangMenu();
+  toggleMenu();
 }
 
 
@@ -87,6 +88,7 @@ onMounted(() => {
       display: block;
       padding: var(--s-1) 0;
       border-bottom: 1px solid hsla(var(--white-hsl), .2);
+      width: 100%;
       
     }
 
@@ -127,17 +129,19 @@ onMounted(() => {
   & { position: relative; }
 
   .submenu {
-    position: absolute;
-    top: 80%;
-    left: -35px;
-    width: 10ch;
-    text-align: center;
-    background: var(--base-color);
-    display: flex;
-    flex-direction: column;
-    gap: var(--s-1);
-    padding: var(--s-1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .52);
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 80%;
+      left: -35px;
+      width: 10ch;
+      text-align: center;
+      background: var(--base-color);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-1);
+      padding: var(--s-1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, .52);
+    }
   }
 
   
@@ -163,6 +167,5 @@ onMounted(() => {
 //   text-align: inherit; /* Ensure text alignment is inherited */
 //   appearance: none; /* Remove default browser appearance */
 // }
-
 
 </style>

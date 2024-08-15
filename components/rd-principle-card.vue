@@ -1,7 +1,7 @@
 <template>
   <div class="principle-card" :principle="content.slug" :n="n" :expanded="expanded" @click="expanded = !expanded">
     <div class="number">{{ principle_n }}</div>
-    <div class="content">
+    <div class="content | text-wrap:balance">
       <h3>{{content.name}}</h3>
       <h4>{{content.tagline}}</h4>
       <p>{{content.description}}</p>

@@ -47,12 +47,13 @@
 const { locale } = useI18n()
 
 const pageContent = await queryContent('pages', 'videos').findOne();
+const { block_hero } = await useTranslator(pageContent, locale.value);
+
 const { 
-  block_hero,
   block_explainers,
   block_webinars,
   block_lessons } = await useTranslator(pageContent, locale.value);
-block_hero.image = "/images/hero/readings.jpg"
+  block_hero.image = "/images/testing/test-26.jpg"
 
 const videos = await queryContent('videos').find();
 

@@ -40,7 +40,7 @@ const pageContent = await queryContent('pages', 'publications').findOne();
 const { 
   block_hero, 
   block_intro } = await useTranslator(pageContent, locale.value);
-block_hero.image = "/images/hero/readings.jpg"
+block_hero.image = "/images/testing/test-22.jpg"
 
 const resources = await queryContent('publications').where({"publication_type": 'resource'}).find();
 const reports = await queryContent('publications').where({"publication_type": 'report'}).find();

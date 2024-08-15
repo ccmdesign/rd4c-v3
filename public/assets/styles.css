@@ -51,6 +51,7 @@ a:not[class] {
   }  
 }
 
-.text-balance {
+.text-balance,
+.text-wrap\:balance {
   * { text-wrap: balance; }
 }

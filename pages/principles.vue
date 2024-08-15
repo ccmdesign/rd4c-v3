@@ -2,18 +2,19 @@
   <div>
     <rd-hero :content="block_hero" />
 
-    <rd-base-section >
+    <rd-base-section>
       <center-l measure="var(--wide)" class="columns">
         <span v-html="block_intro.description"></span>
-        <p><rd-button color="primary">{{ $t('buttons.downloadReport') }}</rd-button></p>
+        <p><rd-button color="primary" href="/files/rd4c-synthesis-report.pdf">{{ $t('buttons.downloadReport') }}</rd-button></p>
       </center-l>
     </rd-base-section>
-    
-    <rd-divider :content="$t('divider.principle')" color="green"/>
-      
+
+    <rd-divider :content="$t('divider.principle')" color="green" />
+
     <rd-base-section>
       <div class="principles-grid">
-        <rd-principle-card class="principles-grid__item" v-for="(i, index) in principles" :content="i" :data-n="index + 1" :n="index+1"/>
+        <rd-principle-card class="principles-grid__item" v-for="(i, index) in principles" :content="i"
+          :data-n="index + 1" :n="index+1" />
       </div>
     </rd-base-section>
   </div>
@@ -27,7 +28,7 @@ const pageContent = await queryContent('pages', 'principles').findOne();
 const { 
   block_hero, 
   block_intro } = await useTranslator(pageContent, locale.value);
-block_hero.image = "/images/hero/pencils.png"
+block_hero.image = "/images/testing/test-23.jpg"
 
 const principles = await queryContent('principles').find();
 

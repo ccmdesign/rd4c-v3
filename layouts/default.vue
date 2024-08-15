@@ -5,7 +5,7 @@
     </main>
     <footer>
       <rd-cta />
-      <rd-footer :footer-content="footerData"/>
+      <rd-footer />
       <div class="by-ccm">
         <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>
         <a href="https://www.ccmdesign.ca" target="_blank">by ccm.design</a>
@@ -18,21 +18,8 @@
 import { ref, onMounted, onUpdated, watch } from 'vue'
 import PROJECTCONFIG from '~/project_config.json'
 
-const { locale, t } = useI18n()
-
-const pageContent = await queryContent('pages', 'footer').findOne();
-const { block_footer } = await useTranslator(pageContent, locale.value);
-const footerData = ref(block_footer)
-
-
 const currentYear = ref('')
 const projectConfig = PROJECTCONFIG;
-
-watch(locale, async () => {
-  const pageContent = await queryContent('pages', 'footer').findOne();
-  const { block_footer } = await useTranslator(pageContent, locale.value);
-  footerData.value = { ...block_footer }
-})
 
 onMounted(() => {
   currentYear.value = new Date().getFullYear()

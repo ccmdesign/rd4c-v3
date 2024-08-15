@@ -21,15 +21,15 @@
 
     <rd-principles-section :block="block_principle_led"/>
     
+    <!-- @ToDo: Merge these two components -->
     <rd-divider v-if="block_team.brow" :content="block_team.brow" color="primary" class="divider"/>
     <rd-team-section :block="block_team"/>
     
+    <!-- @ToDo: Merge these two components -->
     <rd-divider :content="block_testimonials.title" color="yellow"></rd-divider>
     <rd-video-section id="testimonials" video="https://www.youtube.com/embed/x4Nu8XhaDcw?si=rpCmMPwDqmXyVJ36">
-      
       <div class="cms-content" v-html="block_testimonials.description"></div>
     </rd-video-section>
-
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>

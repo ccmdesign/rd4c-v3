@@ -3,23 +3,12 @@
     <rd-divider content="Our Principles" color="purple" />
 
     <div class="rd-principles-section__panels">
-      <span v-html="block.description"></span>
-      <!-- <div class="rd-principles-section__panel">
-        <p>Supported by principles developed through extensive research and country office engagement, we support
-          institutions as they pursue data-driven projects that promote children’s welfare.</p>
-        <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and
-            Principles</rd-button></p>
-      </div>
-      <div class="rd-principles-section__panel">
-        <p>Principles guide responsible data handling toward saving children’s lives, defending their rights, and
-          helping them fulfill their potential from early childhood through adolescence.</p>
+      <div class="cms-content" v-html="block.description"></div>
+      <div class="flow">
+        <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and Principles</rd-button></p>
         <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p>
-      </div> -->
-      <div class="rd-principles-section__panels">
-        <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and
-          Principles</rd-button></p>
-          <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p>
       </div>
+      
     </div>
 
     <div class="rd-principles-section__grid">
@@ -29,8 +18,7 @@
         <!-- <p>{{ i.description }}</p> -->
       </div>
       <div class="grid-item" data-n="8">
-        <h3>Read about our principles at <a href="/principles"
-            class="link">Principles Page</a></h3>
+        <h3>Read about our principles at <a href="/principles" class="link">Principles Page</a></h3>
       </div>
     </div>
 
@@ -51,14 +39,16 @@ const principles = await queryContent('principles').find();
 .rd-principles-section {
   background-color: var(--white-color);
   color: var(--base-color);
-  text-align: center;
-  padding-bottom: var(--s2);
 }
 
 .rd-principles-section__panels {
+  max-width: var(--wrapper);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  gap: var(--s0);
+  padding: var(--s0);
 
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -66,25 +56,12 @@ const principles = await queryContent('principles').find();
   }
 }
 
-.rd-principles-section__panel {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s0);
-  // aspect-ratio: 2/1;
-  font-size: 1.25rem;
-  text-align: left;
-  padding: var(--s0);
-  text-wrap: balance;
-  
-  @media screen and (min-width: 768px) { padding: var(--s2); }
-  
-  > * { max-width: 50ch; }
-}
+.rd-principles-section__panel > * { max-width: 50ch; }
 
 @media screen and (min-width: 768px) {
   .rd-principles-section__panel:nth-child(2n + 1) {
-    align-items: flex-end;
-    text-align: right;
+    // align-items: flex-end;
+    // text-align: right;
   }
 }
 
@@ -99,7 +76,8 @@ const principles = await queryContent('principles').find();
 
 .grid-item {
   padding: var(--s1);
-  aspect-ratio: 1/1;
+  aspect-ratio: 2/1;
+  @media screen and (min-width: 768px) { aspect-ratio: 1/1; }
   align-items: center;
   place-content: center;
   border-radius: var(--base-border-radius);

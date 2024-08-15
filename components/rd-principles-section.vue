@@ -53,6 +53,8 @@ const principles = await queryContent('principles').find();
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    align-items: center;
+    gap: var(--s4);
   }
 }
 

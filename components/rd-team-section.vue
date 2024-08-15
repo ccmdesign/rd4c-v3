@@ -2,7 +2,7 @@
   <section id="team" class="team-section">
     <div class="content">
       <h2>{{ block.title }}</h2>
-      <span v-html="block.description"></span>
+      <div class="cms-content" v-html="block.description"></div>
       <p><rd-button to="/about#team" visual="secondary" color="primary">{{
           $t('buttons.view-all') }}</rd-button></p>
     </div>
@@ -39,7 +39,7 @@
   gap: var(--s1);  
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 2fr ;
+    grid-template-columns: 1fr 1fr ;
     grid-template-rows: auto;
     grid-template-areas: "content team";  
     gap: var(--s2);  
@@ -51,10 +51,10 @@
 .content { grid-area: content; }
 
 .team-group {
-  padding-inline: var(--s0);
+  // padding-inline: var(--s0);
   display: grid;
   gap: var(--s-2);
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
 .content {
@@ -66,7 +66,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    * { max-width: 30ch; }
+    justify-content: center;
+    // * { max-width: 30ch; }
   }
 }
 
@@ -96,8 +97,8 @@
 .team-card h4 {
   margin-top: auto;
   width: 100%;
-  padding: var(--s1);
-  font-size: 1.25rem;
+  padding: var(--s0);
+  font-size: 100%;
   text-align: center;
   color: var(--white-color);
   position: relative;

@@ -4,9 +4,13 @@
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="item.link" :target="item.target">{{
       $t(item.name) }}</nuxt-link>
     <div class="language-selector">
-        <nuxt-link :to="switchLocalePath('en')" class="menu__item" value="en">EN</nuxt-link>
-        <nuxt-link :to="switchLocalePath('es')" class="menu__item" value="es">ES</nuxt-link>
-        <nuxt-link :to="switchLocalePath('fr')" class="menu__item" value="fr">FR</nuxt-link>
+      <button class="menu__item" @click="toggleLangMenu">{{ activeLang }}</button>
+      <ul class="submenu" v-if="isSubmenuActive">
+        <nuxt-link if="activeLang.value != 'en'" :to="switchLocalePath('en')" class="menu__item" value="en" @click="switchLanguage('en')">EN</nuxt-link>
+        <nuxt-link if="activeLang.value != 'es'" :to="switchLocalePath('es')" class="menu__item" value="es" @click="switchLanguage('es')">ES</nuxt-link>
+        <nuxt-link if="activeLang.value != 'fr'" :to="switchLocalePath('fr')" class="menu__item" value="fr" @click="switchLanguage('fr')">FR</nuxt-link>
+      </ul>
+      
     </div>
     
   </nav>
@@ -20,10 +24,22 @@ const switchLocalePath = useSwitchLocalePath();
 const { menuItems } = useNavigation();
 
 const isMenuOpen = ref(false);
+const isSubmenuActive = ref(false);
+const activeLang = ref('en');
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
+
+function toggleLangMenu() {
+  isSubmenuActive.value = !isSubmenuActive.value;
+}
+
+function switchLanguage(lang) {
+  activeLang.value = lang;
+  toggleLangMenu();
+}
+
 
 // Optionally, you can add a watcher to close the menu when the route changes
 watch(() => useRoute().path, () => {
@@ -98,28 +114,57 @@ onMounted(() => {
 }
 
 .language-selector {
-  display: flex;
-  gap: var(--s-2);
+
+  button {
+    all: unset;
+    display: flex;
+  }
+
+  button:after {
+    content: 'keyboard_arrow_down';
+    color: white;
+    font-family: var(--icon-font);
+  }
+
+  & { position: relative; }
+
+  .submenu {
+    position: absolute;
+    top: 80%;
+    left: -35px;
+    width: 10ch;
+    text-align: center;
+    background: var(--base-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+    padding: var(--s-1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .52);
+  }
+
+  
 }
 
-.language-selector select {
-  all: unset; /* This will reset all inherited styles */
-  font-family: inherit; /* Ensure the font family is inherited */
-  font-size: inherit; /* Ensure the font size is inherited */
-  color: inherit; /* Ensure the color is inherited */
-  background: none; /* Remove any background */
-  border: none; /* Remove any border */
-  padding: 0; /* Remove any padding */
-  margin: 0; /* Remove any margin */
-  box-shadow: none; /* Remove any box shadow */
-  outline: none; /* Remove any outline */
-  text-align: inherit; /* Ensure text alignment is inherited */
-  appearance: none; /* Remove default browser appearance */
-}
 
-.language-selector:after {
-  content: 'keyboard_arrow_down';
-  color: white;
-  font-family: var(--icon-font);
-}
+// .language-selector {
+//   display: flex;
+//   gap: var(--s-2);
+// }
+
+// .language-selector select {
+//   all: unset; /* This will reset all inherited styles */
+//   font-family: inherit; /* Ensure the font family is inherited */
+//   font-size: inherit; /* Ensure the font size is inherited */
+//   color: inherit; /* Ensure the color is inherited */
+//   background: none; /* Remove any background */
+//   border: none; /* Remove any border */
+//   padding: 0; /* Remove any padding */
+//   margin: 0; /* Remove any margin */
+//   box-shadow: none; /* Remove any box shadow */
+//   outline: none; /* Remove any outline */
+//   text-align: inherit; /* Ensure text alignment is inherited */
+//   appearance: none; /* Remove default browser appearance */
+// }
+
+
 </style>

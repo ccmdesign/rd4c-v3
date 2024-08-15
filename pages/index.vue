@@ -11,7 +11,7 @@
       
     <rd-split-section id="case-studies" image="/images/hero/readings.jpg">
       <h2>{{ block_case_studies.title }}</h2>
-      <span v-html="block_case_studies.description"></span>
+      <div class="cms-content" v-html="block_case_studies.description"></div>
       <p><rd-button to="/publications#case-studies" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
@@ -25,19 +25,19 @@
 
     <rd-split-section id="tools" image="/images/hero/case_studies.png">
       <h2>{{ block_tools.title }}</h2>
-      <span v-html="block_tools.description"></span>
+      <div class="cms-content" v-html="block_tools.description"></div>
       <p><rd-button to="/publications#resources" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
     <rd-split-section id="partners" image="/images/hero/pencils.png">
       <h2>{{ block_platform.title }}</h2>
-      <span v-html="block_platform.description"></span>
+      <div class="cms-content" v-html="block_platform.description"></div>
       <p><rd-button to="/about#partners" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
     <rd-split-section id="get-involved" image="/images/hero/readings.jpg">
       <h2>{{ block_newsletter.title }}</h2>
-      <span v-html="block_newsletter.description"></span>
+      <div class="cms-content" v-html="block_newsletter.description"></div>
       <p><rd-button to="/#get-involved" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
@@ -47,13 +47,12 @@
 
     <rd-split-section id="get-involved" image="/images/hero/readings.jpg">
       <h2>{{ block_get_involved.title }}</h2>
-      <span v-html="block_get_involved.description"></span>
-
+      <div class="cms-content" v-html="block_get_involved.description"></div>
     </rd-split-section>
 
     <rd-split-section id="stay-engaged" image="/images/hero/case_studies.png">
       <h3>{{ block_stay_engaged.title }}</h3>
-      <span v-html="block_stay_engaged.description"></span>
+      <div class="cms-content" v-html="block_stay_engaged.description"></div>
       <p><rd-button to="/join" visual="secondary" color="primary">Join the conversation</rd-button></p>
     </rd-split-section>
   </div>

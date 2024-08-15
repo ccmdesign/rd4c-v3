@@ -41,10 +41,11 @@
       <p><rd-button to="/#get-involved" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button></p>
     </rd-split-section>
 
-    <rd-divider content="Team" color="primary" class="divider"/>
+    <rd-divider v-if="block_team.brow" :content="block_team.brow" color="primary" class="divider"/>
     
     <rd-team-section :block="block_team" />
 
+    <rd-divider v-if="block_get_involved.brow" :content="block_get_involved.brow" color="blue" class="divider"/>
     <rd-split-section id="get-involved" image="/images/hero/readings.jpg">
       <h2>{{ block_get_involved.title }}</h2>
       <div class="cms-content" v-html="block_get_involved.description"></div>
@@ -52,7 +53,7 @@
     </rd-split-section>
 
     <rd-split-section id="stay-engaged" image="/images/hero/case_studies.png">
-      <h3>{{ block_stay_engaged.title }}</h3>
+      <h2>{{ block_stay_engaged.title }}</h2>
       <div class="cms-content" v-html="block_stay_engaged.description"></div>
       <p><rd-button href="http://eepurl.com/gKa2S1" color="primary">Join the conversation</rd-button></p><!-- @ToDo: Translate -->
     </rd-split-section>

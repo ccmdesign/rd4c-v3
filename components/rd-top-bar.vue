@@ -16,4 +16,9 @@
   grid-template-columns: 1fr auto;
   padding: var(--s1);
 }
+
+img {
+  transform: scale(1.2);
+  transform-origin: left center;
+}
 </style>

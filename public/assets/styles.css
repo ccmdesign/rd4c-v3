@@ -51,6 +51,6 @@ a:not[class] {
   }  
 }
 
-.cms-content.text-balance {
+.text-balance {
   * { text-wrap: balance; }
 }

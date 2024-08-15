@@ -15,20 +15,24 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUpdated } from 'vue'
+import { ref, onMounted, onUpdated, watch } from 'vue'
 import PROJECTCONFIG from '~/project_config.json'
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
-const blockFooter = await queryContent('pages', 'footer').findOne();
-const footerData = ref(blockFooter.lang[locale.value]);
+const pageContent = await queryContent('pages', 'footer').findOne();
+const { block_footer } = await useTranslator(pageContent, locale.value);
+const footerData = ref(block_footer)
+
 
 const currentYear = ref('')
 const projectConfig = PROJECTCONFIG;
 
-watch(() => useRoute().path, () => {
-  footerData.value = blockFooter.lang[locale.value]
-});
+watch(locale, async () => {
+  const pageContent = await queryContent('pages', 'footer').findOne();
+  const { block_footer } = await useTranslator(pageContent, locale.value);
+  footerData.value = { ...block_footer }
+})
 
 onMounted(() => {
   currentYear.value = new Date().getFullYear()

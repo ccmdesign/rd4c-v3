@@ -6,13 +6,8 @@
       <h2>{{ block_intro.title }}</h2>
       <span v-html="block_intro.description"></span>
     </rd-video-section>
-<<<<<<< Updated upstream
-    
-    <rd-principles-section :content="principles" id="principles" />
-=======
 
     <rd-principles-section :block="block_principle_led" id="principles" />
->>>>>>> Stashed changes
       
     <rd-split-section id="case-studies" image="/images/hero/readings.jpg">
       <h2>{{ block_case_studies.title }}</h2>
@@ -81,44 +76,12 @@ const {
   block_team, 
   block_stay_engaged } = await useTranslator(pageContent, locale.value)
 
-
-// console.log(34, block_hero)
-
-// const blockHero = await queryContent('pages', 'home').only('block_hero').findOne();
-// console.log(11, blockHero);
 const heroData = ref({...block_hero, 
   image: "/images/hero/homepage.jpg",
   action: {
     label: t('buttons.learn-more'),
     url: "/about"
   }});
-
-  // const blockIntro = await queryContent('pages', 'home').only('intro').findOne();
-  // const introData = ref(blockIntro.intro[locale.value] ? blockIntro.intro[locale.value] : blockIntro.intro['en']);
-
-
-
-// watch(() => useRoute().path, () => {
-//   heroData.value = {...block_hero, 
-//   image: "/images/hero/homepage.jpg",
-//   action: {
-//     label: t('buttons.learn-more'),
-//     url: "/about"
-//   }}
-
-//   introData.value = blockIntro.intro[locale.value] ? blockIntro.intro[locale.value] : blockIntro.intro['en'];
-// });
-
-// const hero_content = {
-//   brow: t('pages.home.brow'),  
-//   title: t('pages.home.title'),
-//   tagline: t('pages.home.tagline'),
-//   image: "/images/hero/homepage.jpg",
-//   action: {
-//     label: t('buttons.learn-more'),
-//     url: "/about"
-//   }
-// }
 
 </script>
 

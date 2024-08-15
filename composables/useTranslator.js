@@ -13,7 +13,8 @@ const SECTIONS = [
   "platform",
   "testimonials",
   "about_us",
-  "approach"
+  "approach",
+  "footer"
 ]
 
 export function useTranslator(data, locale, sections=SECTIONS) {

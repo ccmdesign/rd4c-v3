@@ -13,10 +13,10 @@ const objectContructor = async (dir, fs) => {
 
   await footer.data.forEach((pg) => {
     let i = {};
-    i.lang = {};
+    i.footer = {};
     i.slug = common.slugify('footer');
     pg.translations.forEach((t) => {
-    i.lang[common.LANGUAGES[t.languages_code]] = t;
+    i.footer[common.LANGUAGES[t.languages_code]] = t;
     });
 
     fs.writeFile(

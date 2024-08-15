@@ -8,9 +8,8 @@
         -->
 
     <rd-base-section>
-      <h2>RD4C Bites & Lessons from the Field</h2>
-      <p>Short videos highlighting responsible data practices from governments, UN offices, research centers, and other
-        partners around the world.</p>
+      <h2>{{ block_lessons.title }}</h2>
+      <span v-html="block_lessons.description"></span>
         <!-- <h3 class="aux">Bites</h3> -->
         <!-- <pre>{{ videos }}</pre> -->
 
@@ -21,9 +20,8 @@
     </rd-base-section>
 
     <rd-base-section>
-      <h2>Recorded Webinars and Lectures</h2>
-      <p>Recordings of our efforts to train data professionals and disseminate the Responsible Data for Children
-        approach</p>
+      <h2>{{ block_webinars.title }}</h2>
+      <span v-html="block_webinars.description"></span>
       <!-- <h3 class="aux">Webinars</h3> -->
       <rd-card-grid>
         <rd-card v-for="video in videos" :content="video" />
@@ -33,8 +31,8 @@
     </rd-base-section>
 
     <rd-base-section>
-      <h2>What is Responsible Data for Children?</h2>
-      <p>Videos explaining the value of the Responsible Data for Children initiative, available in different languages.</p>
+      <h2>{{ block_explainers.title }}</h2>
+      <span v-html="block_explainers.description"></span>
       <!-- <h3 class="aux">Explainers</h3> -->
       <rd-card-grid>
         <rd-card v-for="video in videos" :content="video" />
@@ -49,7 +47,11 @@
 const { locale } = useI18n()
 
 const pageContent = await queryContent('pages', 'videos').findOne();
-const { block_hero } = await useTranslator(pageContent, locale.value);
+const { 
+  block_hero,
+  block_explainers,
+  block_webinars,
+  block_lessons } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/hero/readings.jpg"
 
 const videos = await queryContent('videos').find();

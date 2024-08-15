@@ -5,11 +5,11 @@
     <rd-base-section >
       <center-l measure="var(--wide)" class="columns">
         <span v-html="block_intro.description"></span>
-        <p><rd-button color="primary">Download the Report</rd-button></p><!-- @ToDo: Translate -->
+        <p><rd-button color="primary">{{ $t('buttons.downloadReport') }}</rd-button></p>
       </center-l>
     </rd-base-section>
     
-    <rd-divider content="Principles" color="green"/><!-- @ToDo: Translate -->
+    <rd-divider :content="$t('divider.principle')" color="green"/>
       
     <rd-base-section>
       <div class="principles-grid">

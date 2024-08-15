@@ -8,10 +8,19 @@
         "videos": "Videos",
         "updates": "Updates"
     },
+    "divider": {
+        "principle": "Principle",
+        "caseStudies": "Case Studies",
+        "resources": "Resources",
+        "reports": "Reports"
+    },
     "buttons": {
         "view-all": "View All",
         "learn-more": "Learn more",
-        "join": "Join"
+        "join": "Join",
+        "getInvolved": "Join the Alliance",
+        "stayEngaged": "Join the conversation",
+        "downloadReport": "Download the Report"
     },
     "texts": {
         "join": "Join the RD4C Conversation"
@@ -30,6 +39,12 @@
             "brow": "",
             "title": "Responsible Data for Children",
             "tagline": "An initiative by UNICEF and The GovLab to provide guidance, tools, and leadership that supports the responsible handling of data for and about children"
+        }
+    },
+    "errors": {
+        "404": {
+            "title": "404: Page Not Found",
+            "message": "The page you were looking for could not be found."
         }
     }
 }

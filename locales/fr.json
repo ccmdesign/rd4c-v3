@@ -8,9 +8,19 @@
         "videos": "Vidéos",
         "updates": "Mises à jour"
     },
+    "divider": {
+        "principle": "Principe",
+        "caseStudies": "Études de cas",
+        "resources": "Ressources",
+        "reports": "Rapports"
+    },
     "buttons": {
+        "view-all": "Voir tout",
         "learn-more": "En savoir plus",
-        "join": "Rejoindre"
+        "join": "Rejoindre",
+        "getInvolved": "Rejoignez l'Alliance",
+        "stayEngaged": "Rejoignez la conversation",
+        "downloadReport": "Télécharger le rapport"
     },
     "texts": {
         "join": "Rejoindre la conversation RD4C"
@@ -29,6 +39,12 @@
             "brow": "GovLab",
             "title": "Données Responsables pour les Enfants",
             "tagline": "Une initiative de l'UNICEF et The GovLab pour fournir des conseils, des outils et un leadership qui soutiennent la gestion responsable des données pour et sur les enfants"
+        }
+    },
+    "errors": {
+        "404": {
+            "title": "404: Page introuvable",
+            "message": "La page que vous cherchiez est introuvable."
         }
     }
 }

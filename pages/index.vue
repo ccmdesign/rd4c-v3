@@ -49,13 +49,13 @@
     <rd-split-section id="get-involved" image="/images/hero/readings.jpg">
       <h2>{{ block_get_involved.title }}</h2>
       <div class="cms-content" v-html="block_get_involved.description"></div>
-      <p><rd-button href="http://eepurl.com/gKa2S1" visual="secondary" color="primary">Join the Alliance</rd-button></p><!-- @ToDo: Translate -->
+      <p><rd-button href="http://eepurl.com/gKa2S1" visual="secondary" color="primary">{{ $t('buttons.getInvolved') }}</rd-button></p>
     </rd-split-section>
 
     <rd-split-section id="stay-engaged" image="/images/hero/case_studies.png">
       <h2>{{ block_stay_engaged.title }}</h2>
       <div class="cms-content" v-html="block_stay_engaged.description"></div>
-      <p><rd-button href="http://eepurl.com/gKa2S1" color="primary">Join the conversation</rd-button></p><!-- @ToDo: Translate -->
+      <p><rd-button href="http://eepurl.com/gKa2S1" color="primary">{{ $t('buttons.stayEngaged') }}</rd-button></p>
     </rd-split-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->

@@ -62,6 +62,7 @@ onMounted(() => {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .5px;
+    width: max-content;
 
     &:hover {
       color: var(--primary-color);
@@ -94,7 +95,6 @@ onMounted(() => {
 
   @media screen and (min-width: 768px) {
     display: flex;
-    justify-content: space-between;
     list-style: none;
     gap: var(--s1);
   }

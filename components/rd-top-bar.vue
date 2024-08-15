@@ -1,7 +1,7 @@
 <template>
   <header class="top-bar">
-    <nuxt-link to="/"><img src="/images/logos/rd4c-logo.svg" alt="Homepage"></nuxt-link><!-- @ToDo: Translate -->
-    <rd-menu />
+    <nuxt-link to="/" class="logo"><img src="/images/logos/rd4c-logo-white.svg" alt="Homepage"></nuxt-link><!-- @ToDo: Translate -->
+    <rd-menu class="menu"/>
   </header>
 </template>
 
@@ -11,14 +11,14 @@
 
 <style lang="scss" scoped>
 .top-bar {
-  display: grid;
+  display: flex;
   background: var(--base-color);
   grid-template-columns: 1fr auto;
   padding: var(--s1);
+  justify-content: space-between;
+  align-items: center;
 }
 
-img {
-  transform: scale(1.2);
-  transform-origin: left center;
-}
+.top-bar .logo { flex: 0 1 400px; }
+.top-bar .menu { flex: 0 1; }
 </style>

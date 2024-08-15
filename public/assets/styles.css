@@ -21,6 +21,17 @@ a:not[class] {
   }
 }
 
+.flow,
+.cms-content {
+  --gap: var(--s-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+@media screen and (min-width: 768px) { 
+  .cms-content { --gap: var(--s0); }
+}
 
 /* In this file you will add your project wide styles. */
 /* body {

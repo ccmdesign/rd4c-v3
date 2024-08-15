@@ -7,32 +7,17 @@ const common = require ("./common");
 const objectContructor = async (dir, fs) => {
   
   const junctionFields = [
-    "blocks.collection",
-    "blocks.item.*",
-    "blocks.item.translations.*"
+    "translations.*"
   ]
-  const pages = await common.getDirectusData("pages", junctionFields);
+  const footer = await common.getDirectusData("block_footer", junctionFields);
 
-  await pages.data.forEach((pg) => {
+  await footer.data.forEach((pg) => {
     let i = {};
-    i.slug = common.slugify(pg.title);
-    i.title = pg.title ? pg.title : '';
-    pg.blocks.forEach((b) => {
-
-      let lang  = {};
-      b.item.translations.forEach((t) => {
-        lang[common.LANGUAGES[t.languages_code]] = t;
-      });
-
-      const key = b.item.section_name ? b.item.section_name : b.collection;
-      if(key) {
-        i[key] = lang;
-      } else {
-        i[key] = {...i[key], ...lang};
-      }
-
+    i.lang = {};
+    i.slug = common.slugify('footer');
+    pg.translations.forEach((t) => {
+    i.lang[common.LANGUAGES[t.languages_code]] = t;
     });
-    
 
     fs.writeFile(
       dir + "/" + i.slug + ".json",
@@ -46,7 +31,7 @@ const objectContructor = async (dir, fs) => {
   });
 }
 
-const getPages = async () => {
+const getFooter = async () => {
 
   const dir = "./content/pages";
   if (fs.existsSync(dir)) {
@@ -78,5 +63,5 @@ const getPages = async () => {
 }
 
 module.exports = {
-  getPages
+  getFooter
 }

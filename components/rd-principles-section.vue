@@ -3,7 +3,8 @@
     <rd-divider content="Our Principles" color="purple" />
 
     <div class="rd-principles-section__panels">
-      <div class="rd-principles-section__panel">
+      <span v-html="block.description"></span>
+      <!-- <div class="rd-principles-section__panel">
         <p>Supported by principles developed through extensive research and country office engagement, we support
           institutions as they pursue data-driven projects that promote children’s welfare.</p>
         <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and
@@ -13,6 +14,11 @@
         <p>Principles guide responsible data handling toward saving children’s lives, defending their rights, and
           helping them fulfill their potential from early childhood through adolescence.</p>
         <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p>
+      </div> -->
+      <div class="rd-principles-section__panels">
+        <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and
+          Principles</rd-button></p>
+          <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p>
       </div>
     </div>
 
@@ -32,6 +38,12 @@
 </template>
 
 <script setup>
+defineProps({
+  block: {
+    type: Object,
+    required: true
+  }
+});
 const principles = await queryContent('principles').find();
 </script>
 

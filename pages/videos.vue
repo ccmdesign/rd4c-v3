@@ -1,6 +1,6 @@
 <template>
   <div>
-    <rd-hero :content="hero_content" />
+    <rd-hero :content="block_hero" />
 
     <!-- Essa lista vai mudar para "videos", e vai receber Bites and Lessons, Webinars, Explainers
           https://www.notion.so/ccmdesign/Conte-do-Videos-312685a4148d40c98e251b47c1c933d8?pvs=4
@@ -59,11 +59,11 @@
 </template>
 
 <script setup>
-const hero_content = {
-  title: "Videos",
-  tagline: "Need tagline",
-  image: "/images/hero/readings.jpg"
-}
+const { locale } = useI18n()
+
+const pageContent = await queryContent('pages', 'videos').findOne();
+const { block_hero } = await useTranslator(pageContent, locale.value);
+block_hero.image = "/images/hero/readings.jpg"
 
 const videos = await queryContent('videos').find();
 

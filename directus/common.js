@@ -73,10 +73,17 @@ const formatTime = (date) => {
   );
 }
 
+const LANGUAGES = {
+  "es-ES": "es",
+  "en-US": "en",
+  "fr-FR": "fr"
+}
+
 module.exports = {
   getDirectusData,
   getImage,
   slugify,
   formatDate,
   formatTime,
+  LANGUAGES
  };

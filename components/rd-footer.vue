@@ -1,7 +1,7 @@
 <template>
   <div class="footer-wrapper">
     <footer class="footer-section">
-      <h3 class="logos-title footer-heading">{{ $t('footer.partners') }}</h3>
+      <h3 class="logos-title footer-heading">{{ footerContent.partners_brow }}</h3>
       <div class="logos">
         <a class="logo-1" href="https://www.unicef.org/" target="_blank"><img
             src="/images/logos/unicef-logo-white.svg" alt="Unicef"></a>
@@ -9,11 +9,9 @@
             src="/images/logos/govlab-logo-white.svg" alt="Govlab"></a>
       </div>
 
-      <h3 class="content-title footer-heading">{{ $t('footer.about') }}</h3>
+      <h3 class="content-title footer-heading">{{ footerContent.about_heading_text }}</h3>
       <div class="content" data-column="two-columns">
-        <p>{{ $t('footer.p1') }}</p>
-        <p>{{ $t('footer.p2') }}</p>
-        <p>{{ $t('footer.p3') }}</p>
+        <spa v-html="footerContent.content"></spa>
       </div>
 
       <div class="after-footer">
@@ -34,6 +32,12 @@
 <script setup>
 import { useNavigation } from '@/composables/useNavigation';
 const { menuItems } = useNavigation();
+
+defineProps({
+  footerContent: {
+    type: Object
+  }
+})
 
 </script>
 

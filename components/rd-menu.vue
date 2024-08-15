@@ -4,9 +4,9 @@
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="item.link" :target="item.target">{{
       $t(item.name) }}</nuxt-link>
     <div class="language-selector">
-        <nuxt-link class="menu__item" value="en">EN</nuxt-link>
-        <nuxt-link class="menu__item" value="es">ES</nuxt-link>
-        <nuxt-link class="menu__item" value="fr">FR</nuxt-link>
+        <nuxt-link :to="switchLocalePath('en')" class="menu__item" value="en">EN</nuxt-link>
+        <nuxt-link :to="switchLocalePath('es')" class="menu__item" value="es">ES</nuxt-link>
+        <nuxt-link :to="switchLocalePath('fr')" class="menu__item" value="fr">FR</nuxt-link>
     </div>
     
   </nav>
@@ -14,6 +14,8 @@
 
 <script setup>
 import { useNavigation } from '@/composables/useNavigation';
+
+const switchLocalePath = useSwitchLocalePath();
 
 const { menuItems } = useNavigation();
 

@@ -1,9 +1,8 @@
 <template>
   <section id="team" class="team-section">
     <div class="content">
-      <h2>Maintaining a team of dedicated researchers and advocates</h2>
-      <p>Learn about the team supporting the Responsible Data for Children initiative and the different projects they
-        work on.</p>
+      <h2>{{ block.title }}</h2>
+      <span v-html="block.description"></span>
       <p><rd-button to="/about#team" visual="secondary" color="primary">{{
           $t('buttons.view-all') }}</rd-button></p>
     </div>
@@ -17,10 +16,12 @@
 </template>
 
 <script setup>
-  // const props = defineProps({
-  //   team: Object,
-  //   bg: String
-  // });
+  defineProps({
+    block: {
+      type: Object,
+      required: false
+    }
+  })
 
   const team = await queryContent('team').find();
 

@@ -24,7 +24,7 @@
 <script setup>
 const { locale } = useI18n()
 
-const pageContent = await queryContent('pages', 'principles').findOne();
+const pageContent = await queryContent('pages').where({title: 'Principles'}).findOne();
 const { 
   block_hero, 
   block_intro } = await useTranslator(pageContent, locale.value);

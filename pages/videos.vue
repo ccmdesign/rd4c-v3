@@ -10,7 +10,7 @@
       <h2>RD4C Bites & Lessons from the Field</h2>
       <p>Short videos highlighting responsible data practices from governments, UN offices, research centers, and other
         partners around the world.</p>
-        <h3 class="aux">Bites</h3>
+        <!-- <h3 class="aux">Bites</h3> -->
         <!-- <pre>{{ videos }}</pre> -->
 
         <rd-card-grid>
@@ -23,7 +23,7 @@
       <h2>Recorded Webinars and Lectures</h2>
       <p>Recordings of our efforts to train data professionals and disseminate the Responsible Data for Children
         approach</p>
-      <h3 class="aux">Webinars</h3>
+      <!-- <h3 class="aux">Webinars</h3> -->
       <rd-card-grid>
         <rd-card v-for="video in videos" :content="video" />
       </rd-card-grid>
@@ -33,28 +33,14 @@
 
     <rd-base-section>
       <h2>What is Responsible Data for Children?</h2>
-      <p>Videos explaining the value of the Responsible Data for Children initiative, available in different languages.
-      </p>
-      <h3 class="aux">Explainers</h3>
+      <p>Videos explaining the value of the Responsible Data for Children initiative, available in different languages.</p>
+      <!-- <h3 class="aux">Explainers</h3> -->
       <rd-card-grid>
         <rd-card v-for="video in videos" :content="video" />
       </rd-card-grid>
     </rd-base-section>
 
-    <rd-split-section>
-      <h2>Be the first to know</h2>
-      <p>The Responsible Data for Children initiative regularly releases videos explaining its work and the work of its
-        partners. Here’s a few of our video series that you might be interested in. If you would like to stay up to date
-        with our latest releases, please subscribe to our YouTube channel or fill out the form here.</p>
-
-        <template #extra>
-          <ccm-form class="form">
-            <base-input placeholder="Name"/>
-            <base-input placeholder="Email"/>
-            <rd-button>Send</rd-button>
-          </ccm-form>
-        </template>
-    </rd-split-section>
+    <rd-signup-section />
   </div>
 </template>
 
@@ -75,7 +61,6 @@ const videos = await queryContent('videos').find();
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--s0);
-  margin-top: var(--s1);
-  margin-bottom: var(--s1);
+  margin-block: auto;
 }
 </style>

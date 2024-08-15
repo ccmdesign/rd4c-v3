@@ -14,6 +14,7 @@ const objectContructor = async (dir, fs) => {
   await footer.data.forEach((pg) => {
     let i = {};
     i.footer = {};
+    i.title = 'Footer';
     i.slug = common.slugify('footer');
     pg.translations.forEach((t) => {
     i.footer[common.LANGUAGES[t.languages_code]] = t;

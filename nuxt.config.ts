@@ -1,4 +1,3 @@
-
 import { defineNuxtConfig } from "nuxt/config";
 import { resolve } from "path";
 import projectConfig from "./project_config.json";
@@ -10,6 +9,7 @@ import locales from './locales'
 // https://www.notion.so/ccmdesign/Reposit-rio-Inicial-para-Projetos-em-Nuxt-6c1f64c4a65c46eda799a78a08a4c4f5?pvs=4
 
 export default defineNuxtConfig({
+  target: 'static',
   app: {
     head: {
       title: projectConfig.title,
@@ -26,7 +26,15 @@ export default defineNuxtConfig({
       script: [],
     }
   },
-  modules: ['nuxt-gtag', '@nuxt/content', '@pinia/nuxt', '@nuxtjs/google-fonts', '@vee-validate/nuxt','@nuxtjs/i18n'],
+  modules: [
+    'nuxt-gtag',
+    '@nuxt/content',
+    '@pinia/nuxt',
+    '@nuxtjs/google-fonts',
+    '@vee-validate/nuxt',
+    '@nuxtjs/i18n',
+    "@nuxt/image"
+  ],
 
   css: [
     '@ccmdesign/ccm-ds/assets/css/main.scss',
@@ -68,7 +76,7 @@ export default defineNuxtConfig({
     locales,
     defaultLocale: 'en',
   },
-  ssr: false,
+  ssr: true,
   gtag: {
     id: projectConfig.gtag
   },

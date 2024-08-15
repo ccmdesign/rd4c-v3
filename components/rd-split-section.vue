@@ -71,13 +71,11 @@ defineProps({
 
 .panel--image {
   aspect-ratio: 1 / 1;
-  background-color: lightblue;
   object-position: center;
 
   img {
     object-fit: cover;
     height: 100%;
-    
   }
 }
 
@@ -89,26 +87,5 @@ defineProps({
   padding: var(--_padding-block) var(--_padding-inline);
 }
 
-// .rd-split-section .content {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   gap: var(--_gap);
-//   padding: var(--_padding-block) 0;
-//   text-wrap: balance;
-// }
 
-// .rd-split-section :deep(h2) {
-//   color: var(--primary-color);
-// }
-// .rd-split-section :deep(h3) {
-//   color: var(--primary-color);
-// }
-// .rd-split-section :deep(h4) {
-//   font-weight: 900;
-//   color: var(--primary-color);
-// }
-// .rd-split-section :deep(p) {
-//   color: var(--base-color);
-// }
 </style>

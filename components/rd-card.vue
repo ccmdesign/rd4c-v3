@@ -18,10 +18,10 @@
         <h4 v-if="content.tagline">{{ content.tagline }}</h4>
         
         <div class="rd-card__action">
-          <nuxt-link v-if="content.url" class="button" data-size="full-width" color="primary" :to="content.url">Read
-            More</nuxt-link>
-          <nuxt-link v-else class="button" color="primary" data-size="full-width" :to="content._path">
-            Read More</nuxt-link>
+          <a v-if="content.url" class="button" data-size="full-width" color="primary" :to="content.url">Read
+            More</a>
+          <a v-else class="button" color="primary" data-size="full-width" :to="content._path">
+            Read More</a>
         </div>
       </div>
     <!-- <pre>{{ content }}</pre> -->

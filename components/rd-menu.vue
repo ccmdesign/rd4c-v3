@@ -10,9 +10,7 @@
         <nuxt-link if="activeLang.value != 'es'" :to="switchLocalePath('es')" class="menu__item" value="es" @click="switchLanguage('es')">ES</nuxt-link>
         <nuxt-link if="activeLang.value != 'fr'" :to="switchLocalePath('fr')" class="menu__item" value="fr" @click="switchLanguage('fr')">FR</nuxt-link>
       </ul>
-      
     </div>
-    
   </nav>
 </template>
 

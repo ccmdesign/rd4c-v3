@@ -6,28 +6,28 @@
 
     <rd-split-section id="intro" image="/images/hero/readings.jpg">
       <h2>{{ block_intro.title }}</h2>
-      <span v-html="block_intro.description"></span>
+      <div class="cms-content" v-html="block_intro.description"></div>
     </rd-split-section>
 
     <rd-split-section id="about-us" image="/images/hero/readings.jpg">
       <h2>{{ block_about_us.title }}</h2>
-      <span v-html="block_about_us.description"></span>
+      <div class="cms-content" v-html="block_about_us.description"></div>
     </rd-split-section>
 
     <rd-split-section id="our-approach" image="/images/hero/readings.jpg">
       <h2>{{ block_approach.title }}</h2>
-      <span v-html="block_approach.description"></span>
+      <div class="cms-content" v-html="block_approach.description"></div>
     </rd-split-section>
 
     <rd-principles-section :block="block_principle_led"/>
     
-    <rd-divider content="Team" color="primary" class="divider"/>
-
+    <rd-divider v-if="block_team.brow" :content="block_team.brow" color="primary" class="divider"/>
     <rd-team-section :block="block_team"/>
-
+    
+    <rd-divider :content="block_testimonials.title" color="yellow"></rd-divider>
     <rd-video-section id="testimonials" video="https://www.youtube.com/embed/x4Nu8XhaDcw?si=rpCmMPwDqmXyVJ36">
-      <h2>{{ block_testimonials.title }}</h2>
-      <span v-html="block_testimonials.description"></span>
+      
+      <div class="cms-content" v-html="block_testimonials.description"></div>
     </rd-video-section>
 
   </div>

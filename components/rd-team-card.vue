@@ -3,7 +3,7 @@
     <img :src="content.image" :alt="content.name">
     <h4>{{content.name}}</h4>
     <h5>{{ content.organization }}</h5>
-    <div><base-button icon-after="arrow_forward" visual="primary" color="primary">Bio</base-button></div>
+    <div><base-button icon-after="arrow_forward" visual="primary" color="primary">Bio</base-button></div><!-- @ToDo: Translate -->
     <pre>{{ content }}</pre>
   
   </div>

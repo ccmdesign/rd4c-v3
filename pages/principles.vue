@@ -5,13 +5,12 @@
     <rd-base-section >
       <center-l measure="var(--wide)" class="columns">
         <span v-html="block_intro.description"></span>
-        <p><rd-button color="primary">Download the Report</rd-button></p>
+        <p><rd-button color="primary">Download the Report</rd-button></p><!-- @ToDo: Translate -->
       </center-l>
     </rd-base-section>
-
-    <rd-divider content="Principles" color="green"/>
+    
+    <rd-divider content="Principles" color="green"/><!-- @ToDo: Translate -->
       
-
     <rd-base-section>
       <div class="principles-grid">
         <rd-principle-card class="principles-grid__item" v-for="(i, index) in principles" :content="i" :data-n="index + 1" :n="index+1"/>

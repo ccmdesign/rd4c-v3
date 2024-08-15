@@ -1,4 +1,5 @@
 <template>
+  <!-- @ToDo: Translate -->
   <div>
     <rd-hero :content="block_hero" />
 

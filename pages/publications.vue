@@ -9,21 +9,21 @@
     <rd-base-section>
       <span v-html="block_intro.description"></span>
     </rd-base-section>
-    <rd-divider content="Case Studies" color="purple" />
+    <rd-divider content="Case Studies" color="purple" /><!-- @ToDo: Translate -->
     <rd-base-section>
       <rd-card-grid>
         <rd-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
       </rd-card-grid>
     </rd-base-section>
 
-    <rd-divider content="Resources" color="purple" />
+    <rd-divider content="Resources" color="purple" /><!-- @ToDo: Translate -->
     <rd-base-section>
       <rd-card-grid>
         <rd-card v-for="i in resources" v-bind:key="i.slug" :content="i" />
       </rd-card-grid>
     </rd-base-section>
 
-    <rd-divider content="Reports" color="purple" />
+    <rd-divider content="Reports" color="purple" /><!-- @ToDo: Translate -->
     <rd-base-section>
       <rd-card-grid>
         <rd-card v-for="i in reports" v-bind:key="i.slug" :content="i" />

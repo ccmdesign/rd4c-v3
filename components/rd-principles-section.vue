@@ -1,12 +1,12 @@
 <template>
   <div class="rd-principles-section">
-    <rd-divider content="Our Principles" color="purple" />
+    <rd-divider content="Our Principles" color="purple" /><!-- @ToDo: Translate -->
 
     <div class="rd-principles-section__panels">
       <div class="cms-content" v-html="block.description"></div>
       <div class="flow">
-        <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and Principles</rd-button></p>
-        <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p>
+        <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and Principles</rd-button></p><!-- @ToDo: Translate -->
+        <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p><!-- @ToDo: Translate -->
       </div>
       
     </div>
@@ -18,7 +18,7 @@
         <!-- <p>{{ i.description }}</p> -->
       </div>
       <div class="grid-item" data-n="8">
-        <h3>Read about our principles at <a href="/principles" class="link">Principles Page</a></h3>
+        <h3>Read about our principles at <a href="/principles" class="link">Principles Page</a></h3><!-- @ToDo: Translate -->
       </div>
     </div>
 

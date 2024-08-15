@@ -7,7 +7,7 @@
       <span class="chip" v-for="p in content.principle">{{ p }}</span>
     </cluster-l>
     <div>
-      <rd-button el="a" :href="content.url" color="primary" target="_blank">Read More</rd-button>
+      <rd-button el="a" :href="content.url" color="primary" target="_blank">Read More</rd-button><!-- @ToDo: Translate -->
     </div>
 
     <!-- <pre>

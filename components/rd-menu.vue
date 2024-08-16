@@ -114,7 +114,6 @@ onMounted(() => {
     display: block;
     cursor: pointer;
     padding-block: var(--s-2) !important;
-    width: auto;
   }
 
   @media screen and (min-width: 768px) {

@@ -21,6 +21,7 @@
 
 <script setup>
 import { useNavigation } from '@/composables/useNavigation';
+const { locale } = useI18n()
 
 const switchLocalePath = useSwitchLocalePath();
 
@@ -28,7 +29,7 @@ const { menuItems } = useNavigation();
 
 const isMenuOpen = ref(false);
 const isSubmenuActive = ref(false);
-const activeLang = ref('en');
+const activeLang = ref(locale.value);
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;

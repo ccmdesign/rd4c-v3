@@ -19,6 +19,12 @@
   align-items: center;
 }
 
-.top-bar .logo { flex: 0 1 400px; }
-.top-bar .menu { flex: 0 1; }
+.top-bar .logo { 
+  flex: 0 1 400px; 
+  min-width: 200px;
+}
+.top-bar .menu { 
+  flex: 0; 
+  margin-left: var(--s1);
+  }
 </style>

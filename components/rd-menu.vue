@@ -56,6 +56,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .menu {
+  background-color: red;
 
   .menu__item {
     color: var(--white-color);
@@ -63,8 +64,9 @@ onMounted(() => {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .5px;
-    // width: max-content;
-
+    background: blue;
+    width: max-content;
+    
     &:hover {
       color: var(--primary-color);
     }

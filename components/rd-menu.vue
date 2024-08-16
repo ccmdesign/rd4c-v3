@@ -63,7 +63,7 @@ onMounted(() => {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .5px;
-    width: max-content;
+    // width: max-content;
 
     &:hover {
       color: var(--primary-color);
@@ -103,18 +103,20 @@ onMounted(() => {
 }
 
 .menu__toggle {
-  @media screen and (min-width: 768px) { display: none; }
-
   @media screen and (max-width: 768px) {
     font-size: 1.25rem;
     display: block;
     cursor: pointer;
     padding-block: var(--s-2) !important;
+    width: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }
 
 .language-selector {
-
   button {
     all: unset;
     display: flex;
@@ -143,8 +145,6 @@ onMounted(() => {
       box-shadow: 0 0 10px rgba(0, 0, 0, .52);
     }
   }
-
-  
 }
 
 

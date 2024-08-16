@@ -1,8 +1,7 @@
 <template>
   <nav class="menu" :class="{ 'menu--open': isMenuOpen }">
-    <div class="menu__toggle">
-      <rd-button @click="toggleMenu" icon-before="menu" visual="ghost" color="white" size="full-width" />
-    </div>
+    <rd-button class="menu__toggle" @click="toggleMenu" icon-before="menu" visual="ghost" color="white"
+        size="full-width" />
 
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="item.link" :target="item.target">{{
       $t(item.name) }}</nuxt-link>

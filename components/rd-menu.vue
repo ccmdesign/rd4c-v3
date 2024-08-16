@@ -1,14 +1,20 @@
 <template>
   <nav class="menu" :class="{ 'menu--open': isMenuOpen }">
-    <rd-button @click="toggleMenu" class="menu__toggle" icon-before="menu" visual="ghost" color="white" size="full-width" /> 
+    <div class="menu__toggle">
+      <rd-button @click="toggleMenu" icon-before="menu" visual="ghost" color="white" size="full-width" />
+    </div>
+
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="item.link" :target="item.target">{{
       $t(item.name) }}</nuxt-link>
     <div class="language-selector">
       <button class="menu__item" @click="toggleLangMenu">{{ activeLang }}</button>
       <ul class="submenu" v-if="isSubmenuActive">
-        <nuxt-link if="activeLang.value != 'en'" :to="switchLocalePath('en')" class="menu__item" value="en" @click="switchLanguage('en')">EN</nuxt-link>
-        <nuxt-link if="activeLang.value != 'es'" :to="switchLocalePath('es')" class="menu__item" value="es" @click="switchLanguage('es')">ES</nuxt-link>
-        <nuxt-link if="activeLang.value != 'fr'" :to="switchLocalePath('fr')" class="menu__item" value="fr" @click="switchLanguage('fr')">FR</nuxt-link>
+        <nuxt-link if="activeLang.value != 'en'" :to="switchLocalePath('en')" class="menu__item" value="en"
+          @click="switchLanguage('en')">EN</nuxt-link>
+        <nuxt-link if="activeLang.value != 'es'" :to="switchLocalePath('es')" class="menu__item" value="es"
+          @click="switchLanguage('es')">ES</nuxt-link>
+        <nuxt-link if="activeLang.value != 'fr'" :to="switchLocalePath('fr')" class="menu__item" value="fr"
+          @click="switchLanguage('fr')">FR</nuxt-link>
       </ul>
     </div>
   </nav>
@@ -103,7 +109,7 @@ onMounted(() => {
   }
 }
 
-.menu__toggle {
+.menu__toggle.menu__toggle.menu__toggle {
   @media screen and (max-width: 768px) {
     font-size: 1.25rem;
     display: block;

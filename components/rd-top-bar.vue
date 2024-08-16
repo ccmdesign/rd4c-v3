@@ -15,6 +15,7 @@
   background: var(--base-color);
   grid-template-columns: 1fr auto;
   padding: var(--s1);
+  gap: var(--s1);
   justify-content: space-between;
   align-items: center;
 }
@@ -25,6 +26,5 @@
 }
 .top-bar .menu { 
   flex: 0; 
-  margin-left: var(--s1);
   }
 </style>

@@ -7,6 +7,7 @@ const { getPublications } = require('./directus/publications');
 const { getVideos } = require('./directus/videos');
 const { getTeam } = require('./directus/team');
 const { getFooter } = require('./directus/footer');
+// const { getPrinciplesV2 } = require('./directus/principles-v2');
 
 
 console.log('');
@@ -22,3 +23,4 @@ getPrinciples();
 getPublications();
 getTeam();
 getVideos();
+// getPrinciplesV2();

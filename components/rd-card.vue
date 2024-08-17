@@ -20,7 +20,7 @@
         <div class="rd-card__action">
           <a v-if="content.url" class="button" data-size="full-width" color="primary" :href="content.url">Read
             More</a>
-          <a v-else class="button" color="primary" data-size="full-width" :href="content._path">
+          <a v-else class="button" color="primary" data-size="full-width" :href="computedUrl">
             Read More</a>
         </div>
       </div>

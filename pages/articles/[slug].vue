@@ -15,7 +15,6 @@
     <rd-prose>
       <div v-html="data.post.main_content"></div>
     </rd-prose>
-    <pre>{{ data.post }}</pre>
     <!-- <contentDoc :document="data.post.main_content"></contentDoc> -->
   </div>
 </template>

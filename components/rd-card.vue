@@ -24,7 +24,7 @@
       <div class="rd-card__action">
         <a v-if="content.url" class="button" data-size="full-width" color="primary" :href="content.url"
           target="_blank">Go to Resource</a>
-        <a v-else class="button" color="primary" data-size="full-width" :to="content._path">
+        <a v-else class="button" color="primary" data-size="full-width" :href="content._path">
           Read More</a>
       </div>
     </div>

@@ -45,37 +45,33 @@
   --rd-yellow: 39, 88%, 58%;
   --rd-orange: 29, 100%, 44%;
   --rd-purple: 238, 33%, 46%;
-  --rd-red: 355, 84%, 47%;
+  --rd-red: 355, 66%, 41%;
   --rd-teal: 180, 76%, 40%;
 
 
-  --base-h: 0;
-  --base-s: 0%;
-  --base-l: 20%;
+  --base-h: 202;
+  --base-s: 60%;
+  --base-l: 16%;
 
-  --primary-h: 12;
-  --primary-s: 100%;
-  --primary-l: 67%;
+  --primary-h: 216;
+  --primary-s: 58%;
+  --primary-l: 29%;
 
-  --accent-h: 39;
-  --accent-s: 88%;
-  --accent-l: 58%;
+  --accent-h: 12;
+  --accent-s: 100%;
+  --accent-l: 61%;
 
-  --secondary-h: 355;
-  --secondary-s: 56%;
-  --secondary-l: 51%;
+  --secondary-h: 39;
+  --secondary-s: 88%;
+  --secondary-l: 58%;
 
   --tertiary-h: 170;
-  --tertiary-s: 74%;
-  --tertiary-l: 36%;
+  --tertiary-s: 99%;
+  --tertiary-l: 32%;
   
-  --quaternary-h: 39;
-  --quaternary-s: 77%;
-  --quaternary-l: 58%;
-
-  
-
-
+  --quaternary-h: 212;
+  --quaternary-s: 59%;
+  --quaternary-l: 75%;
 
 
   /* Feedback colors */
@@ -101,65 +97,6 @@
   /* --black-hsl: 0%;   */
   /* --black-hsl: 5%; */
 }
-
-/* Colors from 11ty */
-:root {
-  --rd4c-red-hsl: 355, 84%, 47%;
-  --rd4c-red-text-hsl: var(--rd4c-red-hsl);
-
-  --rd4c-green-hsl: 170, 100%, 32%;
-  --rd4c-green-text-hsl: 170, 100%, 26%;
-
-  --rd4c-yellow-hsl: 39, 88%, 58%;
-  --rd4c-yellow-text-hsl: 39, 89%, 33%;
-  --rd4c-dark-yellow-text: var(--rd4c-yellow-hsl);
-
-  --rd4c-blue-hsl: 202, 68%, 49%;
-  --rd4c-blue-text-hsl: 202, 69%, 41%;
-
-  --rd4c-orange-hsl: 29, 100%, 44%;
-  --rd4c-orange-text-hsl: 29, 100%, 37%;
-
-  --rd4c-purple-hsl: 238, 33%, 46%;
-  --rd4c-purple-text-hsl: 238, 33%, 46%;
-
-  --rd4c-dark-gray: 255, 6%, 43%;
-  --rd4c-darker-gray: 0, 0%, 19%;
-
-  --rd4c-red-color: hsla(var(--rd4c-red-hsl), 1);
-  --rd4c-green-color: hsla(var(--rd4c-green-hsl), 1);
-  --rd4c-yellow-color: hsla(var(--rd4c-yellow-hsl), 1);
-  --rd4c-blue-color: hsla(var(--rd4c-blue-hsl), 1);
-  --rd4c-orange-color: hsla(var(--rd4c-orange-hsl), 1);
-  --rd4c-purple-color: hsla(var(--rd4c-purple-hsl), 1);
-
-  --rd4c-red-text: hsla(var(--rd4c-red-text-hsl), 1);
-  --rd4c-green-text: hsla(var(--rd4c-green-text-hsl), 1);
-  --rd4c-yellow-text: hsla(var(--rd4c-yellow-text-hsl), 1);
-  --rd4c-blue-text: hsla(var(--rd4c-blue-text-hsl), 1);
-  --rd4c-orange-text: hsla(var(--rd4c-orange-text-hsl), 1);
-  --rd4c-purple-text: hsla(var(--rd4c-purple-text-hsl), 1);
-
-
-  /* O ideal seria substituirmos essas variáveis para seguir o mesmo namespace do DS.*/
-  /* Sei que estamos correndo contra o tempo, então vamos deixar isso para a semana que vem.*/
-
-  --base-red: #DE1325;
-  --base-green: #00A388;
-  --text-green: #00856F;
-  --base-yellow: #F2B134;
-  --text-yellow: #9F6B09;
-  --text-dark-yellow: #f2b134;
-  --base-blue: #2695D3;
-  --text-blue: #207CB1;
-  --base-orange: #E06C00;
-  --text-orange: #BD5B00;
-  --base-purple: #4F519C;
-  --dark-gray: #676A73;
-  --darker-gray: #303030;
-}
-
-
 
 :root,
 :after,
@@ -227,7 +164,7 @@
   /* H2 */
   /* --h2-font-family: var(--display-font); */
   --h2-font-size: clamp(1.5rem, 1.5vw + 1rem, 2.25rem);
-  /* --h2-text-color: var(--primary-color); */
+  --h2-text-color: hsla(var(--rd-purple), 1);
   /* --h2-line-height: 1.2; */
   --h2-font-weight: 300;
 

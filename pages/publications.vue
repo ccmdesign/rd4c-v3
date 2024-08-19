@@ -16,22 +16,15 @@
       </rd-card-grid>
     </rd-base-section>
 
-    <rd-divider :content="$t('divider.resources')" color="purple" />
-    <rd-base-section>
-      <rd-card-grid>
-        <rd-card v-for="i in resources" v-bind:key="i.slug" :content="i" />
-      </rd-card-grid>
-    </rd-base-section>
-
     <rd-divider :content="$t('divider.reports')" color="purple" />
     <rd-base-section>
       <rd-card-grid>
         <rd-card v-for="i in reports" v-bind:key="i.slug" :content="i" />
       </rd-card-grid>
     </rd-base-section>
-    <pre>
+    <!-- <pre>
       {{ JSON.stringify(resources, null, 2) }}
-    </pre>
+    </pre> -->
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>
@@ -45,7 +38,6 @@ const {
   block_intro } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-22.jpg"
 
-const resources = await queryContent('publications').where({"publication_type": 'resource'}).find();
 const reports = await queryContent('publications').where({"publication_type": 'report'}).find();
 const caseStudies = await queryContent('publications').where({"publication_type": 'case_study'}).find();
 

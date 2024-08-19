@@ -19,8 +19,6 @@
       <div class="cms-content" v-html="block_approach.description"></div>
     </rd-split-section>
 
-    <rd-principles-section :block="block_principle_led"/>
-    
     <!-- @ToDo: Merge these two components -->
     <rd-divider v-if="block_team.brow" :content="block_team.brow" color="primary" class="divider"/>
     <rd-team-section :block="block_team"/>

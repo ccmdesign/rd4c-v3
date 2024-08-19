@@ -45,7 +45,7 @@
       </p>
     </rd-split-section>
 
-    <rd-divider v-if="block_team.brow" :content="block_team.brow" color="primary" class="divider" />
+    <rd-divider v-if="block_team.brow" :content="block_team.brow" color="purple" class="divider" />
 
     <rd-team-section :block="block_team" />
 

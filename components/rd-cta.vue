@@ -13,7 +13,8 @@
 
 <style lang="scss" scoped>
 .cta {
-  background-color: var(--rd4c-green-color);
+  --_cta-color: var(--secondary-color);
+  background-color: var(--_cta-color);
   padding: var(--s1) 0;
 }
 

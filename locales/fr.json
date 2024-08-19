@@ -11,8 +11,7 @@
     "divider": {
         "principle": "Principe",
         "caseStudies": "Études de cas",
-        "resources": "Ressources",
-        "reports": "Rapports"
+        "tools": "Outils"
     },
     "buttons": {
         "view-all": "Voir tout",

@@ -16,10 +16,10 @@
       </rd-card-grid>
     </rd-base-section>
 
-    <rd-divider :content="$t('divider.reports')" color="purple" />
+    <rd-divider :content="$t('divider.tools')" color="purple" />
     <rd-base-section>
       <rd-card-grid>
-        <rd-card v-for="i in reports" v-bind:key="i.slug" :content="i" />
+        <rd-card v-for="i in tools" v-bind:key="i.slug" :content="i" />
       </rd-card-grid>
     </rd-base-section>
     <!-- <pre>
@@ -38,7 +38,7 @@ const {
   block_intro } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-22.jpg"
 
-const reports = await queryContent('publications').where({"publication_type": 'report'}).find();
+const tools = await queryContent('publications').where({"publication_type": 'tools'}).find();
 const caseStudies = await queryContent('publications').where({"publication_type": 'case_study'}).find();
 
 

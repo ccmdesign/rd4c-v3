@@ -29,6 +29,9 @@
         <rd-card v-for="i in reports" v-bind:key="i.slug" :content="i" />
       </rd-card-grid>
     </rd-base-section>
+    <pre>
+      {{ JSON.stringify(resources, null, 2) }}
+    </pre>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>
@@ -45,6 +48,10 @@ block_hero.image = "/images/testing/test-22.jpg"
 const resources = await queryContent('publications').where({"publication_type": 'resource'}).find();
 const reports = await queryContent('publications').where({"publication_type": 'report'}).find();
 const caseStudies = await queryContent('publications').where({"publication_type": 'case_study'}).find();
+
+
+// console.log(reports)
+// console.log(caseStudies)
 
 </script>
 

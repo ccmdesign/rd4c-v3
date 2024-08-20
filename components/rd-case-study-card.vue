@@ -1,28 +1,29 @@
 <template>
   <div class="rd-case-study-card" :is-active="isActive" @click="isActive = !isActive">
+    <div class="image">
+      <img :src="`https://cms.thegovlab.com/assets/${content.image.id}`" alt="">
+    </div>
     <div class="content stack">
-      <h4 v-if="content.brow">{{ content.brow }}</h4>
-      <!-- <h4 v-else>{{ content.publication_type }}</h4> -->
-      <h3>{{ isActive.value }}{{ content.heading }}</h3>
-      <h5>{{ content.tagline }}</h5>
-      <p v-if="isActive == false" v-html="cropContent(content.description)"></p>
-      <p v-else v-html="content.description"></p>
-      <p>
+      <h4 class="brow" v-if="content.brow">{{ content.brow }}</h4>
+      <h4 class="brow" v-else>Case Study</h4>
+      <h3 class="heading">{{ isActive.value }}{{ content.heading }}</h3>
+      <h5 class="tagline">{{ content.tagline }}</h5>
+      <p class="main-text" v-html="content.description"></p>
+      <div class="actions">
         <a class="button" :href="content.url" target="_blank" rel="noopener noreferrer" data-color="accent">Open
           Document</a>
-      </p>
-      <div>
-        <cluster-l>
-          <span v-for="i in principles">{{ i }}</span>
-        </cluster-l>
       </div>
+      <cluster-l class="principles-list">
+        <rd-chip v-for="i in content.principles">{{ i }}</rd-chip>
+      </cluster-l>
     </div>
-    <img :src="`https://cms.thegovlab.com/assets/${content.image.id}`" alt="">
-    <!-- <pre>{{ content }}</pre> -->
+
   </div>
 </template>
 
 <script setup>
+const isActive = ref(false);
+
 defineProps({
   content: {
     type: Object,
@@ -30,40 +31,154 @@ defineProps({
   }
 });
 
-const isActive = ref(false);
-
-function cropContent(content) {
-  if (typeof content !== 'string') {
-    return content;
-  }
-  return content.length > 600 ? content.substring(0, 600) + '...' : content;
-}
-
-
 </script>
 
 <style lang="scss" scoped>
+// Card Variables
 .rd-case-study-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--s1);
-  transition: all 0.5s;
-  height: calc(auto);
+  --_principle-hsl: var(--tertiary-hsl);
 }
+
+
+//////////////////////
+// Card Structure
+/////////////////////
+
+.rd-case-study-card {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    height: auto;
+    gap: var(--s1);
+    grid-template-columns: 1fr 500px;
+    grid-template-areas: "content image";
+  }
+}
+
+// Left Panel Structure
+.content {
+  padding: var(--s1);
+  @media screen and (min-width: 768px) { 
+    padding: var(--s2); 
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: content;
+}
+
+// Right Panel Structure
+.image {
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  grid-area: image;
+}
+
+//////////////////////
+// Card Visuals
+//////////////////////
+
 .rd-case-study-card {
   background-color: var(--white-color);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: var(--base-border-radius);
+  border: 2px solid hsla(var(--base-hsl), 0.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0);
+}
+
+.rd-case-study-card[is-active="true"] {
+  border: 2px solid hsla(var(--base-hsl), 0.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+
+  @media screen and (min-width: 768px) { 
+    transform: scale(1.025);
+  }
+}
+
+// Setting vertical spacing
+.stack { --space: var(--s0); }
+.principles-list { --space: var(--s2); }
+
+img {
+  max-width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  object-fit: cover;
   border-radius: var(--base-border-radius);
 }
 
-.content {
-  padding: var(--s2);
+.brow {
+  font-size: var(--s0);
+  text-transform: uppercase;
+  font-weight: 800;
+  color: hsla(var(--_principle-hsl), 1);
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0;
+.heading {
+  --space: 0;
+  line-height: 1;
 }
+
+.tagline {
+  
+}
+
+
+//////////////////////
+// Card Transitions //
+//////////////////////
+.rd-case-study-card {
+  transition: all 0.5s;
+}
+
+// Principles List Transition
+.principles-list {
+  max-height: 2rem;
+  overflow: clip;
+  transition: all 0.5s;
+}
+
+[is-active="true"] .principles-list { max-height: 5rem; }
+
+// Image transition
+img {
+  transform: rotate(-5deg) scale(1);
+  transition: all 0.5s;
+}
+
+[is-active="true"] img { 
+  transform: rotate(0deg) scale(1.05);;
+  @media screen and (min-width: 768px) { transform: rotate(0deg) scale(1.1); }
+}
+
+// Complex transition for the text truncate effect
+.main-text {
+  --lh: 1.62;
+  --max-lines: 6;
+  position: relative;
+  max-height: calc(var(--lh) * var(--max-lines) * 1em);
+  overflow: clip;
+  transition: all calc(0.05s * var(--max-lines));
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    transition: all calc(0.5s);
+    background: linear-gradient(to bottom, transparent, hsla(var(--white-hsl), 1) 75%);
+  }
+}
+
+// Text Truncate Effect [isActive] State
+[is-active="true"] .main-text {
+  --max-lines: 80;
+
+  &::after {
+    top: 100%;
+    transition-delay: .15s;
+  }
+}
+
 </style>

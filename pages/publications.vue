@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 const pageContent = await queryContent('pages', 'publications').findOne();
 const { 
@@ -48,11 +48,10 @@ block_hero.image = "/images/testing/test-22.jpg"
 const tools = await queryContent('publications').where({"publication_type": 'tools'}).sort({sort: 1}).find();
 const caseStudies = await queryContent(locale.value, 'publications').where({"publication_type": 'case_study'}).sort({sort: 1}).find();
 
-
-// @ToDo: @Douglas, preciso da sua ajuda pra passar as traduções pra dentro do array "tabs"
-const tabs = ['Case Studies', 'Tools'];
-// $t('divider.caseStudies')
-// $t('divider.tools')
+const tabs = ref([t('divider.caseStudies'), t('divider.tools')]);
+watch(() => locale.value, () => {
+  tabs.value = [t('divider.caseStudies'), t('divider.tools')];
+});
 
 </script>
 

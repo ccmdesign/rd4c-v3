@@ -48,10 +48,10 @@ block_hero.image = "/images/testing/test-22.jpg"
 const tools = await queryContent('publications').where({"publication_type": 'tools'}).sort({sort: 1}).find();
 const caseStudies = await queryContent(locale.value, 'publications').where({"publication_type": 'case_study'}).sort({sort: 1}).find();
 
-const tabs = ref([t('divider.caseStudies'), t('divider.tools')]);
-watch(() => locale.value, () => {
-  tabs.value = [t('divider.caseStudies'), t('divider.tools')];
-});
+// const tabs = ref([t('divider.caseStudies'), t('divider.tools')]);
+// watch(() => locale.value, () => {
+//   tabs.value = [t('divider.caseStudies'), t('divider.tools')];
+// });
 
 </script>
 

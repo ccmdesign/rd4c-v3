@@ -8,19 +8,33 @@ const objectContructor = async (dir, fs) => {
     "translations.*"
   ]
 
-  let principles = await common.getDirectusData("rd4c_principles", junctionFields);
+  let publications = await common.getDirectusData("rd4c_publications", junctionFields);
+
+  publications = publications.data.sort((a, b) => {
+    if (a.sort > b.sort) return 1;
+    else return -1;
+  });
 
   const translations = [];
   const availableLang = [];
 
-  const finalPrinciples = principles.data.map((item) => {
+  const finalPublications = publications.map((item, index) => {
     let i = { ...{'lang': 'en'}, ...item };
-    i.slug = common.slugify(item.name);
+    i.sort = index + 1;
+    i.slug = common.slugify(item.title);
+    i.heading = item.title;
+    i.main_content = item.description;
+    i.cover_image = item.image ? common.getImage(item.image.id) : '';
     writeInLocaleFolder(i.lang, i, true);
     
     item.translations.forEach((translation) => {
       let tr = { ...{'itemId': item.id, 'lang': common.LANGUAGES[translation.languages_code]}, ...translation };
-      tr.slug = common.slugify(tr.name);
+      tr.sort = i.sort;
+      tr.slug = common.slugify(tr.title);
+      tr.url = i.url;
+      tr.cover_image = i.cover_image;
+      tr.publication_type = i.publication_type;
+      tr.main_content = i.main_content;
       writeInLocaleFolder(tr.lang, tr, true);
       translations.push(tr);
       availableLang.push(tr.lang);
@@ -33,7 +47,7 @@ const objectContructor = async (dir, fs) => {
   for(key in common.LANGUAGES) {
     let lang = common.LANGUAGES[key];
     translations.forEach((i) => {
-      let result = finalPrinciples.filter((j) => j.id !== i.itemId);
+      let result = finalPublications.filter((j) => j.id !== i.itemId);
       
       if(lang !== 'en' && availableLang.includes(lang)) {
         result.forEach((item) => {
@@ -41,18 +55,18 @@ const objectContructor = async (dir, fs) => {
         });
 
       } else if(lang !== 'en' && !availableLang.includes(lang)) {
-        finalPrinciples.forEach((item) => {
+        finalPublications.forEach((item) => {
           writeInLocaleFolder(lang, item);
         });
       }
 
     });
   }
-      
+  
 }
 
 const writeInLocaleFolder = async (lang, item, log=false) => {
-  const dir = `./content/${ lang }/principles`;
+  const dir = `./content/${ lang }/publications`;
   
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
@@ -69,11 +83,11 @@ const writeInLocaleFolder = async (lang, item, log=false) => {
     }
   );
 
-  if(log) console.log("WRITING PRINCIPLES: ", item.slug + ".json");
+  if(log) console.log("WRITING PUBLICATIONS: ", item.slug + ".json");
 
 }
 
-const getPrinciplesV2 = async () => {
+const getPublicationsV2 = async () => {
 
   const dir = "./content";
   if (fs.existsSync(dir)) {
@@ -118,5 +132,5 @@ function checkFolder(dirName) {
 }
 
 module.exports = {
-  getPrinciplesV2
+  getPublicationsV2
 }

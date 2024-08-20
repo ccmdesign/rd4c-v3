@@ -19,13 +19,13 @@
         <h4 v-if="content.tagline">{{ content.tagline }}</h4>
       </header>
       <div>
-        <p>{{ content.description }}</p>
+        <span v-html="content.description"></span>
       </div>
       <div class="rd-card__action">
-        <a v-if="content.url" class="button" data-size="full-width" color="primary" :href="content.url"
+        <a v-if="content.url && content.url.startsWith('https')" class="button" data-size="full-width" color="primary" :href="content.url"
           target="_blank">Go to Resource</a>
-        <a v-else class="button" color="primary" data-size="full-width" :href="content._path">
-          Read More</a>
+        <nuxt-link v-else class="button" color="primary" data-size="full-width" :to="content._path">
+          Read More</nuxt-link>
       </div>
     </div>
     <!-- <pre>{{ content }}</pre> -->
@@ -42,16 +42,6 @@ const props = defineProps({
     default: () => ({})
   }
 });
-
-// const slugifiedHeading = computed(() => props.content.slug);
-
-// @ToDo: Douglas, estávamos usando isso na versão anterior. Atualemente estou usando o
-// attr _path que vem do Directus/Content. Por favor, cheque se a minha solução funciona ou 
-// devemos continuar usando o slug.
-const computedUrl = computed(() => {
-  return `/articles/${props.content.slug}`;
-});
-
 
 </script>
 

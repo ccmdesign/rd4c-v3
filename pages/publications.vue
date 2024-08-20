@@ -22,9 +22,6 @@
         <rd-card v-for="i in tools" v-bind:key="i.slug" :content="i" />
       </rd-card-grid>
     </rd-base-section>
-    <!-- <pre>
-      {{ JSON.stringify(resources, null, 2) }}
-    </pre> -->
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>
@@ -38,12 +35,8 @@ const {
   block_intro } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-22.jpg"
 
-const tools = await queryContent('publications').where({"publication_type": 'tools'}).find();
-const caseStudies = await queryContent('publications').where({"publication_type": 'case_study'}).find();
-
-
-// console.log(reports)
-// console.log(caseStudies)
+const tools = await queryContent('publications').where({"publication_type": 'tools'}).sort({sort: 1}).find();
+const caseStudies = await queryContent(locale.value, 'publications').where({"publication_type": 'case_study'}).sort({sort: 1}).find();
 
 </script>
 

@@ -30,7 +30,7 @@ const {
   block_intro } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-23.jpg"
 
-const principles = await queryContent('principles').find();
+const principles = await queryContent(locale.value, 'principles').find();
 
 </script>
 

@@ -115,7 +115,7 @@ img {
 
 .heading {
   --space: 0;
-  line-height: 1;
+  line-height: 1.35;
 }
 
 .tagline {

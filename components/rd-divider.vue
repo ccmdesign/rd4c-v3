@@ -10,7 +10,7 @@
 const props = defineProps({
   content: {
     type: String,
-    required: true
+    required: false
   },
   color: {
     type: String,

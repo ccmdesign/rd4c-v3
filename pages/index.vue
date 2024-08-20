@@ -9,6 +9,11 @@
 
     <rd-principles-section :block="block_principle_led" id="principles" />
 
+    <!-- @ToDo: @Douglas, adicionei esse divider aqui. 
+         Preciso que vc configure essa string no directus
+    -->
+    <rd-divider color="primary" class="divider" content="What we do" />
+
     <rd-split-section id="case-studies" image="/images/testing/test-14.jpg">
       <h2>{{ block_case_studies.title }}</h2>
       <div class="cms-content" v-html="block_case_studies.description"></div>
@@ -53,7 +58,8 @@
     <rd-split-section id="get-involved" image="/images/testing/test-28.jpg">
       <h2>{{ block_get_involved.title }}</h2>
       <div class="cms-content" v-html="block_get_involved.description"></div>
-      <p><rd-button href="http://eepurl.com/gKa2S1" visual="secondary" color="primary">{{ $t('buttons.getInvolved') }}</rd-button></p>
+      <p><rd-button href="http://eepurl.com/gKa2S1" visual="secondary" color="primary">{{ $t('buttons.getInvolved')
+          }}</rd-button></p>
     </rd-split-section>
 
     <rd-split-section id="stay-engaged" image="/images/testing/test-25.jpg">

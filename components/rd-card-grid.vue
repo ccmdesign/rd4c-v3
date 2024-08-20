@@ -16,11 +16,11 @@
 
 .rd-card-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--s1);
   
   @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
   }
 }
 </style>

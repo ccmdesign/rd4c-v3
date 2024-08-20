@@ -32,7 +32,11 @@ defineProps({
     required: true
   }
 });
-const principles = await queryContent('principles').find();
+const { locale } = useI18n()
+
+const pageContent = await queryContent('pages').where({ title: 'Principles' }).findOne();
+
+const principles = await queryContent(locale.value, 'principles').find();
 </script>
 
 <style lang="scss" scoped>

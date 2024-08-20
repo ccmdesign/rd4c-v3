@@ -1,7 +1,7 @@
 <template>
   <div class="rd-case-study-card" :is-active="isActive" @click="isActive = !isActive">
     <div class="image">
-      <img :src="`https://cms.thegovlab.com/assets/${content.image.id}`" alt="">
+      <img :src="content.cover_image" alt="">
     </div>
     <div class="content stack">
       <h4 class="brow" v-if="content.brow">{{ content.brow }}</h4>

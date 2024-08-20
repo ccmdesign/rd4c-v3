@@ -1,7 +1,7 @@
 <template>
   <div>
     <rd-hero :content="block_hero" />
-    
+
     <rd-base-section>
       <div class="stack" v-html="block_intro.description"></div>
     </rd-base-section>
@@ -9,9 +9,13 @@
       <h3 class="aux">[Interactive global map that can be clicked to display projects my continent]</h3>
     </rd-base-section> -->
 
-    <rd-tabs-section :tabs="tabs" color="primary">
+    <rd-tabs-section color="primary">
+      <template #tabs>
+        <span>{{ $t('divider.caseStudies') }}</span>
+        <span>{{ $t('divider.tools') }}</span>
+      </template>
+
       <template #tab-1>
-        <!-- <rd-divider :content="$t('divider.caseStudies')" color="purple" /> -->
         <rd-base-section>
           <stack-l space="var(--s3)">
             <rd-case-study-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
@@ -20,8 +24,8 @@
       </template>
 
       <template #tab-2>
-        <!-- <rd-divider :content="$t('divider.tools')" color="purple" /> -->
         <rd-base-section>
+          <h2>Tools Temp</h2>
           <rd-card-grid>
             <rd-card v-for="i in tools" v-bind:key="i.slug" :content="i" />
           </rd-card-grid>

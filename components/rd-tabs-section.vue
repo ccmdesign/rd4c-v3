@@ -1,14 +1,14 @@
 <template>
   <article class="rd-tabs-section" :color="color">
     <rd-divider :color="color">
-      <h2>
-        <span v-for="(tab, index) in tabs" :key="index" @click="activeTab = tab" :isActive="activeTab === tab">{{ tab }}</span>
+      <h2 class="tab-triggers">
+        <slot name="tabs" />
       </h2>
     </rd-divider>
 
     <div class="panels">
-      <transition name="fade" v-for="(tab, index) in tabs" :key="index">
-        <section v-show="activeTab === tab" :class="['panel', `panel-${index + 1}`]">
+      <transition name="fade" v-for="(tab, index) in tabElements" :key="index">
+        <section v-show="activeTab === index" :class="['panel', `panel-${index + 1}`]">
           <slot :name="'tab-' + (index + 1)"></slot>
         </section>
       </transition>
@@ -17,20 +17,30 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const props = defineProps({
-  tabs: {
-    type: Array,
-    required: true
-  },
   color: {
     type: String,
     default: 'purple'
   }
 });
 
-const activeTab = ref(props.tabs[0]);
+const activeTab = ref(0);
+const tabElements = ref([]);
+
+onMounted(() => {
+  tabElements.value = Array.from(document.querySelectorAll('.tab-triggers span'));
+  tabElements.value.forEach((tab, index) => {
+    tab.setAttribute('is-active', index === activeTab.value);
+    tab.addEventListener('click', () => {
+      activeTab.value = index;
+      tabElements.value.forEach((t, i) => {
+        t.setAttribute('is-active', i === activeTab.value);
+      });
+    });
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -46,18 +56,18 @@ h2 {
   gap: var(--s2);
 }
 
-span {
+:deep(span) {
   cursor: pointer;
   transition: all .3s;
 }
 
-span[isActive="false"] {
+:deep(span[is-active="false"]) {
   opacity: .6;
   transform: scale(.7);
   transform-origin: bottom;
 }
 
-span[isActive="true"] { opacity: 1; }
+:deep(span[is-active="true"]) { opacity: 1; }
 
 .panels {
   position: relative;

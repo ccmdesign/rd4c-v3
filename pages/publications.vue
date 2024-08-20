@@ -1,8 +1,9 @@
 <template>
   <div>
     <rd-hero :content="block_hero" />
+    
     <rd-base-section>
-      <span v-html="block_intro.description"></span>
+      <div class="stack" v-html="block_intro.description"></div>
     </rd-base-section>
     <!-- <rd-base-section>
       <h3 class="aux">[Interactive global map that can be clicked to display projects my continent]</h3>
@@ -27,11 +28,6 @@
         </rd-base-section>
       </template>
     </rd-tabs-section>
-
-
-
-
-
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>

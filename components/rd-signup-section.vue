@@ -14,7 +14,7 @@
       <ccm-form class="form">
         <base-input placeholder="Name"/>
         <base-input placeholder="Email"/>
-        <rd-button color="primary">Signup</rd-button>
+        <rd-button size="l" color="white">Signup</rd-button>
       </ccm-form>
     </div>
     
@@ -32,7 +32,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: var(--s2);
-  padding-block: var(--s4);
+  padding-block: var(--s3);
   background-color: hsla(var(--rd-purple), 1);
   padding-inline: var(--s0);
 
@@ -76,12 +76,16 @@
 
 :deep(input) {
   background-color: transparent;
-  border-color: hsla(var(--rd-orange), 1) !important;
+  border-color: var(--white-color) !important;
   color: var(--white-color);
 
   &::placeholder {
     color: var(--white-color);
   }
+}
+
+h2 {
+  color: var(--white-color);
 }
 
 // .master-grid {

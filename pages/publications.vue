@@ -11,9 +11,9 @@
     </rd-base-section>
     <rd-divider :content="$t('divider.caseStudies')" color="purple" />
     <rd-base-section>
-      <rd-card-grid>
-        <rd-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
-      </rd-card-grid>
+      <stack-l>
+        <rd-case-study-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
+      </stack-l>
     </rd-base-section>
 
     <rd-divider :content="$t('divider.tools')" color="purple" />

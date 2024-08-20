@@ -7,37 +7,37 @@
           https://www.notion.so/ccmdesign/Conte-do-Videos-312685a4148d40c98e251b47c1c933d8?pvs=4
         -->
 
-    <rd-base-section>
-      <h2>{{ block_lessons.title }}</h2>
-      <span v-html="block_lessons.description"></span>
-        <!-- <h3 class="aux">Bites</h3> -->
-        <!-- <pre>{{ videos }}</pre> -->
+    <rd-tabs-section :tabs="tabs" color="primary">
+      <template #tab-1>
+        <rd-base-section>
+          <h2>{{ block_lessons.title }}</h2>
+          <span v-html="block_lessons.description"></span>
+          <rd-card-grid>
+            <rd-card v-for="video in videos" :content="video" />
+          </rd-card-grid>
+        </rd-base-section>
+      </template>
 
-        <rd-card-grid>
-          <rd-card v-for="video in videos" :content="video" />
-        </rd-card-grid>
-      
-    </rd-base-section>
+      <template #tab-2>
+        <rd-base-section>
+          <h2>{{ block_webinars.title }}</h2>
+          <span v-html="block_webinars.description"></span>
+          <rd-card-grid>
+            <rd-card v-for="video in videos" :content="video" />
+          </rd-card-grid>
+        </rd-base-section>
+      </template>
 
-    <rd-base-section>
-      <h2>{{ block_webinars.title }}</h2>
-      <span v-html="block_webinars.description"></span>
-      <!-- <h3 class="aux">Webinars</h3> -->
-      <rd-card-grid>
-        <rd-card v-for="video in videos" :content="video" />
-      </rd-card-grid>
-
-      
-    </rd-base-section>
-
-    <rd-base-section>
-      <h2>{{ block_explainers.title }}</h2>
-      <span v-html="block_explainers.description"></span>
-      <!-- <h3 class="aux">Explainers</h3> -->
-      <rd-card-grid>
-        <rd-card v-for="video in videos" :content="video" />
-      </rd-card-grid>
-    </rd-base-section>
+      <template #tab-3>
+        <rd-base-section>
+          <h2>{{ block_explainers.title }}</h2>
+          <span v-html="block_explainers.description"></span>
+          <rd-card-grid>
+            <rd-card v-for="video in videos" :content="video" />
+          </rd-card-grid>
+        </rd-base-section>
+      </template>
+    </rd-tabs-section>
 
     <rd-signup-section />
   </div>
@@ -56,6 +56,9 @@ const {
   block_hero.image = "/images/testing/test-26.jpg"
 
 const videos = await queryContent('videos').find();
+
+const tabs = ['Bites', 'Webinars', 'Explainers'];
+
 
 </script>
 

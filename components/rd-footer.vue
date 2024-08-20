@@ -149,10 +149,16 @@ defineProps({
   p:has(.by-line) {
     margin-left: auto;
   }
+
+  a {
+    color: var(--tertiary-color);
+  }
 }
 
 .by-line {
   color: hsl(var(--white-hsl), 0.5);
+
+  a { color: white;}
 }
 
 .by-line {

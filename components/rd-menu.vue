@@ -73,7 +73,7 @@ onMounted(() => {
     white-space: nowrap;
     
     &:hover {
-      color: var(--primary-color);
+      color: var(--accent-color);
     }
   }
   @media screen and (max-width: 768px) {

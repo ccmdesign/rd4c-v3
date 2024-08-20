@@ -6,10 +6,10 @@
     <footer>
       <rd-cta />
       <rd-footer :footer-content="footerData"/>
-      <div class="by-ccm">
+      <!-- <div class="by-ccm">
         <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>
         <a href="https://www.ccmdesign.ca" target="_blank">by ccm.design</a>
-      </div>
+      </div> -->
     </footer>
   </div>
 </template>

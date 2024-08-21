@@ -43,10 +43,11 @@ defineProps({
 
 .panel {
   padding-inline: var(--_padding-inline);
+  
 }
 
 .panel--image {
-  @media screen and (min-width: 768px) { aspect-ratio: 1 / 1; }
+  @media screen and (min-width: 1400px) { aspect-ratio: 1 / 1; }
   object-position: center;
   padding-inline: 0;
 

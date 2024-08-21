@@ -4,7 +4,7 @@
       <slot />
     </main>
     <footer>
-      <rd-cta />
+      <rd-signup-section />
       <rd-footer :footer-content="footerData"/>
       <!-- <div class="by-ccm">
         <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>

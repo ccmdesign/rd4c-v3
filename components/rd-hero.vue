@@ -75,8 +75,9 @@ defineProps({
 }
 
 .rd-hero {
+  min-height: 60svh; 
+  // max-height: 60svh;
   @media screen and (max-width: 768px) { 
-    min-height: 80svh; 
     text-align: center;
   }
   @media screen and (min-width: 768px) { 
@@ -86,7 +87,7 @@ defineProps({
 
   &__content { 
     align-self: center;
-    padding: var(--space-l-xl) var(--space-xl-2xl);
+    padding: var(--space-l-xl) var(--space-m-xl);
   }
 
   &__headings {

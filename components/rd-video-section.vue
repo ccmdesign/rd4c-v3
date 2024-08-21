@@ -34,10 +34,10 @@ defineProps({
 .video-section {
   --_color-1: var(--tertiary-color);
   --_color-2: var(--white-color);
-  --_vertical-padding: var(--space-l-xl);
 
   // This padding bottom matches the padding top of the .video-container. 
   // Made this way to make the bg gradient consistent
+  --_vertical-padding: var(--space-l-xl);
   padding-bottom: var(--_vertical-padding); 
 }
 

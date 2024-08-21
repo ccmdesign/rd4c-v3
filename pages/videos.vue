@@ -36,8 +36,6 @@
         </rd-base-section>
       </template>
     </rd-tabs-section>
-
-    <rd-signup-section />
   </div>
 </template>
 

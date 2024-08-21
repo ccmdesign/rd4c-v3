@@ -25,7 +25,7 @@
     
     <!-- @ToDo: Merge these two components -->
     <rd-divider :content="block_testimonials.title" color="yellow"></rd-divider>
-    <rd-video-section id="testimonials" video="https://www.youtube.com/embed/x4Nu8XhaDcw?si=rpCmMPwDqmXyVJ36">
+    <rd-video-section id="testimonials" class="testimonials" video="https://www.youtube.com/embed/x4Nu8XhaDcw?si=rpCmMPwDqmXyVJ36">
       <div class="cms-content" v-html="block_testimonials.description"></div>
     </rd-video-section>
   </div>
@@ -54,4 +54,9 @@ block_hero.image = "/images/testing/test-9.jpg";
     display: grid;
     grid-template-columns: minmax(250px, 1fr);
   }
+
+  .testimonials {
+    --_color-1: hsla(var(--rd-yellow), 1);
+  }
+
 </style>

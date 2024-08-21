@@ -10,7 +10,7 @@
       </div>
 
       <h3 class="content-title footer-heading">{{ footerContent.about_heading_text }}</h3>
-      <div class="content" data-column="two-columns">
+      <div class="content columns">
         <spa v-html="footerContent.content"></spa>
       </div>
 
@@ -82,13 +82,6 @@ defineProps({
 .logos { grid-area: logos; }
 .content { grid-area: content; }
 .after-footer { grid-area: by-line; }
-
-.content {
-  column-width: 35ch;
-  column-gap: var(--space-m-l);
-  
-  * + * { margin-top: var(--space-xs-s); }
-}
 
 .footer-section {
   padding-top: var(--s2);

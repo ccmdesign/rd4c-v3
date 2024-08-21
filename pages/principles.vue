@@ -2,7 +2,7 @@
   <div>
     <rd-hero :content="block_hero" />
 
-    <rd-base-section>
+    <rd-base-section class="intro-section">
       <center-l measure="var(--wide)" class="columns">
         <span v-html="block_intro.description"></span>
         <p><rd-button color="primary" href="/files/rd4c-synthesis-report.pdf">{{ $t('buttons.downloadReport') }}</rd-button></p>
@@ -44,16 +44,4 @@ const principles = await queryContent(locale.value, 'principles').find();
 
 .principles-grid__item {
 }
-
-.columns {
-  * + * { margin-top: var(--s-1);}
-
-  @media screen and (min-width: 768px) {
-    columns: 2;
-    column-gap: var(--s2);
-  }
-  
-}
-
-
 </style>

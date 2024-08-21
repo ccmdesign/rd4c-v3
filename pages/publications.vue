@@ -3,7 +3,7 @@
     <rd-hero :content="block_hero" />
 
     <rd-base-section>
-      <div class="stack" v-html="block_intro.description"></div>
+      <div class="columns" v-html="block_intro.description"></div>
     </rd-base-section>
     <!-- <rd-base-section>
       <h3 class="aux">[Interactive global map that can be clicked to display projects my continent]</h3>
@@ -50,5 +50,8 @@ const caseStudies = await queryContent(locale.value, 'publications').where({"pub
 
 </script>
 
-<style scoped
-  lang="scss"></style>
+<style scoped lang="scss">
+.columns {
+  --_column-width: 45ch;
+}
+</style>

@@ -5,7 +5,7 @@
     <div class="rd-principles-section__panels">
       <div class="cms-content" v-html="block.description"></div>
       <div class="flow">
-        <p><rd-button to="/principles" visual="secondary" color="primary">Explore our Approach and Principles</rd-button></p><!-- @ToDo: Translate -->
+        <p><rd-button to="/principles" visual="secondary" color="primary">Our Approach and Principles</rd-button></p><!-- @ToDo: Translate -->
         <p><rd-button to="/about" visual="secondary" color="primary">Join the Conversation</rd-button></p><!-- @ToDo: Translate -->
       </div>
       
@@ -51,37 +51,36 @@ const principles = await queryContent(locale.value, 'principles').find();
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  gap: var(--s0);
-  padding: var(--s0);
+  gap: var(--space-m-l);
+  padding: var(--space-m-l);
 
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     align-items: center;
-    gap: var(--s4);
   }
 }
 
-.rd-principles-section__panel > * { max-width: 50ch; }
+// .rd-principles-section__panel > * { max-width: 50ch; }
 
-@media screen and (min-width: 768px) {
-  .rd-principles-section__panel:nth-child(2n + 1) {
-    // align-items: flex-end;
-    // text-align: right;
-  }
-}
+// @media screen and (min-width: 768px) {
+//   .rd-principles-section__panel:nth-child(2n + 1) {
+//     // align-items: flex-end;
+//     // text-align: right;
+//   }
+// }
 
 .rd-principles-section__grid {
   max-width: var(--wrapper);
   margin: 0 auto;
-  padding: var(--s2) var(--s-2);
+  padding: var(--space-m-l) var(--space-xs-s);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--s-2);
+  gap: var(--space-3xs-2xs);
 }
 
 .grid-item {
-  padding: var(--s1);
+  padding: var(--space-m-l);
   aspect-ratio: 2/1;
   @media screen and (min-width: 768px) { aspect-ratio: 1/1; }
   align-items: center;
@@ -106,28 +105,23 @@ const principles = await queryContent(locale.value, 'principles').find();
 .grid-item[data-n="8"] { --_principle-color: var(--base-hsl); }
 
 .grid-item h4 {
-  font-size: clamp(7rem, 13vh, 15rem);
-  // @media screen and (min-width: 768px) {font-size: 15rem;}
+  font-size: clamp(7rem, calc(18vh + 1rem), 25rem);
   font-weight: 800;
   color: var(--white-color-10);
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset:0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .grid-item h3 {
-  font-size: clamp(1rem, 2vh, 1.275rem);
+  font-size: var(--step-0);
   font-weight: bold;
   color: var(--white-color);
   text-align: center;
 
   &.alt {
-    font-size: 1.5rem;
     font-weight: 400;
     text-wrap: balance;
   }

@@ -6,34 +6,32 @@
     <!-- Essa lista vai mudar para "videos", e vai receber Bites and Lessons, Webinars, Explainers
           https://www.notion.so/ccmdesign/Conte-do-Videos-312685a4148d40c98e251b47c1c933d8?pvs=4
         -->
+    <rd-tabs-section color="primary">
+      <template #tabs>
+        <span>{{ $t('tabs.bites') }}</span>
+        <span>{{ $t('tabs.webinars') }}</span>
+        <span>{{ $t('tabs.explainers') }}</span>
+      </template>
 
-    <rd-tabs-section :tabs="tabs" color="primary">
       <template #tab-1>
         <rd-base-section>
-          <h2>{{ block_lessons.title }}</h2>
-          <span v-html="block_lessons.description"></span>
           <rd-card-grid>
-            <rd-card v-for="video in videos" :content="video" />
+            <rd-card v-for="i in bites" v-bind:key="i.slug" :content="i" />
           </rd-card-grid>
         </rd-base-section>
       </template>
 
       <template #tab-2>
         <rd-base-section>
-          <h2>{{ block_webinars.title }}</h2>
-          <span v-html="block_webinars.description"></span>
           <rd-card-grid>
-            <rd-card v-for="video in videos" :content="video" />
+            <rd-card v-for="i in webinars" v-bind:key="i.slug" :content="i" />
           </rd-card-grid>
         </rd-base-section>
       </template>
-
       <template #tab-3>
         <rd-base-section>
-          <h2>{{ block_explainers.title }}</h2>
-          <span v-html="block_explainers.description"></span>
           <rd-card-grid>
-            <rd-card v-for="video in videos" :content="video" />
+            <rd-card v-for="i in explainers" v-bind:key="i.slug" :content="i" />
           </rd-card-grid>
         </rd-base-section>
       </template>
@@ -55,10 +53,9 @@ const {
   block_lessons } = await useTranslator(pageContent, locale.value);
   block_hero.image = "/images/testing/test-26.jpg"
 
-const videos = await queryContent('videos').find();
-
-const tabs = ['Bites', 'Webinars', 'Explainers'];
-
+const bites = await queryContent(locale.value, 'videos').where({ category: 'bites' }).find();
+const explainers = await queryContent(locale.value, 'videos').where({ category: 'explainers' }).find();
+const webinars = await queryContent(locale.value, 'videos').where({ category: 'webinars' }).find();
 
 </script>
 

@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         { hid: 'og:url', property: 'og:url', content: projectConfig.url },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+        // { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
       ],
       script: [],
     }

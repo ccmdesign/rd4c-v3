@@ -13,6 +13,14 @@
         "caseStudies": "Case Studies",
         "tools": "Tools"
     },
+    "tabs": {
+        "principles": "Principles",
+        "caseStudies": "Case Studies",
+        "tools": "Tools",
+        "webinars": "Webinars",
+        "explainers": "Explainers",
+        "bites": "Bites"
+    },
     "buttons": {
         "view-all": "View All",
         "learn-more": "Learn more",

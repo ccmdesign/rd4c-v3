@@ -13,6 +13,14 @@
         "caseStudies": "Études de cas",
         "tools": "Outils"
     },
+    "tabs": {
+        "principles": "Principe",
+        "caseStudies": "Études de cas",
+        "tools": "Outils",
+        "webinars": "Webinaires",
+        "explainers": "Explicateurs",
+        "bites": "Morsures"
+    },
     "buttons": {
         "view-all": "Voir tout",
         "learn-more": "En savoir plus",

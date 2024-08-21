@@ -11,8 +11,8 @@
 
     <rd-tabs-section color="primary">
       <template #tabs>
-        <span>{{ $t('divider.caseStudies') }}</span>
-        <span>{{ $t('divider.tools') }}</span>
+        <span>{{ $t('tabs.caseStudies') }}</span>
+        <span>{{ $t('tabs.tools') }}</span>
       </template>
 
       <template #tab-1>
@@ -47,11 +47,6 @@ block_hero.image = "/images/testing/test-22.jpg"
 
 const tools = await queryContent('publications').where({"publication_type": 'tools'}).sort({sort: 1}).find();
 const caseStudies = await queryContent(locale.value, 'publications').where({"publication_type": 'case_study'}).sort({sort: 1}).find();
-
-// const tabs = ref([t('divider.caseStudies'), t('divider.tools')]);
-// watch(() => locale.value, () => {
-//   tabs.value = [t('divider.caseStudies'), t('divider.tools')];
-// });
 
 </script>
 

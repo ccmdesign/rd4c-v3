@@ -13,6 +13,14 @@
         "caseStudies": "Estudios de caso",
         "tools": "Herramientas"
     },
+    "tabs": {
+        "principles": "Principio",
+        "caseStudies": "Estudios de caso",
+        "tools": "Herramientas",
+        "webinars": "Seminarios web",
+        "explainers": "Explicadores",
+        "bites": "Picaduras"
+    },
     "buttons": {
         "view-all": "Ver todo",
         "learn-more": "Saber más",

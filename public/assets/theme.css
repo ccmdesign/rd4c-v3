@@ -22,10 +22,11 @@
   /* Set the project fonts */
   --display-font: "Noto Sans", sans-serif;
   --body-font: "Noto Sans", sans-serif;
-
+  --base-font-size: var(--step-0);
+  
   /* --icon-font: 'Material Symbols Outlined'; */
   /* --icon-weight: 300; /* This variable is here in case we have multiple weights of the material symbols. */
-  /* --base-font-size: 16px; */
+  
 }
 
 /* Theme Colors  */
@@ -112,13 +113,13 @@
   /* --base-border: var(--base-border-width) var(--base-border-style) hsla(var(--base-hsl), .1); */
 
   /* Base Spacing */
-  /* --base-gap: var(--s1); */
+  --base-gap: var(--space-m-l);
 
   /* ToDo: I'm not sure this is a good thing. 
      base-padding is not equal to base-padding-inline and block */
-  --base-padding: var(--s1);
-  /* --base-padding-inline: var(--s0); */
-  /* --base-padding-block: var(--s-1); */
+  --base-padding: var(--space-m-l);
+  --base-padding-inline: var(--space-m);
+  --base-padding-block: var(--space-s);
 
   /* Decorations */
   --base-border-radius: 6px;
@@ -156,35 +157,35 @@
   /* Headings Config */
   /* H1 */
   /* --h1-font-family: var(--display-font); */
-  /* --h1-font-size: 3rem; */
+  --h1-font-size: var(--step-3);
   /* --h1-text-color: var(--base-color); */
   /* --h1-line-height: 1.2; */
   --h1-font-weight:  300;
 
   /* H2 */
   /* --h2-font-family: var(--display-font); */
-  --h2-font-size: clamp(1.5rem, 1.5vw + 1rem, 2.25rem);
+  --h2-font-size: var(--step-2);
   --h2-text-color: hsla(var(--rd-purple), 1);
   /* --h2-line-height: 1.2; */
   --h2-font-weight: 300;
 
   /* H3 */
   /* --h3-font-family: var(--display-font); */
-  --h3-font-size: clamp(1.25rem, 5vw + 1rem, 2rem);
+  --h3-font-size: var(--step-1);
   /* --h3-text-color: var(--base-color); */
   /* --h3-line-height: 1.2; */
   --h3-font-weight: 300;
 
   /* H4 */
   /* --h4-font-family: var(--display-font); */
-  --h4-font-size: clamp(1.1rem, 5vw + 1rem, 1.6rem);
+  --h4-font-size: var(--step-0);
   /* --h4-text-color: var(--base-color); */
   /* --h4-line-height: 1.5; */
   /* --h4-font-weight: 400; */
 
   /* H5 */
   /* --h5-font-family: var(--display-font); */
-  --h5-font-size: clamp(1rem, 5vw + 1rem, 1.25rem);
+  --h5-font-size: var(--step-0);
   /* --h5-text-color: var(--base-color); */
   /* --h5-line-height: var(--ratio); */
   --h5-font-weight: 500;
@@ -197,9 +198,6 @@
   /* --h6-font-weight: 400; */
 }
 
-p {
-  font-size: clamp(1rem, 10vw + 1rem, 1.1rem);
-}
 
 /* Wrappers */
 :root,

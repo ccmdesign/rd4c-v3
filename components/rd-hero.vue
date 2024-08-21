@@ -86,8 +86,7 @@ defineProps({
 
   &__content { 
     align-self: center;
-    @media screen and (max-width: 768px) { padding: var(--s3) var(--s0); }
-    @media screen and (min-width: 768px) { padding: var(--s0) var(--s3); }
+    padding: var(--space-l-xl) var(--space-xl-2xl);
   }
 
   &__headings {
@@ -102,6 +101,7 @@ defineProps({
 
     h4 {
       font-weight: 200;
+      text-wrap: balance;
     }
   }
 
@@ -175,14 +175,14 @@ defineProps({
 // }
 
 // .rd-hero__headings {
-//   --space: var(--s0);
+//   --space: var(--step-0);
 //   text-align: center;
 //   display: flex;
 //   align-items: center;
   
 //   > *[class] {
 //     width: fit-content;
-//     padding: var(--s-2) var(--s0);
+//     padding: var(--s-2) var(--step-0);
 //     color: var(--white-color);
 //     position: relative;
 //     z-index: 1;

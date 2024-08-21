@@ -43,8 +43,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .footer-wrapper {
-  background-color: var(--bg);
-  --bg: var(--base-color);
+  --_bg: var(--base-color);
+  
+  background-color: var(--_bg);
 }
 
 .footer-section {
@@ -53,7 +54,7 @@ defineProps({
   color: var(--color);
   
   --color: var(--white-color);
-  padding-inline: var(--s0);
+  padding-inline: var(--space-s-xl);
   display: grid;
   gap: var(--s0);
   grid-template-columns: 1fr 1fr;

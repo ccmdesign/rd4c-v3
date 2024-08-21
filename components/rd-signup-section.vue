@@ -8,30 +8,28 @@
       <div>
         <label class="rd-checkbox" for="videos-updates">
           <input type="checkbox" checked name="videos-updates" id="videos-updates" aria-labelledby="videos-updates-label">
-          <span id="videos-updates-label">Sign up for Videos and Updates</span>
+          <span id="videos-updates-label">{{ $t('signup.options.updates') }}</span>
         </label>
         <label class="rd-checkbox" for="join-conversation">
           <input type="checkbox" name="join-conversation" id="join-conversation" aria-labelledby="join-conversation-label">
-          <span id="join-conversation-label">Join the Conversation</span>
+          <span id="join-conversation-label">{{ $t('signup.options.conversation') }}</span>
         </label>
         <label class="rd-checkbox" for="join-alliance">
           <input type="checkbox" name="join-alliance" id="join-alliance" aria-labelledby="join-alliance-label">
-          <span id="join-alliance-label">Join the Alliance</span>
+          <span id="join-alliance-label">{{ $t('signup.options.alliance') }}</span>
         </label>
       </div>
 
-      <rd-button size="l" color="white" aria-label="Signup">Signup</rd-button>
+      <rd-button size="l" color="white" aria-label="Signup">{{ $t('signup.btnLabel') }}</rd-button>
     </ccm-form>
 
     <template #extra>
       <div class="header">
-        <h4 class="brow">Join Us</h4>
-        <h2 class="heading">Be the first to know</h2>
+        <h4 class="brow">{{ signup.brow }}</h4>
+        <h2 class="heading">{{ signup.heading }}</h2>
       </div>
       <div class="content">
-        <p>The Responsible Data for Children initiative regularly releases videos explaining its work and the work of its
-          partners. Here’s a few of our video series that you might be interested in. If you would like to stay up to date
-          with our latest releases, please subscribe to our YouTube channel or fill out the form here.</p>
+        <p>{{ signup.content }}</p>
       </div>
     </template>
   </rd-split-section>
@@ -39,6 +37,12 @@
 </template>
 
 <script setup>
+const { locale } = useI18n();
+
+const signup = ref((await queryContent('pages', 'signup').findOne()).signup[locale.value]);
+watch(locale, async () => {
+  signup.value = (await queryContent('pages', 'signup').findOne()).signup[locale.value];
+});
 
 </script>
 

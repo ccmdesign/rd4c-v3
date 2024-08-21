@@ -41,6 +41,14 @@
         "under": "This work is licensed under a",
         "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
     },
+    "signup": {
+        "btnLabel": "Signup",
+        "options": {
+            "updates": "Sign up for Videos and Updates",
+            "conversation": "Join the Conversation",
+            "alliance": "Join The Alliance"
+        }
+    },
     "pages": {
         "home": {
             "brow": "",

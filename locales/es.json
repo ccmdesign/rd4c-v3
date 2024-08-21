@@ -41,6 +41,14 @@
         "under": "Este trabajo está bajo una",
         "license": "Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional"
     },
+    "signup": {
+        "btnLabel": "Inscribirse",
+        "options": {
+            "updates": "Regístrate para recibir vídeos y actualizaciones",
+            "conversation": "Únase a la conversación",
+            "alliance": "Únete a la Alianza"
+        }
+    },
     "pages": {
         "home": {
             "brow": "GovLab",

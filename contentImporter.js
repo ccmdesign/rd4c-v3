@@ -1,10 +1,7 @@
 const chalk = require('chalk');
 
 const { getPages } = require('./directus/pages');
-const { getArticles } = require('./directus/articles');
-// const { getPrinciples } = require('./directus/principles');
-// const { getPublications } = require('./directus/publications');
-const { getVideos } = require('./directus/videos');
+const { getSignup } = require('./directus/signup');
 const { getTeam } = require('./directus/team');
 const { getFooter } = require('./directus/footer');
 const { getPrinciplesV2 } = require('./directus/principles-v2');
@@ -28,6 +25,7 @@ Promise.all([getPrinciplesV2(), getPublicationsV2(), getVideosV2(), getArticlesV
     setTimeout(() => {
       getPages();
       getFooter();
+      getSignup();
       getTeam();
 
     }, 1000);

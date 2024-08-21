@@ -3,17 +3,17 @@
     <rd-top-bar />
     <header class="post-hero">
       <rd-content-grid>
-        <h4 v-if="data.post.brow">{{ data.post.brow }}</h4>
-        <h2>{{ data.post.heading }}</h2>
-        <h3 v-if="data.post.tagline">{{ data.post.tagline }}</h3>
-        <h5 v-if="data.post.date">{{ formatDate(data.post.date) }}</h5>
+        <h4 class="brow" v-if="data.post.brow">{{ data.post.brow }}</h4>
+        <h2 class="heading" >{{ data.post.heading }}</h2>
+        <h3 class="tagline" v-if="data.post.tagline">{{ data.post.tagline }}</h3>
+        <h5 class="date" v-if="data.post.date">{{ formatDate(data.post.date) }}</h5>
         <div class="collaborators" v-if="data.post.collaborators">
           <span v-for="i in data.post.collaborators">{{ i.id }}</span>
         </div>
       </rd-content-grid>
     </header>
     <rd-prose>
-      <div v-html="data.post.main_content"></div>
+      <div class="cms-content" v-html="data.post.main_content"></div>
     </rd-prose>
     <!-- <contentDoc :document="data.post.main_content"></contentDoc> -->
   </div>
@@ -43,34 +43,54 @@ const formatDate = filters.formatDate;
 <style lang="scss" scoped>
 .post-hero {
   background-color: hsl(var(--rd-purple), 1);
-  padding-block: var(--s2);
-  display: flex;
-  align-items: center;
-  height: max(400px, 40svh);
-  gap: var(--s0);
+  padding-block: var(--space-l-xl);
+  gap: var(--space-m-l);
 }
 
-.post-hero :deep(*) {
+.post-hero__wrapper {
+}
+
+// .heading,
+.tagline,
+.brow,
+.date {
+  margin-top: var(--space-xs-s);
+}
+
+
+.heading {
+  font-size: var(--step-4);
+  font-weight: 100;
+  line-height: 1.1;
+  color: var(--white-color);
+  margin-top: var(--space-3xs-2xs);
+}
+
+.tagline {
+  font-size: var(--step-0);
+  font-weight: 200;
+  line-height: 1.5;
+  color: var(--white-color);
+  
+}
+
+.brow {
+  font-size: var(--step-0);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+  color: hsla(var(--white-hsl), 0.4);
+}
+
+.date {
+  font-size: var(--step-0);
+  font-weight: 200;
+  line-height: 1;
   color: var(--white-color);
 }
 
-.post-hero h2 {
-  font-size: 2.5rem;
-  font-weight: 200;
-}
-
-.post-hero h3 {
-  font-size: 2.5rem;
-  font-weight: 200;
-}
-.post-hero h4 {
-  font-size: 1.25rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-.post-hero h5 {
-  font-size: 1.25rem;
-  font-weight: 200;
-  margin-top: var(--s2);
+a {
+  
 }
 </style>

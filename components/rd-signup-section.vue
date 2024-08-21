@@ -45,6 +45,11 @@
 <style lang="scss" scoped>
 .rd-signup-section {
   background-color: var(--tertiary-color);
+  --_brow-color: hsla(var(--white-hsl), 0.5);
+}
+
+.brow {
+  color: var(--_brow-color);
 }
 
 .form {

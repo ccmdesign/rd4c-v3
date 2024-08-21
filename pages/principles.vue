@@ -37,7 +37,7 @@ const principles = await queryContent(locale.value, 'principles').find();
 <style scoped lang="scss">
 .principles-grid {
   display: grid;
-  gap: var(--s-1);
+  gap: var(--space-xs-s);
   grid-template-columns: 1fr;
   grid-row: auto;
 }

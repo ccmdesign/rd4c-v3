@@ -1,7 +1,8 @@
 <template>
   <section class="video-section" :video="video">
-    <center-l>
-        <div class="video-wrapper">
+    <div class="video-container">
+      <center-l>
+        <div class="video-wrapper"><!--This is here so the .frame work inside a center-l-->
           <div class="frame">
             <iframe :src="video" title="YouTube video player"
               frameborder="0"
@@ -9,6 +10,9 @@
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
+      </center-l>
+      </div>
+      <center-l>
         <stack-l class="content-wrapper">
           <slot></slot>
         </stack-l>
@@ -30,23 +34,29 @@ defineProps({
 .video-section {
   --_color-1: var(--tertiary-color);
   --_color-2: var(--white-color);
-  background: linear-gradient(180deg, var(--_color-1) 0%, var(--_color-1) 35%, var(--_color-2) 35%, var(--_color-2) 100%); 
-  padding: var(--s4) 0;
+  --_vertical-padding: var(--space-l-xl);
+
+  // This padding bottom matches the padding top of the .video-container. 
+  // Made this way to make the bg gradient consistent
+  padding-bottom: var(--_vertical-padding); 
 }
 
 .content-wrapper {
-  margin-top: var(--s2);
+  margin-top: var(--space-m-l);
   color: var(--base-color);
   text-align: center;
-  font-size: 1.25rem;
-  text-wrap: balance;
+  font-size: var(--step-0);
+  text-wrap: balance;  
+}
+
+.video-container {
+  padding-top: var(--_vertical-padding);
+  background: linear-gradient(180deg, var(--_color-1) 0%, var(--_color-1) 60%, var(--_color-2) 60%, var(--_color-2) 100%); 
 }
 
 .video-wrapper {
   width: 100%;  
   margin-inline: auto;
-  margin-bottom: var(--s2);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  background-color: var(--base-color);
 }
 </style>

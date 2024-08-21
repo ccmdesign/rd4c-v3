@@ -68,7 +68,7 @@ const computedUrl = computed(() => {
   gap: var(--s-1);
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "heading" "description" "action";
-  height: fill-available;
+  height: stretch;
 }
 
 .rd-card__content header {

@@ -3,7 +3,7 @@
     <rd-button class="menu__toggle" @click="toggleMenu" icon-before="menu" visual="ghost" color="white"
         size="full-width" />
 
-    <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="item.link" :target="item.target">{{
+    <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="localePath(item.link)" :target="item.target">{{
       $t(item.name) }}</nuxt-link>
     <div class="language-selector">
       <button class="menu__item" @click="toggleLangMenu">{{ activeLang }}</button>

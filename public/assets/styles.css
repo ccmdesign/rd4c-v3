@@ -88,3 +88,20 @@ to change how empty grid tracks are handled */
   --grid-placement: auto-fit;
   --grid-min-item-size: clamp(20rem, 50vw, 30rem);
 }
+
+/* Typography - Temp */
+.brow {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--brow-color, var(--primary-color));
+}
+
+.heading {
+
+}
+
+.tagline {
+  
+}
+

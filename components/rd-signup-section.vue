@@ -1,24 +1,40 @@
 <template>
   <!-- @ToDo: Translate the whole section -->
-  <section class="rd-signup-section">
-    <div class="header" side="left">
-      <h2>Be the first to know</h2>
-    </div>
-    <div class="content" side="left">
-      <p>The Responsible Data for Children initiative regularly releases videos explaining its work and the work of its
-        partners. Here’s a few of our video series that you might be interested in. If you would like to stay up to date
-        with our latest releases, please subscribe to our YouTube channel or fill out the form here.</p>
-    </div>
-    <!-- <div class="header" side="right"></div> -->
-    <div class="content" side="right">
-      <ccm-form class="form">
-        <base-input placeholder="Name"/>
-        <base-input placeholder="Email"/>
-        <rd-button size="l" color="white">Signup</rd-button>
-      </ccm-form>
-    </div>
-    
-  </section>
+  <rd-split-section class="rd-signup-section" data-layout="50-50" regular-order>
+    <ccm-form class="form" aria-labelledby="signup-form">
+      <!-- <base-input placeholder="Name" aria-label="Name"/> -->
+      <base-input placeholder="Email" aria-label="Email"/>
+      
+      <div>
+        <label class="rd-checkbox" for="videos-updates">
+          <input type="checkbox" checked name="videos-updates" id="videos-updates" aria-labelledby="videos-updates-label">
+          <span id="videos-updates-label">Sign up for Videos and Updates</span>
+        </label>
+        <label class="rd-checkbox" for="join-conversation">
+          <input type="checkbox" name="join-conversation" id="join-conversation" aria-labelledby="join-conversation-label">
+          <span id="join-conversation-label">Join the Conversation</span>
+        </label>
+        <label class="rd-checkbox" for="join-alliance">
+          <input type="checkbox" name="join-alliance" id="join-alliance" aria-labelledby="join-alliance-label">
+          <span id="join-alliance-label">Join the Alliance</span>
+        </label>
+      </div>
+
+      <rd-button size="l" color="white" aria-label="Signup">Signup</rd-button>
+    </ccm-form>
+
+    <template #extra>
+      <div class="header">
+        <h4 class="brow">Join Us</h4>
+        <h2 class="heading">Be the first to know</h2>
+      </div>
+      <div class="content">
+        <p>The Responsible Data for Children initiative regularly releases videos explaining its work and the work of its
+          partners. Here’s a few of our video series that you might be interested in. If you would like to stay up to date
+          with our latest releases, please subscribe to our YouTube channel or fill out the form here.</p>
+      </div>
+    </template>
+  </rd-split-section>
   
 </template>
 
@@ -28,50 +44,30 @@
 
 <style lang="scss" scoped>
 .rd-signup-section {
-  display: grid;  
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: var(--s2);
-  padding-block: var(--s3);
-  background-color: hsla(var(--rd-purple), 1);
-  padding-inline: var(--s0);
+  background-color: var(--tertiary-color);
+}
 
-  @media screen and (min-width: 768px) {
-    grid-template-columns: minmax(1rem, 1fr) [content-start] 600px [center] 600px [content-end] minmax(1rem, 1fr);
-    grid-template-rows: [header] auto [content-start] auto [content-end];
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-inline: auto;
+
+  .stack {
+    width: 100%;
+    justify-content: stretch;
   }
 }
 
-[side="left"] {
-  @media screen and (min-width: 768px) { 
-    grid-column: content-start / center; 
-    text-align: right !important;
-    padding-right: var(--s2);
-  }
-}
-
-[side="right"] {
-  @media screen and (min-width: 768px) { 
-    grid-column: center / content-end;
-    padding-left: var(--s2);
-  }
-  
-}
-
-
-.header {
-  @media screen and (min-width: 768px) { grid-row: header / content-start; }
-}
-
-.content {
-  @media screen and (min-width: 768px) { grid-row: content-start / content-end; }
-  color: var(--white-color);
-}
-
-
-.content {
-  display: grid;
-  gap: var(--s0);
+:deep(.panel--image) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  gap: var(--s1);
+  padding-block: var(--s1);
 }
 
 :deep(input) {
@@ -84,44 +80,29 @@
   }
 }
 
-h2 {
+h2, p {
   color: var(--white-color);
 }
 
-// .master-grid {
-//   --padding-inline: 1rem;
-//   --content-max-width: 900px;
-//   --wide-max-width: 1200px;
-//   --wide-size: calc((var(--wide-max-width) - var(--content-max-width)) / 2);
+.rd-checkbox {
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
 
-//   display: grid;
-//   grid-template-columns:
-//     [full-width-start] minmax(var(--padding-inline), 1fr)
-//     [content-start] min(50% - var(--padding-inline), calc(var(--content-max-width) /2))
-//     [center] 
-//     min(50% - var(--padding-inline), calc(var(--content-max-width) / 2)) [content-end] 
-//     [full-width-end];
-// }
+  input[type="checkbox"] {
+    display: none;
+  }
 
-// .master-grid > :not(.wide, .full-width),
-// .full-width > :not(.wide, .full-width) {
-//   grid-column: content;
-// }
+  &::before {
+    content: 'check_box_outline_blank';
+    font-family: var(--icon-font);
+    font-size: 1.75rem;
+  }
+  
+  &:has(:checked)::before {
+    content: 'check_box';
+  }
+}
 
-// .master-grid > .wide {
-//   grid-column: wide;
-// }
-
-// .content[side="left"] {
-//   grid-column: content-start / center;
-// }
-
-// .content[side="right"] {
-//   grid-column: center / content-end;
-// }
-// .master-grid > .full-width {
-//   grid-column: full-width;
-//   display: grid;
-//   grid-template-columns: inherit;
-// }
 </style>

@@ -18,7 +18,7 @@ const pageContent = await queryContent('pages', 'updates').findOne();
 const { block_hero } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-2.jpg"
   
-const articles = await queryContent('articles').find();
+const articles = await queryContent(locale.value, 'articles').find();
   
 </script>
 

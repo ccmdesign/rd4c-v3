@@ -21,10 +21,11 @@
 
 <script setup>
 import * as filters from '~/composables/useFilters';
+const { locale } = useI18n()
 
 const route = useRoute()
 
-const postData = await queryContent('articles').where({
+const postData = await queryContent(locale.value, 'articles').where({
     slug: route.params.slug
 }).findOne();
 

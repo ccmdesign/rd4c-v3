@@ -24,7 +24,7 @@
       <div class="rd-card__action">
         <a v-if="content.url && content.url.startsWith('https')" class="button" data-size="full-width" color="primary" :href="content.url"
           target="_blank">Go to Resource</a>
-        <nuxt-link v-else class="button" color="primary" data-size="full-width" :to="content._path">
+        <nuxt-link v-else class="button" color="primary" data-size="full-width" :to="computedUrl">
           Read More</nuxt-link>
       </div>
     </div>
@@ -40,6 +40,14 @@ const props = defineProps({
     type: Object,
     required: true,
     default: () => ({})
+  }
+});
+
+const computedUrl = computed(() => {
+  if(props.content.lang !== 'en') {
+    return `${ props.content._path }`
+  } else {
+    return `/${ props.content._dir }/${ props.content.slug }`;
   }
 });
 

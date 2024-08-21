@@ -74,6 +74,7 @@ export default defineNuxtConfig({
     langDir: 'locales',
     locales,
     defaultLocale: 'en',
+    detectBrowserLanguage: false
   },
   ssr: true,
   gtag: {

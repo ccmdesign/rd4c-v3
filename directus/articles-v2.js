@@ -83,8 +83,6 @@ const objectContructor = async (dir, fs) => {
 const writeInLocaleFolder = async (lang, item, log=false) => {
   const dir = `./content/${ lang }/articles`;
 
-  console.log('dir', dir);
-  
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }

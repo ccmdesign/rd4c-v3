@@ -49,14 +49,14 @@ defineProps({
 }
 
 .footer-section {
-  max-width: 1680px;
-  margin-inline: auto;
-  color: var(--color);
-  
-  --color: var(--white-color);
+  --_color: var(--white-color);
+
+  color: var(--_color);
   padding-inline: var(--space-s-xl);
   display: grid;
-  gap: var(--s0);
+  gap: var(--space-m-l);
+  
+  // I might be able to make this simpler
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
@@ -68,7 +68,6 @@ defineProps({
 
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 2fr;
-    gap: var(--s1);
     grid-template-rows: auto;
     grid-template-areas:
       "logos-title content-title"
@@ -85,11 +84,10 @@ defineProps({
 .after-footer { grid-area: by-line; }
 
 .content {
-  @media screen and (min-width: 1000px) { 
-    columns: 2; 
-    column-gap: var(--s2);
-  }
-  *+* { margin-top: var(--s-1); }
+  column-width: 35ch;
+  column-gap: var(--space-m-l);
+  
+  * + * { margin-top: var(--space-xs-s); }
 }
 
 .footer-section {

@@ -61,13 +61,13 @@
   }
 }
 
-:deep(.panel--image) {
+:deep(.panel) {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  gap: var(--s1);
-  padding-block: var(--s1);
+  gap: var(--space-m-l);
+  padding-block: var(--space-m-xl);
 }
 
 :deep(input) {
@@ -88,7 +88,7 @@ h2, p {
   color: var(--white-color);
   display: flex;
   align-items: center;
-  gap: var(--s-2);
+  gap: var(--space-2xs-xs);
 
   input[type="checkbox"] {
     display: none;
@@ -97,7 +97,7 @@ h2, p {
   &::before {
     content: 'check_box_outline_blank';
     font-family: var(--icon-font);
-    font-size: 1.75rem;
+    font-size: var(--step-2);
   }
   
   &:has(:checked)::before {

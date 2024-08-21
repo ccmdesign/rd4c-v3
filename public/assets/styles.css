@@ -161,6 +161,7 @@ to change how empty grid tracks are handled */
   --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
 
   /* Custom pairs */
-  /* Space s-l: 18px → 40px */
   --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+  --space-s-xl: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);
+  --space-m-xl: clamp(1.6875rem, 0.9701rem + 3.587vw, 3.75rem);
 }

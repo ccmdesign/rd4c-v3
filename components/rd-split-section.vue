@@ -1,6 +1,6 @@
 <template>
   <section class="rd-split-section auto-grid" :image="image" data-layout="50-50">
-    <div class="panel panel--image">
+    <div class="panel" :class="image ? 'panel--image' : ''">
       <slot name="extra">
         <img :src="image" alt="">
       </slot>
@@ -28,15 +28,10 @@ defineProps({
 
 <style lang="scss" scoped>
 .rd-split-section {
-  --_padding-inline: var(--s0);
-  --_padding-block: var(--s2);
-  --_gap: var(--s1);
-
-  @media screen and (min-width: 768px) {
-    --_padding-inline: var(--s3);
-    --_padding-block: var(--s3);
-    --_gap: var(--s0);
-  }
+  --_padding-inline: var(--space-s-xl);
+  --_padding-block: var(--space-m-xl);
+  --_gap: var(--space-m-l);
+  --gutter: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -53,6 +48,7 @@ defineProps({
 .panel--image {
   @media screen and (min-width: 768px) { aspect-ratio: 1 / 1; }
   object-position: center;
+  padding-inline: 0;
 
   img {
     object-fit: cover;

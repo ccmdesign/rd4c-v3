@@ -32,7 +32,8 @@ const objectContructor = async (dir, fs) => {
 
       return person
     }) : [];
-
+    i.collaborators = item.author ? [{'name': item.author}, ...i.collaborators] : i.collaborators;
+    delete i.author;
     writeInLocaleFolder(i.lang, i, true);
     
     item.translations.forEach((translation) => {

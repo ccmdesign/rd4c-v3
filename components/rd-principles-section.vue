@@ -57,7 +57,10 @@ function toggleAttribute(event) {
     grid-template-rows: repeat(3, 1fr);  
   }
   
-  gap: var(--space-2xs-xs);
+  & {
+    gap: var(--space-2xs-xs);
+  }
+
 }
 
 .principle {

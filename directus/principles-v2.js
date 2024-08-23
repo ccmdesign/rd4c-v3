@@ -32,21 +32,28 @@ const objectContructor = async (dir, fs) => {
 
   for(key in common.LANGUAGES) {
     let lang = common.LANGUAGES[key];
-    translations.forEach((i) => {
-      let result = finalPrinciples.filter((j) => j.id !== i.itemId);
-      
-      if(lang !== 'en' && availableLang.includes(lang)) {
-        result.forEach((item) => {
-          writeInLocaleFolder(lang, item);
-        });
+    if(translations.length > 0) {
+      translations.forEach((i) => {
+        let result = finalPrinciples.filter((j) => j.id !== i.itemId);
+        
+        if(lang !== 'en' && availableLang.includes(lang)) {
+          result.forEach((item) => {
+            writeInLocaleFolder(lang, item);
+          });
+  
+        } else if(lang !== 'en' && !availableLang.includes(lang)) {
+          finalPrinciples.forEach((item) => {
+            writeInLocaleFolder(lang, item);
+          });
+        }
+  
+      });
 
-      } else if(lang !== 'en' && !availableLang.includes(lang)) {
-        finalPrinciples.forEach((item) => {
-          writeInLocaleFolder(lang, item);
-        });
-      }
-
-    });
+    } else {
+      finalPrinciples.forEach((item) => {
+        writeInLocaleFolder(lang, item);
+      });
+    }
   }
       
 }

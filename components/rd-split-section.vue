@@ -48,8 +48,11 @@ defineProps({
 
 .panel--image {
   @media screen and (min-width: 1400px) { aspect-ratio: 1 / 1; }
-  object-position: center;
-  padding-inline: 0;
+  
+  & {
+    object-position: center;
+    padding-inline: 0;
+  }
 
   img {
     object-fit: cover;

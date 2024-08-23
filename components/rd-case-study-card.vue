@@ -60,10 +60,13 @@ defineProps({
   @media screen and (min-width: 768px) { 
     padding: var(--s2); 
   }
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  grid-area: content;
+
+  & {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: content;
+  }
 }
 
 // Right Panel Structure

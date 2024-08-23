@@ -4,8 +4,8 @@ import { ref } from 'vue';
 
 export function useSignupForm() {
 
-  const resetForm = () => {
-    email.value = '';
+  const resetForm = (event) => {
+    event.target.elements.email.value = '';
     updates.value = false;
     alliance.value = false;
     conversation.value = false;
@@ -44,7 +44,7 @@ export function useSignupForm() {
       });
 
       if (response.ok) {
-        resetForm();
+        resetForm(event);
         console.log('Form submitted successfully');
         success.value = true;
       } else {

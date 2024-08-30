@@ -40,11 +40,13 @@ const hideContent = ref(true);
 
 const openDialog = () => {
   hideContent.value = false;
+  document.body.style.overflow = 'hidden';
   dialog.value.showModal();
 };
 
 const closeDialog = () => {
   hideContent.value = true;
+  document.body.style.overflow = '';
   dialog.value.close();
 };
 </script>
@@ -114,7 +116,13 @@ const closeDialog = () => {
 }
 
 .bio-content * + * {
+  max-height: 70vh;
+  overflow-y: auto;
   margin-block-start: var(--s0);
+
+  @media screen and (max-width: 768px) {
+    max-height: 30vh;
+  }
 }
 
 .bio-content__text * + * {

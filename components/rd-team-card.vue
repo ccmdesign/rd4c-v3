@@ -3,7 +3,7 @@
     <h4>{{content.name}}</h4>
     <!-- <pre>{{ content }}</pre> -->
   </div>
-  <div :class="{'dialog-content-display' : hideContent }">
+  <div class="bio-wrapper" :class="{'dialog-content-display' : hideContent }">
     <dialog ref="dialog" class="rd-team-card__bio" @click="closeDialog">
         <!-- <rd-button class="close-button"  icon-only icon-before="close" visual="ghost"></rd-button> -->
         <img :src="content.image" :alt="content.name" />
@@ -89,7 +89,9 @@ const closeDialog = () => {
   position: relative;
   z-index: 1;
 }
-
+.bio-wrapper {
+  position: absolute;
+}
 .rd-team-card__bio {
   border-radius: var(--base-border-radius);
   border: 0;

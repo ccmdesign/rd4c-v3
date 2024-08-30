@@ -1,6 +1,6 @@
 <template>
   <div class="rd-principles-section">
-    <rd-divider content="Our Principles" color="purple" /><!-- @ToDo: Translate -->
+    <rd-divider content="Our Principles" color="base" /><!-- @ToDo: Translate -->
     <div class="principles-grid">
       <div v-for="(i, index) in principles" :key="index" class="principle" :data-n="index + 1" @click="toggleAttribute">
         <div class="principle__content">
@@ -37,7 +37,7 @@ function toggleAttribute(event) {
 
 <style lang="scss" scoped>
 .rd-principles-section {
-  // background-color: var(--base-color);
+  background: linear-gradient(to bottom, hsla(var(--base-hsl), 1) 15%, hsla(var(--primary-hsl), 1));
   color: var(--base-color);
 }
 
@@ -86,6 +86,7 @@ function toggleAttribute(event) {
   text-align: center;
   padding: var(--space-m-l);
   border-radius: var(--base-border-radius);
+  
 }
 
 .principle::after {
@@ -95,7 +96,9 @@ function toggleAttribute(event) {
   background-color: hsla(var(--base-hsl), .1);
   position: absolute;
   rotate: 45deg;
+
   z-index: 0;
+  
 }
 
 .principle[is-active="true"][data-n="1"] {
@@ -213,8 +216,8 @@ function toggleAttribute(event) {
 .principle::after {
   background-color: hsla(var(--_principle-hsl), 1);
   border-radius: var(--base-border-radius);
-  box-shadow: 0 0 16px hsla(var(--base-hsl), .1);
   border: 2px solid hsla(var(--_principle-hsl), 1);  
+  box-shadow: 0 16px 38px -12px hsla(var(--base-hsl),  0.52), 0 4px 25px 0px hsla(var(--base-hsl), 0.12), 0 8px 10px -5px hsla(var(--base-hsl), 0.2);
 }
 
 .principle * { color: hsla(var(--white-hsl), 1);}

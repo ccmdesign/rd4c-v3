@@ -47,9 +47,9 @@
 .content { grid-area: content; }
 
 .team-group {
-  // padding-inline: var(--s0);
+  padding-inline: var(--space-2xs-xs);
   display: grid;
-  gap: var(--s-2);
+  gap: var(--space-2xs-xs);
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 

@@ -3,16 +3,18 @@
     <h4>{{content.name}}</h4>
     <!-- <pre>{{ content }}</pre> -->
   </div>
-  <dialog ref="dialog" class="rd-team-card__bio" @click="closeDialog">
-      <!-- <rd-button class="close-button"  icon-only icon-before="close" visual="ghost"></rd-button> -->
-      <img :src="content.image" :alt="content.name" />
-      <div class="bio-content">
-        <h3>{{ content.name }}</h3>
-        <h4>{{ content.title }}</h4>
-        <h5>{{ content.organization }}</h5>
-        <div class="bio-content__text" v-html="content.bio"></div>
-      </div>
-  </dialog>
+  <div :class="{'dialog-content-display' : hideContent }">
+    <dialog ref="dialog" class="rd-team-card__bio" @click="closeDialog">
+        <!-- <rd-button class="close-button"  icon-only icon-before="close" visual="ghost"></rd-button> -->
+        <img :src="content.image" :alt="content.name" />
+        <div class="bio-content">
+          <h3>{{ content.name }}</h3>
+          <h4>{{ content.title }}</h4>
+          <h5>{{ content.organization }}</h5>
+          <div class="bio-content__text" v-html="content.bio"></div>
+        </div>
+    </dialog>
+  </div>
 </template>
 
 <script setup>
@@ -34,17 +36,25 @@ const props = defineProps({
 });
 
 const dialog = ref(null);
+const hideContent = ref(true);
 
 const openDialog = () => {
+  hideContent.value = false;
   dialog.value.showModal();
 };
 
 const closeDialog = () => {
+  hideContent.value = true;
   dialog.value.close();
 };
 </script>
 
 <style lang="scss" scoped>
+
+.dialog-content-display {
+  display: none;
+}
+
 .rd-team-card {
   aspect-ratio: 1/1;
   max-width: auto;

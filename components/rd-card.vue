@@ -11,16 +11,13 @@
     <img v-else src="/images/default.jpg" alt="">
 
     <div class="rd-card__content">
-      <header>
+      <header class="stack">
         <h5 v-if="content.brow">{{ content.brow }}</h5>
         <h3 v-if="content.heading">{{ content.heading }}</h3>
         <h3 v-else-if="content.title">{{ content.title }}</h3>
         <p v-if="content.date" class="date" v-html="formatDate(content.date)"></p>
         <h4 v-if="content.tagline">{{ content.tagline }}</h4>
       </header>
-      <div>
-        <span v-html="content.description"></span>
-      </div>
       <div class="rd-card__action">
         <a v-if="content.url && content.url.startsWith('https')" class="button" data-size="full-width" color="primary" :href="content.url"
           target="_blank">Go to Resource</a>
@@ -54,12 +51,21 @@ const computedUrl = computed(() => {
 
 <style lang="scss" scoped>
 .rd-card {
-  border: 1px solid hsla(var(--rd-orange), 1);
+  // Overriding the Base Section color.
+  // This is an unintended side effect of the Base Section component.
+  --base-section-color: var(--base-color); 
+}
+
+.rd-card {
+  --_card-radius: var(--base-border-radius);
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto 1fr;
   box-shadow: 0 4px 8px hsla(var(--base-hsl), 0.15);
   align-items: start;
+  margin-top: var(--s1);
+  border-radius: var(--_card-radius);
+  background-color: #fff;
 }
 
 .rd-card__content {
@@ -73,13 +79,18 @@ const computedUrl = computed(() => {
 
 .rd-card__content header {
   grid-area: heading;
+  --space: var(--s-2);
 } 
 
 .rd-card img {
-  width: 100%;
+  width: calc(100% - (var(--s0) * 2));
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
+  margin-inline: var(--s0);
+  margin-top: calc(var(--s1) * -1);
+  border-radius: var(--_card-radius);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 .rd-card h5 {
@@ -90,6 +101,7 @@ const computedUrl = computed(() => {
 
 .rd-card h3 {
   font-size: 1.25rem;
+  line-height: 1.35;
   color: hsla(var(--rd-purple), 1);
 }
 
@@ -97,10 +109,12 @@ const computedUrl = computed(() => {
   font-size: 1rem;
 }
 
-.rd-card .description {
+.rd-card__main-content {
   font-size: 1rem;
   grid-area: description;
+  padding-bottom: var(--s-1);
 }
+
 .rd-card .date {
   font-size: 1rem;
   font-weight: 500;

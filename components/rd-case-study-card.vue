@@ -17,7 +17,9 @@
         <rd-chip v-for="i in content.principles">{{ i }}</rd-chip>
       </cluster-l>
     </div>
-
+    <!-- <pre>
+      {{ content }}
+    </pre> -->
   </div>
 </template>
 

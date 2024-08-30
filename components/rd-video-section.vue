@@ -55,8 +55,17 @@ defineProps({
 }
 
 .video-wrapper {
-  width: 100%;  
-  margin-inline: auto;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  // width: 100%;  
+  // margin-inline: auto;
+  // box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  width: calc(100% - (var(--s0) * 2));
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin-inline: var(--s0);
+  margin-top: calc(var(--s1) * -1);
+  border-radius: var(--base-border-radius);
+  overflow: hidden;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.25), 0 4px 25px 0px rgba(0, 0, 0, 0.06), 0 8px 10px -5px rgba(0, 0, 0, 0.1);
 }
 </style>

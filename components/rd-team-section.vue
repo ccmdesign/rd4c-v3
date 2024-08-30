@@ -7,10 +7,7 @@
           $t('buttons.view-all') }}</rd-button></p>
     </div>
     <div class="team-group">
-      <div class="team-card" v-for="member of team" :content="member" :key="member.id"
-        :style="{ '--bg': `url(${member.image})` }">
-        <h4>{{ member.name }}</h4>
-      </div>
+      <rd-team-card v-for="member of team" :content="member" :key="member.id"  />
     </div>
   </section>
 </template>
@@ -24,7 +21,6 @@
   })
 
   const team = await queryContent('team').find();
-
 </script>
 
 <style lang="scss" scoped>
@@ -71,38 +67,5 @@
   }
 }
 
-.team-card {
-  aspect-ratio: 1/1;
-  max-width: auto;
-  background-image: var(--bg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: var(--base-border-radius);
-  display: flex;
-  position: relative;
-}
 
-.team-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(hsla(var(--base-hsl), 0), hsla(var(--base-hsl), .4));
-  border-radius: var(--base-border-radius);
-  z-index: 0;
-}
-
-.team-card h4 {
-  margin-top: auto;
-  width: 100%;
-  padding: var(--s0);
-  font-size: 100%;
-  text-align: center;
-  color: var(--white-color);
-  position: relative;
-  z-index: 1;
-  
-}
 </style>

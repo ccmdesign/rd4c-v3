@@ -9,11 +9,6 @@
             src="/images/logos/govlab-logo-white.svg" alt="Govlab"></a>
       </div>
 
-      <h3 class="content-title footer-heading">{{ footerContent.about_heading_text }}</h3>
-      <div class="content columns">
-        <spa v-html="footerContent.content"></spa>
-      </div>
-
       <div class="after-footer">
         <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0>
           <img alt='Creative Commons License' style='border-width:0'
@@ -67,13 +62,16 @@ defineProps({
     "by-line by-line";
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "logos-title content-title"
-      "logos content"
-      "logos content"
-      "by-line by-line";
+    // grid-template-columns: 1fr 2fr;
+    // grid-template-rows: auto;
+    // grid-template-areas:
+    //   "logos-title content-title"
+    //   "logos content"
+    //   "logos content"
+    //   "by-line by-line";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -95,9 +93,7 @@ defineProps({
   
   @media screen and (min-width: 768px) {
     .logos {
-      flex-direction: column;
-      place-self: start;
-      max-width: 200px;
+      flex-direction: row;
     }
   }
 

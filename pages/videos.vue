@@ -8,15 +8,15 @@
         -->
     <rd-tabs-section color="primary">
       <template #tabs>
-        <span>{{ $t('tabs.bites') }}</span>
-        <span>{{ $t('tabs.webinars') }}</span>
         <span>{{ $t('tabs.explainers') }}</span>
+        <span>{{ $t('tabs.testimonials') }}</span>
+        <span>{{ $t('tabs.trainings') }}</span>
       </template>
 
       <template #tab-1>
         <rd-base-section>
           <rd-card-grid>
-            <rd-card v-for="i in bites" v-bind:key="i.slug" :content="i" />
+            <rd-card v-for="i in explainers" v-bind:key="i.slug" :content="i" />
           </rd-card-grid>
         </rd-base-section>
       </template>
@@ -24,14 +24,14 @@
       <template #tab-2>
         <rd-base-section>
           <rd-card-grid>
-            <rd-card v-for="i in webinars" v-bind:key="i.slug" :content="i" />
+            <rd-card v-for="i in testimonials" v-bind:key="i.slug" :content="i" />
           </rd-card-grid>
         </rd-base-section>
       </template>
       <template #tab-3>
         <rd-base-section>
           <rd-card-grid>
-            <rd-card v-for="i in explainers" v-bind:key="i.slug" :content="i" />
+            <rd-card v-for="i in trainings" v-bind:key="i.slug" :content="i" />
           </rd-card-grid>
         </rd-base-section>
       </template>
@@ -51,9 +51,9 @@ const {
   block_lessons } = await useTranslator(pageContent, locale.value);
   block_hero.image = "/images/testing/test-26.jpg"
 
-const bites = await queryContent(locale.value, 'videos').where({ category: 'bites' }).find();
+const trainings = await queryContent(locale.value, 'videos').where({ category: 'trainings' }).find();
 const explainers = await queryContent(locale.value, 'videos').where({ category: 'explainers' }).find();
-const webinars = await queryContent(locale.value, 'videos').where({ category: 'webinars' }).find();
+const testimonials = await queryContent(locale.value, 'videos').where({ category: 'testimonials' }).find();
 
 </script>
 

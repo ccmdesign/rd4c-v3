@@ -4,9 +4,9 @@
         "about": "À propos",
         "contact": "Contact",
         "principles": "Principes",
-        "publications": "Publications",
+        "publications": "Ressources",
         "videos": "Vidéos",
-        "updates": "Mises à jour"
+        "updates": "Blogue"
     },
     "divider": {
         "principle": "Principe",
@@ -17,9 +17,9 @@
         "principles": "Principe",
         "caseStudies": "Études de cas",
         "tools": "Outils",
-        "webinars": "Webinaires",
+        "trainings": "Formations",
         "explainers": "Explicateurs",
-        "bites": "Morsures"
+        "testimonials": "Témoignages"
     },
     "buttons": {
         "view-all": "Voir tout",
@@ -44,7 +44,7 @@
     "signup": {
         "btnLabel": "S'inscrire",
         "options": {
-            "updates": "Inscrivez-vous pour les vidéos et les mises à jour",
+            "updates": "Inscrivez-vous pour les vidéos",
             "conversation": "Rejoignez la conversation",
             "alliance": "Rejoignez l'Alliance"
         }

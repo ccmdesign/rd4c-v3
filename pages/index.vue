@@ -17,7 +17,7 @@
     <rd-split-section id="case-studies" image="/images/testing/test-14.jpg">
       <h2>{{ block_case_studies.title }}</h2>
       <div class="cms-content" v-html="block_case_studies.description"></div>
-      <p><rd-button to="/publications#case-studies" visual="secondary" color="primary">{{ $t('buttons.learn-more')
+      <p><rd-button to="/resources#case-studies" visual="secondary" color="primary">{{ $t('buttons.learn-more')
           }}</rd-button></p>
     </rd-split-section>
 

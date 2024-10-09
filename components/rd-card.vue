@@ -7,9 +7,9 @@
 
   <div class="rd-card" :color="content.color">
     <!-- <img v-if="content.cover_image" :src="content.cover_image" alt=""> -->
-    <NuxtImg v-if="content.cover_image" :src="content.cover_image" loading="lazy" />
-    <NuxtImg v-else-if="content.image" :src="content.image" alt="" />
-    <NuxtImg v-else src="/images/default.jpg" alt="" />
+    <img v-if="content.cover_image" :src="content.cover_image" loading="lazy" />
+    <img v-else-if="content.image" :src="content.image" alt="" />
+    <img v-else src="/images/default.jpg" alt="" />
 
     <div class="rd-card__content">
       <header class="stack">

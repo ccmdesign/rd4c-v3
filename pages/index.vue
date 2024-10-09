@@ -32,7 +32,7 @@
     <rd-split-section id="tools" image="/images/testing/test-19.jpg">
       <h2>{{ block_tools.title }}</h2>
       <div class="cms-content" v-html="block_tools.description"></div>
-      <p><rd-button visual="secondary" color="primary" to="/publications">{{ $t('buttons.learn-more')
+      <p><rd-button visual="secondary" color="primary" to="/resources">{{ $t('buttons.learn-more')
           }}</rd-button></p>
     </rd-split-section>
 

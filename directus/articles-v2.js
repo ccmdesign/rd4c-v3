@@ -23,6 +23,7 @@ const objectContructor = async (dir, fs) => {
     let i = { ...{'lang': 'en'}, ...item };
     i.slug = common.slugify(item.heading);
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
+    i.cover_image_id = item.cover_image ? item.cover_image.id : '';
 
     // collaborators
     i.collaborators = item.collaborators.length > 0 ? item.collaborators.map((collab) => {
@@ -39,6 +40,7 @@ const objectContructor = async (dir, fs) => {
       tr.slug = common.slugify(tr.heading);
       tr.url = i.url;
       tr.cover_image = i.cover_image;
+      tr.cover_image_id = i.cover_image_id;
       tr.category = i.category;
       tr.principles = i.principles;
       tr.main_content = i.main_content;

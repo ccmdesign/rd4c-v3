@@ -35,6 +35,12 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/image',
   ],
+  image: {
+    directus: {
+      baseURL: `${ process.env.BASE_URL }/assets/`,
+    }
+
+  },
 
   css: [
     '@ccmdesign/ccm-ds/assets/css/main.scss',

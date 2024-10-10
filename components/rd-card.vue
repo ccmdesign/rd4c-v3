@@ -7,7 +7,11 @@
 
   <div class="rd-card" :color="content.color">
     <!-- <img v-if="content.cover_image" :src="content.cover_image" alt=""> -->
-    <img v-if="content.cover_image" :src="content.cover_image" loading="lazy" />
+    <NuxtImg v-if="source === 'blog' && content.cover_image" 
+    :src="content.cover_image_id" 
+    provider="directus"
+    loading="lazy" />
+    <img v-else-if="content.cover_image" :src="content.cover_image" />
     <img v-else-if="content.image" :src="content.image" alt="" />
     <img v-else src="/images/default.jpg" alt="" />
 
@@ -35,6 +39,10 @@ import { formatDate } from '~/composables/useFilters';
 const { locale } = useI18n()
 
 const props = defineProps({
+  source: {
+    type: String,
+    default: ''
+  },
   content: {
     type: Object,
     required: true,

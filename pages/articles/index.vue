@@ -3,7 +3,7 @@
     <rd-hero :content="block_hero" />
     <rd-base-section color="base">
       <rd-card-grid>
-        <rd-card v-for="post in articles" v-bind:key="post.slug" :content="post" />
+        <rd-card v-for="post in articles" v-bind:key="post.slug" :content="post" source="blog"/>
       </rd-card-grid>
     </rd-base-section>
   </div>

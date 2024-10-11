@@ -8,12 +8,12 @@
     <div class="language-selector">
       <button class="menu__item" @click="toggleLangMenu">{{ activeLang }}</button>
       <ul class="submenu" v-if="isSubmenuActive">
-        <nuxt-link if="activeLang.value != 'en'" :to="switchLocalePath('en')" class="menu__item" value="en"
-          @click="switchLanguage('en')">EN</nuxt-link>
-        <nuxt-link if="activeLang.value != 'es'" :to="switchLocalePath('es')" class="menu__item" value="es"
-          @click="switchLanguage('es')">ES</nuxt-link>
-        <nuxt-link if="activeLang.value != 'fr'" :to="switchLocalePath('fr')" class="menu__item" value="fr"
-          @click="switchLanguage('fr')">FR</nuxt-link>
+
+        <div v-for="locl in locales">
+          <nuxt-link :if="activeLang.value != locl.code" :to="switchLocalePath(locl.code)" class="menu__item" :value="locl.code"
+            @click="switchLanguage(locl.code)">{{ locl.code.toUpperCase() }}</nuxt-link>
+        </div>
+
       </ul>
     </div>
   </nav>
@@ -21,7 +21,7 @@
 
 <script setup>
 import { useNavigation } from '@/composables/useNavigation';
-const { locale } = useI18n()
+const { locale, locales } = useI18n()
 
 const switchLocalePath = useSwitchLocalePath();
 

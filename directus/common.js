@@ -76,7 +76,10 @@ const formatTime = (date) => {
 const LANGUAGES = {
   "es-ES": "es",
   "en-US": "en",
-  "fr-FR": "fr"
+  "fr-FR": "fr",
+  "sl-SL": "sl",
+  "ar-SA": "ar",
+  "zh-CN": "zh",
 }
 
 module.exports = {

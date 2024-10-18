@@ -15,6 +15,7 @@ const SECTIONS = [
   "about_us",
   "approach",
   "footer",
+  "signup",
   "lessons",
   "webinars",
   "explainers"

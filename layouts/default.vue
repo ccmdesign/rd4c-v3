@@ -1,17 +1,19 @@
 <template>
-  <div class="page-wrapper">
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <rd-signup-section />
-      <rd-footer :footer-content="footerData"/>
-      <!-- <div class="by-ccm">
-        <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>
-        <a href="https://www.ccmdesign.ca" target="_blank">by ccm.design</a>
-      </div> -->
-    </footer>
-  </div>
+  <Html :dir="htmlAttrs.dir">
+    <div class="page-wrapper">
+      <main>
+        <slot />
+      </main>
+      <footer>
+        <rd-signup-section />
+        <rd-footer :footer-content="footerData"/>
+        <!-- <div class="by-ccm">
+          <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>
+          <a href="https://www.ccmdesign.ca" target="_blank">by ccm.design</a>
+        </div> -->
+      </footer>
+    </div>
+  </Html>
 </template>
 
 <script setup>
@@ -37,6 +39,11 @@ watch(locale, async () => {
 onMounted(() => {
   currentYear.value = new Date().getFullYear()
 })
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+})
+const htmlAttrs = computed(() => head.value.htmlAttrs)
 
 </script>
 

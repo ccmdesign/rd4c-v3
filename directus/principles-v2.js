@@ -20,7 +20,7 @@ const objectContructor = async (dir, fs) => {
     
     item.translations.forEach((translation) => {
       let tr = { ...{'itemId': item.id, 'lang': common.LANGUAGES[translation.languages_code]}, ...translation };
-      tr.slug = common.slugify(tr.name);
+      tr.slug = common.slugify(i.name);
       writeInLocaleFolder(tr.lang, tr, true);
       translations.push(tr);
       availableLang.push(tr.lang);

@@ -30,7 +30,7 @@ const objectContructor = async (dir, fs) => {
     item.translations.forEach((translation) => {
       let tr = { ...{'itemId': item.id, 'lang': common.LANGUAGES[translation.languages_code]}, ...translation };
       tr.sort = i.sort;
-      tr.slug = common.slugify(tr.title);
+      tr.slug = common.slugify(i.title);
       tr.url = i.url;
       tr.cover_image = i.cover_image;
       tr.publication_type = i.publication_type;

@@ -18,6 +18,7 @@ export default [
   {
     code: 'ar',
     name: 'Arabic',
+    dir: "rtl"
   },
   {
     code: 'zh',

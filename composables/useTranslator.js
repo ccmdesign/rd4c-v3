@@ -18,7 +18,16 @@ const SECTIONS = [
   "signup",
   "lessons",
   "webinars",
-  "explainers"
+  "explainers",
+  "faq_whatis", // FAQ section
+  "faq_why_create",
+  "faq_prodive",
+  "faq_how_work",
+  "faq_geo_focus",
+  "faq_benefit",
+  "faq_involved",
+  "faq_initiative",
+
 ]
 
 export function useTranslator(data, locale, sections=SECTIONS) {

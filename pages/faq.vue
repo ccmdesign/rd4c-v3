@@ -4,7 +4,7 @@
 
     <rd-base-section v-for="item of blocks">
       <h3>{{ item.title }}</h3>
-      <div class="columns" v-html="item.description"></div>
+      <div v-html="item.description"></div>
     </rd-base-section>
     
   </div>
@@ -38,9 +38,3 @@ const blocks = [block_faq_whatis,
   block_faq_initiative]
 
 </script>
-
-<style scoped lang="scss">
-.columns {
-  --_column-width: 45ch;
-}
-</style>

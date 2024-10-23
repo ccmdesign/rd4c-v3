@@ -2,7 +2,7 @@
   <div>
     <rd-hero :content="heroData" />
 
-    <rd-video-section video="https://www.youtube.com/embed/e0JxdJu4mK8?si=CY7g9bN1rYff_QDM">
+    <rd-video-section :video="block_intro.url">
       <h2>{{ block_intro.title }}</h2>
       <span v-html="block_intro.description"></span>
     </rd-video-section>

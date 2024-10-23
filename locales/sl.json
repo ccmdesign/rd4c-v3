@@ -42,11 +42,17 @@
         "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
     },
     "signup": {
-        "btnLabel": "Prijava",
-        "options": {
-            "updates": "Prijavite se za videoposnetke",
-            "conversation": "Pridružite se pogovoru",
-            "alliance": "Pridružite se zavezništvu"
+        "updates": {
+            "btnLabel": "Naroči se",
+            "text": "Naroči se na naše videoposnetke"
+        },
+        "conversation": {
+            "btnLabel": "Pridruži se",
+            "text": "Pridruži se pogovoru"
+        },
+        "alliance": {
+            "btnLabel": "Pridruži se",
+            "text": "Pridruži se zavezništvu"
         }
     },
     "pages": {

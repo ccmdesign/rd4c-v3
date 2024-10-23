@@ -42,11 +42,17 @@
         "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
     },
     "signup": {
-        "btnLabel": "Signup",
-        "options": {
-            "updates": "Sign up for Videos",
-            "conversation": "Join the Conversation",
-            "alliance": "Join The Alliance"
+        "updates": {
+            "btnLabel": "Subscribe",
+            "text": "Subscribe to our videos"
+        },
+        "conversation": {
+            "btnLabel": "Join",
+            "text": "Join the Conversation"
+        },
+        "alliance": {
+            "btnLabel": "Join",
+            "text": "Join The Alliance"
         }
     },
     "pages": {

@@ -42,11 +42,17 @@
         "license": "Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional"
     },
     "signup": {
-        "btnLabel": "Inscribirse",
-        "options": {
-            "updates": "Regístrate para recibir vídeos",
-            "conversation": "Únase a la conversación",
-            "alliance": "Únete a la Alianza"
+        "updates": {
+            "btnLabel": "Inscribirse",
+            "text": "Suscríbete a nuestros videos"
+        },
+        "conversation": {
+            "btnLabel": "Unirse",
+            "text": "Únase a la conversación"
+        },
+        "alliance": {
+            "btnLabel": "Unirse",
+            "text": "Únete a la Alianza"
         }
     },
     "pages": {

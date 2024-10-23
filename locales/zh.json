@@ -42,11 +42,17 @@
         "license": "知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议"
     },
     "signup": {
-        "btnLabel": "注册",
-        "options": {
-            "updates": "注册视频",
-            "conversation": "加入对话",
-            "alliance": "加入联盟"
+        "updates": {
+            "btnLabel": "订阅",
+            "text": "订阅我们的视频"
+        },
+        "conversation": {
+            "btnLabel": "加入",
+            "text": "加入对话"
+        },
+        "alliance": {
+            "btnLabel": "加入",
+            "text": "加入联盟"
         }
     },
     "pages": {

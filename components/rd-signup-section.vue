@@ -1,27 +1,30 @@
 <template>
   <!-- @ToDo: Translate the whole section -->
   <rd-split-section class="rd-signup-section" data-layout="50-50" regular-order>
-    <ccm-form @submit.prevent="onSubmit" class="form" aria-labelledby="signup-form">
-      <!-- <base-input placeholder="Name" aria-label="Name"/> -->
-      <base-input placeholder="Email" aria-label="Email" type="email" name="email" v-model="email" required />
+    <div>
 
-      <div>
-        <label class="rd-checkbox" for="videos-updates">
-          <input type="checkbox" checked name="videos-updates" id="videos-updates" aria-labelledby="videos-updates-label" v-model="updates">
-          <span id="videos-updates-label">{{ $t('signup.options.updates') }}</span>
+      <div class="rd-signup-group-actions">
+        <label class="rd-signup-actions">
+          <span>{{ $t('signup.updates.text') }}</span>
+          <a href="https://www.youtube.com/@rd4c" target="_blank">
+            <rd-button size="s" color="white" aria-label="Signup">{{ $t('signup.updates.btnLabel') }}</rd-button>
+          </a>
         </label>
-        <label class="rd-checkbox" for="join-conversation">
-          <input type="checkbox" name="join-conversation" id="join-conversation" aria-labelledby="join-conversation-label" v-model="conversation">
-          <span id="join-conversation-label">{{ $t('signup.options.conversation') }}</span>
+        <label class="rd-signup-actions">
+          <span>{{ $t('signup.conversation.text') }}</span>
+          <a href="https://thegovlab.us6.list-manage.com/subscribe?u=1a990feb5c&id=8990a71369" target="_blank">
+            <rd-button size="s" color="white" aria-label="Signup">{{ $t('signup.conversation.btnLabel') }}</rd-button>
+          </a>
         </label>
-        <label class="rd-checkbox" for="join-alliance">
-          <input type="checkbox" name="join-alliance" id="join-alliance" aria-labelledby="join-alliance-label" v-model="alliance">
-          <span id="join-alliance-label">{{ $t('signup.options.alliance') }}</span>
+        <label class="rd-signup-actions">
+          <span>{{ $t('signup.alliance.text') }}</span>
+          <a href="mailto:datastewards@thegovlab.org">
+            <rd-button size="s" color="white" aria-label="Signup">{{ $t('signup.alliance.btnLabel') }}</rd-button>
+          </a>
         </label>
       </div>
 
-      <rd-button size="l" color="white" aria-label="Signup">{{ $t('signup.btnLabel') }}</rd-button>
-    </ccm-form>
+    </div>
 
     <template #extra>
       <div class="header">
@@ -121,25 +124,18 @@ h2, p {
   color: var(--white-color);
 }
 
-.rd-checkbox {
+.rd-signup-group-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: var(--s1);
+}
+
+.rd-signup-actions {
   color: var(--white-color);
   display: flex;
   align-items: center;
   gap: var(--space-2xs-xs);
-
-  input[type="checkbox"] {
-    display: none;
-  }
-
-  &::before {
-    content: 'check_box_outline_blank';
-    font-family: var(--icon-font);
-    font-size: var(--step-2);
-  }
-  
-  &:has(:checked)::before {
-    content: 'check_box';
-  }
 }
 
 </style>

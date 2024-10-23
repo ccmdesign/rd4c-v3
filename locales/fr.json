@@ -42,11 +42,17 @@
         "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
     },
     "signup": {
-        "btnLabel": "S'inscrire",
-        "options": {
-            "updates": "Inscrivez-vous pour les vidéos",
-            "conversation": "Rejoignez la conversation",
-            "alliance": "Rejoignez l'Alliance"
+        "updates": {
+            "btnLabel": "S'inscrire",
+            "text": "Abonnez-vous à nos vidéos"
+        },
+        "conversation": {
+            "btnLabel": "Rejoindre",
+            "text": "Rejoignez la conversation"
+        },
+        "alliance": {
+            "btnLabel": "Rejoindre",
+            "text": "Rejoignez l'Alliance"
         }
     },
     "pages": {

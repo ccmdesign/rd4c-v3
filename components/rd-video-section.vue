@@ -32,7 +32,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .video-section {
-  --_color-1: var(--tertiary-color);
+  --_color-1: var(--primary-color);
   --_color-2: var(--white-color);
 
   // This padding bottom matches the padding top of the .video-container. 

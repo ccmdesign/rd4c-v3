@@ -1,5 +1,5 @@
 <template>
-  <div class="rd-case-study-card" :is-active="isActive" @click="isActive = !isActive">
+  <div class="rd-case-study-card" :is-active="isActive" @click="isActive = !isActive" >
     <div class="image">
       <img :src="content.cover_image" alt="">
     </div>
@@ -14,7 +14,7 @@
           Document</a>
       </div>
       <cluster-l class="principles-list">
-        <rd-chip v-for="i in content.principles">{{ i }}</rd-chip>
+        <rd-chip v-for="i in content.principles" :color="i">{{ i }}</rd-chip>
       </cluster-l>
     </div>
     <!-- <pre>

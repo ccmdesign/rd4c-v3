@@ -50,11 +50,11 @@
       </p>
     </rd-split-section>
 
-    <rd-divider v-if="block_team.brow" :content="block_team.brow" color="purple" class="divider" />
+    <rd-divider v-if="block_team.brow" :content="block_team.brow" color="primary" class="divider" />
 
     <rd-team-section :block="block_team" />
 
-    <rd-divider v-if="block_get_involved.brow" :content="block_get_involved.brow" color="blue" class="divider" />
+    <rd-divider v-if="block_get_involved.brow" :content="block_get_involved.brow" color="primary" class="divider" />
     <rd-split-section id="get-involved" image="/images/testing/test-28.jpg">
       <h2>{{ block_get_involved.title }}</h2>
       <div class="cms-content" v-html="block_get_involved.description"></div>

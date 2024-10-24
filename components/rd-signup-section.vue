@@ -2,28 +2,23 @@
   <!-- @ToDo: Translate the whole section -->
   <rd-split-section class="rd-signup-section" data-layout="50-50" regular-order>
     <div>
-
       <div class="rd-signup-group-actions">
         <label class="rd-signup-actions">
-          <span>{{ $t('signup.updates.text') }}</span>
           <a href="https://www.youtube.com/@rd4c" target="_blank">
-            <rd-button size="s" color="white" aria-label="Signup">{{ $t('signup.updates.btnLabel') }}</rd-button>
+            <rd-button size="m" color="white" :aria-label="$t('signup.updates.text')">{{ $t('signup.updates.text') }}</rd-button>
           </a>
         </label>
         <label class="rd-signup-actions">
-          <span>{{ $t('signup.conversation.text') }}</span>
           <a href="https://thegovlab.us6.list-manage.com/subscribe?u=1a990feb5c&id=8990a71369" target="_blank">
-            <rd-button size="s" color="white" aria-label="Signup">{{ $t('signup.conversation.btnLabel') }}</rd-button>
+            <rd-button size="m" color="white" :aria-label="$t('signup.conversation.text')">{{ $t('signup.conversation.text') }}<</rd-button>
           </a>
         </label>
         <label class="rd-signup-actions">
-          <span>{{ $t('signup.alliance.text') }}</span>
           <a href="mailto:datastewards@thegovlab.org">
-            <rd-button size="s" color="white" aria-label="Signup">{{ $t('signup.alliance.btnLabel') }}</rd-button>
+            <rd-button size="m" color="white" :aria-label="$t('signup.alliance.text')">{{ $t('signup.alliance.text') }}</rd-button>
           </a>
         </label>
       </div>
-
     </div>
 
     <template #extra>
@@ -79,7 +74,7 @@ watch(success, (value) => {
 
 <style lang="scss" scoped>
 .rd-signup-section {
-  background-color: var(--tertiary-color);
+  background-color: var(--primary-color);
   --_brow-color: hsla(var(--white-hsl), 0.5);
 }
 
@@ -128,7 +123,7 @@ h2, p {
   display: flex;
   flex-direction: column;
   align-items: end;
-  gap: var(--s1);
+  gap: var(--s-1);
 }
 
 .rd-signup-actions {

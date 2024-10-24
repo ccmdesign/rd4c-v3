@@ -1,6 +1,6 @@
 <template>
   <div class="rd-principles-section">
-    <rd-divider content="Our Principles" color="base" /><!-- @ToDo: Translate -->
+    <rd-divider content="Our Principles" color="primary" /><!-- @ToDo: Translate -->
     <div class="principles-grid">
       <div v-for="(i, index) in principles" :key="index" class="principle" :data-n="index + 1" @click="toggleAttribute">
         <div class="principle__content">
@@ -37,7 +37,8 @@ function toggleAttribute(event) {
 
 <style lang="scss" scoped>
 .rd-principles-section {
-  background: linear-gradient(to bottom, hsla(var(--base-hsl), 1) 15%, hsla(var(--primary-hsl), 1));
+  background: hsla(var(--base-hsl), 1);
+  // background: linear-gradient(to bottom, hsla(var(--base-hsl), 1) 15%, hsla(var(--primary-hsl), 1));
   color: var(--base-color);
 }
 

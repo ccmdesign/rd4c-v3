@@ -12,7 +12,8 @@
     <rd-tabs-section color="primary">
       <template #tabs>
         <span>{{ $t('tabs.caseStudies') }}</span>
-        <span>{{ $t('tabs.tools') }}</span>
+        <!-- This is currently hidden because we don't have any tools in the CMS yet. We will show it once we do. -->
+        <!-- <span>{{ $t('tabs.tools') }}</span> -->
       </template>
 
       <template #tab-1>

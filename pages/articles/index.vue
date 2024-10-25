@@ -33,6 +33,7 @@ const articles = await queryContent(locale.value, 'articles').find();
 .button {
   --button-color: hsla(var(--rd-purple), 1);
   --button-text-color: hsla(var(--rd-white), 1);
+  --button-padding-block: var(--s-1);
 }
 
 .button input[type="checkbox"] { display: none; }

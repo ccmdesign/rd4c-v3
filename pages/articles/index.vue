@@ -4,7 +4,7 @@
     <rd-base-section color="base">
       <div class="center">
         <fieldset class="search-field">
-          <input class="search" type="search">
+          <input class="search" type="search" placeholder="Search" autofocus>
         </fieldset>
         
       </div>
@@ -100,6 +100,39 @@ onMounted(() => {
   flex: 1;
   border: 2px solid hsla(var(--rd-purple), 1);
   background-color: hsla(var(--white-hsl), .05);
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px;
+  padding-inline: var(--s-1);
 }
+
+.search-field input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+  // background-color: hsla(var(--rd-purple), 1);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.search-field input[type="search"],
+.search-field input[type="search"]::placeholder {
+  color: var(--white-color);
+}
+
+.list {
+  width: 100%;
+}
+
+.list:empty {
+  grid-template-columns: 1fr;
+}
+
+.list:empty:after {
+  content: 'No articles found';
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: hsla(var(--white-hsl), .3);
+}
+
 </style>

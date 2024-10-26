@@ -87,4 +87,7 @@ export default defineNuxtConfig({
   gtag: {
     id: projectConfig.gtag
   },
+  plugins: [
+    { src: '~/plugins/list.client.js', ssr: false },
+  ]
 });

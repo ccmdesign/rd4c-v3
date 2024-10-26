@@ -17,6 +17,12 @@
 
     <div class="rd-card__content">
       <header class="stack">
+        <div style="display: none">
+          <span :class="`filter-${content.content_type}`">{{content.content_type}}</span>
+          <span class="filter-heading">{{ content.heading }}</span>
+          <span class="filter-tagline">{{ content.tagline }}</span>
+          <span class="filter-main_content">{{ content.main_content }}</span>
+        </div>
         <h5 v-if="content.brow">{{ content.brow }}</h5>
         <h3 v-if="content.heading">{{ content.heading }}</h3>
         <h3 v-else-if="content.title">{{ content.title }}</h3>

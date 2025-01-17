@@ -4,7 +4,8 @@
   "description": "Boilerplate for project using CCM Design System",
   "scripts": {
     "dev": "node ./contentImporter.js && nuxt dev",
-    "generate": "node ./contentImporter.js && nuxt generate"
+    "generate": "node ./contentImporter.js && nuxt generate",
+    "build": "node ./contentImporter.js && nuxt build"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",

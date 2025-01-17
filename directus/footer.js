@@ -1,7 +1,7 @@
 // https://cms.thegovlab.com/items/pages?fields=title,blocks.collection,blocks.item.*,blocks.item.translations.*
 
 const fs = require("fs");
-var rimraf = require("rimraf");
+const { rimraf } = require('rimraf');
 const common = require ("./common");
 
 const objectContructor = async (dir, fs) => {
@@ -36,7 +36,7 @@ const getFooter = async () => {
 
   const dir = "./content/pages";
   if (fs.existsSync(dir)) {
-    rimraf(dir, async () => {
+    Promise.all([rimraf(dir)]).then(() => {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
       }
@@ -44,7 +44,7 @@ const getFooter = async () => {
         if (err) {
           console.log(err);
         } else {
-          objectContructor(dir, fs);
+          await objectContructor(dir, fs);
         }
       });
     });

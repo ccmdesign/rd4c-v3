@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-var rimraf = require("rimraf");
+const { rimraf } = require('rimraf');
 const common = require ("./common");
 const axios = require("axios");
 
@@ -64,7 +64,7 @@ const objectContructor = async (dir, fs) => {
 const getArticleFilterFields = async () => {
   const dir = "./content/articles-filters";
   if (fs.existsSync(dir)) {
-    rimraf(dir, async () => {
+    Promise.all([rimraf(dir)]).then(() => {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
       }

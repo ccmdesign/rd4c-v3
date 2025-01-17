@@ -89,5 +89,10 @@ export default defineNuxtConfig({
   },
   plugins: [
     { src: '~/plugins/list.client.js', ssr: false },
-  ]
+  ],
+  runtimeConfig: {
+    public: {
+      SEARCH_API_URL: process.env.SEARCH_API_URL
+    }
+  },
 });

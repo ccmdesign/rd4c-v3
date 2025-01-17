@@ -21,7 +21,7 @@ const objectContructor = async (dir, fs) => {
 
   const finalArticles = articles.map((item) => {
     let i = { ...{'lang': 'en'}, ...item };
-    i.slug = common.slugify(item.heading);
+    i.slug = item.slug ? item.slug : common.slugify(item.heading);
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
     i.cover_image_id = item.cover_image ? item.cover_image.id : '';
 

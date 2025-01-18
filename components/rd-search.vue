@@ -1,3 +1,11 @@
+<template>
+  <form @submit.prevent action="" class="rd-search">
+    
+    <input v-model="searchInput" type="search" placeholder="Try our Ai Powered Search">
+    <button type="submit" class="button" @click="createSearchQuery()">Search</button>
+  </form>
+</template>
+
 <script setup>
 import { useStore } from '../store/searchStore';
 const store = useStore();
@@ -21,62 +29,75 @@ const createSearchQuery = async (e) => {
 };
 </script>
 
-<template>
-  <form @submit.prevent action="" class="rd-search">
-    <i class="icon">search</i>
-    <input v-model="searchInput" type="search">
-    <button type="submit" class="button" @click="createSearchQuery()">Search</button>
-  </form>
-</template>
 
 <style lang="scss" scoped>
 .rd-search {
   position: relative;
   display: flex;
-  min-width: 350px;
+  // width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s0);
+  
+  @media screen and (min-width: 480px) {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+
+.rd-search {
+  input {
+    border-radius: var(--base-border-radius);
+    width: fill-available;
+    @media screen and (max-width: 480px) {
+      
+    }
+    @media screen and (min-width: 480px) {
+      border-radius: var(--base-border-radius) 0 0 var(--base-border-radius);
+    }
+  }
+  
+  button {
+    border-radius: var(--base-border-radius);
+    
+    @media screen and (max-width: 480px) {
+      width: fill-available;  
+    }
+    @media screen and (min-width: 480px) {
+      border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0;
+    }
+  }
 }
 
 .rd-search input {
-  width: 100%;
   background-color: hsla(var(--white-hsl), .1);
   border: 0;
-  border-radius: var(--base-border-radius) 0 0 var(--base-border-radius);
-  padding-left: var(--s2);
-  color: var(--white-color);  
+  padding-inline: var(--s1);
+  @media screen and (max-width: 480px) {
+      padding-block: var(--s0);
+    }
+  color: var(--white-color);
+  
+  &::placeholder { color: var(--white-color); }
 }
 
-.rd-search .icon {
-  position: absolute;
-  height: 100%;
-  padding: 0 var(--s-1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rd-search button {
-  padding-inline: var(--s0);
-  border: 2px solid transparent;
-  background-color: hsla(var(--white-hsl), .2);
-}
+// .rd-search button {
+//   border-color: transparent;
+//   background-color: hsla(var(--white-hsl), .4);
+// }
 
 .rd-search:focus-within {
-  background-color: hsla(var(--white-hsl), .2);
-  outline: 2px solid var(--accent-color);
-  border-radius: var(--base-border-radius);
+  input {
+    outline: 2px solid hsla(var(--white-hsl), .2);
+  }
+
+  input + button {
+    background-color: hsla(var(--accent-hsl), 1);
+    border-color: transparent;
+  }
 
   input { outline: 0; }
-  button { background-color: hsla(var(--primary-hsl), 1  ); }
-  .icon { opacity: 1; }
-}
-
-.rd-search button:hover {
-  background-color: hsla(var(--primary-hsl), .8);
-}
-
-.rd-search button {
-  border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0;
-  outline: 0;
+  
 }
 
 </style>

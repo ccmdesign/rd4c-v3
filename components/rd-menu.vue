@@ -1,10 +1,15 @@
 <template>
-  <nav class="menu" :class="{ 'menu--open': isMenuOpen }">
+  <nav class="menu" :class="{ 'menu--open': isMenuOpen }" ref="menuRef">
+    
+
     <rd-button class="menu__toggle" @click="toggleMenu" icon-before="menu" visual="ghost" color="white"
         size="full-width" />
-
+        
+    <rd-button class="search-trigger menu__item" icon-before="search" color="white" visual="ghost" popovertarget="search-trigger"></rd-button>
+    
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="localePath(item.link)" :target="item.target">{{
       $t(item.name) }}</nuxt-link>
+    
     <div class="language-selector">
       <button class="menu__item" @click="toggleLangMenu">{{ activeLang }}</button>
       <ul class="submenu" v-if="isSubmenuActive">
@@ -13,9 +18,10 @@
           <nuxt-link :if="activeLang.value != locl.code" :to="switchLocalePath(locl.code)" class="menu__item" :value="locl.code"
             @click="switchLanguage(locl.code)">{{ locl.code.toUpperCase() }}</nuxt-link>
         </div>
-
       </ul>
     </div>
+
+    
   </nav>
 </template>
 
@@ -30,6 +36,7 @@ const { menuItems } = useNavigation();
 const isMenuOpen = ref(false);
 const isSubmenuActive = ref(false);
 const activeLang = ref(locale.value);
+const menuRef = ref(null);
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
@@ -45,6 +52,12 @@ function switchLanguage(lang) {
   toggleMenu();
 }
 
+function updateMenuHeight() {
+  if (menuRef.value) {
+    const height = menuRef.value.scrollHeight - 50;
+    document.documentElement.style.setProperty('--menu-height', `${height}px`);
+  }
+}
 
 // Optionally, you can add a watcher to close the menu when the route changes
 watch(() => useRoute().path, () => {
@@ -53,9 +66,14 @@ watch(() => useRoute().path, () => {
 
 onMounted(() => {
   nextTick(() => {
-    const menuElement = document.querySelector('.menu');
-    const height = menuElement ? menuElement.scrollHeight : 0;
-    document.documentElement.style.setProperty('--menu-height', `${height}px`);
+    updateMenuHeight();
+  });
+});
+
+// Update height when submenu opens/closes
+watch(isSubmenuActive, () => {
+  nextTick(() => {
+    updateMenuHeight();
   });
 });
 </script>
@@ -76,11 +94,12 @@ onMounted(() => {
       color: var(--accent-color);
     }
   }
+
   @media screen and (max-width: 768px) {
-    --menu-height: 355px; // magic number calculated based on the number of menu items in useNavigation
     transition: all .3s ease-in-out;
     position: fixed;
-    display: block;
+    display: flex;
+    flex-direction: column;
     z-index: 1000;
     width: 100%;
     height: auto;
@@ -96,16 +115,23 @@ onMounted(() => {
       padding: var(--s-1) 0;
       border-bottom: 1px solid hsla(var(--white-hsl), .2);
       width: 100%;
-      
     }
 
     &.menu--open { bottom: 0; }
+
+
+    .search-trigger { order: 1; }
+
   }
 
   @media screen and (min-width: 768px) {
     display: flex;
     list-style: none;
     gap: var(--s1);
+  }
+
+  .search-trigger {
+    order: 1;
   }
 }
 

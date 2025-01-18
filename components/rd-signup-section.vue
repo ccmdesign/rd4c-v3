@@ -10,7 +10,7 @@
         </label>
         <label class="rd-signup-actions">
           <a href="https://thegovlab.us6.list-manage.com/subscribe?u=1a990feb5c&id=8990a71369" target="_blank">
-            <rd-button size="m" color="white" :aria-label="$t('signup.conversation.text')">{{ $t('signup.conversation.text') }}<</rd-button>
+            <rd-button size="m" color="white" :aria-label="$t('signup.conversation.text')">{{ $t('signup.conversation.text') }}</rd-button>
           </a>
         </label>
         <label class="rd-signup-actions">

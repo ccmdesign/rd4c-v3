@@ -1,17 +1,17 @@
 <template>
   <div class="rd-card" :color="content.color">
-    <img v-if="content.cover_image" :src="content.cover_image" />
-    <img v-else-if="content.image" :src="content.image" alt="" />
-    <img v-else src="/images/default.jpg" alt="" />
+    <img class="rd-card__image" v-if="content.cover_image" :src="content.cover_image" />
+    <img class="rd-card__image" v-else-if="content.image" :src="content.image" alt="" />
+    <img class="rd-card__image" v-else src="/images/default.jpg" alt="" />
 
-    <div class="rd-card__content">
-      <header class="stack">
+    <div class="rd-card__content | stack">
+      <header>
         <h5 v-if="content.brow">{{ content.brow }}</h5>
         <h3 v-if="content.heading">{{ content.heading }}</h3>
         <h3 v-else-if="content.title">{{ content.title }}</h3>
         <h4 v-if="content.tagline">{{ content.tagline }}</h4>
-        <p v-if="content.excerptSummary">{{ content.excerptSummary }}</p>
       </header>
+      <p v-if="content.excerptSummary">{{ content.excerptSummary }}</p>
       <div class="rd-card__action">
         <a v-if="content.url && content.url.startsWith('https')" class="button" data-size="full-width" color="primary" :href="content.url"
           target="_blank">Go to Resource</a>
@@ -39,7 +39,6 @@ const props = defineProps({
   }
 
 });
-console.log(9999, props.content)
 
 const computedUrl = computed(() => {
   if(props.content.lang === 'en') {
@@ -51,39 +50,27 @@ const computedUrl = computed(() => {
 
 <style lang="scss" scoped>
 .rd-card {
-  // Overriding the Base Section color.
-  // This is an unintended side effect of the Base Section component.
-  --base-section-color: var(--base-color); 
-}
-
-.rd-card {
-  --_card-radius: var(--base-border-radius);
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto 1fr;
-  box-shadow: 0 4px 8px hsla(var(--base-hsl), 0.15);
-  align-items: start;
-  margin-top: var(--s1);
-  border-radius: var(--_card-radius);
-  background-color: #fff;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "image" "content";
+  
+  @media screen and (min-width: 768px) {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "image content";
+  }
 }
 
-.rd-card__content {
-  padding: var(--s1);
-  display: grid;
-  gap: var(--s-1);
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: "heading" "description" "action";
-  height: stretch;
-}
-
-.rd-card__content header {
-  grid-area: heading;
-  --space: var(--s-2);
-} 
-
-.rd-card img {
-  width: calc(40% - (var(--s0) * 2));
+.rd-card__image {
+  max-width: 93%;
+  @media screen and (min-width: 768px) {
+    max-width: 350px;
+  }
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  grid-area: image;
+  // width: calc(40% - (var(--s0) * 2));
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
@@ -92,6 +79,27 @@ const computedUrl = computed(() => {
   border-radius: var(--_card-radius);
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
+
+
+.rd-card {
+  // Overriding the Base Section color.
+  // This is an unintended side effect of the Base Section component.
+  --base-section-color: var(--base-color); 
+}
+
+.rd-card {
+  --_card-radius: var(--base-border-radius);
+  box-shadow: 0 4px 8px hsla(var(--base-hsl), 0.15);
+  border-radius: var(--_card-radius);
+  background-color: #fff;
+}
+
+.rd-card__content {
+  padding: var(--s1);
+  * {--space: var(--s0); }
+}
+
+
 
 .rd-card h5 {
   font-size: 1rem;
@@ -105,23 +113,4 @@ const computedUrl = computed(() => {
   color: hsla(var(--rd-purple), 1);
 }
 
-.rd-card h4 {
-  font-size: 1rem;
-}
-
-.rd-card__main-content {
-  font-size: 1rem;
-  grid-area: description;
-  padding-bottom: var(--s-1);
-}
-
-.rd-card .date {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.rd-card__action {
-  margin-top: auto;
-  grid-area: action;
-}
 </style>

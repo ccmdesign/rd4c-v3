@@ -1,6 +1,5 @@
 <template>
   <form @submit.prevent action="" class="rd-search">
-    
     <input v-model="searchInput" type="search" placeholder="Try our Ai Powered Search">
     <button type="submit" class="button" @click="createSearchQuery()">Search</button>
   </form>

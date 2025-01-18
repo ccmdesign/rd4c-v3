@@ -75,12 +75,11 @@
 </script>
 
 <template>
-  <rd-top-bar />
-  <article class="padding-top:s4">
+  <article>
     <div v-if=searchResultData.length>
       <center-l size="wide">
-        <stack-l>
-          <rd-search-result-card v-for="item in searchResultData" :content="item" />
+        <stack-l class="list" space="var(--s4)">
+          <rd-search-result-card class="result-card" v-for="item in searchResultData" :content="item" />
         </stack-l>
       </center-l>
     </div>
@@ -88,6 +87,14 @@
   </article>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .list {
+    padding-block: var(--s3);
+  }
+  
+  .list > * {
+    --space: 4rem;
+  }
+</style>
 
 

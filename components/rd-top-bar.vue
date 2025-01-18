@@ -34,6 +34,10 @@
 
 
 .top-bar {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 85px;
   display: flex;
   background: var(--base-color);
   grid-template-columns: 1fr auto;
@@ -71,6 +75,8 @@
   align-items: center;
   inset: none;
   margin: 0;
-  top: 75px;
+  // @media screen and (max-width: 468px) { top: 75px; } 
+  top: 85px;
+  
 }
 </style>

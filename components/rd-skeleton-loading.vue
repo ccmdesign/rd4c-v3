@@ -56,6 +56,10 @@
 }
 
 .skeleton-card {
+  --_skeleton-color: hsla(var(--primary-hsl), .15);
+}
+
+.skeleton-card {
   display: flex;
   gap: 1rem;
   background-color: transparent;
@@ -68,7 +72,7 @@
 .skeleton-card__header {
   width: 30%;
   height: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--_skeleton-color);
   border-radius: 5px;
   margin-bottom: 1rem;
 }
@@ -81,13 +85,13 @@
 }
 
 .skeleton-card__line {
-  background-color: var(--primary-color);
+  background-color: var(--_skeleton-color);
   border-radius: 5px;
   height: 10px;
 }
 
 .skeleton-card__summary-line {
-  background-color: var(--primary-color);
+  background-color: var(--_skeleton-color);
   border-radius: 5px;
   height: 100%;
   width: 100%;

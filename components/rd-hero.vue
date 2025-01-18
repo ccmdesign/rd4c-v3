@@ -1,6 +1,6 @@
 <template>
   <header class="rd-hero" :bg="content.image" :route="$route.name" :color="color">
-    <rd-top-bar class="rd-hero__top-bar" />
+    
     <div class="rd-hero__image">
       <img class="rd-hero__bg" :src="content.image" :alt="content.title" />
       <img class="rd-logo-icon" src="/images/logos/rd4c-logo-icon.png" alt="">

@@ -1,16 +1,19 @@
 <template>
   <Html :dir="htmlAttrs.dir">
     <div class="page-wrapper">
+      <div class="top-bar">
+        <rd-top-bar />
+      </div>
       <main>
         <slot />
       </main>
       <footer>
         <rd-signup-section />
         <rd-footer :footer-content="footerData"/>
-        <!-- <div class="by-ccm">
+        <div class="by-ccm">
           <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>
           <a href="https://www.ccmdesign.ca" target="_blank">by ccm.design</a>
-        </div> -->
+        </div>
       </footer>
     </div>
   </Html>
@@ -51,6 +54,8 @@ const htmlAttrs = computed(() => head.value.htmlAttrs)
 .page-wrapper {
   min-height: 100vh;
   position: relative;
+  display: grid;
+  grid-template-rows: 85px 1fr auto;
 }
 
 .by-ccm {

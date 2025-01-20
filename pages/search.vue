@@ -75,11 +75,15 @@
 </script>
 
 <template>
-  <article>
+  <article class="padding-block:s3">
+    <center-l size="wide" class="padding-bottom:s4">
+      <rd-search class="search-input"/>
+    </center-l>
+    
     <div v-if=searchResultData.length>
       <center-l size="wide">
         <stack-l class="list" space="var(--s4)">
-          <rd-search class="search-input"/>
+          
           <rd-search-result-card class="result-card" v-for="item in searchResultData" :content="item" />
         </stack-l>
       </center-l>
@@ -89,13 +93,14 @@
 </template>
 
 <style lang="scss" scoped>
-  .search-input {
-    border-color: red;
+  .search-input :deep(input[type="search"]) {
+    --_search-border-color: var(--base-color);
+    --_search-color: var(--base-color);
   }
 
-  .list {
-    padding-block: var(--s3);
-  }
+  // .list {
+  //   padding-block: var(--s3);
+  // }
   
   .list > * {
     --space: 4rem;

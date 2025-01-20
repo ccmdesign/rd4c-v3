@@ -76,7 +76,7 @@ const computedUrl = computed(() => {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto 1fr;
-  box-shadow: 0 4px 8px hsla(var(--base-hsl), 0.15);
+  box-shadow: var(--shadow-elevation-medium);
   align-items: start;
   margin-top: var(--s1);
   border-radius: var(--_card-radius);
@@ -105,7 +105,7 @@ const computedUrl = computed(() => {
   margin-inline: var(--s0);
   margin-top: calc(var(--s1) * -1);
   border-radius: var(--_card-radius);
-  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-elevation-high);
 }
 
 .rd-card h5 {

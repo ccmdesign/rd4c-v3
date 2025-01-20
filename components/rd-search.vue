@@ -45,6 +45,9 @@ const createSearchQuery = async (e) => {
 }
 
 .rd-search {
+  --_search-border-color: transparent;
+  --_search-color: var(--white-color);
+
   input {
     border-radius: var(--base-border-radius);
     width: fill-available;
@@ -70,14 +73,16 @@ const createSearchQuery = async (e) => {
 
 .rd-search input {
   background-color: hsla(var(--white-hsl), .1);
-  border: 0;
+  border: var(--base-border-width) solid var((--_search-border-color));
+  margin-right: calc(var(--base-border-width) * -1);
+
   padding-inline: var(--s1);
   @media screen and (max-width: 480px) {
       padding-block: var(--s0);
     }
-  color: var(--white-color);
+  color: var(--_search-color);
   
-  &::placeholder { color: var(--white-color); }
+  &::placeholder { color: var(--_search-color); }
 }
 
 // .rd-search button {

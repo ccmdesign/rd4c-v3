@@ -62,6 +62,16 @@
   });
 
   onMounted(() => {
+
+    const dialogInput = document.querySelector('#search-trigger');
+    if(dialogInput) {
+      dialogInput.style.display = 'none';
+    }
+
+    const articleInput = document.querySelector('article div .rd-search input');
+    articleInput.focus();
+
+
     if(store.searchValue) {
       doSearch();
     }

@@ -1,17 +1,20 @@
 <template>
   <form @submit.prevent action="" class="rd-search">
-    <input v-model="searchInput" type="search" placeholder="Try our Ai Powered Search">
+    <input :id="'search-input' + uniqueId" v-model="searchInput" type="search" placeholder="Try our Ai Powered Search">
     <button type="submit" class="button" @click="createSearchQuery()">Search</button>
   </form>
 </template>
 
 <script setup>
 import { useStore } from '../store/searchStore';
+import { v4 as uuidv4 } from 'uuid';
 const store = useStore();
 const router = useRouter();
 const route = useRoute();
 
-let searchInput = ref(null);
+
+const uniqueId = ref(uuidv4());
+const searchInput = ref(store.searchValue);
 const emit = defineEmits(['search']);
 
 const createSearchQuery = async (e) => {
@@ -27,7 +30,6 @@ const createSearchQuery = async (e) => {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .rd-search {

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <rd-top-bar />
     <header class="post-hero">
       <rd-content-grid>
         <h4 class="brow" v-if="data.post.brow">{{ data.post.brow }}</h4>

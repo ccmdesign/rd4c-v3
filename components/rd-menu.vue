@@ -5,7 +5,7 @@
     <rd-button class="menu__toggle" @click="toggleMenu" icon-before="menu" visual="ghost" color="white"
         size="full-width" />
         
-    <rd-button class="search-trigger menu__item" icon-before="search" color="white" visual="ghost" popovertarget="search-trigger"></rd-button>
+    <rd-button class="search-trigger menu__item" icon-before="search" color="white" visual="ghost" popovertarget="search-trigger" @click="delegateFocus"></rd-button>
     
     <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="localePath(item.link)" :target="item.target">{{
       $t(item.name) }}</nuxt-link>
@@ -76,6 +76,17 @@ watch(isSubmenuActive, () => {
     updateMenuHeight();
   });
 });
+
+const route = useRoute();
+const delegateFocus = (e) => {
+  if(route.path === '/search') {
+    e.preventDefault();
+    const searchInput = document.querySelector('article div .rd-search input');
+    searchInput.focus();
+  } else {
+    document.querySelector('#search-trigger').style.display = 'block';
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -79,6 +79,7 @@
     <div v-if=searchResultData.length>
       <center-l size="wide">
         <stack-l class="list" space="var(--s4)">
+          <rd-search class="search-input"/>
           <rd-search-result-card class="result-card" v-for="item in searchResultData" :content="item" />
         </stack-l>
       </center-l>
@@ -88,6 +89,10 @@
 </template>
 
 <style lang="scss" scoped>
+  .search-input {
+    border-color: red;
+  }
+
   .list {
     padding-block: var(--s3);
   }

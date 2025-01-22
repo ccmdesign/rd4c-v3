@@ -19,11 +19,12 @@ const objectContructor = async (dir, fs) => {
   const translations = [];
   const availableLang = [];
 
-  const finalVideos = videos.map((item) => {
+  const finalVideos = videos.map(async (item) => {
     let i = { ...{'lang': 'en'}, ...item };
     i.slug = common.slugify(item.title);
     i.heading = item.title;
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
+    i.thumbnail = !item.cover_image ? await common.getVideoThumbnail(item.url) : '';
 
     // collaborators
     i.collaborators = item.collaborators.length > 0 ? item.collaborators.map((collab) => {
@@ -38,9 +39,10 @@ const objectContructor = async (dir, fs) => {
     
     item.translations.forEach((translation) => {
       let tr = { ...{'itemId': item.id, 'lang': common.LANGUAGES[translation.languages_code]}, ...translation };
-      tr.slug = common.slugify(i.title);
+      tr.slug = common.slugify(i.heading);
       tr.url = tr.url ? tr.url : i.url;
       tr.cover_image = i.cover_image;
+      tr.thumbnail = i.thumbnail;
       tr.category = i.category;
       tr.principles = i.principles;
       tr.main_content = i.main_content;
@@ -74,8 +76,8 @@ const objectContructor = async (dir, fs) => {
       });
 
     } else {
-      finalVideos.forEach((item) => {
-        writeInLocaleFolder(lang, item);
+      finalVideos.forEach(async (item) => {
+        await writeInLocaleFolder(lang, item);
       });
     }
   }

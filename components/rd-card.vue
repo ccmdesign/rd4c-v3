@@ -13,6 +13,7 @@
     loading="lazy" />
     <img v-else-if="content.cover_image" :src="content.cover_image" />
     <img v-else-if="content.image" :src="content.image" alt="" />
+    <img v-else-if="content.thumbnail" :src="content.thumbnail" alt="" />
     <img v-else src="/images/default.jpg" alt="" />
 
     <div class="rd-card__content">

@@ -100,7 +100,7 @@ const writeInLocaleFolder = async (lang, item, log=false) => {
     }
   );
 
-  if(log) console.log("WRITING VIDEOS: ", item.slug + ".json");
+  if(log) console.log("WRITING ARTICLES: ", item.slug + ".json");
 
 }
 

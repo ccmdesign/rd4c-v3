@@ -52,7 +52,7 @@ const createSearchQuery = async (e) => {
 
   input {
     border-radius: var(--base-border-radius);
-    width: fill-available;
+    width: stretch;
     @media screen and (max-width: 480px) {
       
     }
@@ -65,7 +65,7 @@ const createSearchQuery = async (e) => {
     border-radius: var(--base-border-radius);
     
     @media screen and (max-width: 480px) {
-      width: fill-available;  
+      width: stretch;
     }
     @media screen and (min-width: 480px) {
       border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0;
@@ -77,12 +77,11 @@ const createSearchQuery = async (e) => {
   background-color: hsla(var(--white-hsl), .1);
   border: var(--base-border-width) solid var((--_search-border-color));
   margin-right: calc(var(--base-border-width) * -1);
-
+  color: var(--_search-color);
   padding-inline: var(--s1);
   @media screen and (max-width: 480px) {
       padding-block: var(--s0);
     }
-  color: var(--_search-color);
   
   &::placeholder { color: var(--_search-color); }
 }

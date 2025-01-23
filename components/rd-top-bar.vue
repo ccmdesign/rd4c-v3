@@ -65,7 +65,7 @@
 }
 
 .search-field-popover {
-  width: fill-available;
+  width: stretch;
   padding: var(--s0);
   background: hsla(var(--base-hsl), .95);
   border-radius: 0 0 var(--base-border-radius) var(--base-border-radius) ;

@@ -2,12 +2,7 @@
   <div id="list-container">
     <rd-hero :content="block_hero" />
     <rd-base-section color="base">
-      <div class="center">
-        <fieldset class="search-field">
-          <input class="search" type="search" placeholder="Search" autofocus>
-        </fieldset>
-        
-      </div>
+      
       <cluster-l class="filters | padding-bottom:s1" justify="center">
         <div v-for="(i, index) of filters[0].items" :key="index">
           <label class="button" data-size="s"><input type="checkbox" :id="`filter-${i.value}`" style="display:none" v-model="isChecked[i.value]" :value="i.text">{{ i.text.toUpperCase() }}</label>

@@ -22,15 +22,15 @@
         "testimonials": "Testimonials"
     },
     "buttons": {
-        "view-all": "View All",
+        "view-all": "View aAll",
         "learn-more": "Learn more",
         "join": "Join",
-        "getInvolved": "Join the Alliance",
+        "getInvolved": "Join the alliance",
         "stayEngaged": "Join the conversation",
-        "downloadReport": "Download the Report"
+        "downloadReport": "Download the report"
     },
     "texts": {
-        "join": "Join the RD4C Conversation"
+        "join": "Join the RD4C conversation"
     },
     "footer": {
         "partners": "Partners",
@@ -48,11 +48,11 @@
         },
         "conversation": {
             "btnLabel": "Join",
-            "text": "Join the Conversation"
+            "text": "Join the conversation"
         },
         "alliance": {
             "btnLabel": "Join",
-            "text": "Join The Alliance"
+            "text": "Join the alliance"
         }
     },
     "pages": {
@@ -64,7 +64,7 @@
     },
     "errors": {
         "404": {
-            "title": "404: Page Not Found",
+            "title": "404: Page not found",
             "message": "The page you were looking for could not be found."
         }
     }

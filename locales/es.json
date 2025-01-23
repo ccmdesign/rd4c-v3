@@ -17,7 +17,7 @@
         "principles": "Principio",
         "caseStudies": "Estudios de caso",
         "tools": "Herramientas",
-        "trainings": "La Formacion",
+        "trainings": "La formacion",
         "explainers": "Explicadores",
         "testimonials": "Testimonios"
     },
@@ -25,9 +25,9 @@
         "view-all": "Ver todo",
         "learn-more": "Saber más",
         "join": "Unirse",
-        "getInvolved": "Únase a la Alianza",
+        "getInvolved": "Únase a la alianza",
         "stayEngaged": "Únete a la conversación",
-        "downloadReport": "Descargar Informe"
+        "downloadReport": "Descargar informe"
     },
     "texts": {
         "join": "Unirse a la conversación RD4C"
@@ -52,7 +52,7 @@
         },
         "alliance": {
             "btnLabel": "Unirse",
-            "text": "Únete a la Alianza"
+            "text": "Únete a la alianza"
         }
     },
     "pages": {

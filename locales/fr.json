@@ -25,7 +25,7 @@
         "view-all": "Voir tout",
         "learn-more": "En savoir plus",
         "join": "Rejoindre",
-        "getInvolved": "Rejoignez l'Alliance",
+        "getInvolved": "Rejoignez l'alliance",
         "stayEngaged": "Rejoignez la conversation",
         "downloadReport": "Télécharger le rapport"
     },
@@ -52,7 +52,7 @@
         },
         "alliance": {
             "btnLabel": "Rejoindre",
-            "text": "Rejoignez l'Alliance"
+            "text": "Rejoignez l'alliance"
         }
     },
     "pages": {

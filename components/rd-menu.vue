@@ -83,8 +83,6 @@ const delegateFocus = (e) => {
     e.preventDefault();
     const searchInput = document.querySelector('article div .rd-search input');
     searchInput.focus();
-  } else {
-    document.querySelector('#search-trigger').style.display = 'block';
   }
 }
 </script>

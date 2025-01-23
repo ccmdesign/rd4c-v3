@@ -1,5 +1,6 @@
 <script setup>
-  import { useStore } from '../store/searchStore';
+  import { onUnmounted } from 'vue';
+import { useStore } from '../store/searchStore';
   const config = useRuntimeConfig();
   const store = useStore();
   const searchResultData = ref([]);
@@ -80,6 +81,13 @@
       searchResultData.value = store.lastSearchResults;
     }
 
+  });
+
+  onUnmounted(() => {
+    const dialogInput = document.querySelector('#search-trigger');
+    if(dialogInput) {
+      dialogInput.style = undefined;
+    }
   });
 
 </script>

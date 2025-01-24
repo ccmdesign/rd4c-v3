@@ -7,7 +7,7 @@
         <h3 class="tagline" v-if="data.post.tagline">{{ data.post.tagline }}</h3>
         <h5 class="date" v-if="data.post.date">{{ formatDate(data.post.date) }}</h5>
         <div class="collaborators" v-if="data.post.collaborators">
-          <span v-for="i in data.post.collaborators">{{ i.id }}</span>
+          <span v-for="i in data.post.collaborators">{{ i.name }}</span>
         </div>
       </rd-content-grid>
     </header>

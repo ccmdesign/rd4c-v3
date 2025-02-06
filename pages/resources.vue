@@ -17,7 +17,7 @@
       </template>
 
       <template #tab-1>
-        <rd-base-section>
+        <rd-base-section id="case-studies">
           <stack-l space="var(--s3)">
             <rd-case-study-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
           </stack-l>
@@ -25,7 +25,7 @@
       </template>
 
       <template #tab-2>
-        <rd-base-section>
+        <rd-base-section id="tools">
           <h2>Tools Temp</h2>
           <rd-card-grid>
             <rd-card v-for="i in tools" v-bind:key="i.slug" :content="i" />

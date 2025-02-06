@@ -7,8 +7,21 @@
         
     <rd-button class="search-trigger menu__item" icon-before="search" color="white" visual="ghost" popovertarget="search-trigger" @click="delegateFocus"></rd-button>
     
-    <nuxt-link v-for="item in menuItems" :key="item.name" class="menu__item" :to="localePath(item.link)" :target="item.target">{{
+    <div v-for="item in menuItems" >
+
+      <div v-if="item.subMenu" class="language-selector">
+        <button class="menu__item" @click="toggleSubMenu">{{ $t(item.name) }}</button>
+        <ul class="submenu" v-if="mainSubItem">
+
+          <div v-for="subItem in item.subMenu">
+            <nuxt-link :to="subItem.link" class="menu__item">{{ $t(subItem.name) }}</nuxt-link>
+          </div>
+        </ul>
+      </div>
+
+      <nuxt-link v-else :key="item.name" class="menu__item" :to="localePath(item.link)" :target="item.target">{{
       $t(item.name) }}</nuxt-link>
+    </div>
     
     <div class="language-selector">
       <button class="menu__item" @click="toggleLangMenu">{{ activeLang }}</button>
@@ -34,7 +47,6 @@ const switchLocalePath = useSwitchLocalePath();
 const { menuItems } = useNavigation();
 
 const isMenuOpen = ref(false);
-const isSubmenuActive = ref(false);
 const activeLang = ref(locale.value);
 const menuRef = ref(null);
 
@@ -42,8 +54,19 @@ function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
 
+const subMenuWidth = ref('10ch');
+const isSubmenuActive = ref(false);
 function toggleLangMenu() {
   isSubmenuActive.value = !isSubmenuActive.value;
+  subMenuWidth.value = '10ch';
+  mainSubItem.value = false;
+}
+
+const mainSubItem = ref(false);
+function toggleSubMenu() {
+  mainSubItem.value = !mainSubItem.value;
+  subMenuWidth.value = '15ch';
+  isSubmenuActive.value = false;
 }
 
 function switchLanguage(lang) {
@@ -176,7 +199,7 @@ const delegateFocus = (e) => {
       position: absolute;
       top: 80%;
       left: -35px;
-      width: 10ch;
+      width: v-bind(subMenuWidth);
       text-align: center;
       background: var(--base-color);
       display: flex;

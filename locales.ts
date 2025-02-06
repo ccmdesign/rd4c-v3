@@ -12,10 +12,6 @@ export default [
     name: 'French',
   },
   {
-    code: 'sl',
-    name: 'Slovenian',
-  },
-  {
     code: 'ar',
     name: 'Arabic',
     dir: "rtl"

@@ -58,14 +58,14 @@
     <rd-split-section id="get-involved" image="/images/testing/test-28.jpg">
       <h2>{{ block_get_involved.title }}</h2>
       <div class="cms-content" v-html="block_get_involved.description"></div>
-      <p><rd-button href="http://eepurl.com/gKa2S1" visual="secondary" color="primary">{{ $t('buttons.getInvolved')
+      <p><rd-button href="mailto:datastewards@thegovlab.org" visual="secondary" color="primary">{{ $t('buttons.getInvolved')
           }}</rd-button></p>
     </rd-split-section>
 
     <rd-split-section id="stay-engaged" image="/images/testing/test-25.jpg">
       <h2>{{ block_stay_engaged.title }}</h2>
       <div class="cms-content" v-html="block_stay_engaged.description"></div>
-      <p><rd-button href="http://eepurl.com/gKa2S1" color="primary">{{ $t('buttons.stayEngaged') }}</rd-button></p>
+      <p><rd-button href="https://thegovlab.us6.list-manage.com/subscribe?u=1a990feb5c&id=8990a71369" color="primary">{{ $t('buttons.stayEngaged') }}</rd-button></p>
     </rd-split-section>
   </div>
   <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->

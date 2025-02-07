@@ -277,7 +277,7 @@
 }
 
 :root {
-  --shadow-color: 286deg 36% 64%;
+  --shadow-color: 0deg 0% 70%;
   --shadow-elevation-low:
     0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.25),
     0.4px 0.8px 1px -1.3px hsl(var(--shadow-color) / 0.25),

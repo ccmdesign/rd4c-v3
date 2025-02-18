@@ -16,10 +16,7 @@ const objectContructor = async (dir, fs) => {
     else return -1;
   });
 
-  const translations = [];
-  const availableLang = [];
-
-  const finalVideos = videos.map(async (item) => {
+  videos.map(async (item) => {
     let i = { ...{'lang': 'en'}, ...item };
     i.slug = common.slugify(item.title);
     i.heading = item.title;
@@ -47,41 +44,16 @@ const objectContructor = async (dir, fs) => {
       tr.principles = i.principles;
       tr.main_content = i.main_content;
       tr.collaborators = i.collaborators;
-      writeInLocaleFolder(tr.lang, tr, true);
-      translations.push(tr);
-      availableLang.push(tr.lang);
+      
+      if(tr.lang !== 'en') {
+        writeInLocaleFolder(tr.lang, tr, true);
+      }
     });
 
     return i;
 
   });
 
-  for(key in common.LANGUAGES) {
-    let lang = common.LANGUAGES[key];
-    if(translations.length > 0) {
-      translations.forEach((i) => {
-        let result = finalVideos.filter((j) => j.id !== i.itemId);
-        
-        if(lang !== 'en' && availableLang.includes(lang)) {
-          result.forEach((item) => {
-            writeInLocaleFolder(lang, item);
-          });
-  
-        } else if(lang !== 'en' && !availableLang.includes(lang)) {
-          finalVideos.forEach((item) => {
-            writeInLocaleFolder(lang, item);
-          });
-        }
-  
-      });
-
-    } else {
-      finalVideos.forEach(async (item) => {
-        await writeInLocaleFolder(lang, item);
-      });
-    }
-  }
-  
 }
 
 const writeInLocaleFolder = async (lang, item, log=false) => {

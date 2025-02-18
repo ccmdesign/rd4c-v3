@@ -10,10 +10,7 @@ const objectContructor = async (dir, fs) => {
 
   let principles = await common.getDirectusData("rd4c_principles", junctionFields);
 
-  const translations = [];
-  const availableLang = [];
-
-  const finalPrinciples = principles.data.map((item) => {
+  principles.data.map((item) => {
     let i = { ...{'lang': 'en'}, ...item };
     i.slug = common.slugify(item.name);
     writeInLocaleFolder(i.lang, i, true);
@@ -21,40 +18,15 @@ const objectContructor = async (dir, fs) => {
     item.translations.forEach((translation) => {
       let tr = { ...{'itemId': item.id, 'lang': common.LANGUAGES[translation.languages_code]}, ...translation };
       tr.slug = common.slugify(i.name);
-      writeInLocaleFolder(tr.lang, tr, true);
-      translations.push(tr);
-      availableLang.push(tr.lang);
+      // avoid duplicates
+      if(tr.lang !== 'en') {
+        writeInLocaleFolder(tr.lang, tr, true);
+      }
     });
 
     return i;
 
   });
-
-  for(key in common.LANGUAGES) {
-    let lang = common.LANGUAGES[key];
-    if(translations.length > 0) {
-      translations.forEach((i) => {
-        let result = finalPrinciples.filter((j) => j.id !== i.itemId);
-        
-        if(lang !== 'en' && availableLang.includes(lang)) {
-          result.forEach((item) => {
-            writeInLocaleFolder(lang, item);
-          });
-  
-        } else if(lang !== 'en' && !availableLang.includes(lang)) {
-          finalPrinciples.forEach((item) => {
-            writeInLocaleFolder(lang, item);
-          });
-        }
-  
-      });
-
-    } else {
-      finalPrinciples.forEach((item) => {
-        writeInLocaleFolder(lang, item);
-      });
-    }
-  }
       
 }
 

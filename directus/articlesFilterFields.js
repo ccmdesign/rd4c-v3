@@ -31,11 +31,27 @@ const objectContructor = async (dir, fs) => {
 
   const __FIELD_OPTIONS = await getFields('rd4c_items', 'content_type');
   const items = await common.getDirectusData("rd4c_items");
+  let __CUSTOM_CONTENT_TYPE_OPTIONS = []
+  
+  
+  // This field in Directus is a select field with choices
+  // We need to filter out the values that are not in the choices
+  const __FIELD_OPTIONS_VALUES_ONLY = __FIELD_OPTIONS.choices.map((item) => item.value);
+  __CUSTOM_CONTENT_TYPE_OPTIONS = items.data.map((item) => {
+    
+    if(item.content_type !== null && !__FIELD_OPTIONS_VALUES_ONLY.includes(item.content_type)) {
+      return {
+        "text": item.content_type,
+        "value": item.content_type.replace(" ", "_")
+      }
+    }
+    
+  }).filter((item) => item !== undefined);
+
 
   let i = {};
   let fields = [];
-  __FIELD_OPTIONS.choices.forEach((pg) => {
-
+  __FIELD_OPTIONS.choices.forEach((pg) => {    
     const temp = items.data.find((item) => item.content_type === pg.value);
     
     if(temp) {
@@ -47,7 +63,7 @@ const objectContructor = async (dir, fs) => {
 
   });
 
-  i.items = fields;
+  i.items = fields.concat(...__CUSTOM_CONTENT_TYPE_OPTIONS);
   
   fs.writeFile(
     dir + "/filters.json",

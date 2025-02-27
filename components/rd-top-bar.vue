@@ -1,6 +1,6 @@
 <template>
   <header class="top-bar">
-    <nuxt-link to="/" class="logo"><img src="/images/logos/rd4c-logo-white.svg" alt="Homepage"></nuxt-link><!-- @ToDo: Translate -->
+    <nuxt-link :to="`${ homeLogoUrl }`" class="logo"><img src="/images/logos/rd4c-logo-white.svg" alt="Homepage"></nuxt-link><!-- @ToDo: Translate -->
     <div class="menu-wrapper">
       <rd-menu class="menu"/>
     </div>
@@ -14,6 +14,14 @@
 </template>
 
 <script setup>
+const { locale } = useI18n()
+const homeLogoUrl = computed(() => {
+  if(locale.value === 'en') {
+    return '/'
+  }
+
+  return `/${ locale.value }`
+})
 
 </script>
 

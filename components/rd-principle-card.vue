@@ -28,11 +28,9 @@ const props = defineProps({
     required: true,
     default: 0
   },
-  expanded: {
-    type: Boolean,
-    default: false
-  }
 });
+
+const expanded = ref(false);
 
 const principle_n = computed(() => {
   return props.n.toString().padStart(2, '0');

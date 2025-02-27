@@ -17,7 +17,7 @@
     <rd-split-section id="case-studies" image="/images/testing/test-14.jpg">
       <h2>{{ block_case_studies.title }}</h2>
       <div class="cms-content" v-html="block_case_studies.description"></div>
-      <p><rd-button to="/resources#case-studies" visual="secondary" color="primary">{{ $t('buttons.learn-more')
+      <p><rd-button :to="locale !== 'en'? `${locale}/resources#case-studies` : '/resources#case-studies'" visual="secondary" color="primary">{{ $t('buttons.learn-more')
           }}</rd-button></p>
     </rd-split-section>
 
@@ -32,21 +32,21 @@
     <rd-split-section id="tools" image="/images/testing/test-19.jpg">
       <h2>{{ block_tools.title }}</h2>
       <div class="cms-content" v-html="block_tools.description"></div>
-      <p><rd-button visual="secondary" color="primary" to="/resources">{{ $t('buttons.learn-more')
+      <p><rd-button visual="secondary" color="primary" :to="locale !== 'en'? `${locale}/resources` : '/resources'" >{{ $t('buttons.learn-more')
           }}</rd-button></p>
     </rd-split-section>
 
     <rd-split-section id="partners" image="/images/testing/test-24.jpg">
       <h2>{{ block_platform.title }}</h2>
       <div class="cms-content" v-html="block_platform.description"></div>
-      <p><rd-button to="/about" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
+      <p><rd-button :to="locale !== 'en'? `${locale}/about` : '/about'" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
       </p>
     </rd-split-section>
 
     <rd-split-section id="get-involved" image="/images/testing/test-29.jpg">
       <h2 class="text-balance">{{ block_newsletter.title }}</h2>
       <div class="cms-content" v-html="block_newsletter.description"></div>
-      <p><rd-button to="/#get-involved" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
+      <p><rd-button :to="locale !== 'en'? `${locale}/#get-involved` : '/#get-involved'" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
       </p>
     </rd-split-section>
 

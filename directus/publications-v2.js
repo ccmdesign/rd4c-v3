@@ -15,10 +15,7 @@ const objectContructor = async (dir, fs) => {
     else return -1;
   });
 
-  const translations = [];
-  const availableLang = [];
-
-  const finalPublications = publications.map((item, index) => {
+  publications.map((item, index) => {
     let i = { ...{'lang': 'en'}, ...item };
     i.sort = index + 1;
     i.slug = common.slugify(item.title);
@@ -35,40 +32,16 @@ const objectContructor = async (dir, fs) => {
       tr.cover_image = i.cover_image;
       tr.publication_type = i.publication_type;
       tr.main_content = i.main_content;
-      writeInLocaleFolder(tr.lang, tr, true);
-      translations.push(tr);
-      availableLang.push(tr.lang);
+ 
+      // avoid duplicates
+      if(tr.lang !== 'en') {
+        writeInLocaleFolder(tr.lang, tr, true);
+      }
     });
 
     return i;
 
   });
-
-  for(key in common.LANGUAGES) {
-    let lang = common.LANGUAGES[key];
-    if(translations.length > 0) {
-      translations.forEach((i) => {
-        let result = finalPublications.filter((j) => j.id !== i.itemId);
-        
-        if(lang !== 'en' && availableLang.includes(lang)) {
-          result.forEach((item) => {
-            writeInLocaleFolder(lang, item);
-          });
-  
-        } else if(lang !== 'en' && !availableLang.includes(lang)) {
-          finalPublications.forEach((item) => {
-            writeInLocaleFolder(lang, item);
-          });
-        }
-  
-      });
-
-    } else {
-      finalPublications.forEach((item) => {
-        writeInLocaleFolder(lang, item);
-      });
-    }
-  }
   
 }
 

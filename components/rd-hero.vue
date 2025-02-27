@@ -13,7 +13,7 @@
           <h2 class="rd-hero__title">{{ content.title }}</h2>
           <h4 class="rd-hero__tagline">{{ content.tagline }}</h4>
           <div v-if="content.action">
-            <nuxt-link class="button" size="l" visual="primary" color="primary" :to="content.action.url">
+            <nuxt-link class="button" size="l" visual="primary" color="primary" :to="actionUrl">
               {{ content.action.label }}
             </nuxt-link>
           </div>
@@ -24,7 +24,10 @@
 </template>
 
 <script setup>
-defineProps({
+import { useLocaledUrl } from '../composables/useLocaledUrl';
+
+const { locale } = useI18n()
+const props = defineProps({
   content: {
     type: Object,
     required: true,
@@ -45,6 +48,8 @@ defineProps({
     default: ''
   }
 })
+
+const actionUrl = props.content.action ? useLocaledUrl(locale, props.content.action.url) : '/';
 
 </script>
 

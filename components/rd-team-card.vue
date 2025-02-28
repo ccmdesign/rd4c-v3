@@ -1,12 +1,12 @@
 <template>
-  <div class="rd-team-card" @click="openDialog" :style="{ '--bg': `url(${content.image})` }">
+  <div class="rd-team-card" @click="openDialog" :style="{ '--bg': `url(${personImage})` }">
     <h4>{{content.name}}</h4>
     <!-- <pre>{{ content }}</pre> -->
   </div>
   <div class="bio-wrapper" :class="{'dialog-content-display' : hideContent }">
     <dialog ref="dialog" class="rd-team-card__bio" @click="closeDialog">
         <!-- <rd-button class="close-button"  icon-only icon-before="close" visual="ghost"></rd-button> -->
-        <img :src="content.image" :alt="content.name" />
+        <img :src="personImage" :alt="content.name" />
         <div class="bio-content">
           <h3>{{ content.name }}</h3>
           <h4>{{ content.title }}</h4>
@@ -18,7 +18,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 
 const props = defineProps({
   content: {
@@ -49,6 +48,14 @@ const closeDialog = () => {
   document.body.style.overflow = '';
   dialog.value.close();
 };
+
+const personImage = computed(() => {
+  if(!props.content.image) {
+    return `/images/rd4c-fallback.png`;
+  }
+  return props.content.image;
+});
+
 </script>
 
 <style lang="scss" scoped>

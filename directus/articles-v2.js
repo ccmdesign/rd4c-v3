@@ -28,8 +28,10 @@ const objectContructor = async (dir, fs) => {
     // collaborators
     i.collaborators = item.collaborators.length > 0 ? item.collaborators.map((collab) => {
       let person = collab.rd4c_team_id;
-      person.picture = person.picture ? common.getImage(person.picture) : '';
-
+      if(person) {
+        person.picture = person.picture ? common.getImage(person.picture) : '';
+      }
+      
       return person
     }) : [];
 

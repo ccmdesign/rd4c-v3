@@ -20,11 +20,13 @@
         </stack-l>
       </slot>
     </div>
+    <RdTranslationNotice v-if="locale !== 'en'"/>
   </header>
 </template>
 
 <script setup>
 import { useLocaledUrl } from '../composables/useLocaledUrl';
+import RdTranslationNotice from './rd-translation-notice.vue';
 
 const { locale } = useI18n()
 const props = defineProps({

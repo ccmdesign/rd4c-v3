@@ -42,7 +42,6 @@ const openEmail = () => {
   border-radius: 8px;
   padding: 10px;
   z-index: 5;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   & :nth-child(1) {
     color: var(--white-color);
     text-align: center;
@@ -57,7 +56,7 @@ const openEmail = () => {
   border: 1px solid hsla(var(--accent-hsl), 1);
   border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 5;
   cursor: pointer;
 }
 

@@ -14,7 +14,7 @@
         <ul class="submenu" v-if="mainSubItem">
 
           <div v-for="subItem in item.subMenu" :key="subItem.name">
-            <nuxt-link :to="localePath(subItem.link)" class="menu__item">{{ $t(subItem.name) }} - {{ locale }}</nuxt-link>
+            <nuxt-link :to="localePath(subItem.link)" class="menu__item">{{ $t(subItem.name) }}</nuxt-link>
           </div>
         </ul>
       </div>
@@ -24,17 +24,16 @@
     </div>
     
     <div class="language-selector">
-      <button class="menu__item" @click="toggleLangMenu">{{ activeLang }}</button>
+      <button class="menu__item" @click="toggleLangMenu">{{  $t(`languages.${activeLang}`) }}</button>
       <ul class="submenu" v-if="isSubmenuActive">
 
         <div v-for="locl in locales">
           <nuxt-link :if="activeLang.value != locl.code" :to="switchLocalePath(locl.code)" class="menu__item" :value="locl.code"
-            @click="switchLanguage(locl.code)">{{ locl.code.toUpperCase() }}</nuxt-link>
+            @click="switchLanguage(locl.code)">{{  $t(`languages.${locl.code}`) }}</nuxt-link>
         </div>
       </ul>
     </div>
 
-    
   </nav>
 </template>
 
@@ -65,7 +64,7 @@ function toggleLangMenu() {
 const mainSubItem = ref(false);
 function toggleSubMenu() {
   mainSubItem.value = !mainSubItem.value;
-  subMenuWidth.value = '15ch';
+  subMenuWidth.value = '20ch';
   isSubmenuActive.value = false;
 }
 

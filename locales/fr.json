@@ -69,5 +69,12 @@
             "title": "404: Page introuvable",
             "message": "La page que vous cherchiez est introuvable."
         }
+    },
+    "languages": {
+        "ar": "AR",
+        "en": "EN",
+        "es": "ES",
+        "fr": "FR",
+        "zh": "中文"
     }
 }

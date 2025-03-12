@@ -3,7 +3,7 @@
     <div class="content">
       <h2>{{ block.title }}</h2>
       <div class="cms-content" v-html="block.description"></div>
-      <p><rd-button to="/about#team" visual="secondary" color="primary">{{
+      <p><rd-button :to="localePath('/about#team')" visual="secondary" color="primary">{{
           $t('buttons.view-all') }}</rd-button></p>
     </div>
     <div class="team-group">

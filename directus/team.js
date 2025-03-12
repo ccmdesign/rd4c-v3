@@ -26,21 +26,25 @@ const objectContructor = async (dir, fs) => {
         if (team.translations && team.translations.length > 0) {
             team.translations.forEach((translation) => {
                 let tr = { ...i, ...translation };
+                tr.itemId = team.id;
                 tr.slug = common.slugify(tr.name);
                 tr.lang = common.LANGUAGES[translation.languages_code];
-                writeInLocaleFolder(tr.lang, tr, true);
-                translations.push(tr);
-                availableLang.push(tr.lang);
+                if(tr.lang !== 'en') {
+                    writeInLocaleFolder(tr.lang, tr, true);
+                    translations.push(tr);
+                    availableLang.push(tr.lang);
+                  }
+
             });
         }
 
         return i;
     });
 
-    for (const key in common.LANGUAGES) {
+    for (const  key in common.LANGUAGES) {
         const lang = common.LANGUAGES[key];
-        if (translations.length > 0) {
-            translations.forEach((i) => {
+          if (translations.length > 0) {
+                  translations.forEach((i) => {
                 const result = finalTeam.filter((j) => j.id !== i.itemId);
 
                 if (lang !== 'en' && availableLang.includes(lang)) {
@@ -85,21 +89,17 @@ const writeInLocaleFolder = async (lang, item, log = false) => {
 const getTeam = async () => {
     const dir = "./content/team";
     if (fs.existsSync(dir)) {
-        rimraf(dir, { glob: false }, (err) => {
-            if (err) {
-                console.error("Error removing directory:", err);
-            } else {
-                if (!fs.existsSync(dir)) {
-                    fs.mkdirSync(dir);
-                }
-                fs.access(dir, fs.constants.R_OK | fs.constants.W_OK, async (err) => {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        await objectContructor(dir, fs);
-                    }
-                });
+        Promise.all([rimraf(dir)]).then(() => {
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
             }
+            fs.access(dir, fs.constants.R_OK | fs.constants.W_OK, async (err) => {
+                if (err) {
+                    console.error("Error removing directory:", err);
+                } else {
+                    await objectContructor(dir, fs);
+                }
+            });
         });
     } else {
         if (!fs.existsSync("./content")) {

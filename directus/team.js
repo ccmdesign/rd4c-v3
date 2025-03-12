@@ -21,10 +21,8 @@ const objectContructor = async (dir, fs) => {
         i.name = team.name ? team.name : '';
         i.title = team.title ? team.title : '';
 
-        // Write the default locale (assuming 'en' as default)
         writeInLocaleFolder(i.lang, i, true);
 
-        // Handle translations if available
         if (team.translations && team.translations.length > 0) {
             team.translations.forEach((translation) => {
                 let tr = { ...i, ...translation };
@@ -85,19 +83,23 @@ const writeInLocaleFolder = async (lang, item, log = false) => {
 };
 
 const getTeam = async () => {
-    const dir = "./content";
+    const dir = "./content/team";
     if (fs.existsSync(dir)) {
-        Promise.all([rimraf(dir)]).then(() => {
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir);
-            }
-            fs.access(dir, fs.constants.R_OK | fs.constants.W_OK, async (err) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                    await objectContructor(dir, fs);
+        rimraf(dir, { glob: false }, (err) => {
+            if (err) {
+                console.error("Error removing directory:", err);
+            } else {
+                if (!fs.existsSync(dir)) {
+                    fs.mkdirSync(dir);
                 }
-            });
+                fs.access(dir, fs.constants.R_OK | fs.constants.W_OK, async (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        await objectContructor(dir, fs);
+                    }
+                });
+            }
         });
     } else {
         if (!fs.existsSync("./content")) {

@@ -3,7 +3,7 @@
     
     <RdTranslationNotice v-if="locale !== 'en'"/>
     <div class="rd-hero__image">
-      <img class="rd-hero__bg" :src="content.image" :alt="content.title" />
+      <img class="rd-hero__bg" :src="content.image" :alt="content.title" :title="content.imageCredit" />
       <img class="rd-logo-icon" src="/images/logos/rd4c-logo-icon.png" alt="">
     </div>
     

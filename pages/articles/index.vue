@@ -25,6 +25,7 @@ const { $list } = useNuxtApp()
 const pageContent = await queryContent('pages', 'updates').findOne();
 const { block_hero } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-2.jpg"
+block_hero.imageCredit = "Photo by Annie Spratt/Unsplash"
   
 const articles = await queryContent(locale.value, 'articles').find();
 const filters = await queryContent('articles-filters').find();

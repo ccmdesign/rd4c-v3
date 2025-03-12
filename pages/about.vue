@@ -4,17 +4,17 @@
 
     </rd-hero>
 
-    <rd-split-section id="intro" image="/images/testing/test-4.jpg">
+    <rd-split-section id="intro" image="/images/testing/test-4.jpg"  title="Photo by Avel Chuklanov/Unsplash">
       <h2>{{ block_intro.title }}</h2>
       <div class="cms-content" v-html="block_intro.description"></div>
     </rd-split-section>
 
-    <rd-split-section id="about-us" image="/images/testing/test-6.jpg">
+    <rd-split-section id="about-us" image="/images/testing/test-6.jpg" title="Photo by Ben White/Unsplash">
       <h2>{{ block_about_us.title }}</h2>
       <div class="cms-content" v-html="block_about_us.description"></div>
     </rd-split-section>
 
-    <rd-split-section id="our-approach" image="/images/testing/test-5.jpg">
+    <rd-split-section id="our-approach" image="/images/testing/test-5.jpg" title="Photo by Ben McLeod/Unsplash">
       <h2>{{ block_approach.title }}</h2>
       <div class="cms-content" v-html="block_approach.description"></div>
     </rd-split-section>
@@ -45,6 +45,7 @@ const {
   block_approach,
   block_testimonials } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-9.jpg";
+block_hero.imageCredit = 'Photo by Charlein Gracia/Unsplash';
 
 </script>
 

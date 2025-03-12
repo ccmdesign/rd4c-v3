@@ -45,6 +45,7 @@ const {
   block_hero, 
   block_intro } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-22.jpg"
+block_hero.imageCredit = "Photo by Priscilla Du Preez/Unsplash"
 
 const tools = await queryContent('publications').where({"publication_type": 'tools'}).sort({sort: 1}).find();
 const caseStudies = await queryContent(locale.value, 'publications').where({"publication_type": 'case_study'}).sort({sort: 1}).find();

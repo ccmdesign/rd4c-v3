@@ -50,6 +50,7 @@ const {
   block_webinars,
   block_lessons } = await useTranslator(pageContent, locale.value);
   block_hero.image = "/images/testing/test-26.jpg"
+block_hero.imageCredit = "Photo by Stem/Unsplash"
 
 const trainings = await queryContent(locale.value, 'videos').where({ category: 'trainings' }).find();
 const explainers = await queryContent(locale.value, 'videos').where({ category: 'explainers' }).find();

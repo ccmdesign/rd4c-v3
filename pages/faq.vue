@@ -25,7 +25,8 @@ const {
   block_faq_benefit,
   block_faq_involved,
   block_faq_initiative } = await useTranslator(pageContent, locale.value);
-block_hero.image = "/images/testing/test-22.jpg"
+block_hero.image = "/images/testing/test-22.jpg";
+block_hero.imageCredit = "Photo by Priscilla Du Preez/Unsplash"
 
 
 const blocks = [block_faq_whatis,

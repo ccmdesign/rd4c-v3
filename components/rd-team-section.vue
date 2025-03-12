@@ -20,7 +20,9 @@
     }
   })
 
-  const team = await queryContent('team').find();
+  const { locale } = useI18n()
+
+  const team = await queryContent(locale.value, 'team').find();
 </script>
 
 <style lang="scss" scoped>

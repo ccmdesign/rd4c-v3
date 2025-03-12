@@ -1,6 +1,7 @@
 <template>
   <header class="rd-hero" :bg="content.image" :route="$route.name" :color="color">
     
+    <RdTranslationNotice v-if="locale !== 'en'"/>
     <div class="rd-hero__image">
       <img class="rd-hero__bg" :src="content.image" :alt="content.title" />
       <img class="rd-logo-icon" src="/images/logos/rd4c-logo-icon.png" alt="">
@@ -20,7 +21,6 @@
         </stack-l>
       </slot>
     </div>
-    <RdTranslationNotice v-if="locale !== 'en'"/>
   </header>
 </template>
 

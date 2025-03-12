@@ -27,7 +27,8 @@ const SECTIONS = [
   "faq_benefit",
   "faq_involved",
   "faq_initiative",
-
+  "what_we_do",
+  "our_principles" 
 ]
 
 export function useTranslator(data, locale, sections=SECTIONS) {

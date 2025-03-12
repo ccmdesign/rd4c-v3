@@ -10,6 +10,7 @@ import locales from './locales'
 
 export default defineNuxtConfig({
   target: 'static',
+
   app: {
     head: {
       title: projectConfig.title,
@@ -26,6 +27,7 @@ export default defineNuxtConfig({
       script: [],
     }
   },
+
   modules: [
     'nuxt-gtag',
     '@nuxt/content',
@@ -35,6 +37,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/image',
   ],
+
   image: {
     directus: {
       baseURL: `${ process.env.BASE_URL }/assets/`,
@@ -47,6 +50,7 @@ export default defineNuxtConfig({
     'public/assets/theme.css',
     'public/assets/styles.css',
   ],
+
   components: {
     "dirs": [
       {
@@ -68,14 +72,17 @@ export default defineNuxtConfig({
       "~/components"
     ]
   },
+
   vue: {
     compilerOptions: {
       isCustomElement: tag => tag === 'v-icon'
     }
   },
+
   pinia: {
     storesDirs: ['./stores/**'],
   },
+
   i18n: {
     lazy: true,
     langDir: 'locales',
@@ -83,16 +90,22 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     detectBrowserLanguage: false
   },
+
   ssr: true,
+
   gtag: {
     id: projectConfig.gtag
   },
+
   plugins: [
     { src: '~/plugins/list.client.js', ssr: false },
   ],
+
   runtimeConfig: {
     public: {
       SEARCH_API_URL: process.env.SEARCH_API_URL
     }
   },
+
+  compatibilityDate: '2025-03-11',
 });

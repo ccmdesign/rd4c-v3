@@ -7,13 +7,16 @@
       <span v-html="block_intro.description"></span>
     </rd-video-section>
 
-    <rd-principles-section :block="block_principle_led" id="principles" />
+    <rd-principles-section :block="block_principle_led" :brow="block_our_principles.brow?block_our_principles.brow:''" id="principles" />
 
     <!-- @ToDo: @Douglas, adicionei esse divider aqui. 
          Preciso que vc configure essa string no directus
-    -->
-    <rd-divider color="primary" class="divider" content="What We Do" />
+    
+    
+    
+-->
 
+<rd-divider color="primary" class="divider" v-if="block_what_we_do.brow" :content="block_what_we_do.brow" />
     <rd-split-section id="case-studies" image="/images/testing/test-14.jpg">
       <h2>{{ block_case_studies.title }}</h2>
       <div class="cms-content" v-html="block_case_studies.description"></div>
@@ -85,6 +88,8 @@ const {
   block_newsletter, 
   block_get_involved,  
   block_team, 
+  block_what_we_do,
+  block_our_principles,
   block_stay_engaged } = await useTranslator(pageContent, locale.value)
 
 const heroData = ref({...block_hero, 

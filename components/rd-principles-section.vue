@@ -1,6 +1,6 @@
 <template>
   <div class="rd-principles-section">
-    <rd-divider content="Our Principles" color="primary" /><!-- @ToDo: Translate -->
+    <rd-divider :content="brow" color="primary" /><!-- @ToDo: Translate -->
     <div class="principles-grid">
       <div v-for="(i, index) in principles" :key="index" class="principle" :data-n="index + 1" @click="toggleAttribute">
         <div class="principle__content">
@@ -18,6 +18,11 @@ defineProps({
   block: {
     type: Object,
     required: true
+  },
+  brow: {
+    type: String,
+    required: false,
+    default: 'Our Principles'
   }
 });
 const { locale } = useI18n()

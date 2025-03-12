@@ -7,13 +7,16 @@
       <span v-html="block_intro.description"></span>
     </rd-video-section>
 
-    <rd-principles-section :block="block_principle_led" id="principles" />
+    <rd-principles-section :block="block_principle_led" :brow="block_our_principles.brow?block_our_principles.brow:''" id="principles" />
 
     <!-- @ToDo: @Douglas, adicionei esse divider aqui. 
          Preciso que vc configure essa string no directus
-    -->
-    <rd-divider color="primary" class="divider" content="What we do" />
+    
+    
+    
+-->
 
+<rd-divider color="primary" class="divider" v-if="block_what_we_do.brow" :content="block_what_we_do.brow" />
     <rd-split-section id="case-studies" image="/images/testing/test-14.jpg">
       <h2>{{ block_case_studies.title }}</h2>
       <div class="cms-content" v-html="block_case_studies.description"></div>
@@ -39,14 +42,14 @@
     <rd-split-section id="partners" image="/images/testing/test-24.jpg">
       <h2>{{ block_platform.title }}</h2>
       <div class="cms-content" v-html="block_platform.description"></div>
-      <p><rd-button :to="localePath('/about')" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
+      <p><rd-button :to="localePath('/videos')" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
       </p>
     </rd-split-section>
 
     <rd-split-section id="get-involved" image="/images/testing/test-29.jpg">
       <h2 class="text-balance">{{ block_newsletter.title }}</h2>
       <div class="cms-content" v-html="block_newsletter.description"></div>
-      <p><rd-button :to="localePath('/#get-involved')" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
+      <p><rd-button href="https://thegovlab.us6.list-manage.com/subscribe?u=1a990feb5c&id=8990a71369" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
       </p>
     </rd-split-section>
 
@@ -85,6 +88,8 @@ const {
   block_newsletter, 
   block_get_involved,  
   block_team, 
+  block_what_we_do,
+  block_our_principles,
   block_stay_engaged } = await useTranslator(pageContent, locale.value)
 
 const heroData = ref({...block_hero, 

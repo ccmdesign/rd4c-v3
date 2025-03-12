@@ -13,7 +13,8 @@
     "divider": {
         "principle": "Principles",
         "caseStudies": "Case Studies",
-        "tools": "Tools"
+        "tools": "Tools",
+        "whatWeDo": "What We Do"
     },
     "tabs": {
         "principles": "Principles",
@@ -69,5 +70,12 @@
             "title": "404: Page not found",
             "message": "The page you were looking for could not be found."
         }
+    },
+    "languages": {
+        "ar": "AR",
+        "en": "EN",
+        "es": "ES",
+        "fr": "FR",
+        "zh": "中文"
     }
 }

@@ -69,6 +69,13 @@
             "title": "404: Página no encontrada",
             "message": "No se pudo encontrar la página que estaba buscando."
         }
+    },
+    "languages": {
+        "ar": "AR",
+        "en": "EN",
+        "es": "ES",
+        "fr": "FR",
+        "zh": "中文"
     }
     
 }

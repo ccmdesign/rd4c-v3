@@ -99,6 +99,7 @@ export default defineNuxtConfig({
 
   plugins: [
     { src: '~/plugins/list.client.js', ssr: false },
+    { src: '~/plugins/clarity.client.js', mode: 'client' }
   ],
 
   runtimeConfig: {

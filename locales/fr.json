@@ -76,5 +76,9 @@
         "es": "ES",
         "fr": "FR",
         "zh": "中文"
+    },
+    "translationNotice": {
+        "text": "Traductions automatiques pour cette langue. Veuillez nous contacter si vous souhaitez suggérer une modification.",
+        "btnLabel": "Suggérer des améliorations"
     }
 }

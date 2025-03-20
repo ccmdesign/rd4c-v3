@@ -76,6 +76,10 @@
         "es": "ES",
         "fr": "FR",
         "zh": "中文"
+    },
+    "translationNotice": {
+        "text": "Traducciones automáticas para este idioma. Por favor, contáctenos si desea sugerir un cambio.",
+        "btnLabel": "Sugerir mejoras"
     }
     
 }

@@ -1,7 +1,7 @@
 <template>
   <header class="rd-hero" :bg="content.image" :route="$route.name" :color="color">
     
-    <RdTranslationNotice v-if="locale !== 'en'"/>
+    <RdTranslationNotice v-if="!doNotDisplay.includes(locale)" />
     <div class="rd-hero__image">
       <img class="rd-hero__bg" :src="content.image" :alt="content.title" :title="content.imageCredit" />
       <img class="rd-logo-icon" src="/images/logos/rd4c-logo-icon.png" alt="">
@@ -52,6 +52,10 @@ const props = defineProps({
 })
 
 const actionUrl = props.content.action ? useLocaledUrl(locale, props.content.action.url) : '/';
+
+// THe client is reviewing the content and does not want to display the notice for the languages that they already reviewed
+const doNotDisplay = ['en', 'zh']
+
 
 </script>
 

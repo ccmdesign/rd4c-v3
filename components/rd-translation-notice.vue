@@ -14,10 +14,10 @@ const openEmail = () => {
 
 <template>
   <div v-if="showNotice" class="translation-notice">
-      <p>🌐 Automated Translations for this language. Please, reach out if you'd like to suggest a change.</p>
+      <p>🌐 {{ $t('translationNotice.text') }}</p>
       <div class="notice-actions">
         <button @click="openEmail" class="button" visual="secondary" color="white" size="s">
-          Suggest improvements
+          {{ $t('translationNotice.btnLabel') }}
         </button>
         <button @click="displayNotice" class="close-btn">
           ✕

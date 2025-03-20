@@ -42,7 +42,11 @@
     <rd-split-section id="partners" image="/images/testing/test-24.jpg" title="Photo by Sigmund/Unsplash" >
       <h2>{{ block_platform.title }}</h2>
       <div class="cms-content" v-html="block_platform.description"></div>
-      <p><rd-button :to="localePath('/videos')" visual="secondary" color="primary">{{ $t('buttons.learn-more') }}</rd-button>
+      <p><rd-button 
+        :to="localePath('/videos')"
+        @click="handleActiveVideoTab" 
+        visual="secondary" 
+        color="primary">{{ $t('buttons.learn-more') }}</rd-button>
       </p>
     </rd-split-section>
 
@@ -75,6 +79,8 @@
 </template>
 
 <script setup>
+import { useStore } from '../store/videoTabsStore';
+
 const { locale, t } = useI18n()
 
 const pageContent = await queryContent('pages', 'home').findOne();
@@ -99,6 +105,12 @@ const heroData = ref({...block_hero,
     label: t('buttons.learn-more'),
     url: "/about"
   }});
+
+
+  const store = useStore();
+  const handleActiveVideoTab = () => {
+    store.setActiveTab(1);
+  }
 
 </script>
 

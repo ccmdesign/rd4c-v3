@@ -17,7 +17,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+import { useStore } from '../store/videoTabsStore';
 
 const props = defineProps({
   color: {
@@ -26,7 +27,8 @@ const props = defineProps({
   }
 });
 
-const activeTab = ref(0);
+const store = useStore();
+const activeTab = ref(store.tab);
 const tabElements = ref([]);
 
 onMounted(() => {
@@ -41,6 +43,11 @@ onMounted(() => {
     });
   });
 });
+
+onUnmounted(() => {
+  store.setActiveTab(0);
+});
+
 </script>
 
 <style lang="scss" scoped>

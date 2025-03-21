@@ -5,16 +5,15 @@
     </div>
     <div class="content stack">
       <h4 class="brow" v-if="content.brow">{{ content.brow }}</h4>
-      <h4 class="brow" v-else>Case Study</h4>
+      <h4 class="brow" v-else>{{ $t('resources.cardBrow') }}</h4>
       <h3 class="heading">{{ isActive.value }}{{ content.heading }}</h3>
       <h5 class="tagline">{{ content.tagline }}</h5>
       <p class="main-text" v-html="content.description"></p>
       <div class="actions">
-        <a class="button" :href="content.url" target="_blank" rel="noopener noreferrer" data-color="accent">Open
-          Document</a>
+        <a class="button" :href="content.url" target="_blank" rel="noopener noreferrer" data-color="accent">{{ $t('resources.btnLabel') }}</a>
       </div>
       <cluster-l class="principles-list">
-        <rd-chip v-for="i in content.principles" :color="i">{{ i }}</rd-chip>
+        <rd-chip v-for="(item, index) in content.principles" :color="index">{{ item }}</rd-chip>
       </cluster-l>
     </div>
     <!-- <pre>
@@ -142,7 +141,7 @@ img {
   transition: all 0.5s;
 }
 
-[is-active="true"] .principles-list { max-height: 5rem; }
+[is-active="true"] .principles-list { max-height: 11rem; }
 
 // Image transition
 img {

@@ -15,11 +15,11 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-.rd-chip[color="Participatory"]  { color: hsla(var(--rd-blue), 1); }
-.rd-chip[color="Proportional"]  { color: hsla(var(--rd-red), 1); }
-.rd-chip[color="Purpose-Driven"]  { color: hsla(var(--rd-teal), 1); }
-.rd-chip[color="People-Centric"]  { color: hsla(var(--rd-green), 1); }
-.rd-chip[color="Prevention of Harms Across the Data Life Cycle"]  { color: hsla(var(--rd-orange), 1); }
-.rd-chip[color="Professionally Accountable"]  { color: hsla(var(--rd-purple), 1); }
-.rd-chip[color="Protective of Children’s Rights"]  { color: hsla(var(--rd-yellow), 1); }
+.rd-chip[color="0"]  { color: hsla(var(--rd-blue), 1); }
+.rd-chip[color="1"]  { color: hsla(var(--rd-red), 1); }
+.rd-chip[color="2"]  { color: hsla(var(--rd-teal), 1); }
+.rd-chip[color="3"]  { color: hsla(var(--rd-green), 1); }
+.rd-chip[color="4"]  { color: hsla(var(--rd-orange), 1); }
+.rd-chip[color="5"]  { color: hsla(var(--rd-purple), 1); }
+.rd-chip[color="6"]  { color: hsla(var(--rd-yellow), 1); }
 </style>

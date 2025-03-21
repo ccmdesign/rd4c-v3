@@ -77,5 +77,9 @@
         "es": "ES",
         "fr": "FR",
         "zh": "中文"
+    },
+    "resources": {
+        "cardBrow": "Case Study",
+        "btnLabel": "Open document" 
     }
 }

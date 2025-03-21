@@ -28,6 +28,7 @@ const objectContructor = async (dir, fs) => {
       let tr = { ...{'itemId': item.id, 'lang': common.LANGUAGES[translation.languages_code]}, ...translation };
       tr.sort = i.sort;
       tr.slug = common.slugify(i.title);
+      tr.heading = translation.title;
       tr.url = i.url;
       tr.cover_image = i.cover_image;
       tr.publication_type = i.publication_type;

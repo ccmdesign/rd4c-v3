@@ -80,6 +80,10 @@
     "translationNotice": {
         "text": "Traducciones automáticas para este idioma. Por favor, contáctenos si desea sugerir un cambio.",
         "btnLabel": "Sugerir mejoras"
+    },
+    "resources": {
+        "cardBrow": "Estudio de caso",
+        "btnLabel": "Abrir documento"
     }
     
 }

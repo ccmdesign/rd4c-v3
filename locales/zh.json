@@ -76,5 +76,9 @@
         "es": "ES",
         "fr": "FR",
         "zh": "中文"
+    },
+    "resources": {
+        "cardBrow": "案例研究",
+        "btnLabel": "打开文件"   
     }
 }

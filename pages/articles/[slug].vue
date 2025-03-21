@@ -90,7 +90,8 @@ const formatDate = filters.formatDate;
   color: var(--white-color);
 }
 
-a {
-  
+.collaborators {
+  display: flex;
+  flex-direction: column;
 }
 </style>

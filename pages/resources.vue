@@ -2,9 +2,10 @@
   <div>
     <rd-hero :content="block_hero" />
 
-    <rd-base-section>
+    <!-- <rd-base-section>
       <div class="columns" v-html="block_intro.description"></div>
-    </rd-base-section>
+    </rd-base-section> -->
+    
     <!-- <rd-base-section>
       <h3 class="aux">[Interactive global map that can be clicked to display projects my continent]</h3>
     </rd-base-section> -->

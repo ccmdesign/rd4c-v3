@@ -74,6 +74,10 @@ const doNotDisplay = ['en', 'zh']
   }
 }
 
+.rd-hero__image {
+  max-height: 60vh;
+}
+
 @media screen and (max-width: 768px) {
   .rd-hero__image   { grid-row: 2; }
   .rd-hero__content { grid-row: 3; }

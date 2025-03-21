@@ -34,7 +34,7 @@
         <a v-if="content.url && content.url.startsWith('https')" class="button" data-size="full-width" color="primary" :href="content.url"
           target="_blank">Go to Resource</a>
         <nuxt-link v-else class="button" color="primary" data-size="full-width" :to="locale !== 'en' ? content._path : computedUrl">
-          Read More</nuxt-link>
+          Read more</nuxt-link>
       </div>
     </div>
     <!-- <pre>{{ content }}</pre> -->

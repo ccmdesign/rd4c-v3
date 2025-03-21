@@ -34,6 +34,7 @@ const objectContructor = async (dir, fs) => {
       
       return person
     }) : [];
+    i.collaborators = i.collaborators.filter((collab) => collab !== null);
 
     writeInLocaleFolder(i.lang, i, true);
     

@@ -4,11 +4,12 @@
     <RdTranslationNotice v-if="!doNotDisplay.includes(locale)" />
     <div class="rd-hero__image">
       <img class="rd-hero__bg" :src="content.image" :alt="content.title" :title="content.imageCredit" />
-      <img class="rd-logo-icon" src="/images/logos/rd4c-logo-icon.png" alt="">
+      <img class="rd-logo-icon mobile-only" src="/images/logos/rd4c-logo-icon.png" alt="">
     </div>
     
     <div class="rd-hero__content">
       <slot>
+        <img class="rd-logo-icon desktop-only" src="/images/logos/rd4c-logo-icon.png" alt="">
         <stack-l class="rd-hero__headings">
           <h5 class="rd-hero__brow" v-if="content.brow">{{ content.brow }}</h5>
           <h2 class="rd-hero__title">{{ content.title }}</h2>
@@ -75,7 +76,6 @@ const doNotDisplay = ['en', 'zh']
 }
 
 .rd-hero__image {
-  max-height: 60vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -102,7 +102,9 @@ const doNotDisplay = ['en', 'zh']
 
   &__content { 
     align-self: center;
+    margin-block: var(--space-2xl);
     padding: var(--space-l-xl) var(--space-m-xl);
+    position: relative;
   }
 
   &__headings {
@@ -145,9 +147,9 @@ const doNotDisplay = ['en', 'zh']
   }
   @media screen and (min-width: 768px) { 
     width: 100px;
-    left: calc(100% - 50px);
-    top: calc(38% - 50px);
-    
+    left: 0;
+    top: 0;
+    transform: translate(-50%, var(--space-l-xl));
   }
 }
 

@@ -10,7 +10,7 @@ export function useNavigation() {
       subMenu: [
         { name: 'menu.videos', link: '/videos', target: '_self' },
         { name: 'menu.caseStudies', link: '/resources', target: '_self' },
-        { name: 'menu.tools', link: '/resources#tools', target: '_self' }
+        { name: 'menu.tools', link: '/resources?tab=tools', target: '_self' }
       ] 
     },
     { name: 'menu.updates', link: '/articles', target: '_self' },

@@ -1,7 +1,9 @@
 <template>
   <div class="rd-case-study-card" :is-active="isActive" @click="isActive = !isActive" >
     <div class="image">
-      <img :src="content.cover_image" alt="">
+      <img v-if="content.cover_image" :src="content.cover_image" :alt="content.heading">
+      <img v-if="content.image" :src="content.image" :alt="content.heading">
+      <img v-else src="/images/default.jpg" :alt="content.heading" />
     </div>
     <div class="content stack">
       <h4 class="brow" v-if="content.brow">{{ content.brow }}</h4>

@@ -10,7 +10,7 @@
       <h3 class="aux">[Interactive global map that can be clicked to display projects my continent]</h3>
     </rd-base-section> -->
 
-    <rd-tabs-section color="primary">
+    <rd-tabs-section color="primary" :defaultTab="defaultTab">
       <template #tabs>
         <span>{{ $t('tabs.caseStudies') }}</span>
         <!-- This is currently hidden because we don't have any tools in the CMS yet. We will show it once we do. -->
@@ -39,6 +39,13 @@
 
 <script setup>
 const { locale, t } = useI18n()
+const route = useRoute();
+let defaultTab;
+if(route.query && route.query.tab == 'tools') {
+  defaultTab = 1;
+} else {
+  defaultTab = 0;
+}
 
 const pageContent = await queryContent('pages', 'publications').findOne();
 const { 

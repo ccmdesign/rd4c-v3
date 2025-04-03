@@ -24,6 +24,10 @@ const props = defineProps({
   color: {
     type: String,
     default: 'purple'
+  },
+  defaultTab: {
+    type: String,
+    default: 1
   }
 });
 
@@ -31,17 +35,22 @@ const store = useStore();
 const activeTab = ref(store.tab);
 const tabElements = ref([]);
 
+const setActiveLocalTab = (index) => {
+  activeTab.value = index;
+  tabElements.value.forEach((t, i) => {
+    t.setAttribute('is-active', i === activeTab.value);
+  });
+}
+
 onMounted(() => {
   tabElements.value = Array.from(document.querySelectorAll('.tab-triggers span'));
   tabElements.value.forEach((tab, index) => {
     tab.setAttribute('is-active', index === activeTab.value);
     tab.addEventListener('click', () => {
-      activeTab.value = index;
-      tabElements.value.forEach((t, i) => {
-        t.setAttribute('is-active', i === activeTab.value);
-      });
+      setActiveLocalTab(index)
     });
   });
+  props.defaultTab?setActiveLocalTab(props.defaultTab):'';
 });
 
 onUnmounted(() => {

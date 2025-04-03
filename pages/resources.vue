@@ -14,7 +14,7 @@
       <template #tabs>
         <span>{{ $t('tabs.caseStudies') }}</span>
         <!-- This is currently hidden because we don't have any tools in the CMS yet. We will show it once we do. -->
-        <!-- <span>{{ $t('tabs.tools') }}</span> -->
+        <span>{{ $t('tabs.tools') }}</span>
       </template>
 
       <template #tab-1>
@@ -27,10 +27,9 @@
 
       <template #tab-2>
         <rd-base-section id="tools">
-          <h2>Tools Temp</h2>
-          <rd-card-grid>
-            <rd-card v-for="i in tools" v-bind:key="i.slug" :content="i" />
-          </rd-card-grid>
+          <stack-l space="var(--s3)">
+            <rd-case-study-card v-for="i in tools" v-bind:key="i.slug" :content="i" />
+          </stack-l>
         </rd-base-section>
       </template>
     </rd-tabs-section>

@@ -29,7 +29,9 @@
         "join": "انضم",
         "getInvolved": "انضم إلى التحالف",
         "stayEngaged": "انضم إلى المحادثة",
-        "downloadReport": "تحميل التقرير"
+        "downloadReport": "تحميل التقرير",
+        "read-more": "اقرأ المزيد",
+        "go-to-resource": "انتقل إلى المصدر"
     },
     "texts": {
         "join": "انضم إلى محادثة RD4C"

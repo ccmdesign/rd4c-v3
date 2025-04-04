@@ -29,7 +29,9 @@
         "join": "Unirse",
         "getInvolved": "Únase a la alianza",
         "stayEngaged": "Únete a la conversación",
-        "downloadReport": "Descargar informe"
+        "downloadReport": "Descargar informe",
+        "read-more": "Leer más",
+        "go-to-resource": "Ir al recurso"
     },
     "texts": {
         "join": "Unirse a la conversación RD4C"

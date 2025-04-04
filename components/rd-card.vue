@@ -6,6 +6,10 @@
   <!-- <img src="/images/default.jpg" alt=""> -->
 
   <div class="rd-card" :color="content.color">
+    <a aria-hidden="true" v-if="content.url && content.url.startsWith('https')" class="actionable-area" :href="content.url"
+          target="_blank">{{ $t('buttons.go-to-resource') }}</a>
+    <nuxt-link aria-hidden="true" v-else class="actionable-area" :to="locale !== 'en' ? content._path : computedUrl">
+          {{ $t('buttons.read-more') }}</nuxt-link>
     <!-- <img v-if="content.cover_image" :src="content.cover_image" alt=""> -->
     <NuxtImg v-if="source === 'blog' && content.cover_image" 
     :src="content.cover_image_id" 
@@ -32,9 +36,9 @@
       </header>
       <div class="rd-card__action">
         <a v-if="content.url && content.url.startsWith('https')" class="button" data-size="full-width" color="primary" :href="content.url"
-          target="_blank">Go to Resource</a>
+          target="_blank">{{ $t('buttons.go-to-resource') }}</a>
         <nuxt-link v-else class="button" color="primary" data-size="full-width" :to="locale !== 'en' ? content._path : computedUrl">
-          Read more</nuxt-link>
+          {{ $t('buttons.read-more') }}</nuxt-link>
       </div>
     </div>
     <!-- <pre>{{ content }}</pre> -->
@@ -82,6 +86,21 @@ const computedUrl = computed(() => {
   margin-top: var(--s1);
   border-radius: var(--_card-radius);
   background-color: #fff;
+  position: relative;
+  .button {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.actionable-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
 }
 
 .rd-card__content {

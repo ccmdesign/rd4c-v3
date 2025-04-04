@@ -53,7 +53,8 @@ const formatDate = filters.formatDate;
 // .heading,
 .tagline,
 .brow,
-.date {
+.date,
+.collaborators {
   margin-top: var(--space-xs-s);
 }
 
@@ -93,5 +94,6 @@ const formatDate = filters.formatDate;
 .collaborators {
   display: flex;
   flex-direction: column;
+  color: var(--white-color);
 }
 </style>

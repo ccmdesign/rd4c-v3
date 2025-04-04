@@ -39,18 +39,26 @@ a:not[class] {
   ul {
     margin-left: 0;
     padding-left: 0;
+    padding-left: var(--s2);
+
+    li {
+      list-style-type: none;
+      padding-block: var(--s-1);
+      border-bottom: 1px solid var(--primary-color);
+    }
+
+    li:first-child {
+      /* --top: var(--s-1); */
+      border-top: 1px solid var(--primary-color);
+    }  
   } 
 
-  li {
-    list-style-type: none;
-    padding-block: var(--s-1);
-    border-bottom: 1px solid var(--primary-color);
+  ol {
+    padding-left: var(--s2);
+    li {
+      font-weight: 400;
+    }
   }
-
-  li:first-child {
-    /* --top: var(--s-1); */
-    border-top: 1px solid var(--primary-color);
-  }  
 }
 
 .text-balance,

@@ -30,7 +30,9 @@
         "join": "Join",
         "getInvolved": "Join the alliance",
         "stayEngaged": "Join the conversation",
-        "downloadReport": "Download the report"
+        "downloadReport": "Download the report",
+        "read-more": "Read more",
+        "go-to-resource": "Go to resource"
     },
     "texts": {
         "join": "Join the RD4C conversation"

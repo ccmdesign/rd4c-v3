@@ -7,20 +7,17 @@
     </div>
     <div class="content stack">
       <h4 class="brow" v-if="content.brow">{{ content.brow }}</h4>
-      <h4 class="brow" v-else>{{ $t('resources.cardBrow') }}</h4>
+      <h4 class="brow" v-else-if="brow">{{ $t('resources.cardBrow') }}</h4>
       <h3 class="heading">{{ isActive.value }}{{ content.heading }}</h3>
       <h5 class="tagline">{{ content.tagline }}</h5>
       <p class="main-text" v-html="content.description"></p>
       <div class="actions">
         <a class="button" :href="content.url" target="_blank" rel="noopener noreferrer" data-color="accent">{{ $t('resources.btnLabel') }}</a>
       </div>
-      <cluster-l class="principles-list">
+      <cluster-l class="principles-list" v-if="tags">
         <rd-chip v-for="(item, index) in content.principles" :color="index">{{ item }}</rd-chip>
       </cluster-l>
     </div>
-    <!-- <pre>
-      {{ content }}
-    </pre> -->
   </div>
 </template>
 
@@ -31,6 +28,14 @@ defineProps({
   content: {
     type: Object,
     required: true
+  },
+  tags: {
+    type: Boolean,
+    default: true
+  },
+  brow: {
+    type: Boolean,
+    default: true
   }
 });
 

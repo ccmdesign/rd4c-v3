@@ -28,7 +28,7 @@
       <template #tab-2>
         <rd-base-section :id="$t('tabs.tools.id')">
           <stack-l space="var(--s3)">
-            <rd-case-study-card v-for="i in tools" v-bind:key="i.slug" :content="i" />
+            <rd-case-study-card v-for="i in tools" v-bind:key="i.slug" :content="i" :tags="false" :brow="false" />
           </stack-l>
         </rd-base-section>
       </template>

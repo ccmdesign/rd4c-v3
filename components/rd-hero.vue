@@ -75,9 +75,6 @@ const doNotDisplay = ['en', 'zh']
   }
 }
 
-.rd-hero__image {
-}
-
 @media screen and (max-width: 768px) {
   .rd-hero__image   { grid-row: 2; }
   .rd-hero__content { grid-row: 3; }
@@ -85,7 +82,7 @@ const doNotDisplay = ['en', 'zh']
 
 @media screen and (min-width: 768px) {
   .rd-hero__top-bar { grid-area: top; }
-  .rd-hero__image   {  grid-area: image; }
+  .rd-hero__image   {  grid-area: image; max-height: 70vh; }
   .rd-hero__content {  grid-area: content; }
 }
 

@@ -16,12 +16,30 @@
         "tools": "Outils"
     },
     "tabs": {
-        "principles": "Principe",
-        "caseStudies": "Études de cas",
-        "tools": "Outils",
-        "trainings": "Formations",
-        "explainers": "Explicateurs",
-        "testimonials": "Témoignages"
+        "principles": {
+            "id": "principles",
+            "label": "Principe"
+        },
+        "caseStudies": {
+            "id": "case-studies",
+            "label": "Études de cas"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "Outils"
+        },
+        "trainings": {
+            "id": "trainings",
+            "label": "Formations"
+        },
+        "explainers": {
+            "id": "explainers",
+            "label": "Explicateurs"
+        },
+        "testimonials": {
+            "id": "testimonials",
+            "label": "Témoignages"
+        }
     },
     "buttons": {
         "view-all": "Voir tout",

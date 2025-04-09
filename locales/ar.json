@@ -16,12 +16,30 @@
         "tools": "الأدوات"
     },
     "tabs": {
-        "principles": "المبادئ",
-        "caseStudies": "دراسات الحالة",
-        "tools": "الأدوات",
-        "trainings": "التدريبات",
-        "explainers": "الشرح",
-        "testimonials": "الشهادات"
+        "principles": {
+            "id": "principles",
+            "label": "المبادئ"
+        },
+        "caseStudies": {
+            "id": "case-studies",
+            "label": "دراسات الحالة"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "الأدوات"
+        },
+        "trainings": {
+            "id": "trainings",
+            "label": "التدريبات"
+        },
+        "explainers": {
+            "id": "explainers",
+            "label": "الشرح"
+        },
+        "testimonials": {
+            "id": "testimonials",
+            "label": "الشهادات"
+        }
     },
     "buttons": {
         "view-all": "عرض الكل",

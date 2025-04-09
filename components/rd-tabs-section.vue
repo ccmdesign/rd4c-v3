@@ -19,16 +19,19 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useStore } from '../store/videoTabsStore';
+const route = useRoute();
+const router = useRouter();
+const routeTab = route.query && route.query.tab ? route.query.tab : '';
 
 const props = defineProps({
   color: {
     type: String,
     default: 'purple'
   },
-  defaultTab: {
-    type: String,
-    default: 1
-  }
+  tabsIDs: {
+    type: Array,
+    default: []
+  },
 });
 
 const store = useStore();
@@ -40,6 +43,7 @@ const setActiveLocalTab = (index) => {
   tabElements.value.forEach((t, i) => {
     t.setAttribute('is-active', i === activeTab.value);
   });
+  router.replace({ path: route.path, query: { tab: props.tabsIDs[index] } });
 }
 
 onMounted(() => {
@@ -50,7 +54,7 @@ onMounted(() => {
       setActiveLocalTab(index)
     });
   });
-  props.defaultTab?setActiveLocalTab(props.defaultTab):'';
+  routeTab?setActiveLocalTab(props.tabsIDs.indexOf(routeTab)):setActiveLocalTab(0);
 });
 
 onUnmounted(() => {

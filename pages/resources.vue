@@ -10,15 +10,15 @@
       <h3 class="aux">[Interactive global map that can be clicked to display projects my continent]</h3>
     </rd-base-section> -->
 
-    <rd-tabs-section color="primary" :defaultTab="defaultTab">
+    <rd-tabs-section color="primary" :tabsIDs="tabs">
       <template #tabs>
-        <span>{{ $t('tabs.caseStudies') }}</span>
+        <span>{{ $t('tabs.caseStudies.label') }}</span>
         <!-- This is currently hidden because we don't have any tools in the CMS yet. We will show it once we do. -->
-        <span>{{ $t('tabs.tools') }}</span>
+        <span>{{ $t('tabs.tools.label') }}</span>
       </template>
 
       <template #tab-1>
-        <rd-base-section id="case-studies">
+        <rd-base-section :id="$t('tabs.caseStudies.id')">
           <stack-l space="var(--s3)">
             <rd-case-study-card v-for="i in caseStudies" v-bind:key="i.slug" :content="i" />
           </stack-l>
@@ -26,7 +26,7 @@
       </template>
 
       <template #tab-2>
-        <rd-base-section id="tools">
+        <rd-base-section :id="$t('tabs.tools.id')">
           <stack-l space="var(--s3)">
             <rd-case-study-card v-for="i in tools" v-bind:key="i.slug" :content="i" />
           </stack-l>
@@ -39,13 +39,6 @@
 
 <script setup>
 const { locale, t } = useI18n()
-const route = useRoute();
-let defaultTab;
-if(route.query && route.query.tab == 'tools') {
-  defaultTab = 1;
-} else {
-  defaultTab = 0;
-}
 
 const pageContent = await queryContent('pages', 'publications').findOne();
 const { 
@@ -57,6 +50,7 @@ block_hero.imageCredit = "Photo by Priscilla Du Preez/Unsplash"
 const tools = await queryContent(locale.value, 'publications').where({"publication_type": 'tools'}).sort({sort: 1}).find();
 const caseStudies = await queryContent(locale.value, 'publications').where({"publication_type": 'case_study'}).sort({sort: 1}).find();
 
+const tabs = [t('tabs.caseStudies.id'), t('tabs.tools.id')]
 </script>
 
 <style scoped lang="scss">

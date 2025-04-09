@@ -16,12 +16,30 @@
         "tools": "工具"
     },
     "tabs": {
-        "principles": "原则",
-        "caseStudies": "案例研究",
-        "tools": "工具",
-        "trainings": "培训资源",
-        "explainers": "解释指南",
-        "testimonials": "推荐感言"
+        "principles": {
+            "id": "principles",
+            "label": "原则"
+        },
+        "caseStudies": {
+            "id": "case-studies",
+            "label": "案例研究"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "工具"
+        },
+        "trainings": {
+            "id": "trainings",
+            "label": "培训资源"
+        },
+        "explainers": {
+            "id": "explainers",
+            "label": "解释指南"
+        },
+        "testimonials": {
+            "id": "testimonials",
+            "label": "推荐感言"
+        }
     },
     "buttons": {
         "view-all": "查看全部",

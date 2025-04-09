@@ -17,12 +17,30 @@
         "whatWeDo": "What We Do"
     },
     "tabs": {
-        "principles": "Principles",
-        "caseStudies": "Case Studies",
-        "tools": "Tools",
-        "trainings": "Trainings",
-        "explainers": "Explainers",
-        "testimonials": "Testimonials"
+        "principles": {
+            "id": "principles",
+            "label": "Principles"
+        },
+        "caseStudies": {
+            "id": "case-studies",
+            "label": "Case Studies"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "Tools"
+        },
+        "trainings": {
+            "id": "trainings",
+            "label": "Trainings"
+        },
+        "explainers": {
+            "id": "explainers",
+            "label": "Explainers"
+        },
+        "testimonials": {
+            "id": "testimonials",
+            "label": "Testimonials"
+        }
     },
     "buttons": {
         "view-all": "View all",

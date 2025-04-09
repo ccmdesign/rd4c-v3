@@ -1,7 +1,7 @@
 <template>
   <div>
-    <rd-hero :content="block_hero" />
-
+    <rd-hero :content="block_hero" v-if="route.query && route.query.tab == 'case-studies'" />
+    <rd-hero :content="block_tools" v-else-if="route.query && route.query.tab == 'tools'" />
     <!-- <rd-base-section>
       <div class="columns" v-html="block_intro.description"></div>
     </rd-base-section> -->
@@ -39,13 +39,17 @@
 
 <script setup>
 const { locale, t } = useI18n()
+const route = useRoute();
 
 const pageContent = await queryContent('pages', 'publications').findOne();
 const { 
   block_hero, 
-  block_intro } = await useTranslator(pageContent, locale.value);
+  block_intro,
+  block_tools } = await useTranslator(pageContent, locale.value);
 block_hero.image = "/images/testing/test-22.jpg"
 block_hero.imageCredit = "Photo by Priscilla Du Preez/Unsplash"
+block_tools.image = "/images/testing/test-22.jpg"
+block_tools.imageCredit = "Photo by Priscilla Du Preez/Unsplash"
 
 const tools = await queryContent(locale.value, 'publications').where({"publication_type": 'tools'}).sort({sort: 1}).find();
 const caseStudies = await queryContent(locale.value, 'publications').where({"publication_type": 'case_study'}).sort({sort: 1}).find();

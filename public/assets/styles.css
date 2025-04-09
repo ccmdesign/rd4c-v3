@@ -42,20 +42,16 @@ a:not[class] {
     padding-left: var(--s2);
 
     li {
-      list-style-type: none;
+      list-style-type: disc;
       padding-block: var(--s-1);
-      border-bottom: 1px solid var(--primary-color);
+      font-weight: 400;
     }
-
-    li:first-child {
-      /* --top: var(--s-1); */
-      border-top: 1px solid var(--primary-color);
-    }  
   } 
 
   ol {
     padding-left: var(--s2);
     li {
+      padding-block: var(--s-1);
       font-weight: 400;
     }
   }

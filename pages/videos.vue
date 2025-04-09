@@ -52,9 +52,9 @@ const {
   block_hero.image = "/images/testing/test-26.jpg"
 block_hero.imageCredit = "Photo by Stem/Unsplash"
 
-const trainings = await queryContent(locale.value, 'videos').where({ category: 'trainings' }).sort({ date: -1 }).find();
-const explainers = await queryContent(locale.value, 'videos').where({ category: 'explainers' }).sort({ date: -1 }).find();
-const testimonials = await queryContent(locale.value, 'videos').where({ category: 'testimonials' }).sort({ date: -1 }).find();
+const trainings = await queryContent(locale.value, 'videos').where({ category: 'trainings' }).sort({ date: 1 }).find();
+const explainers = await queryContent(locale.value, 'videos').where({ category: 'explainers' }).sort({ date: 1 }).find();
+const testimonials = await queryContent(locale.value, 'videos').where({ category: 'testimonials' }).sort({ date: 1 }).find();
 
 </script>
 

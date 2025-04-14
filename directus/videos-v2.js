@@ -22,6 +22,7 @@ const objectContructor = async (dir, fs) => {
     i.heading = item.title;
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
     i.thumbnail = !item.cover_image ? await common.getVideoThumbnail(item.url) : '';
+    i.main_content = item.description;
 
     // collaborators
     i.collaborators = item.collaborators.length > 0 ? item.collaborators.map((collab) => {
@@ -42,7 +43,7 @@ const objectContructor = async (dir, fs) => {
       tr.thumbnail = i.thumbnail;
       tr.category = i.category;
       tr.principles = i.principles;
-      tr.main_content = i.main_content;
+      tr.main_content = tr.description;
       tr.collaborators = i.collaborators;
       
       if(tr.lang !== 'en') {

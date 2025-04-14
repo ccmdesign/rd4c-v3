@@ -33,6 +33,7 @@
         <h3 v-else-if="content.title">{{ content.title }}</h3>
         <p v-if="content.date" class="date" v-html="formatDate(content.date)"></p>
         <h4 v-if="content.tagline">{{ content.tagline }}</h4>
+        <h4 v-if="source === 'video' && content.main_content">{{ content.main_content }}</h4>
       </header>
       <div class="rd-card__action">
         <a v-if="content.url && content.url.startsWith('https')" class="button" data-size="full-width" color="primary" :href="content.url"

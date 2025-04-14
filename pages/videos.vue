@@ -16,7 +16,7 @@
       <template #tab-1>
         <rd-base-section>
           <rd-card-grid>
-            <rd-card v-for="i in explainers" v-bind:key="i.slug" :content="i" />
+            <rd-card v-for="i in explainers" v-bind:key="i.slug" :content="i" :source="'video'"/>
           </rd-card-grid>
         </rd-base-section>
       </template>
@@ -24,14 +24,14 @@
       <template #tab-2>
         <rd-base-section>
           <rd-card-grid>
-            <rd-card v-for="i in testimonials" v-bind:key="i.slug" :content="i" />
+            <rd-card v-for="i in testimonials" v-bind:key="i.slug" :content="i" :source="'video'"/>
           </rd-card-grid>
         </rd-base-section>
       </template>
       <template #tab-3>
         <rd-base-section>
           <rd-card-grid>
-            <rd-card v-for="i in trainings" v-bind:key="i.slug" :content="i" />
+            <rd-card v-for="i in trainings" v-bind:key="i.slug" :content="i" :source="'video'" />
           </rd-card-grid>
         </rd-base-section>
       </template>

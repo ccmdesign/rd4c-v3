@@ -23,6 +23,7 @@ const objectContructor = async (dir, fs) => {
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
     i.thumbnail = !item.cover_image ? await common.getVideoThumbnail(item.url) : '';
     i.main_content = item.description;
+    i.date = item.date ? item.date : item.date_created;
 
     // collaborators
     i.collaborators = item.collaborators.length > 0 ? item.collaborators.map((collab) => {
@@ -45,6 +46,7 @@ const objectContructor = async (dir, fs) => {
       tr.principles = i.principles;
       tr.main_content = tr.description;
       tr.collaborators = i.collaborators;
+      tr.date = i.date;
       
       if(tr.lang !== 'en') {
         writeInLocaleFolder(tr.lang, tr, true);

@@ -24,6 +24,7 @@ const objectContructor = async (dir, fs) => {
     i.slug = item.slug ? item.slug : common.slugify(item.heading);
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
     i.cover_image_id = item.cover_image ? item.cover_image.id : '';
+    i.date = item.date ? item.date : item.date_created;
 
     // collaborators
     i.collaborators = item.collaborators.length > 0 ? item.collaborators.map((collab) => {
@@ -48,6 +49,7 @@ const objectContructor = async (dir, fs) => {
       tr.principles = i.principles;
       tr.main_content = i.main_content;
       tr.collaborators = i.collaborators;
+      tr.date = i.date;
       writeInLocaleFolder(tr.lang, tr, true);
       translations.push(tr);
       availableLang.push(tr.lang);

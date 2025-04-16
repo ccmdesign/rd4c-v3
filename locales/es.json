@@ -7,12 +7,12 @@
         "publications": "Recursos",
         "videos": "Videos",
         "updates": "Blog",
-        "caseStudies": "Estudios de caso",
+        "caseStudies": "Casos prácticos",
         "tools": "Herramientas"
     },
     "divider": {
         "principle": "Principio",
-        "caseStudies": "Estudios de caso",
+        "caseStudies": "Casos prácticos",
         "tools": "Herramientas"
     },
     "tabs": {
@@ -22,7 +22,7 @@
         },
         "caseStudies": {
             "id": "case-studies",
-            "label": "Estudios de caso"
+            "label": "Casos prácticos"
         },
         "tools": {
             "id": "tools",
@@ -30,11 +30,11 @@
         },
         "trainings": {
             "id": "trainings",
-            "label": "La formacion"
+            "label": "La formación"
         },
         "explainers": {
             "id": "explainers",
-            "label": "Explicadores"
+            "label": "Video explicativo"
         },
         "testimonials": {
             "id": "testimonials",
@@ -45,7 +45,7 @@
         "view-all": "Ver todo",
         "learn-more": "Saber más",
         "join": "Unirse",
-        "getInvolved": "Únase a la alianza",
+        "getInvolved": "Únete a la alianza",
         "stayEngaged": "Únete a la conversación",
         "downloadReport": "Descargar informe",
         "read-more": "Leer más",
@@ -59,7 +59,7 @@
         "about": "Acerca del proyecto",
         "p1": "La iniciativa RD4C es un esfuerzo conjunto entre UNICEF y The GovLab en la Universidad de Nueva York para destacar y apoyar las mejores prácticas en nuestro trabajo; identificar desafíos y desarrollar herramientas prácticas para ayudar a los practicantes a evaluar y abordarlos; y fomentar un debate más amplio sobre principios, ideas, enfoques y enfoques prácticos para la gestión responsable de datos.",
         "p2": "El trabajo está destinado a abordar consideraciones prácticas a lo largo del ciclo de vida de los datos, incluyendo la recopilación de datos rutinarios y la recopilación de datos únicos; y complementa el trabajo en temas relacionados que están siendo abordados por la comunidad de desarrollo, como la guía sobre sistemas de datos específicos y tecnologías, estandarización técnica, y estrategias de participación digital.",
-        "p3": "Adicionales herramientas y materiales están por venir y serán publicados en este sitio web a medida que estén disponibles. Únase a la conversación para recibir actualizaciones regulares.",
+        "p3": "Adicionales herramientas y materiales están por venir y serán publicados en este sitio web a medida que estén disponibles. Únete a la conversación para recibir actualizaciones regulares.",
         "under": "Este trabajo está bajo una",
         "license": "Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional"
     },
@@ -70,7 +70,7 @@
         },
         "conversation": {
             "btnLabel": "Unirse",
-            "text": "Únase a la conversación"
+            "text": "Únete a la conversación"
         },
         "alliance": {
             "btnLabel": "Unirse",
@@ -102,7 +102,7 @@
         "btnLabel": "Sugerir mejoras"
     },
     "resources": {
-        "cardBrow": "Estudio de caso",
+        "cardBrow": "Caso práctico",
         "btnLabel": "Abrir documento"
     }
     

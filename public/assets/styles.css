@@ -44,7 +44,6 @@ a:not[class] {
     li {
       list-style-type: disc;
       padding-block: var(--s-1);
-      font-weight: 400;
     }
   } 
 
@@ -52,7 +51,6 @@ a:not[class] {
     padding-left: var(--s2);
     li {
       padding-block: var(--s-1);
-      font-weight: 400;
     }
   }
 }

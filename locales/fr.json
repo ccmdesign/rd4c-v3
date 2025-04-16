@@ -6,7 +6,7 @@
         "principles": "Principes",
         "publications": "Ressources",
         "videos": "Vidéos",
-        "updates": "Blogue",
+        "updates": "Blog",
         "caseStudies": "Études de cas",
         "tools": "Outils"
     },
@@ -49,7 +49,7 @@
         "stayEngaged": "Rejoignez la conversation",
         "downloadReport": "Télécharger le rapport",
         "read-more": "En savoir plus",
-        "go-to-resource": "Aller à la ressource"
+        "go-to-resource": "Accéder à cette ressource"
     },
     "texts": {
         "join": "Rejoindre la conversation RD4C"

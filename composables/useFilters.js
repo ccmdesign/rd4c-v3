@@ -26,11 +26,21 @@ export function decodeHTMLEntities(text) {
   return textarea.value;
 }
 
-export function formatDate(dateString) {
+export function formatDate(dateString, locale) {
     const date = new Date(dateString);
     const options = { month: 'short', day: 'numeric', year: 'numeric' };
-    const formattedDate = date.toLocaleDateString('en-US', options);
-
+    let formattedDate;
+    if(locale == 'en'){
+      formattedDate = date.toLocaleDateString('en-US', options);
+    } else if (locale == 'zh'){
+      formattedDate = date.toLocaleDateString('zh-Hans', options);
+    } else if (locale == 'es'){
+      formattedDate = date.toLocaleDateString('fr', { month: 'numeric', day: 'numeric', year: 'numeric' });
+    } else if (locale == 'fr'){
+      formattedDate = date.toLocaleDateString('fr', { month: 'numeric', day: 'numeric', year: 'numeric' });
+    } else if (locale == 'ar'){
+      formattedDate = date.toLocaleDateString('fr', { month: 'numeric', day: 'numeric', year: 'numeric' });
+    }
     // Add ordinal suffix to day
     const day = date.getDate();
     let daySuffix;
@@ -45,5 +55,9 @@ export function formatDate(dateString) {
         }
     }
 
-    return formattedDate.replace(/\d+/, day + daySuffix);
+    if(locale == 'en'){
+      return formattedDate.replace(/\d+/, day + daySuffix);
+    } else {
+      return formattedDate
+    }
 }

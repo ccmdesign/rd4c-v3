@@ -5,13 +5,14 @@
         <h4 class="brow" v-if="data.post.brow">{{ data.post.brow }}</h4>
         <h2 class="heading" >{{ data.post.heading }}</h2>
         <h3 class="tagline" v-if="data.post.tagline">{{ data.post.tagline }}</h3>
-        <h5 class="date" v-if="data.post.date">{{ formatDate(data.post.date) }}</h5>
+        <h5 class="date" v-if="data.post.date">{{ formatDate(data.post.date, locale) }}</h5>
         <div class="collaborators" v-if="data.post.collaborators">
           <span v-for="i in data.post.collaborators">{{ i.name }}</span>
         </div>
       </rd-content-grid>
     </header>
     <rd-prose>
+      <img :src="data.post.cover_image" alt="data.post.heading" v-if="data.post.cover_image">
       <div class="cms-content" v-html="data.post.main_content"></div>
     </rd-prose>
     <!-- <contentDoc :document="data.post.main_content"></contentDoc> -->

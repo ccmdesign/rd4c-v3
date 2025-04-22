@@ -31,7 +31,7 @@
         <h5 v-if="content.brow">{{ content.brow }}</h5>
         <h3 v-if="content.heading">{{ content.heading }}</h3>
         <h3 v-else-if="content.title">{{ content.title }}</h3>
-        <p v-if="content.date" class="date" v-html="formatDate(content.date)"></p>
+        <p v-if="content.date" class="date" v-html="formatDate(content.date, locale)"></p>
         <h4 v-if="content.tagline">{{ content.tagline }}</h4>
         <h4 v-if="source === 'video' && content.main_content">{{ content.main_content }}</h4>
       </header>
@@ -159,5 +159,9 @@ const computedUrl = computed(() => {
 .rd-card__action {
   margin-top: auto;
   grid-area: action;
+}
+
+.date {
+  color: var(--base-section-color);
 }
 </style>

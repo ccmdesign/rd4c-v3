@@ -1,7 +1,6 @@
 <template>
   <header class="rd-hero" :bg="content.image" :route="$route.name" :color="color">
     
-    <RdTranslationNotice v-if="!doNotDisplay.includes(locale)" />
     <div class="rd-hero__image">
       <img class="rd-hero__bg" :src="content.image" :alt="content.title" :title="content.imageCredit" />
       <img class="rd-logo-icon mobile-only" src="/images/logos/rd4c-logo-icon.png" alt="">
@@ -27,7 +26,6 @@
 
 <script setup>
 import { useLocaledUrl } from '../composables/useLocaledUrl';
-import RdTranslationNotice from './rd-translation-notice.vue';
 
 const { locale } = useI18n()
 const props = defineProps({

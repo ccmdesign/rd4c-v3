@@ -38,11 +38,14 @@ const objectContructor = async (dir, fs) => {
   // We need to filter out the values that are not in the choices
   const __FIELD_OPTIONS_VALUES_ONLY = __FIELD_OPTIONS.choices.map((item) => item.value);
   __CUSTOM_CONTENT_TYPE_OPTIONS = items.data.map((item) => {
-    
-    if(item.content_type !== null && !__FIELD_OPTIONS_VALUES_ONLY.includes(item.content_type)) {
+    const customContentType = item.content_type.replace(/\s+/g, "_").toLowerCase();
+
+    if(item.content_type !== null && !__FIELD_OPTIONS_VALUES_ONLY.includes(customContentType)) {
+      __FIELD_OPTIONS_VALUES_ONLY.push(customContentType); // avoid duplicates
+      
       return {
         "text": item.content_type,
-        "value": item.content_type.replace(" ", "_")
+        "value": customContentType
       }
     }
     

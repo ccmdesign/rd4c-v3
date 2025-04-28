@@ -25,6 +25,7 @@ const objectContructor = async (dir, fs) => {
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
     i.cover_image_id = item.cover_image ? item.cover_image.id : '';
     i.date = item.date ? item.date : item.date_created;
+    i.content_type = item.content_type ? item.content_type.replace(/\s+/g, "_").toLowerCase() : '';
 
     // collaborators
     i.collaborators = item.collaborators.length > 0 ? item.collaborators.map((collab) => {

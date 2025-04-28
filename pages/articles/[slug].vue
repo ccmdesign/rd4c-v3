@@ -6,8 +6,8 @@
         <h2 class="heading" >{{ data.post.heading }}</h2>
         <h3 class="tagline" v-if="data.post.tagline">{{ data.post.tagline }}</h3>
         <h5 class="date" v-if="data.post.date">{{ formatDate(data.post.date, locale) }}</h5>
-        <div class="collaborators" v-if="data.post.collaborators">
-          <span v-for="i in data.post.collaborators">{{ i.name }}</span>
+        <div class="collaborators" v-if="allCollaborators">
+          <span v-for="i in allCollaborators">{{ i.name }}</span>
         </div>
       </rd-content-grid>
     </header>
@@ -31,6 +31,15 @@ const postData = await queryContent(locale.value, 'articles').where({
 
 const data = reactive({
     post: postData,
+});
+
+const allCollaborators = computed(() => {
+  if(data.post.external_collaborators && data.post.external_collaborators.length) {
+    return [...data.post.collaborators, ...data.post.external_collaborators];
+
+  } else {
+    return data.post.collaborators;
+  }
 });
 
 const formatDate = filters.formatDate;

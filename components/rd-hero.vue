@@ -56,6 +56,17 @@ const actionUrl = props.content.action ? useLocaledUrl(locale, props.content.act
 const doNotDisplay = ['en', 'zh']
 
 
+const head = useLocaleHead({
+  addDirAttribute: true,
+})
+const htmlAttrs = computed(() => head.value.htmlAttrs)
+const iconLogoPosition = ref('0')
+if (htmlAttrs.value.dir === 'ltr') {
+  iconLogoPosition.value = '0'
+} else {
+  iconLogoPosition.value = '50vw'
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -92,7 +103,6 @@ const doNotDisplay = ['en', 'zh']
   }
   @media screen and (min-width: 768px) { 
     min-height: 60svh; 
-    text-align: left;
   }
 
   &__content { 
@@ -142,7 +152,7 @@ const doNotDisplay = ['en', 'zh']
   }
   @media screen and (min-width: 768px) { 
     width: 100px;
-    left: 0;
+    left: v-bind(iconLogoPosition);
     top: 0;
     transform: translate(-50%, var(--space-l-xl));
   }

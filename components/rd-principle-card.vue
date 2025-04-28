@@ -67,7 +67,7 @@ const principle_n = computed(() => {
 }
 
 .principle-card .number {
-  font-size: clamp(7rem, 13vh, 15rem);
+  font-size: clamp(5rem, 10vw, 12rem);
   line-height: 1;
   font-weight: 800;
   color: hsla(var(--white-hsl), .5);

@@ -102,7 +102,7 @@ const principle_n = computed(() => {
 }
 
 .principle-card h4 {
-  font-weight: 400;
+  font-weight: bold;
   font-size: var(--step-0);
 }
 

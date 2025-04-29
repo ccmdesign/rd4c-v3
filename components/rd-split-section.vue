@@ -47,7 +47,7 @@ defineProps({
 }
 
 .panel--image {
-  @media screen and (min-width: 1400px) { aspect-ratio: 1 / 1; }
+  @media screen and (min-width: 1400px) { }
   
   & {
     object-position: center;

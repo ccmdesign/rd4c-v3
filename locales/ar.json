@@ -1,7 +1,7 @@
 {
     "menu": {
         "home": "الرئيسية",
-        "about": "حول",
+        "about": "لمحة",
         "contact": "اتصل",
         "principles": "المبادئ",
         "publications": "الموارد",
@@ -30,15 +30,15 @@
         },
         "trainings": {
             "id": "trainings",
-            "label": "التدريبات"
+            "label": "تدريبات"
         },
         "explainers": {
             "id": "explainers",
-            "label": "الشرح"
+            "label": "شروح"
         },
         "testimonials": {
             "id": "testimonials",
-            "label": "الشهادات"
+            "label": "شهادات"
         }
     },
     "buttons": {
@@ -47,9 +47,9 @@
         "join": "انضم",
         "getInvolved": "انضم إلى التحالف",
         "stayEngaged": "انضم إلى المحادثة",
-        "downloadReport": "تحميل التقرير",
+        "downloadReport": "تنزيل التقرير",
         "read-more": "اقرأ المزيد",
-        "go-to-resource": "انتقل إلى المصدر"
+        "go-to-resource": "انتقل إلى الفيديو"
     },
     "texts": {
         "join": "انضم إلى محادثة RD4C"

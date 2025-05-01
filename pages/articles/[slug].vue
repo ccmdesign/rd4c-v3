@@ -34,10 +34,7 @@ const data = reactive({
 });
 
 const allCollaborators = computed(() => {
-  if(data.post.external_collaborators && data.post.external_collaborators.length) {
-    return [...data.post.collaborators, ...data.post.external_collaborators];
-
-  } else {
+  if(data.post && data.post.collaborators) {
     return data.post.collaborators;
   }
 });

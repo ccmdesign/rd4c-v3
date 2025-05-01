@@ -2,6 +2,12 @@ const fs = require("fs");
 const { rimraf } = require('rimraf');
 const common = require("./common");
 
+
+const containsChineseCharacters = (text) => {
+    const chineseCharRegex = /[\u4e00-\u9fff]/;
+    return chineseCharRegex.test(text);
+};
+
 const objectContructor = async (dir, fs) => {
     const junctionFields = [
         "translations.*",
@@ -14,7 +20,13 @@ const objectContructor = async (dir, fs) => {
 
     const finalTeam = team.data.map((team) => {
         let i = { ...{'lang': 'en'}, ...team };
-        i.slug = team.slug && team.slug != '' ? team.slug : common.slugify(team.name);
+        
+        i.slug = team.slug && team.slug != '' ? team.slug : 
+        containsChineseCharacters(team.name) ? team.id : common.slugify(team.name);
+        
+        
+        
+        
         i.image = team.picture && team.picture.id ? common.getImage(team.picture.id) : '';
         i.bio = team.bio ? team.bio : '';
         i.bioShort = team.bio_short ? team.bio_short : '';

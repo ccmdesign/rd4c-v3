@@ -22,7 +22,7 @@
 
   const { locale } = useI18n()
 
-  const team = await queryContent(locale.value, 'team').find();
+  const team = await queryContent(locale.value, 'team').where({ 'display_on_team_section': true }).find();
 </script>
 
 <style lang="scss" scoped>

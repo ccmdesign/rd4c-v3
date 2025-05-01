@@ -103,4 +103,15 @@ const formatDate = filters.formatDate;
   flex-direction: column;
   color: var(--white-color);
 }
+
+::v-deep(.cms-content a) {
+  text-decoration: underline;
+  text-decoration-color: hsla(var(--primary-hsl), 0.5);
+  text-underline-offset: 2px;
+  
+  &:hover {
+    background-color: hsla(var(--primary-hsl), 0.1);
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+}
 </style>

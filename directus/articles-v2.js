@@ -9,6 +9,15 @@ const objectContructor = async (dir, fs) => {
     "collaborators.rd4c_team_id.*"
   ]
 
+
+  const handleCustomUrl = (item) => {
+    if(item.custom_url && item.custom_url.includes('-')) {
+      return item.custom_url;
+    } else if(item.custom_url && !item.custom_url.includes('-')) {
+      return common.slugify(item.custom_url);
+    }
+  }
+
   let articles = await common.getDirectusData("rd4c_items", junctionFields);
 
   articles = articles.data.sort((a, b) => {
@@ -21,7 +30,11 @@ const objectContructor = async (dir, fs) => {
 
   const finalArticles = articles.map((item) => {
     let i = { ...{'lang': 'en'}, ...item };
-    i.slug = item.slug ? item.slug : common.slugify(item.heading);
+    
+    i.slug = item.slug ? item.slug : 
+    item.custom_url ? handleCustomUrl(item) : 
+    common.slugify(item.heading);
+    
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
     i.cover_image_id = item.cover_image ? item.cover_image.id : '';
     i.date = item.date ? item.date : item.date_created;

@@ -104,6 +104,10 @@ const formatDate = filters.formatDate;
   color: var(--white-color);
 }
 
+.cms-content {
+  padding-top: var(--s1);
+}
+
 ::v-deep(.cms-content a) {
   text-decoration: underline;
   text-decoration-color: hsla(var(--primary-hsl), 0.5);

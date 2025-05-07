@@ -11,7 +11,7 @@
 
       <div v-if="item.subMenu" class="language-selector">
         <button class="menu__item" @click="toggleSubMenu">{{ $t(item.name) }}</button>
-        <ul class="submenu" v-if="mainSubItem">
+        <ul class="submenu" v-if="mainSubItem" @mouseleave="mainSubItem=false">
 
           <div v-for="subItem in item.subMenu" :key="subItem.name">
             <nuxt-link :to="localePath(subItem.link)" class="menu__item">{{ $t(subItem.name) }}</nuxt-link>

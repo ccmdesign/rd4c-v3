@@ -24,7 +24,14 @@ const objectContructor = async (dir, fs) => {
         lang[common.LANGUAGES[t.languages_code]] = t;
       });
 
-      const key = b.item.section_name ? b.item.section_name : b.collection;
+      let key = b.item.section_name ? b.item.section_name : b.collection;
+      const type = b.item.translations.find(t => t.languages_code === 'en-US').title;
+
+      // Resouces page has two hero blocks that is displayed based on the publications type [case_study, tools]
+      if(i.slug === 'publications' && pg.blocks.length >= 2) {
+        key = common.slugify(type);
+      }
+
       if(key) {
         i[key] = lang;
       } else {

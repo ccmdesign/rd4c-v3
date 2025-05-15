@@ -10,7 +10,9 @@ import locales from './locales'
 
 export default defineNuxtConfig({
   target: 'static',
-
+  nitro: {
+    preset: 'netlify-static'
+  },
   app: {
     head: {
       title: projectConfig.title,

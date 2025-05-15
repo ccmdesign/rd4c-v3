@@ -1,9 +1,12 @@
 <script setup>
   import { onUnmounted } from 'vue';
-import { useStore } from '../store/searchStore';
+  import { useStore } from '../store/searchStore';
+  import { storeToRefs } from 'pinia';
   const config = useRuntimeConfig();
   const store = useStore();
   const searchResultData = ref([]);
+
+  const { searchResults } = storeToRefs(store);
 
   const doSearch = async () => {
 
@@ -14,9 +17,9 @@ import { useStore } from '../store/searchStore';
 
     } else {
 
-      const { data } = await useFetch(`${config.public.SEARCH_API_URL}/search?term=${store.searchValue}`);
-      
-      for( const [key, val] of Object.entries(data.value.data)) {
+      await store.doSearch();
+
+      for( const [key, val] of Object.entries(searchResults.value)) {
 
         if(val.length > 0) {
 

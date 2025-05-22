@@ -1,68 +1,134 @@
 <template>
-  <div>
-    <rd-hero :content="hero_content" />
+  <div id="list-container">
+    <rd-hero :content="block_hero" />
+    <rd-base-section color="base">
+      
+      <cluster-l class="filters | padding-bottom:s1" justify="center">
+        <div v-for="(i, index) of filters[0].items" :key="index">
+          <label class="button" data-size="s"><input type="checkbox" :id="`filter-${i.value}`" style="display:none" v-model="isChecked[i.value]" :value="i.text">{{ i.text.toUpperCase() }}</label>
+        </div>
+      </cluster-l>
 
-
-    <base-section>
-      <div class="list">
-        <rd-update-card v-for="post in data.articles" v-bind:key="post.slug" :content="post" />
-      </div>
-    </base-section>
-
-    <div class="aux">
-      <p>The Responsible Data for Children initiative regularly releases videos explaining its work and the work of its
-        partners. Here’s a few of our video series that you might be interested in. If you would like to stay up to date
-        with our latest releases, please subscribe to our YouTube channel or fill out the form here.</p>
-      <h3>RD4C Bites & Lessons from the Field</h3>
-      <p>Short videos highlighting responsible data practices from governments, UN offices, research centers, and other
-        partners around the world.</p>
-      <h3>Recorded Webinars and Lectures</h3>
-      <p>Recordings of our efforts to train data professionals and disseminate the Responsible Data for Children
-        approach</p>
-      <h3>What is Responsible Data for Children?</h3>
-      <p>Videos explaining the value of the Responsible Data for Children initiative, available in different languages.
-      </p>
-    </div>
-
+      <rd-card-grid class="list">
+        <rd-card v-for="post in articles" v-bind:key="post.slug" :content="post" source="blog"/>
+      </rd-card-grid>
+    </rd-base-section>
   </div>
-  <!-- <a href="https://docs.google.com/document/d/1GWAdhbJy4Y89TYvRL2eycuprJaDbW-yX8EuzjnObt2M/edit">Google Doc</a> -->
 </template>
 
 <script setup>
-const hero_content = {
-  title: 'Responsible Data for Children',
-  tagline: 'Guidance, tools and leadership to support the responsible handling of data for and about children.',
-}
+import { onMounted, watch } from 'vue';
 
+const { locale } = useI18n();
+const { $list } = useNuxtApp()
 
-  // @ToDo
-  // Vamos pegar os dados da lista de updates
-  // Tabs/Filtros para "All, Blogs, Videos"
-  // Ordenação por data reversa, igual todos os blogs
+const pageContent = await queryContent('pages', 'updates').findOne();
+const { block_hero } = await useTranslator(pageContent, locale.value);
+block_hero.image = "/images/testing/test-2.jpg"
+block_hero.imageCredit = "Photo by Annie Spratt/Unsplash"
+  
+const articles = await queryContent(locale.value, 'articles').sort({ date: -1 }).find();
+const filters = await queryContent('articles-filters').find();
+let listObj = null;
 
-  // RECUPERAR OS DADOS DO CONTENT. VOCE PODE USAR O QUERYCONTENT
-  // PARA FILTRAR OS DADOS AQUI.
-  const articles = await queryContent('articles').find();
+let obj = {};
+filters[0].items.forEach((item) => {
+  obj[item.value] = false;
+});
+const isChecked = ref(obj);
 
-  // DECLARO UMA VARIÁVEL REACTIVE PARA INTERAGIR COM O CONTEUDO EXIBIDO EM TEMPO REAL
-  // ALTERACOES EM VARIAVEIS REACTIVE REFLETEM NO TEMPLATE DIRETAMENTE
-  const data = reactive({
-      articles: [],
-  });
+watch(isChecked.value, (value) => {
 
-  // EXEMPLO DE TRATAMENTO DE DADOS APENAS EXEMPLO:
-  articles.forEach(post => {
-    const article = {
-      title: post.title,
-      description: post.description,
-      slug: post.slug,
-      url: `/articles/${post.slug}`
-    }
-    data.articles.push(article);
-  });
+  if (Object.values(isChecked.value).every((item) => item === false)) {
+    listObj.filter();
+
+  } else {
+    listObj.filter(item => {
+      for (const key in isChecked.value) {
+        if (isChecked.value[key]) {
+          if (item.values()[`filter-${key}`] === key) {
+            return true;
+          }
+        }
+      }
+    })
+  }
+
+});
+
+onMounted(() => {
+  if(import.meta.client) {
+    listObj = $list(filters[0].items.map(item => item.value));
+  }
+}); 
 
 </script>
 
 <style lang="scss" scoped>
+.center {
+  max-width: 600px;
+  width: 100%;
+}
+
+.button {
+  --button-color: hsla(var(--rd-purple), 1);
+  --button-text-color: hsla(var(--rd-white), 1);
+  --button-padding-block: var(--s-1);
+}
+
+.button input[type="checkbox"] { display: none; }
+.button:has(input:checked) { background-color: var(--button-color); }
+
+.button[data-visual="primary"] { 
+  border-color: var(--button-color);
+  background-color: var(--button-color);
+  border-radius: 0 4px 4px 0;
+}
+
+
+.search-field {
+  all:unset;
+  display: flex;
+  width: 100%;
+}
+
+.search-field input[type="search"] {
+  flex: 1;
+  border: 2px solid hsla(var(--rd-purple), 1);
+  background-color: hsla(var(--white-hsl), .05);
+  border-radius: 4px;
+  padding-inline: var(--s-1);
+}
+
+.search-field input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+  // background-color: hsla(var(--rd-purple), 1);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.search-field input[type="search"],
+.search-field input[type="search"]::placeholder {
+  color: var(--white-color);
+}
+
+.list {
+  width: 100%;
+}
+
+.list:empty {
+  grid-template-columns: 1fr;
+}
+
+.list:empty:after {
+  content: 'No articles found';
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: hsla(var(--white-hsl), .3);
+}
 
 </style>

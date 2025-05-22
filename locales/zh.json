@@ -1,0 +1,104 @@
+{
+    "menu": {
+        "home": "首页",
+        "about": "关于",
+        "contact": "联系",
+        "principles": "原则",
+        "publications": "资源",
+        "videos": "视频",
+        "updates": "博客",
+        "caseStudies": "案例研究",
+        "tools": "工具"
+    },
+    "divider": {
+        "principle": "原则",
+        "caseStudies": "案例研究",
+        "tools": "工具"
+    },
+    "tabs": {
+        "principles": {
+            "id": "principles",
+            "label": "原则"
+        },
+        "caseStudies": {
+            "id": "case-studies",
+            "label": "案例研究"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "工具"
+        },
+        "trainings": {
+            "id": "trainings",
+            "label": "培训资源"
+        },
+        "explainers": {
+            "id": "explainers",
+            "label": "解释指南"
+        },
+        "testimonials": {
+            "id": "testimonials",
+            "label": "推荐感言"
+        }
+    },
+    "buttons": {
+        "view-all": "查看全部",
+        "learn-more": "了解更多",
+        "join": "加入",
+        "getInvolved": "加入联盟",
+        "stayEngaged": "加入对话",
+        "downloadReport": "下载报告",
+        "read-more": "阅读更多",
+        "go-to-resource": "查看资源"
+    },
+    "texts": {
+        "join": "加入 RD4C 对话"
+    },
+    "footer": {
+        "partners": "合作伙伴",
+        "about": "关于项目",
+        "p1": "RD4C 计划是联合国儿童基金会和纽约大学 GovLab 之间的联合努力，旨在突出和支持我们工作中的最佳实践；识别挑战并开发实用工具以帮助从业者评估和解决这些问题；并鼓励就负责任的数据管理原则、见解和方法进行更广泛的讨论。",
+        "p2": "这项工作旨在解决数据生命周期中的实际考虑因素，包括常规数据收集和一次性数据收集；并补充开发社区正在解决的相关主题的工作，例如特定数据系统和技术的指导、技术标准化和数字参与策略。",
+        "p3": "更多工具和材料即将推出，并将在本网站上发布。加入对话以接收定期更新。",
+        "under": "本网站采用",
+        "license": "知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议"
+    },
+    "signup": {
+        "updates": {
+            "btnLabel": "订阅",
+            "text": "订阅我们的视频"
+        },
+        "conversation": {
+            "btnLabel": "加入",
+            "text": "加入对话"
+        },
+        "alliance": {
+            "btnLabel": "加入",
+            "text": "加入联盟"
+        }
+    },
+    "pages": {
+        "home": {
+            "brow": "",
+            "title": "儿童数据责任",
+            "tagline": "联合国儿童基金会和 GovLab 的一项倡议，提供支持儿童数据责任处理的指导、工具和领导力"
+        }
+    },
+    "errors": {
+        "404": {
+            "title": "404 : 页面未找到",
+            "message": "找不到您要查找的页面。"
+        }
+    },
+    "languages": {
+        "ar": "AR",
+        "en": "EN",
+        "es": "ES",
+        "fr": "FR",
+        "zh": "中文"
+    },
+    "resources": {
+        "cardBrow": "案例研究",
+        "btnLabel": "打开文件"   
+    }
+}

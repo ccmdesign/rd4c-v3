@@ -1,0 +1,105 @@
+{
+    "menu": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "principles": "Principles",
+        "publications": "Resources",
+        "videos": "Videos",
+        "updates": "Blog",
+        "caseStudies": "Case Studies",
+        "tools": "Tools"
+    },
+    "divider": {
+        "principle": "Principles",
+        "caseStudies": "Case Studies",
+        "tools": "Tools",
+        "whatWeDo": "What We Do"
+    },
+    "tabs": {
+        "principles": {
+            "id": "principles",
+            "label": "Principles"
+        },
+        "caseStudies": {
+            "id": "case-studies",
+            "label": "Case Studies"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "Tools"
+        },
+        "trainings": {
+            "id": "trainings",
+            "label": "Trainings"
+        },
+        "explainers": {
+            "id": "explainers",
+            "label": "Explainers"
+        },
+        "testimonials": {
+            "id": "testimonials",
+            "label": "Testimonials"
+        }
+    },
+    "buttons": {
+        "view-all": "View all",
+        "learn-more": "Learn more",
+        "join": "Join",
+        "getInvolved": "Join the alliance",
+        "stayEngaged": "Join the conversation",
+        "downloadReport": "Download the report",
+        "read-more": "Read more",
+        "go-to-resource": "Go to resource"
+    },
+    "texts": {
+        "join": "Join the RD4C conversation"
+    },
+    "footer": {
+        "partners": "Partners",
+        "about": "About the project",
+        "p1": "The RD4C initiative is a joint endeavor between UNICEF and The GovLab at New York University to highlight and support best practice in our work; identify challenges and develop practical tools to assist practitioners in evaluating and addressing them; and encourage a broader discussion on actionable principles, insights, and approaches for responsible data management.",
+        "p2": "The work is intended to address practical considerations across the data lifecycle, including routine data collection and one-off data collections; and compliments work on related topics being addressed by the development community such as guidance on specific data systems and technologies, technical standardization, and digital engagement strategies.",
+        "p3": "Additional tools and materials are coming soon and will be posted on this website as they become available. Join the conversation to receive regular updates.",
+        "under": "This work is licensed under a",
+        "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+    },
+    "signup": {
+        "updates": {
+            "btnLabel": "Subscribe",
+            "text": "Subscribe to our videos"
+        },
+        "conversation": {
+            "btnLabel": "Join",
+            "text": "Join the conversation"
+        },
+        "alliance": {
+            "btnLabel": "Join",
+            "text": "Join the alliance"
+        }
+    },
+    "pages": {
+        "home": {
+            "brow": "",
+            "title": "Responsible Data for Children",
+            "tagline": "An initiative by UNICEF and The GovLab to provide guidance, tools, and leadership that supports the responsible handling of data for and about children"
+        }
+    },
+    "errors": {
+        "404": {
+            "title": "404: Page not found",
+            "message": "The page you were looking for could not be found."
+        }
+    },
+    "languages": {
+        "ar": "AR",
+        "en": "EN",
+        "es": "ES",
+        "fr": "FR",
+        "zh": "中文"
+    },
+    "resources": {
+        "cardBrow": "Case Study",
+        "btnLabel": "Open document" 
+    }
+}

@@ -15,16 +15,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 :root,
 :after,
 :before {
   /* Set the project fonts */
   --display-font: "Noto Sans", sans-serif;
   --body-font: "Noto Sans", sans-serif;
-
+  --base-font-size: var(--step-0);
+  
   /* --icon-font: 'Material Symbols Outlined'; */
   /* --icon-weight: 300; /* This variable is here in case we have multiple weights of the material symbols. */
-  /* --base-font-size: 16px; */
+  
 }
 
 /* Theme Colors  */
@@ -39,29 +41,39 @@
     so the system will generate the same values for the three colors. 
   */
 
-  --base-h: 217;
-  --base-s: 57%;
-  --base-l: 29%;
+  --rd-blue: 202, 68%, 49%;
+  --rd-green: 170, 100%, 32%;
+  --rd-yellow: 39, 88%, 58%;
+  --rd-orange: 29, 100%, 44%;
+  --rd-purple: 238, 33%, 46%;
+  --rd-red: 355, 66%, 41%;
+  --rd-teal: 180, 76%, 40%;
 
-  --primary-h: 12;
-  --primary-s: 100%;
-  --primary-l: 67%;
 
-  --accent-h: 202;
-  --accent-s: 69%;
-  --accent-l: 49%;
+  --base-h: 202;
+  --base-s: 60%;
+  --base-l: 16%;
 
-  --secondary-h: 355;
-  --secondary-s: 56%;
-  --secondary-l: 51%;
+  --primary-h: 216;
+  --primary-s: 58%;
+  --primary-l: 29%;
+
+  --accent-h: 12;
+  --accent-s: 100%;
+  --accent-l: 61%;
+
+  --secondary-h: 39;
+  --secondary-s: 88%;
+  --secondary-l: 58%;
 
   --tertiary-h: 170;
-  --tertiary-s: 74%;
-  --tertiary-l: 36%;
+  --tertiary-s: 99%;
+  --tertiary-l: 32%;
   
-  --quaternary-h: 39;
-  --quaternary-s: 77%;
-  --quaternary-l: 58%;
+  --quaternary-h: 212;
+  --quaternary-s: 59%;
+  --quaternary-l: 75%;
+
 
   /* Feedback colors */
   /* These colors are for feedback. Success, Fail, Warning, Attention.  */
@@ -104,21 +116,21 @@
   */
 
   /* Base Borders */
-  /* --base-border-width: 2px; */
+  --base-border-width: 2px;
   /* --base-border-style: solid; */
   /* --base-border: var(--base-border-width) var(--base-border-style) hsla(var(--base-hsl), .1); */
 
   /* Base Spacing */
-  /* --base-gap: var(--s1); */
+  --base-gap: var(--space-m-l);
 
   /* ToDo: I'm not sure this is a good thing. 
      base-padding is not equal to base-padding-inline and block */
-  /* --base-padding: var(--s1); */
-  --base-padding-inline: var(--s1);
-  --base-padding-block: var(--s0);
+  --base-padding: var(--space-m-l);
+  --base-padding-inline: var(--space-m);
+  --base-padding-block: var(--space-s);
 
   /* Decorations */
-  --base-border-radius: 4px;
+  --base-border-radius: 6px;
 
   /* --box-shadow-offset-x: 0; */
   /* --box-shadow-offset-y: 0; */
@@ -154,35 +166,35 @@
   /* Headings Config */
   /* H1 */
   /* --h1-font-family: var(--display-font); */
-  /* --h1-font-size: 3rem; */
+  --h1-font-size: var(--step-3);
   /* --h1-text-color: var(--base-color); */
   /* --h1-line-height: 1.2; */
   --h1-font-weight:  300;
 
   /* H2 */
   /* --h2-font-family: var(--display-font); */
-  /* --h2-font-size: 2.5rem; */
-  /* --h2-text-color: var(--primary-color); */
+  --h2-font-size: var(--step-2);
+  --h2-text-color: hsla(var(--rd-purple), 1);
   /* --h2-line-height: 1.2; */
   --h2-font-weight: 300;
 
   /* H3 */
   /* --h3-font-family: var(--display-font); */
-  /* --h3-font-size: 1.6rem; */
+  --h3-font-size: var(--step-1);
   /* --h3-text-color: var(--base-color); */
   /* --h3-line-height: 1.2; */
   --h3-font-weight: 300;
 
   /* H4 */
   /* --h4-font-family: var(--display-font); */
-  /* --h4-font-size: 1.2rem; */
+  --h4-font-size: var(--step-0);
   /* --h4-text-color: var(--base-color); */
   /* --h4-line-height: 1.5; */
   /* --h4-font-weight: 400; */
 
   /* H5 */
   /* --h5-font-family: var(--display-font); */
-  /* --h5-font-size:   1rem; */
+  --h5-font-size: var(--step-0);
   /* --h5-text-color: var(--base-color); */
   /* --h5-line-height: var(--ratio); */
   --h5-font-weight: 500;
@@ -195,14 +207,102 @@
   /* --h6-font-weight: 400; */
 }
 
+
 /* Wrappers */
 :root,
 :after,
 :before {
+  --measure: 80ch;
+  --wide: 1280px;
+  --wrapper: 1280px;
+  --narrow: 700px;
+  --scroll-height: 0;
+  /* Accepts a string in VH ex: "70vh" */
   /* --measure: 80ch; */
   /* --narrow: 700px; */
   /* --regular: 992px; */
-  --wide: 1340px;
   /* --wrapper: 1280px; */
   /* --scroll-height: 0; /* Accepts a string in VH ex: "70vh" */
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.7035rem, 0.8083rem + -0.1353vw, 0.7813rem);
+  --step--1: clamp(0.9375rem, 0.9374rem + 0.0004vw, 0.9377rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.24rem + 0.55vw, 1.6663rem);
+  --step-2: clamp(1.62rem, 1.4109rem + 1.0454vw, 2.2211rem);
+  --step-3: clamp(1.944rem, 1.5904rem + 1.7682vw, 2.9607rem);
+  --step-4: clamp(2.3328rem, 1.7715rem + 2.8067vw, 3.9467rem);
+  --step-5: clamp(2.7994rem, 1.9432rem + 4.281vw, 5.2609rem);
+}
+
+
+/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /* Space 3xs: 5px → 5px */
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  /* Space 2xs: 9px → 10px */
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  /* Space xs: 14px → 15px */
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  /* Space s: 18px → 20px */
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  /* Space m: 27px → 30px */
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  /* Space l: 36px → 40px */
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  /* Space xl: 54px → 60px */
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  /* Space 2xl: 72px → 80px */
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  /* Space 3xl: 108px → 120px */
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+
+  /* One-up pairs */
+  /* Space 3xs-2xs: 5px → 10px */
+  --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
+  /* Space 2xs-xs: 9px → 15px */
+  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  /* Space xs-s: 14px → 20px */
+  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+  /* Space s-m: 18px → 30px */
+  --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+  /* Space m-l: 27px → 40px */
+  --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
+  /* Space l-xl: 36px → 60px */
+  --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  /* Space xl-2xl: 54px → 80px */
+  --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
+  /* Space 2xl-3xl: 72px → 120px */
+  --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+  --space-s-xl: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);
+  --space-m-xl: clamp(1.6875rem, 0.9701rem + 3.587vw, 3.75rem);
+}
+
+:root {
+  --shadow-color: 0deg 0% 70%;
+  --shadow-elevation-low:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.25),
+    0.4px 0.8px 1px -1.3px hsl(var(--shadow-color) / 0.25),
+    0.9px 1.7px 2.1px -2.5px hsl(var(--shadow-color) / 0.25);
+  --shadow-elevation-medium:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.27),
+    0.7px 1.5px 1.8px -0.8px hsl(var(--shadow-color) / 0.26),
+    1.8px 3.6px 4.5px -1.7px hsl(var(--shadow-color) / 0.26),
+    4.3px 8.7px 10.8px -2.5px hsl(var(--shadow-color) / 0.26);
+  --shadow-elevation-high:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.25),
+    1.1px 2.2px 2.7px -0.4px hsl(var(--shadow-color) / 0.25),
+    2px 4px 5px -0.7px hsl(var(--shadow-color) / 0.24),
+    3.3px 6.6px 8.2px -1.1px hsl(var(--shadow-color) / 0.24),
+    5.2px 10.5px 13.1px -1.5px hsl(var(--shadow-color) / 0.24),
+    8.2px 16.3px 20.4px -1.8px hsl(var(--shadow-color) / 0.24),
+    12.4px 24.8px 31px -2.2px hsl(var(--shadow-color) / 0.24),
+    18.3px 36.5px 45.6px -2.5px hsl(var(--shadow-color) / 0.24);
 }

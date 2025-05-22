@@ -1,0 +1,108 @@
+{
+    "menu": {
+        "home": "Accueil",
+        "about": "À propos",
+        "contact": "Contact",
+        "principles": "Principes",
+        "publications": "Ressources",
+        "videos": "Vidéos",
+        "updates": "Blog",
+        "caseStudies": "Études de cas",
+        "tools": "Outils"
+    },
+    "divider": {
+        "principle": "Principe",
+        "caseStudies": "Études de cas",
+        "tools": "Outils"
+    },
+    "tabs": {
+        "principles": {
+            "id": "principles",
+            "label": "Principe"
+        },
+        "caseStudies": {
+            "id": "case-studies",
+            "label": "Études de cas"
+        },
+        "tools": {
+            "id": "tools",
+            "label": "Outils"
+        },
+        "trainings": {
+            "id": "trainings",
+            "label": "Formations"
+        },
+        "explainers": {
+            "id": "explainers",
+            "label": "Vidéos explicatives"
+        },
+        "testimonials": {
+            "id": "testimonials",
+            "label": "Témoignages"
+        }
+    },
+    "buttons": {
+        "view-all": "Voir tout",
+        "learn-more": "En savoir plus",
+        "join": "Rejoindre",
+        "getInvolved": "Rejoignez l'alliance",
+        "stayEngaged": "Rejoignez la conversation",
+        "downloadReport": "Télécharger le rapport",
+        "read-more": "En savoir plus",
+        "go-to-resource": "Accéder à cette ressource"
+    },
+    "texts": {
+        "join": "Rejoindre la conversation RD4C"
+    },
+    "footer": {
+        "partners": "Partenaires",
+        "about": "À propos du projet",
+        "p1": "L'initiative RD4C est un effort conjoint entre l'UNICEF et The GovLab à l'Université de New York pour mettre en évidence et soutenir les meilleures pratiques dans notre travail; identifier les défis et développer des outils pratiques pour aider les praticiens à évaluer et à aborder ces défis; et encourager un débat plus large sur des principes, des idées, des approches et des approches pratiques pour la gestion responsable des données.",
+        "p2": "Le travail est destiné à aborder les considérations pratiques tout au long du cycle de vie des données, y compris la collecte de données régulières et la collecte de données uniques; et complète le travail sur des sujets connexes qui sont abordés par la communauté du développement, tels que la guidance sur les systèmes de données spécifiques et les technologies, l'harmonisation technique, et les stratégies d'engagement numérique.",
+        "p3": "Des outils et des matériaux supplémentaires sont en cours de développement et seront publiés sur ce site Web dès qu'ils seront disponibles. Rejoignez la conversation pour recevoir des mises à jour régulières.",
+        "under": "Ce travail est sous licence",
+        "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
+    },
+    "signup": {
+        "updates": {
+            "btnLabel": "S'inscrire",
+            "text": "Abonnez-vous à nos vidéos"
+        },
+        "conversation": {
+            "btnLabel": "Rejoindre",
+            "text": "Rejoignez la conversation"
+        },
+        "alliance": {
+            "btnLabel": "Rejoindre",
+            "text": "Rejoignez l'alliance"
+        }
+    },
+    "pages": {
+        "home": {
+            "brow": "GovLab",
+            "title": "Données Responsables pour les Enfants",
+            "tagline": "Une initiative de l'UNICEF et The GovLab pour fournir des conseils, des outils et un leadership qui soutiennent la gestion responsable des données pour et sur les enfants"
+        }
+    },
+    "errors": {
+        "404": {
+            "title": "404: Page introuvable",
+            "message": "La page que vous cherchiez est introuvable."
+        }
+    },
+    "languages": {
+        "ar": "AR",
+        "en": "EN",
+        "es": "ES",
+        "fr": "FR",
+        "zh": "中文"
+    },
+    "translationNotice": {
+        "text": "Traductions automatiques pour cette langue. Veuillez nous contacter si vous souhaitez suggérer une modification.",
+        "btnLabel": "Suggérer des améliorations"
+    },
+    "resources": {
+        "cardBrow": "Étude de cas",
+        "btnLabel": "Ouvrir le document"
+    }
+}

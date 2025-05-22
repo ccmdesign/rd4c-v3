@@ -1,7 +1,7 @@
-<template>
+<template> <!-- FOR ERRORS: USE THE error.vue FILE INSTEAD -->
   <div>
-    <h1>404: Page Not Found</h1>
-    <p>The page you were looking for could not be found.</p>
+    <h1>{{ $t('errors.404.title') }}</h1>
+    <p>{{ $t('errors.404.message') }}</p>
   </div>
 </template>
 

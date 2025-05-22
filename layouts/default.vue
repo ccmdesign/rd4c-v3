@@ -1,35 +1,61 @@
 <template>
-  <div class="page-wrapper">
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <rd-footer />
-      <div class="by-ccm">
-        <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>
-        <a href="https://www.ccmdesign.ca" target="_blank">by ccm.design</a>
+  <Html :dir="htmlAttrs.dir">
+    <div class="page-wrapper">
+      <div class="top-bar">
+        <rd-top-bar />
       </div>
-    </footer>
-  </div>
+      <main>
+        <slot />
+      </main>
+      <footer>
+        <rd-signup-section />
+        <rd-footer :footer-content="footerData"/>
+        <div class="by-ccm">
+          <span>{{ currentYear }} ® Copyright {{ projectConfig.client }}</span>
+          <a href="https://www.ccmdesign.ca" target="_blank">by ccm.design</a>
+        </div>
+      </footer>
+    </div>
+  </Html>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUpdated, watch } from 'vue'
 import PROJECTCONFIG from '~/project_config.json'
+
+const { locale, t } = useI18n()
+
+const pageContent = await queryContent('pages').where({"title": 'Footer'}).findOne();
+const { block_footer } = await useTranslator(pageContent, locale.value);
+const footerData = ref(block_footer)
 
 
 const currentYear = ref('')
 const projectConfig = PROJECTCONFIG;
 
+watch(locale, async () => {
+  const pageContent = await queryContent('pages').where({"title": 'Footer'}).findOne();
+  const { block_footer } = await useTranslator(pageContent, locale.value);
+  footerData.value = { ...block_footer }
+})
+
 onMounted(() => {
   currentYear.value = new Date().getFullYear()
 })
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+})
+const htmlAttrs = computed(() => head.value.htmlAttrs)
+
 </script>
 
 <style lang="scss" scoped>
 .page-wrapper {
   min-height: 100vh;
   position: relative;
+  display: grid;
+  grid-template-rows: 85px 1fr auto;
 }
 
 .by-ccm {

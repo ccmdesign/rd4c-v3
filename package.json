@@ -4,31 +4,39 @@
   "description": "Boilerplate for project using CCM Design System",
   "scripts": {
     "dev": "node ./contentImporter.js && nuxt dev",
-    "generate": "node ./contentImporter.js && nuxt generate"
+    "generate": "node ./contentImporter.js && nuxt generate",
+    "build": "node ./contentImporter.js && nuxt build"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/i18n": "^8.3.1",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
-    "node-sass": "^7.0.1",
-    "nuxt": "^3.10.1",
+    "nuxt": "^3.11.2",
     "nuxt-gtag": "^0.5.7",
     "prettier": "^3.2.5"
   },
   "dependencies": {
     "@ccmdesign/ccm-ds": "^0.6.2",
-    "@nuxt/content": "^2.9.0",
     "@directus/sdk": "10.3.3",
+    "@nuxt/content": "^2.12.1",
+    "@nuxt/image": "^1.8.1",
     "@pinia/nuxt": "^0.5.1",
     "@vee-validate/nuxt": "^4.12.6",
-    "@vueuse/core": "^10.7.2",
-    "markdown-renderer": "^1.0.1",
+    "@vee-validate/rules": "^4.13.2",
+    "@vueuse/core": "^10.11.0",
+    "axios": "^1.7.7",
     "chalk": "^4.1.2",
+    "list.js": "^2.3.1",
+    "markdown-renderer": "^1.0.1",
     "path": "^0.12.7",
-    "pinia": "^2.1.7",
-    "sass": "^1.54.4",
+    "pinia": "^2.3.0",
+    "rimraf": "^6.0.1",
+    "sass": "^1.83.4",
+    "uuid": "^11.0.5",
     "vue": "^3.4.18",
+    "vue3-toastify": "^0.2.2",
     "yup": "^1.4.0"
   }
 }

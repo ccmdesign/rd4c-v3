@@ -1,9 +1,12 @@
 <template>
-  <div class="rd-principle-card" :principle-n="principleN"> 
-    <stack-l>
-      <h3>{{ content.name }}</h3>
-      <p>{{ content.tagline }}</p>
-    </stack-l>
+  <div class="principle-card" :principle="content.slug" :n="n" :expanded="expanded" @click="expanded = !expanded">
+    <div class="number">{{ principle_n }}</div>
+    <div class="content | text-wrap:balance">
+      <h3>{{content.name}}</h3>
+      <h4>{{content.tagline}}</h4>
+      <p>{{content.description}}</p>
+    </div>
+    
   </div>
 </template>
 
@@ -11,73 +14,135 @@
 const props = defineProps({
   content: {
     type: Object,
-    required: true
+    required: true,
+    default: () => ({
+      brow: '',
+      heading: '',
+      description: '',
+      slug: '',
+      url: ''
+    })
   },
   n: {
     type: Number,
-    required: true
-  }
+    required: true,
+    default: 0
+  },
 });
 
-const principleN = computed(() => {
-  return props.n + 1;
-});
+const expanded = ref(false);
 
+const principle_n = computed(() => {
+  return props.n.toString().padStart(2, '0');
+});
 
 </script>
 <style lang="scss" scoped>
-.rd-principle-card {
-  border-radius: var(--base-border-radius);
-  background-image: url('/images/decor/umbrella2.svg');
-  background-position: 120px 120px;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  padding: var(--s1);
-  position: relative;
-
-  * { color: white !important;}
-
-  @media screen and (max-width: 768px) {
-    box-sizing: border-box;
+.principle-card {
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "number content";
+    
   }
 }
 
-.rd-principle-card:before {
-  content: attr(principle-n);
-  color: white;
-  opacity: .2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 8rem;
-  line-height: 1;
-  z-index: 10;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  font-weight: 900;
+// decorations
+.principle-card {
+  --_principle-padding: var(--space-m-l);
 
-  // width: 100%;
-  // height: 100%;
-  // background: linear-gradient(180deg, hsla(var(--primary-hsl), 0) 0%, hsla(var(--primary-hsl), .2) 100%);
-  // border-radius: var(--base-border-radius);
+  box-sizing: border-box;
+  border-radius: 0 var(--base-border-radius) var(--base-border-radius) 0;
+  transition: all .3s;
+  box-shadow: 0 0 16px hsla(var(--base-hsl), .1);
+  border: 2px solid hsla(var(--_principle-hsl), 1);
+  border-left: 8px solid hsla(var(--_principle-hsl), 1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 32px hsla(var(--base-hsl), .25);
+    --_principle-padding: var(--space-l-xl);
+  }
 }
 
+.principle-card .number {
+  font-size: clamp(5rem, 10vw, 12rem);
+  line-height: 1;
+  font-weight: 800;
+  color: hsla(var(--white-hsl), .5);
+  
+  -webkit-text-stroke: 1px hsla(var(--_principle-hsl), 1);
+  text-stroke: 1px hsla(var(--_principle-hsl), 1); /* Standard property for other browsers */
+  grid-area: number;
+  padding: var(--space-s-l);
 
+  @supports not (-webkit-text-stroke: 1px black) {
+    .principle-card .number {
+      color: hsla(var(--_principle-hsl), 1);
+    }
+  }
+}
 
-.rd-principle-card[color="base"],
-.rd-principle-card:nth-child(1),
-.rd-principle-card:nth-child(6) { background-color: var(--base-color); }
-.rd-principle-card[color="primary"],
-.rd-principle-card:nth-child(2),
-.rd-principle-card:nth-child(7) { background-color: var(--primary-color); }
-.rd-principle-card[color="secondary"],
-.rd-principle-card:nth-child(3),
-.rd-principle-card:nth-child(8) { background-color: var(--secondary-color); }
-.rd-principle-card[color="tertiary"],
-.rd-principle-card:nth-child(4),
-.rd-principle-card:nth-child(9) { background-color: var(--tertiary-color); }
-.rd-principle-card[color="quaternary"],
-.rd-principle-card:nth-child(5),
-.rd-principle-card:nth-child(10) { background-color: var(--quaternary-color); }
+.principle-card .content {
+  grid-area: content;
+  align-self: center;
+  display: flex;
+  gap: var(--space-3xs-2xs);
+  flex-direction: column;
+  padding: var(--_principle-padding);
+  color: hsla(var(--_principle-hsl), 1);
+}
+
+.content > * { color: inherit }
+
+.principle-card h3 {
+  font-size: var(--step-3);
+  font-weight: 200;
+}
+
+.principle-card h4 {
+  font-weight: bold;
+  font-size: var(--step-0);
+}
+
+// Defining Colors
+.principle-card {
+  --_principle-hsl: var(--rd-purple);
+  background-color: hsla(var(--_principle-hsl), .1);
+}
+
+.principle-card[data-n="1"] {
+  --_principle-hsl: var(--rd-blue);
+}
+
+.principle-card[data-n="2"] {
+  --_principle-hsl: var(--rd-green);
+}
+
+.principle-card[data-n="3"] {
+  --_principle-hsl: var(--rd-orange);
+}
+
+.principle-card[data-n="4"] {
+  --_principle-hsl: var(--rd-purple);
+}
+
+.principle-card[data-n="5"] {
+  --_principle-hsl: var(--rd-red);
+}
+
+.principle-card[data-n="6"] {
+  --_principle-hsl: var(--rd-yellow);
+}
+
+.principle-card[data-n="7"] {
+  --_principle-hsl: var(--rd-teal);
+}
+
+.principle-card[data-n="8"] {
+  --_principle-hsl: var(--base-hsl);
+}
+
 </style>
+
+

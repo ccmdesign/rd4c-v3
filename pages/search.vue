@@ -2,7 +2,9 @@
   import { onUnmounted } from 'vue';
   import { useStore } from '../store/searchStore';
   import { storeToRefs } from 'pinia';
-  const config = useRuntimeConfig();
+
+  const { jsonData, loadJsonFiles } = useJsonData()
+
   const store = useStore();
   const searchResultData = ref([]);
 
@@ -36,8 +38,11 @@
                 }
               };
 
-              const result = await queryContent('en', getContentName(key)).where({ id: Number(item.id) }).findOne();
-
+              // const result = await queryContent('en', getContentName(key)).where({ id: Number(item.id) }).findOne();
+              
+              await loadJsonFiles(getContentName(key), item.slug);
+              const result = jsonData.value;
+              
               return {
                 type: item.type,
                 excerptSummary: item.excerptSummary,

@@ -35,7 +35,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@pinia/nuxt',
     '@nuxtjs/google-fonts',
-    '@vee-validate/nuxt',
     '@nuxtjs/i18n',
     '@nuxt/image',
   ],

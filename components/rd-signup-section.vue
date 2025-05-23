@@ -35,39 +35,12 @@
 </template>
 
 <script setup>
-import { watch } from 'vue';
-import { useSignupForm } from '../composables/useSignup';
-import { toast } from 'vue3-toastify';
-import 'vue3-toastify/dist/index.css';
 
 const { locale } = useI18n();
 
 const signup = ref((await queryContent('pages', 'signup').findOne()).signup[locale.value]);
 watch(locale, async () => {
   signup.value = (await queryContent('pages', 'signup').findOne()).signup[locale.value];
-});
-
-const {
-    email,
-    updates,
-    alliance,
-    conversation,
-    success,
-    onSubmit } = useSignupForm();
-
-const notify = () => {
-  toast("Sent successfully!", {
-    "theme": "auto",
-    "type": "success",
-    "autoClose": 600,
-    "position": "bottom-right"
-  })
-};
-
-watch(success, (value) => {
-  if (value) {
-    notify();
-  }
 });
 
 </script>

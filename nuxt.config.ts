@@ -9,9 +9,10 @@ import locales from './locales'
 // https://www.notion.so/ccmdesign/Reposit-rio-Inicial-para-Projetos-em-Nuxt-6c1f64c4a65c46eda799a78a08a4c4f5?pvs=4
 
 export default defineNuxtConfig({
-  target: 'static',
+  // target: 'static',
   nitro: {
-    preset: 'netlify-static'
+    preset: 'netlify',
+    prerender: { crawlLinks: true, ignore: ['/search'] }
   },
   app: {
     head: {

@@ -30,9 +30,9 @@ const objectContructor = async (dir, fs) => {
 
   const finalArticles = articles.map((item) => {
     let i = { ...{'lang': 'en'}, ...item };
-    
     i.slug = item.slug ? item.slug : 
     item.custom_url ? handleCustomUrl(item) : 
+    item.brow?common.slugify(item.brow)+'-'+common.slugify(item.heading):
     common.slugify(item.heading);
     
     i.cover_image = item.cover_image ? common.getImage(item.cover_image.id) : '';
@@ -55,7 +55,7 @@ const objectContructor = async (dir, fs) => {
     
     item.translations.forEach((translation) => {
       let tr = { ...{'itemId': item.id, 'lang': common.LANGUAGES[translation.languages_code]}, ...translation };
-      tr.slug = common.slugify(i.heading);
+      tr.slug = i.brow?common.slugify(i.brow)+'-'+common.slugify(i.heading):common.slugify(i.heading);
       tr.url = i.url;
       tr.cover_image = i.cover_image;
       tr.cover_image_id = i.cover_image_id;

@@ -12,7 +12,7 @@ const objectContructor = async (dir, fs) => {
 
   articles.forEach((item) => {
     let i = { ...item };
-    i.slug = common.slugify(item.heading);
+    i.slug = item.brow?common.slugify(item.brow)+'-':''+common.slugify(item.heading);
     i.cover_image = item.image ? common.getImage(item.image.id) : '';
 
     fs.writeFile(

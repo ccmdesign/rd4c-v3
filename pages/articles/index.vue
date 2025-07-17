@@ -131,4 +131,8 @@ onMounted(() => {
   color: hsla(var(--white-hsl), .3);
 }
 
+:deep(.rd-hero__image) {
+  max-height: 70vh;
+}
+
 </style>

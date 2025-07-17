@@ -91,7 +91,7 @@ if (htmlAttrs.value.dir === 'ltr') {
 
 @media screen and (min-width: 768px) {
   .rd-hero__top-bar { grid-area: top; }
-  .rd-hero__image   {  grid-area: image; max-height: 70vh; }
+  .rd-hero__image   {  grid-area: image; }
   .rd-hero__content {  grid-area: content; }
 }
 

@@ -12,7 +12,7 @@ const objectContructor = async (dir, fs) => {
 
   const handleCustomUrl = (item) => {
     if(item.custom_url && item.custom_url.includes('-')) {
-      return item.custom_url;
+      return item.custom_url.toLowerCase();
     } else if(item.custom_url && !item.custom_url.includes('-')) {
       return common.slugify(item.custom_url);
     }
@@ -30,7 +30,7 @@ const objectContructor = async (dir, fs) => {
 
   const finalArticles = articles.map((item) => {
     let i = { ...{'lang': 'en'}, ...item };
-    i.slug = item.slug ? item.slug : 
+    i.slug = item.slug ? item.slug.toLowerCase() : 
     item.custom_url ? handleCustomUrl(item) : 
     item.brow?common.slugify(item.brow)+'-'+common.slugify(item.heading):
     common.slugify(item.heading);

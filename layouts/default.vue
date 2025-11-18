@@ -16,6 +16,7 @@
         </div>
       </footer>
     </div>
+    <nc-cookie-consent />
   </Html>
 </template>
 

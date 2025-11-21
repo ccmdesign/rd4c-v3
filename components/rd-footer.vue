@@ -10,6 +10,7 @@
       </div>
 
       <div class="after-footer">
+        <a href="#" @click.prevent="openCookieModal" style="cursor: pointer; z-index: 1;">Cookies</a>
         <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0>
           <img alt='Creative Commons License' style='border-width:0'
             src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /> </a>
@@ -27,6 +28,7 @@
 <script setup>
 import { useNavigation } from '@/composables/useNavigation';
 const { menuItems } = useNavigation();
+const { openCookieModal } = useCookieControl();
 
 defineProps({
   footerContent: {

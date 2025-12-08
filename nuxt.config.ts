@@ -107,8 +107,7 @@ export default defineNuxtConfig({
 
   plugins: [
     { src: '~/plugins/list.client.js', ssr: false },
-    { src: '~/plugins/clarity.client.ts', ssr: false },
-    { src: '~/plugins/clarity.ts', ssr: false }
+    { src: '~/plugins/clarity.client.ts', ssr: false }
   ],
 
   runtimeConfig: {

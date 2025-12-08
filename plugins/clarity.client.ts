@@ -13,7 +13,7 @@ declare global {
 }
 
 const insertClaritySnippet = () => {
-  if (!document?.head || document.querySelector(`script[${CLARITY_ATTRIBUTE}]`)) {
+  if (typeof document === 'undefined' || !document.head || document.querySelector(`script[${CLARITY_ATTRIBUTE}]`)) {
     return;
   }
   const script = document.createElement('script');
@@ -24,9 +24,12 @@ const insertClaritySnippet = () => {
 };
 
 const sendClarityEvent = (eventName: string, payload: Record<string, unknown>) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
   let attempts = 0;
   const attempt = () => {
-    if (typeof window?.clarity === 'function') {
+    if (typeof window.clarity === 'function') {
       window.clarity('event', eventName, payload);
       return;
     }
@@ -40,7 +43,7 @@ const sendClarityEvent = (eventName: string, payload: Record<string, unknown>) =
 };
 
 const trackRoute = (route: RouteLocationNormalizedLoaded | null) => {
-  if (!route) {
+  if (!route || typeof window === 'undefined') {
     return;
   }
   const title = typeof route.meta?.title === 'string' ? route.meta.title : '';
@@ -53,6 +56,9 @@ const trackRoute = (route: RouteLocationNormalizedLoaded | null) => {
 };
 
 export default defineNuxtPlugin(() => {
+  if (typeof window === 'undefined') {
+    return;
+  }
   const { state } = useCookieConsent();
   const router = useRouter();
 

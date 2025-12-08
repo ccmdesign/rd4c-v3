@@ -3,8 +3,6 @@ import { resolve } from "path";
 import projectConfig from "./project_config.json";
 import locales from './locales'
 
-const claritySnippet = `!function(c,l,a,r,i,t,y){function sync(){(new Image).src="https://c.clarity.ms/c.gif"}"complete"==document.readyState?sync():window.addEventListener("load",sync);a[c]("metadata",(function(){a[c]("set","C_IS","0")}),!1,!0);if(a[c].v||a[c].t)return a[c]("event",c,"dup."+i.projectId);a[c].t=!0,(t=l.createElement(r)).async=!0,t.src="https://scripts.clarity.ms/0.8.41/clarity.js",(y=l.getElementsByTagName(r)[0]).parentNode.insertBefore(t,y),a[c]("start",i),a[c].q.unshift(a[c].q.pop()),a[c]("set","C_IS","0")}("clarity",document,window,"script",{"projectId":"qo6ifcvtba","upload":"https://i.clarity.ms/collect","expire":365,"cookies":["_uetmsclkid","_uetvid"],"track":true,"content":true,"report":"https://report.clarity.ms/eus2-tag","keep":["msclkid"],"dob":2148});`
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 // Aqui está especificado o que eu pensei até agora para o boilerplate
@@ -105,18 +103,12 @@ export default defineNuxtConfig({
     provider: 'cookieinformation',
     init: false,
     dev: true,
-    scripts: {
-      statistic: [
-        {
-          children: claritySnippet,
-          type: 'text/javascript'
-        }
-      ]
-    }
   },
 
   plugins: [
-    { src: '~/plugins/list.client.js', ssr: false }
+    { src: '~/plugins/list.client.js', ssr: false },
+    { src: '~/plugins/clarity.client.ts', ssr: false },
+    { src: '~/plugins/clarity.ts', ssr: false }
   ],
 
   runtimeConfig: {

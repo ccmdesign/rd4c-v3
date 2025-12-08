@@ -22,7 +22,7 @@
 
 <script setup>
 import { ref, onMounted, onUpdated, watch } from 'vue'
-import PROJECTCONFIG from '~/project_config.json'
+import PROJECTCONFIG from '~/project_config'
 
 const { locale, t } = useI18n()
 

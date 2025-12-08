@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from "nuxt/config";
 import { resolve } from "path";
-import projectConfig from "./project_config.json";
+import projectConfig from "./project_config";
 import locales from './locales'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config

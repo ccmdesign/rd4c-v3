@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent action="" class="rd-search">
-    <input :id="'search-input' + uniqueId" v-model="searchInput" type="search" placeholder="Try our Ai Powered Search">
+    <input ref="searchInputRef" :id="'search-input' + uniqueId" v-model="searchInput" type="search" placeholder="Try our Ai Powered Search">
     <button type="submit" class="button" @click="createSearchQuery()">Search</button>
   </form>
 </template>
@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
 const store = useStore();
 const router = useRouter();
 const route = useRoute();
-
+const searchInputRef = ref(null);
 
 const uniqueId = ref(uuidv4());
 const searchInput = ref(store.searchValue);
@@ -27,6 +27,12 @@ const createSearchQuery = async (e) => {
     if(route.path !== '/search') {
       router.push({ path: '/search' });
     }
+  } else {
+    searchInputRef.value.focus();
+    searchInputRef.value.classList.add('shake');
+    setTimeout(() => {
+      searchInputRef.value.classList.remove('shake');
+    }, 500);
   }
 };
 </script>
@@ -103,6 +109,19 @@ const createSearchQuery = async (e) => {
 
   input { outline: 0; }
   
+}
+
+.rd-search .shake {
+  animation: shake 0.5s;
+  border-color: hsla(var(--accent-hsl), 1);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
 }
 
 </style>

@@ -130,7 +130,7 @@ export default defineNuxtConfig({
       {
         enforce: 'pre',
         config(config) {
-          const jsonPlugin = config.plugins.find(p => p.name === 'vite:json');
+          const jsonPlugin = config.plugins.find(p => p && p.name === 'vite:json');
           if (jsonPlugin) {
             const orgTransform = jsonPlugin.transform;
             // @ts-ignore

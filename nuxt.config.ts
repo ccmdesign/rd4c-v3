@@ -124,4 +124,27 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-04-03',
+
+  vite: {
+    plugins: [
+      {
+        enforce: 'pre',
+        config(config) {
+          const jsonPlugin = config.plugins.find(p => p.name === 'vite:json');
+          if (jsonPlugin) {
+            const orgTransform = jsonPlugin.transform;
+            // @ts-ignore
+            jsonPlugin.transform = function (code, id) {
+              // @ts-ignore
+              if (typeof orgTransform === 'function') {
+                // @ts-ignore
+                return orgTransform.apply(this, [code, id]);
+              }
+              return null;
+            };
+          }
+        },
+      },
+    ],
+  },
 });

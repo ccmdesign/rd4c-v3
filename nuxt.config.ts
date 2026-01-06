@@ -99,6 +99,13 @@ export default defineNuxtConfig({
     id: projectConfig.gtag
   },
 
+  content: {
+    experimental: {
+      // @ts-ignore
+      json: true,
+    }
+  },
+
   cookieConsent: {
     provider: 'cookieinformation',
     init: false,
